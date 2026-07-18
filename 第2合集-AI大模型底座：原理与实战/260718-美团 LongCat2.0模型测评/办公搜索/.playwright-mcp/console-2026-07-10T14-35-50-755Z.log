@@ -1,0 +1,4 @@
+[     487ms] [LOG] 1:yeefx 易分析SDK版本 = 20230824 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[     487ms] [LOG] 2:yeefx 站点id = 10003701, cookie = 20260710223522827238905815539818, pageid = 1783694151240949 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[     488ms] [LOG] 3:yeefx 18 < 5 体验概率不满足 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[    1133ms] [LOG] {siteCode: bm29000002, searchWord: 研发费用加计扣除, column: 全部, uc: 1, left_right_index: 0} @ https://www.chinatax.gov.cn/search5/static/js/common/searchResult.js:3

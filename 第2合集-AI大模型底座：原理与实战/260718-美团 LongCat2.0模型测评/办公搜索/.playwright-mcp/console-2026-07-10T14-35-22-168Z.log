@@ -1,0 +1,11 @@
+[     660ms] [LOG] 1:yeefx 易分析SDK版本 = 20230824 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[     661ms] [LOG] 2:yeefx 站点id = 10003701, cookie = 20260710223522827238905815539818, pageid = 1783694122824193 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[     662ms] [LOG] 3:yeefx 18 < 5 体验概率不满足 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[     910ms] [LOG] rts @ https://api.govwza.cn/cniil/assist.js?sid=2999&pos=left&bar=0:135
+[    1127ms] [ERROR] Mixed Content: The page at 'https://www.chinatax.gov.cn/' was loaded over HTTPS, but requested an insecure favicon 'http://www.chinatax.gov.cn/favicon.ico/'. This request has been blocked; the content must be served over HTTPS. @ https://www.chinatax.gov.cn/:0
+[    5914ms] [LOG] rts @ https://api.govwza.cn/cniil/assist.js?sid=2999&pos=left&bar=0:135
+[    5919ms] [LOG] 1:yeefx 易分析SDK版本 = 20230824 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[    5919ms] [LOG] 2:yeefx 站点id = 10003701, cookie = 20260710223522827238905815539818, pageid = 1783694128085117 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[    5920ms] [LOG] 3:yeefx 18 < 5 体验概率不满足 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[    5928ms] [ERROR] Mixed Content: The page at 'https://www.chinatax.gov.cn/chinatax/n810341/n810755/index.html' was loaded over HTTPS, but requested an insecure favicon 'http://www.chinatax.gov.cn/favicon.ico/'. This request has been blocked; the content must be served over HTTPS. @ https://www.chinatax.gov.cn/chinatax/n810341/n810755/index.html:0
+[   17277ms] [LOG] 2999fff @ https://api.govwza.cn/cniil/assist.js?sid=2999&pos=left&bar=0:12

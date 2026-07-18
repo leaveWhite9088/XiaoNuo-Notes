@@ -1,0 +1,239 @@
+- generic [ref=f4e1]:
+  - link "欢迎进入 国家税务总局政策法规库,盲人用户使用操作智能引导，请按快捷键Ctrl+Alt+R；阅读详细操作说明请按快捷键Ctrl+Alt+问号键。":
+    - /url: javascript:void(0)
+  - generic [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - generic [ref=f4e5]:
+        - link [ref=f4e8] [cursor=pointer]:
+          - /url: http://www.chinatax.gov.cn/eng/home.html
+        - link "繁" [ref=f4e11] [cursor=pointer]:
+          - /url: javascript:zh_tran('t');
+        - link [ref=f4e14] [cursor=pointer]:
+          - /url: http://mail.chinatax.gov.cn/
+        - link "登录" [ref=f4e17] [cursor=pointer]:
+          - /url: javascript:;
+      - link [ref=f4e19] [cursor=pointer]:
+        - /url: https://www.chinatax.gov.cn/chinatax/index.html
+      - generic [ref=f4e20]:
+        - generic [ref=f4e21]:
+          - definition [ref=f4e22]:
+            - textbox "请输入您要搜索的内容" [ref=f4e23]
+          - term [ref=f4e24]
+          - term [ref=f4e25]:
+            - button "搜一搜" [ref=f4e26] [cursor=pointer]
+        - generic:
+          - generic [ref=f4e27]: 本站热词：
+          - link "发票" [ref=f4e28] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票&left_right_index=0&searchSource=0
+          - link "小微企业" [ref=f4e29] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=小微企业&left_right_index=0&searchSource=0
+          - link "个人所得税" [ref=f4e30] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=个人所得税&left_right_index=0&searchSource=0
+          - link "发票查询" [ref=f4e31] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票查询&left_right_index=0&searchSource=0
+          - link "社保" [ref=f4e32] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=社保&left_right_index=0&searchSource=0
+    - list [ref=f4e35]:
+      - listitem [ref=f4e36]:
+        - link "首页" [ref=f4e37] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/index.html
+      - listitem [ref=f4e39]:
+        - link "总局概况" [ref=f4e40] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810209/index.html
+      - listitem [ref=f4e42]:
+        - link "信息公开" [ref=f4e43] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810214/index.html
+      - listitem [ref=f4e45]:
+        - link "新闻发布" [ref=f4e46] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810219//index.html
+      - listitem [ref=f4e48]:
+        - link "政策法规" [ref=f4e49] [cursor=pointer]:
+          - /url: /zcfgk/index.html
+      - listitem [ref=f4e51]:
+        - link "纳税服务" [ref=f4e52] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810346/index.html
+      - listitem [ref=f4e54]:
+        - link "互动交流" [ref=f4e55] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810356/index.html
+      - listitem [ref=f4e57]:
+        - link "专题专栏" [ref=f4e58] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810219/n810744//index.html
+  - generic [ref=f4e61]:
+    - generic [ref=f4e62]:
+      - paragraph [ref=f4e63] [cursor=pointer]: 全部
+      - paragraph [ref=f4e64] [cursor=pointer]: 文件
+      - paragraph [ref=f4e65] [cursor=pointer]: 解读
+    - generic [ref=f4e66]:
+      - textbox "输入“年份 字号”即可检索库内文件 如“2026 1”" [ref=f4e67]: 研发费用加计扣除
+      - button "搜索" [active] [ref=f4e68] [cursor=pointer]
+      - link "高级搜索" [ref=f4e69] [cursor=pointer]:
+        - /url: /zcfgk/c100028/search.html
+    - generic [ref=f4e70]:
+      - text: 搜索方式：
+      - paragraph [ref=f4e71] [cursor=pointer]: 精准
+      - paragraph [ref=f4e72] [cursor=pointer]: 模糊
+    - generic [ref=f4e73]:
+      - text: 热门关键词：
+      - generic [ref=f4e74] [cursor=pointer]: 个人所得税
+      - generic [ref=f4e75] [cursor=pointer]: 增值税
+      - generic [ref=f4e76] [cursor=pointer]: 企业所得税
+      - generic [ref=f4e77] [cursor=pointer]: 小微企业
+      - generic [ref=f4e78] [cursor=pointer]: 印花税
+  - generic [ref=f4e81]:
+    - generic [ref=f4e82]:
+      - text: 当前位置：
+      - link "首页" [ref=f4e83] [cursor=pointer]:
+        - /url: http://www.chinatax.gov.cn/chinatax/index.html
+      - text: ">"
+      - link "政策法规" [ref=f4e84] [cursor=pointer]:
+        - /url: /zcfgk/index.html
+      - text: ">"
+      - link "政策法规文件" [ref=f4e85] [cursor=pointer]:
+        - /url: /zcfgk/c100006/listflfg.html
+    - generic [ref=f4e86]:
+      - generic [ref=f4e87]:
+        - paragraph [ref=f4e88]: 序号
+        - paragraph [ref=f4e89]: 标题
+        - paragraph [ref=f4e90]: 发文字号
+        - paragraph [ref=f4e91]: 成文日期
+      - list [ref=f4e143]:
+        - listitem [ref=f4e144]:
+          - paragraph [ref=f4e145]: "1"
+          - paragraph [ref=f4e146]:
+            - link "财政部 税务总局 工业和信息化部关于调整节能汽车、新能源汽车车船税优惠政策的公告" [ref=f4e147] [cursor=pointer]:
+              - /url: /zcfgk/c102416/c5250801/content.html
+          - paragraph [ref=f4e148]: 财政部 税务总局 工业和信息化部公告2026年第19号
+          - paragraph [ref=f4e149]: 2026-07-02
+        - listitem [ref=f4e150]:
+          - paragraph [ref=f4e151]: "2"
+          - paragraph [ref=f4e152]:
+            - link "财政部 海关总署 税务总局关于2027年第33届世界大学生冬季运动会税收政策的通知" [ref=f4e153] [cursor=pointer]:
+              - /url: /zcfgk/c102416/c5250884/content.html
+          - paragraph [ref=f4e154]: 财税〔2026〕48号
+          - paragraph [ref=f4e155]: 2026-07-01
+        - listitem [ref=f4e156]:
+          - paragraph [ref=f4e157]: "3"
+          - paragraph [ref=f4e158]:
+            - link "财政部 税务总局关于更新国产抗艾滋病病毒药物免税品种清单的公告" [ref=f4e159] [cursor=pointer]:
+              - /url: /zcfgk/c102416/c5250687/content.html
+          - paragraph [ref=f4e160]: 财政部 税务总局公告2026年第18号
+          - paragraph [ref=f4e161]: 2026-06-24
+        - listitem [ref=f4e162]:
+          - paragraph [ref=f4e163]: "4"
+          - paragraph [ref=f4e164]:
+            - link "人力资源社会保障部 教育部 财政部 国家税务总局关于失业保险支持企业稳岗扩岗的通知" [ref=f4e165] [cursor=pointer]:
+              - /url: /zcfgk/c100013/c5250797/content.html
+          - paragraph [ref=f4e166]: 人社部发〔2026〕39号
+          - paragraph [ref=f4e167]: 2026-06-18
+        - listitem [ref=f4e168]:
+          - paragraph [ref=f4e169]: "5"
+          - paragraph [ref=f4e170]:
+            - link "财政部 自然资源部 税务总局关于进一步完善矿业权出让收益征收有关工作的通知" [ref=f4e171] [cursor=pointer]:
+              - /url: /zcfgk/c102416/c5250578/content.html
+          - paragraph [ref=f4e172]: 财综〔2026〕25号
+          - paragraph [ref=f4e173]: 2026-06-11
+        - listitem [ref=f4e174]:
+          - paragraph [ref=f4e175]: "6"
+          - paragraph [ref=f4e176]:
+            - link "国家税务总局关于在成品油零售领域全面推广“交易即开票”有关事项的公告" [ref=f4e177] [cursor=pointer]:
+              - /url: /zcfgk/c100012/c5250347/content.html
+          - paragraph [ref=f4e178]: 国家税务总局公告2026年第11号
+          - paragraph [ref=f4e179]: 2026-06-08
+        - listitem [ref=f4e180]:
+          - paragraph [ref=f4e181]: "7"
+          - paragraph [ref=f4e182]:
+            - link "国家税务总局关于发布出口退税率文库2026B版的通知" [ref=f4e183] [cursor=pointer]:
+              - /url: /zcfgk/c102424/c5250255/content.html
+          - paragraph [ref=f4e184]: 税总货劳函〔2026〕86号
+          - paragraph [ref=f4e185]: 2026-06-05
+        - listitem [ref=f4e186]:
+          - paragraph [ref=f4e187]: "8"
+          - paragraph [ref=f4e188]:
+            - link "国家税务总局关于个人所得税有关征管事项的公告" [ref=f4e189] [cursor=pointer]:
+              - /url: /zcfgk/c100012/c5250556/content.html
+          - paragraph [ref=f4e190]: 国家税务总局公告2026年第12号
+          - paragraph [ref=f4e191]: 2026-05-29
+        - listitem [ref=f4e192]:
+          - paragraph [ref=f4e193]: "9"
+          - paragraph [ref=f4e194]:
+            - link "自然资源部办公厅 公安部办公厅 国家税务总局办公厅 国家市场监督管理总局办公厅 国家金融监督管理总局办公厅关于做好企业购置不动产转移登记“高效办成一件事”的通知" [ref=f4e195] [cursor=pointer]:
+              - /url: /zcfgk/c100013/c5250327/content.html
+          - paragraph [ref=f4e196]: 自然资办函〔2026〕919号
+          - paragraph [ref=f4e197]: 2026-05-29
+        - listitem [ref=f4e198]:
+          - paragraph [ref=f4e199]: "10"
+          - paragraph [ref=f4e200]:
+            - link "中华人民共和国矿产资源法实施条例" [ref=f4e201] [cursor=pointer]:
+              - /url: /zcfgk/c100010/c5250264/content.html
+          - paragraph [ref=f4e202]
+          - paragraph [ref=f4e203]: 2026-05-15
+      - generic [ref=f4e205]:
+        - link "上一页" [ref=f4e206]:
+          - /url: javascript:;
+        - generic [ref=f4e207]:
+          - emphasis [ref=f4e208]
+          - emphasis [ref=f4e209]: "1"
+        - link "2" [ref=f4e210] [cursor=pointer]:
+          - /url: javascript:;
+        - link "3" [ref=f4e211] [cursor=pointer]:
+          - /url: javascript:;
+        - link "4" [ref=f4e212] [cursor=pointer]:
+          - /url: javascript:;
+        - link "5" [ref=f4e213] [cursor=pointer]:
+          - /url: javascript:;
+        - generic [ref=f4e214]: …
+        - link "500" [ref=f4e215] [cursor=pointer]:
+          - /url: javascript:;
+        - link "下一页" [ref=f4e216] [cursor=pointer]:
+          - /url: javascript:;
+        - generic [ref=f4e217]:
+          - text: 到第
+          - textbox [ref=f4e218]: "1"
+          - text: 页
+          - button "确定" [ref=f4e219] [cursor=pointer]
+  - generic [ref=f4e93]:
+    - link "中国政府网" [ref=f4e95] [cursor=pointer]:
+      - /url: https://www.gov.cn/
+    - generic [ref=f4e99]:
+      - term [ref=f4e101] [cursor=pointer]:
+        - text: 国家税务总局各省级税务局
+        - generic [ref=f4e102]: 
+      - term [ref=f4e104] [cursor=pointer]:
+        - text: 直属单位
+        - generic [ref=f4e105]: 
+      - term [ref=f4e107] [cursor=pointer]:
+        - text: 税务相关
+        - generic [ref=f4e108]: 
+      - term [ref=f4e110] [cursor=pointer]:
+        - text: 友情链接
+        - generic [ref=f4e111]: 
+  - generic [ref=f4e112]:
+    - generic [ref=f4e115]:
+      - list [ref=f4e116]:
+        - listitem [ref=f4e117]:
+          - link "访问统计" [ref=f4e118] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/n1670141/index.html
+          - text: "|"
+        - listitem [ref=f4e119]:
+          - link "网站管理" [ref=f4e120] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/n1262558///index.html
+          - text: "|"
+        - listitem [ref=f4e121]:
+          - link "联系我们" [ref=f4e122] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/c101263/c61304/content.html
+          - text: "|"
+        - listitem [ref=f4e123]:
+          - link "网站地图" [ref=f4e124] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/n1636341/index.html
+      - generic [ref=f4e125]:
+        - generic [ref=f4e126]: 主办单位：国家税务总局
+        - generic [ref=f4e127]: 版权所有：国家税务总局
+        - generic [ref=f4e128]: 地址：北京市海淀区羊坊店西路5号
+      - link [ref=f4e131] [cursor=pointer]:
+        - /url: http://bszs.conac.cn/sitename?method=show&id=0895F7C120836C12E053012819AC7E96
+    - definition [ref=f4e136]:
+      - generic [ref=f4e137]: 网站标识码：bm29000002
+      - link "京ICP备13021685号-2" [ref=f4e139] [cursor=pointer]:
+        - /url: https://beian.miit.gov.cn
+      - link "京公网安备 11040102700073号" [ref=f4e141] [cursor=pointer]:
+        - /url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700073

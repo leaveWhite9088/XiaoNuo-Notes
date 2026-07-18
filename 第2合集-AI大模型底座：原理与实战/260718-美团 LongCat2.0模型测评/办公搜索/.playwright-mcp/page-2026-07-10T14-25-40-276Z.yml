@@ -1,0 +1,296 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link [ref=e7] [cursor=pointer]:
+        - /url: /home
+      - generic [ref=e11]:
+        - generic [ref=e12] [cursor=pointer]: 产品
+        - generic [ref=e13] [cursor=pointer]: 解决方案
+        - generic [ref=e14] [cursor=pointer]: 会员服务
+        - generic [ref=e15] [cursor=pointer]: 企业购买
+        - generic [ref=e16]: 帮助与支持
+      - generic [ref=e17]:
+        - button "下载中心" [ref=e18] [cursor=pointer]
+        - button "登录" [ref=e20] [cursor=pointer]
+  - generic [ref=e22]:
+    - generic [ref=e24]: 购买咨询
+    - generic [ref=e28]:
+      - generic [ref=e29] [cursor=pointer]: 售后反馈
+      - generic [ref=e32] [cursor=pointer]: 回到顶部
+  - generic [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e38]: 腾讯文档企业版已正式推出，立即了解新能力
+      - generic [ref=e39] [cursor=pointer]: 点击前往
+    - generic [ref=e47]:
+      - generic:
+        - generic [ref=e49] [cursor=pointer]: 购买咨询
+        - generic [ref=e50] [cursor=pointer]: 立即使用
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - generic [ref=e54]: 丰富的Office应用
+        - generic [ref=e55]: 了解更多
+      - generic [ref=e59]:
+        - generic [ref=e60] [cursor=pointer]:
+          - generic [ref=e62]: 文档
+          - generic [ref=e63]: 专业图文创作
+          - generic [ref=e64]: 查看详情
+        - generic [ref=e68] [cursor=pointer]:
+          - generic [ref=e70]: 表格
+          - generic [ref=e71]: 高效处理数据
+          - generic [ref=e72]: 查看详情
+        - generic [ref=e76] [cursor=pointer]:
+          - generic [ref=e78]: 幻灯片
+          - generic [ref=e79]: 远程播放演示文稿
+          - generic [ref=e80]: 查看详情
+        - generic [ref=e84] [cursor=pointer]:
+          - generic [ref=e86]: PDF
+          - generic [ref=e87]: 跨平台电子文档
+          - generic [ref=e88]: 查看详情
+        - generic [ref=e92] [cursor=pointer]:
+          - generic [ref=e94]: 收集表
+          - generic [ref=e95]: 百万数据收集
+          - generic [ref=e96]: 查看详情
+        - generic [ref=e100] [cursor=pointer]:
+          - generic [ref=e102]: 智能文档
+          - generic [ref=e103]: 集成式应用型文档
+          - generic [ref=e104]: 查看详情
+        - generic [ref=e108] [cursor=pointer]:
+          - generic [ref=e110]: 智能表格
+          - generic [ref=e111]: 结构化数据协作
+          - generic [ref=e112]: 查看详情
+        - generic [ref=e116] [cursor=pointer]:
+          - generic [ref=e118]: 智能白板
+          - generic [ref=e119]: 可协作的无限画布
+          - generic [ref=e120]: 查看详情
+        - generic [ref=e124] [cursor=pointer]:
+          - generic [ref=e126]: 思维导图
+          - generic [ref=e127]: 图形化整理思路
+          - generic [ref=e128]: 查看详情
+        - generic [ref=e132] [cursor=pointer]:
+          - generic [ref=e134]: 流程图
+          - generic [ref=e135]: 高效绘制流程
+          - generic [ref=e136]: 查看详情
+    - generic [ref=e142]:
+      - generic [ref=e143]: 可协作编辑的云端效率工具
+      - generic [ref=e144] [cursor=pointer]: 了解更多
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - generic [ref=e154]: 云端文档永久储存
+          - generic [ref=e155]: 提供免费的存储空间，文档可同步至云端，数据永久存储，文件永不丢失
+        - generic [ref=e156]:
+          - generic [ref=e161]: 多设备自动同步
+          - generic [ref=e162]: 多设备数据资产自动同步，可随时管理文件，切换设备亦可无缝创作
+        - generic [ref=e163]:
+          - generic [ref=e168]: 多人协作数据共享
+          - generic [ref=e169]: 支持多人同时编辑一个文档，信息无缝同步，实时共享数据
+        - generic [ref=e170]:
+          - generic [ref=e175]: 全链路安全管控
+          - generic [ref=e176]: 灵活设置文档权限，支持查看浏览记录、修订记录、操作记录等，使操作有迹可循
+    - generic [ref=e177]:
+      - generic [ref=e178]:
+        - heading "腾讯文档企业版" [level=2] [ref=e179]
+        - link "了解更多 >" [ref=e180] [cursor=pointer]:
+          - /url: /home/saas#tdocs
+      - generic [ref=e181]:
+        - generic [ref=e182]:
+          - img "员工离职交接功能图标" [ref=e183]
+          - heading "员工离职交接" [level=3] [ref=e184]
+          - paragraph [ref=e185]: 管理员可转交离职成员的文档，防止员工离职后将文档带走。
+        - generic [ref=e186]:
+          - img "企业资产安全管控功能图标" [ref=e187]
+          - heading "企业资产安全管控" [level=3] [ref=e188]
+          - paragraph [ref=e189]: 事前权限控制-事中敏感行为预警-事后操作日志查询等能力，全链路保障企业数据资产安全。
+        - generic [ref=e190]:
+          - img "基于组织架构协作功能图标" [ref=e191]
+          - heading "基于组织架构协作" [level=3] [ref=e192]
+          - paragraph [ref=e193]: 基于组织架构协作，无需添加好友，管理员可灵活分配及回收账号。
+        - generic [ref=e194]:
+          - img "企业文档回收站功能图标" [ref=e195]
+          - heading "企业文档回收站" [level=3] [ref=e196]
+          - paragraph [ref=e197]: 成员删除的文档会进入企业文档回收站，企业管理员可随时恢复找回。
+      - link "查看版本与定价" [ref=e198] [cursor=pointer]:
+        - /url: /home/price
+    - generic [ref=e199]:
+      - generic [ref=e200]: AI文档助手
+      - generic [ref=e203] [cursor=pointer]: 立即使用
+      - generic [ref=e204]:
+        - generic [ref=e206]:
+          - generic [ref=e208]: 全品类文档生成
+          - generic [ref=e209]: 捕捉灵感，高效创作，一句话生成文档、表格、幻灯片、思维导图等全品类文档
+        - generic [ref=e211]:
+          - generic [ref=e213]: 跨品类信息处理
+          - generic [ref=e214]: 数据同源，一份内容可以在多种文档形态下任意切换
+        - generic [ref=e216]:
+          - generic [ref=e218]: 一键式智能交互
+          - generic [ref=e219]: 丰富的指令库提供上百条实用指令，只需一键即可达成目标
+    - generic [ref=e220]:
+      - generic [ref=e221]: 腾讯文档全新客户端
+      - generic [ref=e222] [cursor=pointer]: 了解更多
+    - generic [ref=e227]:
+      - generic [ref=e228]: 开放生态
+      - generic [ref=e229] [cursor=pointer]: 立即入驻
+      - generic [ref=e233]:
+        - generic [ref=e234]:
+          - generic [ref=e239]: OPEN API
+          - generic [ref=e240]: 输出核心能力，赋能合作伙伴
+        - generic [ref=e241]:
+          - generic [ref=e246]: 插件
+          - generic [ref=e247]: 在腾讯文档上开发创新应用，服务上亿用户，满足用户的个性化需求
+        - generic [ref=e248]:
+          - generic [ref=e253]: 模板库
+          - generic [ref=e254]: 灵活的模板创作工具，提升创作者作品曝光度和利用率
+        - generic [ref=e255]:
+          - generic [ref=e260]: 腾讯文档SDK
+          - generic [ref=e261]: 支持Office文件在线预览，格式兼容度高，接入模式灵活
+    - generic [ref=e263]:
+      - generic [ref=e264]: 解决方案
+      - generic [ref=e265] [cursor=pointer]: 了解更多解决方案
+      - generic [ref=e269]:
+        - generic [ref=e270] [cursor=pointer]:
+          - generic [ref=e272]: 泛互联网
+          - generic [ref=e273]:
+            - paragraph [ref=e274]: IT项目管理
+            - paragraph [ref=e275]: 知识库管理
+            - paragraph [ref=e276]: 电商私域运营
+            - paragraph [ref=e277]: CRM客户管理
+        - generic [ref=e278] [cursor=pointer]:
+          - generic [ref=e280]: 零售
+          - generic [ref=e281]:
+            - paragraph [ref=e282]: 商品三色价管理
+            - paragraph [ref=e283]: 订货会管理
+            - paragraph [ref=e284]: 门店陈列管理
+            - paragraph [ref=e285]: 健康证管理
+        - generic [ref=e286] [cursor=pointer]:
+          - generic [ref=e288]: 金融
+          - generic [ref=e289]:
+            - paragraph [ref=e290]: 研究报告协同撰写
+            - paragraph [ref=e291]: 信贷审批与合同管理
+            - paragraph [ref=e292]: 同业合作
+            - paragraph [ref=e293]: 内部培训与知识库建设
+        - generic [ref=e294] [cursor=pointer]:
+          - generic [ref=e296]: 教育
+          - generic [ref=e297]:
+            - paragraph [ref=e298]: 校园安全一站通
+            - paragraph [ref=e299]: 学生晚归管理
+            - paragraph [ref=e300]: 学生成长档案
+            - paragraph [ref=e301]: 部门一张表
+        - generic [ref=e302] [cursor=pointer]:
+          - generic [ref=e304]: 交通
+          - generic [ref=e305]:
+            - paragraph [ref=e306]: 应急指挥调度管理
+            - paragraph [ref=e307]: 安全设备检修管理
+            - paragraph [ref=e308]: 客诉协同管理
+            - paragraph [ref=e309]: 一线声音管理
+        - generic [ref=e310] [cursor=pointer]:
+          - generic [ref=e312]: 制造
+          - generic [ref=e313]:
+            - paragraph [ref=e314]: 生产工单与报工管理
+            - paragraph [ref=e315]: 工程变更管理
+            - paragraph [ref=e316]: 供应商管理与采购协同
+            - paragraph [ref=e317]: 全流程质量管理
+        - generic [ref=e318] [cursor=pointer]:
+          - generic [ref=e320]: 能源
+          - generic [ref=e321]:
+            - paragraph [ref=e322]: 设备巡检与预测性维护
+            - paragraph [ref=e323]: 加油站经营日报
+            - paragraph [ref=e324]: HSE（健康、安全、环境）管理
+            - paragraph [ref=e325]: 综合能源项目协同建设
+        - generic [ref=e326] [cursor=pointer]:
+          - generic [ref=e328]: 政法政务
+          - generic [ref=e329]:
+            - paragraph [ref=e330]: 社区一户一档
+            - paragraph [ref=e331]: 党群服务台
+            - paragraph [ref=e332]: 公务用车管理
+            - paragraph [ref=e333]: 应急百科文档
+    - generic [ref=e334]:
+      - generic [ref=e335]: 助力企业与组织实现数字化转型
+      - generic [ref=e340]:
+        - generic [ref=e344] [cursor=pointer]:
+          - generic [ref=e346]: 蓝天救援
+          - generic [ref=e347]: 在土耳其地震等各类应急救援行动中，蓝天救援队使用收集表实现“全国信息秒速收集”，使用在线文档实现各地灾情最新动态的实时更新，在生死时速的救援路上，争分夺秒。
+        - generic [ref=e351] [cursor=pointer]:
+          - generic [ref=e353]: 知识星球
+          - generic [ref=e354]: 通过腾讯文档推动工作进展，建立清晰时间线，实现无缝互通。以文档为基础建立「知识库」，通过共享空间实现项目物料的及时更新和下载。
+        - generic [ref=e358]:
+          - generic [ref=e360]: 腾讯
+          - generic [ref=e361]: 项目中不同角色的成员通过协作进行需求评审，快速对齐项目进展，随时随地高效办公。
+        - generic [ref=e365]:
+          - generic [ref=e367]: 星巴克
+          - generic [ref=e368]: 「星光会员节」通过腾讯文档打造官方福利攻略，创新B2C客户运营玩法，高效精准触达用户，实现拉新和转化。
+        - generic [ref=e372]:
+          - generic [ref=e374]: 立邦
+          - generic [ref=e375]: 「立邦大学」通过腾讯文档进行施工场景问题培训，助力经销商快速掌握专业知识，有效搭建课程作业、课后分享、学员交流的渠道。
+        - generic [ref=e379]:
+          - generic [ref=e381]: 首都师范大学
+          - generic [ref=e382]: 使用收集表自带的疫情信息收集模板，实现附件高效上传，3万师生核酸结果「闪电」收齐。
+    - generic [ref=e383]: 他们都在使用腾讯文档
+    - generic [ref=e388]:
+      - generic [ref=e389]: 下载中心
+      - generic [ref=e390]: 支持 iOS&iPad，Android，小程序，Mac，Windows，Linux 版本。
+      - generic [ref=e391] [cursor=pointer]: 更多版本下载
+      - generic [ref=e395]:
+        - generic [ref=e397] [cursor=pointer]:
+          - generic [ref=e399]: Windows版本
+          - generic: 点击立即下载
+        - generic [ref=e402] [cursor=pointer]:
+          - generic [ref=e404]: Mac版本
+          - generic: 点击立即下载
+          - generic [ref=e405]: 已适配Apple芯片
+        - generic [ref=e407] [cursor=pointer]:
+          - generic [ref=e409]: iOS&iPad版本
+          - generic: 扫码下载
+        - generic [ref=e411] [cursor=pointer]:
+          - generic [ref=e413]: Android版本
+          - generic: 扫码下载
+  - contentinfo [ref=e415]:
+    - generic [ref=e417]:
+      - generic [ref=e420]:
+        - generic [ref=e421]: 产品
+        - generic [ref=e422]:
+          - generic [ref=e423] [cursor=pointer]: 产品介绍
+          - generic [ref=e424] [cursor=pointer]: 开放生态
+          - generic [ref=e425] [cursor=pointer]: 会员服务
+          - generic [ref=e426] [cursor=pointer]: 下载中心
+      - generic [ref=e427]:
+        - generic [ref=e428]: 行业解决方案
+        - generic [ref=e429]:
+          - generic [ref=e430] [cursor=pointer]: 金融行业
+          - generic [ref=e431] [cursor=pointer]: 制造行业
+          - generic [ref=e432] [cursor=pointer]: 交通行业
+          - generic [ref=e433] [cursor=pointer]: 零售行业
+          - generic [ref=e434] [cursor=pointer]: 泛互联网行业
+          - generic [ref=e435] [cursor=pointer]: 能源行业
+      - generic [ref=e436]:
+        - generic [ref=e437]: 支持
+        - generic [ref=e438]:
+          - generic [ref=e439] [cursor=pointer]: 功能更新说明
+          - generic [ref=e440] [cursor=pointer]: 常见问题
+          - generic [ref=e441] [cursor=pointer]: 用户反馈
+          - generic [ref=e442] [cursor=pointer]: 使用教程
+          - generic [ref=e443] [cursor=pointer]: 受限文档申诉
+          - generic [ref=e444] [cursor=pointer]: 安全白皮书
+          - generic [ref=e445] [cursor=pointer]: 侵权投诉指引
+      - generic [ref=e446]:
+        - generic [ref=e447]: 友情链接
+        - generic [ref=e448]:
+          - generic [ref=e449] [cursor=pointer]: 腾讯微云
+          - generic [ref=e450] [cursor=pointer]: TIM
+          - generic [ref=e451] [cursor=pointer]: 包图网
+          - generic [ref=e452] [cursor=pointer]: 腾讯问卷
+          - generic [ref=e453] [cursor=pointer]: 搜狗输入法
+          - generic [ref=e454] [cursor=pointer]: WorkBuddy
+          - generic [ref=e455] [cursor=pointer]: CodeBuddy
+      - generic [ref=e456]:
+        - generic [ref=e457]: 联系我们
+        - generic [ref=e458]:
+          - generic [ref=e459] [cursor=pointer]: 商务合作
+          - generic [ref=e460] [cursor=pointer]: 加入腾讯文档
+          - generic [ref=e461]: QQ交流群：303702904
+    - generic [ref=e470]:
+      - generic [ref=e471]: Copyright © 1998-2026 Tencent. All Rights Reserved. 腾讯公司 版权所有
+      - generic [ref=e472]:
+        - link "服务协议" [ref=e473] [cursor=pointer]:
+          - /url: https://docs.qq.com/doc/p/41c65c813fe78d2f262bf35b825c214f0f459bfe
+        - text: "|"
+        - link "隐私政策" [ref=e474] [cursor=pointer]:
+          - /url: https://docs.qq.com/doc/p/30cb57a3280b16bd48fb49001022ada97479339a

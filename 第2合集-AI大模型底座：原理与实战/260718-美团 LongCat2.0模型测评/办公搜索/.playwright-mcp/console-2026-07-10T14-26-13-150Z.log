@@ -1,0 +1,24 @@
+[     244ms] [ERROR] 加载 AppConfig 配置出错 @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     282ms] [LOG] [2026-07-10T22:26:13.432] [DEBUG] [DDBase] - params erroro: jsonObj2Class @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     283ms] [LOG] [2026-07-10T22:26:13.432] [DEBUG] [DDBase] - params erroro: jsonObj2Class @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     300ms] [LOG] enterpriseFeaturesConfig:  {title: 腾讯文档企业版, learnMore: Object, features: Array(4), button: Object} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     560ms] [LOG] 获取userInfo失败 TypeError: Cannot read properties of undefined (reading 'all')
+    at https://docs.gtimg.com/home/js/index-d74aff.js:2:983784
+    at h (https://docs.gtimg.com/home/js/index-d74aff.js:2:1840267)
+    at Generator.<anonymous> (https://docs.gtimg.com/home/js/index-d74aff.js:2:1841609)
+    at Generator.next (https://docs.gtimg.com/home/js/index-d74aff.js:2:1840696)
+    at r (https://docs.gtimg.com/home/js/index-d74aff.js:2:2141454)
+    at s (https://docs.gtimg.com/home/js/index-d74aff.js:2:2141657) @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     573ms] [LOG] {cgicode: 12100, msg: traceID:4a1a3f3ddc924ce1a1556c3b7d8a4689 [errcode:12100:0], retcode: 12100} getStorageSpace @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     583ms] [LOG] null fetchUserInfo @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     587ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://pingfore.qq.com/pingd?dm=docs.qq.com&url=/home/smartsheet&arg=&rdm=&rurl=&rarg=&adt=&pf=Win32&scr=1560x1040&scl=24-bit&lang=zh-cn&java=0&tz=-8&flash=&pvid=1783169354329553&ty=1&vs=4.1.14&ext=:0
+[     691ms] [LOG] {val: Object} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     725ms] [LOG] [j-report] 准备主动上报数据： {"topic":"SDK-b99328fe37901c8f78c5","data":[{"message":"{\"level\":\"info\",\"ext1\":\"unknown-React\",\"custom_padId\":\"unknown\",\"custom_padType\":\"unknown\",\"custom_deviceType\":\"pc\",\"custom_webPageHostContainer\":\"chrome\",\"custom_eventName\":\"组件资源加载耗时\",\"custom_duration\":88,\"custom_url\":\"//docs.idqqimg.com/tim/docs/components/libs/react-common-16.13.1-2bf240.js\",\"custom_fileExtension\":\"js\"}","fields":"{\"id\":\"SDK-b99328fe37901c8f78c5\",\"uid\":\"\",\"aid\":\"j-report\",\"env\":\"production\",\"type\":\"custom_event\"}","timestamp":1783693573874}]} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     813ms] [LOG] [j-report] 准备主动上报数据： {"topic":"SDK-b99328fe37901c8f78c5","data":[{"message":"{\"level\":\"info\",\"ext1\":\"docs-component-official-footer\",\"custom_padId\":\"unknown\",\"custom_padType\":\"unknown\",\"custom_deviceType\":\"pc\",\"custom_webPageHostContainer\":\"chrome\",\"custom_eventName\":\"组件资源加载耗时\",\"custom_duration\":85,\"custom_url\":\"//docs.gtimg.com/docs_components/docs-component-official-footer.ceb62208.css\",\"custom_fileExtension\":\"css\"}","fields":"{\"id\":\"SDK-b99328fe37901c8f78c5\",\"uid\":\"\",\"aid\":\"j-report\",\"env\":\"production\",\"type\":\"custom_event\"}","timestamp":1783693573962}]} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     910ms] [LOG] [j-report] 主动上报成功： {code: 0, msg: dropped} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     925ms] [WARNING] i18n is not initialized, ready to initialize it... @ https://docs.gtimg.com/docs_components/docs-component-official-footer.9a35742b.js:1
+[     928ms] [ERROR] 加载 AppConfig 配置出错 @ https://docs.gtimg.com/docs_components/docs-component-official-footer.9a35742b.js:1
+[     930ms] [LOG] [j-report] 准备主动上报数据： {"topic":"SDK-b99328fe37901c8f78c5","data":[{"message":"{\"level\":\"info\",\"ext1\":\"docs-component-official-footer\",\"custom_padId\":\"unknown\",\"custom_padType\":\"unknown\",\"custom_deviceType\":\"pc\",\"custom_webPageHostContainer\":\"chrome\",\"custom_eventName\":\"组件资源加载耗时\",\"custom_duration\":115,\"custom_url\":\"//docs.gtimg.com/docs_components/docs-component-official-footer.9a35742b.js\",\"custom_fileExtension\":\"js\"}","fields":"{\"id\":\"SDK-b99328fe37901c8f78c5\",\"uid\":\"\",\"aid\":\"j-report\",\"env\":\"production\",\"type\":\"custom_event\"}","timestamp":1783693574079}]} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     948ms] [LOG] [j-report] 主动上报成功： {code: 0, msg: dropped} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1060ms] [LOG] [j-report] 主动上报成功： {code: 0, msg: dropped} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1114ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://docs.qq.com/home/smartsheet:0

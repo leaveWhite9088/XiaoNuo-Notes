@@ -1,0 +1,423 @@
+- generic [active] [ref=f2e1]:
+  - link "欢迎进入 国家税务总局政策法规库,盲人用户使用操作智能引导，请按快捷键Ctrl+Alt+R；阅读详细操作说明请按快捷键Ctrl+Alt+问号键。":
+    - /url: javascript:void(0)
+  - generic [ref=f2e3]:
+    - generic [ref=f2e4]:
+      - generic [ref=f2e5]:
+        - link [ref=f2e8] [cursor=pointer]:
+          - /url: http://www.chinatax.gov.cn/eng/home.html
+        - link "繁" [ref=f2e11] [cursor=pointer]:
+          - /url: javascript:zh_tran('t');
+        - link [ref=f2e14] [cursor=pointer]:
+          - /url: http://mail.chinatax.gov.cn/
+        - link "登录" [ref=f2e17] [cursor=pointer]:
+          - /url: javascript:;
+      - link [ref=f2e19] [cursor=pointer]:
+        - /url: https://www.chinatax.gov.cn/chinatax/index.html
+      - generic [ref=f2e20]:
+        - generic [ref=f2e21]:
+          - definition [ref=f2e22]:
+            - textbox "请输入您要搜索的内容" [ref=f2e23]
+          - term [ref=f2e24]
+          - term [ref=f2e25]:
+            - button "搜一搜" [ref=f2e26] [cursor=pointer]
+        - generic:
+          - generic [ref=f2e27]: 本站热词：
+          - link "发票" [ref=f2e28] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票&left_right_index=0&searchSource=0
+          - link "小微企业" [ref=f2e29] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=小微企业&left_right_index=0&searchSource=0
+          - link "个人所得税" [ref=f2e30] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=个人所得税&left_right_index=0&searchSource=0
+          - link "发票查询" [ref=f2e31] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票查询&left_right_index=0&searchSource=0
+          - link "社保" [ref=f2e32] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=社保&left_right_index=0&searchSource=0
+    - list [ref=f2e35]:
+      - listitem [ref=f2e36]:
+        - link "首页" [ref=f2e37] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/index.html
+      - listitem [ref=f2e39]:
+        - link "总局概况" [ref=f2e40] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810209/index.html
+      - listitem [ref=f2e42]:
+        - link "信息公开" [ref=f2e43] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810214/index.html
+      - listitem [ref=f2e45]:
+        - link "新闻发布" [ref=f2e46] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810219//index.html
+      - listitem [ref=f2e48]:
+        - link "政策法规" [ref=f2e49] [cursor=pointer]:
+          - /url: /zcfgk/index.html
+      - listitem [ref=f2e51]:
+        - link "纳税服务" [ref=f2e52] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810346/index.html
+      - listitem [ref=f2e54]:
+        - link "互动交流" [ref=f2e55] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810356/index.html
+      - listitem [ref=f2e57]:
+        - link "专题专栏" [ref=f2e58] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810219/n810744//index.html
+  - generic [ref=f2e61]:
+    - generic [ref=f2e62]:
+      - paragraph [ref=f2e63] [cursor=pointer]: 全部
+      - paragraph [ref=f2e64] [cursor=pointer]: 文件
+      - paragraph [ref=f2e65] [cursor=pointer]: 解读
+    - generic [ref=f2e66]:
+      - textbox "输入“年份 字号”即可检索库内文件 如“2026 1”" [ref=f2e67]: 2023年第7号 研发费用
+      - button "搜索" [ref=f2e68] [cursor=pointer]
+      - link "高级搜索" [ref=f2e69] [cursor=pointer]:
+        - /url: /zcfgk/c100028/search.html
+    - generic [ref=f2e70]:
+      - text: 搜索方式：
+      - paragraph [ref=f2e71] [cursor=pointer]: 精准
+      - paragraph [ref=f2e72] [cursor=pointer]: 模糊
+    - generic [ref=f2e73]:
+      - text: 热门关键词：
+      - generic [ref=f2e74] [cursor=pointer]: 个人所得税
+      - generic [ref=f2e75] [cursor=pointer]: 增值税
+      - generic [ref=f2e76] [cursor=pointer]: 企业所得税
+      - generic [ref=f2e77] [cursor=pointer]: 小微企业
+      - generic [ref=f2e78] [cursor=pointer]: 印花税
+  - generic [ref=f2e81]:
+    - generic [ref=f2e82]:
+      - text: 当前位置：
+      - link "首页" [ref=f2e83] [cursor=pointer]:
+        - /url: http://www.chinatax.gov.cn/chinatax/index.html
+      - text: ">"
+      - link "政策法规" [ref=f2e84] [cursor=pointer]:
+        - /url: /zcfgk/index.html
+      - text: "> 搜索"
+      - button "下载" [ref=f2e85] [cursor=pointer]
+    - generic [ref=f2e86]:
+      - generic [ref=f2e87]: 已选条件
+      - generic [ref=f2e89]:
+        - text: 关键词：
+        - generic [ref=f2e90] [cursor=pointer]: 2023年第7号 研发费用
+      - generic [ref=f2e91]: 清空
+    - generic [ref=f2e93]:
+      - generic [ref=f2e94]:
+        - generic [ref=f2e95]:
+          - heading "类别" [level=3] [ref=f2e96]
+          - list [ref=f2e97]:
+            - listitem [ref=f2e98]:
+              - link "法律（0）" [ref=f2e99] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e100]:
+              - link "行政法规（0）" [ref=f2e101] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e102]:
+              - link "国务院文件（0）" [ref=f2e103] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e104]:
+              - link "税务部门规章（0）" [ref=f2e105] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e106]:
+              - link "财税文件（0）" [ref=f2e107] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e108]:
+              - link "税务规范性文件（0）" [ref=f2e109] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e110]:
+              - link "其他文件（0）" [ref=f2e111] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e112]:
+              - link "工作通知（0）" [ref=f2e113] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - generic [ref=f2e114]:
+          - heading "主题" [level=3] [ref=f2e115]
+          - list [ref=f2e116]:
+            - listitem [ref=f2e117]:
+              - link "税收政策（0）" [ref=f2e118] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e121]:
+              - link "非税收入政策（0）" [ref=f2e122] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e123]:
+              - link "社会保险费政策（0）" [ref=f2e124] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e125]:
+              - link "税费征管（0）" [ref=f2e126] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e127]:
+              - link "其他（0）" [ref=f2e128] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - generic [ref=f2e129]:
+          - heading "行业分类" [level=3] [ref=f2e130]
+          - list [ref=f2e131]:
+            - listitem [ref=f2e132]:
+              - link "农林业（0）" [ref=f2e133] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e134]:
+              - link "工业（0）" [ref=f2e135] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e136]:
+              - link "服务业（0）" [ref=f2e137] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e138]:
+              - link "金融业（0）" [ref=f2e139] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e140]:
+              - link "房地产业（0）" [ref=f2e141] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e142]:
+              - link "社会民生（0）" [ref=f2e143] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e144]:
+              - link "科技创新（0）" [ref=f2e145] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e146]:
+              - link "创业就业（0）" [ref=f2e147] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e148]:
+              - link "绿色发展（0）" [ref=f2e149] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e150]:
+              - link "区域发展（0）" [ref=f2e151] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e152]:
+              - link "涉外（0）" [ref=f2e153] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - generic [ref=f2e154]:
+          - heading "年份" [level=3] [ref=f2e155]
+          - list [ref=f2e156]:
+            - listitem [ref=f2e157]:
+              - link "2026（0）" [ref=f2e158] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e159]:
+              - link "2025（0）" [ref=f2e160] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e161]:
+              - link "2024（0）" [ref=f2e162] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e163]:
+              - link "2023（0）" [ref=f2e164] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e165]:
+              - link "2022（0）" [ref=f2e166] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e167]:
+              - link "2021（0）" [ref=f2e168] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e169]:
+              - link "2020（0）" [ref=f2e170] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e171]:
+              - link "2019（0）" [ref=f2e172] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e173]:
+              - link "2018（0）" [ref=f2e174] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e175]:
+              - link "2017（0）" [ref=f2e176] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e177]:
+              - link "2016（0）" [ref=f2e178] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e179]:
+              - link "2015（0）" [ref=f2e180] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e181]:
+              - link "2014（0）" [ref=f2e182] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e183]:
+              - link "2013（0）" [ref=f2e184] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e185]:
+              - link "2012（0）" [ref=f2e186] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e187]:
+              - link "2011（0）" [ref=f2e188] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e189]:
+              - link "2010（0）" [ref=f2e190] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e191]:
+              - link "2009（0）" [ref=f2e192] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e193]:
+              - link "2008（0）" [ref=f2e194] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e195]:
+              - link "2007（0）" [ref=f2e196] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e197]:
+              - link "2006（0）" [ref=f2e198] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e199]:
+              - link "2005（0）" [ref=f2e200] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e201]:
+              - link "2004（0）" [ref=f2e202] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e203]:
+              - link "2003（0）" [ref=f2e204] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e205]:
+              - link "2002（0）" [ref=f2e206] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e207]:
+              - link "2001（0）" [ref=f2e208] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e209]:
+              - link "2000（0）" [ref=f2e210] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e211]:
+              - link "1999（0）" [ref=f2e212] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e213]:
+              - link "1998（0）" [ref=f2e214] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e215]:
+              - link "1997（0）" [ref=f2e216] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e217]:
+              - link "1996（0）" [ref=f2e218] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e219]:
+              - link "1995（0）" [ref=f2e220] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e221]:
+              - link "1994（0）" [ref=f2e222] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e223]:
+              - link "1993（0）" [ref=f2e224] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e225]:
+              - link "1992（0）" [ref=f2e226] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e227]:
+              - link "1991（0）" [ref=f2e228] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e229]:
+              - link "1990（0）" [ref=f2e230] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e231]:
+              - link "1989（0）" [ref=f2e232] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e233]:
+              - link "1988（0）" [ref=f2e234] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e235]:
+              - link "1987（0）" [ref=f2e236] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e237]:
+              - link "1986（0）" [ref=f2e238] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e239]:
+              - link "1985（0）" [ref=f2e240] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e241]:
+              - link "1984（0）" [ref=f2e242] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - generic [ref=f2e243]:
+          - heading "文件时效" [level=3] [ref=f2e244]
+          - list [ref=f2e245]:
+            - listitem [ref=f2e246]:
+              - link "全文有效（0）" [ref=f2e247] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e248]:
+              - link "已修改（0）" [ref=f2e249] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e250]:
+              - link "全文失效（0）" [ref=f2e251] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e252]:
+              - link "全文废止（0）" [ref=f2e253] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f2e254]:
+              - link "尚未生效（0）" [ref=f2e255] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - heading "政策解读" [level=3] [ref=f2e257] [cursor=pointer]
+      - generic [ref=f2e258]:
+        - generic [ref=f2e259]:
+          - generic [ref=f2e260]: 找到条相关信息
+          - generic [ref=f2e261]:
+            - paragraph [ref=f2e262]:
+              - link "法律（0）" [ref=f2e263] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f2e264]:
+              - link "行政法规（0）" [ref=f2e265] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f2e266]:
+              - link "国务院文件（0）" [ref=f2e267] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f2e268]:
+              - link "税务部门规章（0）" [ref=f2e269] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f2e270]:
+              - link "财税文件（0）" [ref=f2e271] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f2e272]:
+              - link "税务规范性文件（0）" [ref=f2e273] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f2e274]:
+              - link "其他文件（0）" [ref=f2e275] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f2e276]:
+              - link "工作通知（0）" [ref=f2e277] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f2e278]:
+              - link "政策指引（0）" [ref=f2e279] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f2e280]:
+              - link "政策解读（0）" [ref=f2e281] [cursor=pointer]:
+                - /url: javascript:void(0)
+          - generic [ref=f2e282]:
+            - generic [ref=f2e283]: 排序：
+            - generic [ref=f2e284] [cursor=pointer]: 按相关度
+            - generic [ref=f2e285] [cursor=pointer]: 按日期
+            - generic [ref=f2e286] [cursor=pointer]: 按类别
+            - generic [ref=f2e287] [cursor=pointer]: 按热度
+          - generic [ref=f2e288]:
+            - generic [ref=f2e289]: 搜索位置：
+            - generic [ref=f2e290] [cursor=pointer]: 全文
+            - generic [ref=f2e291] [cursor=pointer]: 标题
+            - generic [ref=f2e292]: 时间不限
+        - list
+  - generic [ref=f2e295]:
+    - link "中国政府网" [ref=f2e297] [cursor=pointer]:
+      - /url: https://www.gov.cn/
+    - generic [ref=f2e301]:
+      - term [ref=f2e303] [cursor=pointer]:
+        - text: 国家税务总局各省级税务局
+        - generic [ref=f2e304]: 
+      - term [ref=f2e306] [cursor=pointer]:
+        - text: 直属单位
+        - generic [ref=f2e307]: 
+      - term [ref=f2e309] [cursor=pointer]:
+        - text: 税务相关
+        - generic [ref=f2e310]: 
+      - term [ref=f2e312] [cursor=pointer]:
+        - text: 友情链接
+        - generic [ref=f2e313]: 
+  - generic [ref=f2e314]:
+    - generic [ref=f2e317]:
+      - list [ref=f2e318]:
+        - listitem [ref=f2e319]:
+          - link "访问统计" [ref=f2e320] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/n1670141/index.html
+          - text: "|"
+        - listitem [ref=f2e321]:
+          - link "网站管理" [ref=f2e322] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/n1262558///index.html
+          - text: "|"
+        - listitem [ref=f2e323]:
+          - link "联系我们" [ref=f2e324] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/c101263/c61304/content.html
+          - text: "|"
+        - listitem [ref=f2e325]:
+          - link "网站地图" [ref=f2e326] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/n1636341/index.html
+      - generic [ref=f2e327]:
+        - generic [ref=f2e328]: 主办单位：国家税务总局
+        - generic [ref=f2e329]: 版权所有：国家税务总局
+        - generic [ref=f2e330]: 地址：北京市海淀区羊坊店西路5号
+      - link [ref=f2e333] [cursor=pointer]:
+        - /url: http://bszs.conac.cn/sitename?method=show&id=0895F7C120836C12E053012819AC7E96
+    - definition [ref=f2e338]:
+      - generic [ref=f2e339]: 网站标识码：bm29000002
+      - link "京ICP备13021685号-2" [ref=f2e341] [cursor=pointer]:
+        - /url: https://beian.miit.gov.cn
+      - link "京公网安备 11040102700073号" [ref=f2e343] [cursor=pointer]:
+        - /url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700073

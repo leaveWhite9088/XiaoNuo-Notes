@@ -1,0 +1,16 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e5]:
+    - generic [ref=f2e7]:
+      - textbox [ref=f2e9]: 研发费用加计扣除
+      - generic [ref=f2e10]:
+        - button [ref=f2e11] [cursor=pointer]
+        - generic [ref=f2e13] [cursor=pointer]: 搜索
+    - link "高级搜索" [ref=f2e15] [cursor=pointer]:
+      - /url: javascript:;
+  - generic [ref=f2e19]:
+    - generic:
+      - paragraph
+    - generic [ref=f2e20]:
+      - generic [ref=f2e21] [cursor=pointer]: 时间不限
+      - generic [ref=f2e27] [cursor=pointer]: 排序方式
+      - generic [ref=f2e30] [cursor=pointer]: 全部格式

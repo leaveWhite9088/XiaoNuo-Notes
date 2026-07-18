@@ -1,0 +1,276 @@
+- generic [ref=f1e1]:
+  - link "欢迎进入 最新文件,盲人用户使用操作智能引导，请按快捷键Ctrl+Alt+R；阅读详细操作说明请按快捷键Ctrl+Alt+问号键。":
+    - /url: javascript:void(0)
+  - generic [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - link [ref=f1e8] [cursor=pointer]:
+          - /url: /eng/home.html
+        - link "繁" [ref=f1e11] [cursor=pointer]:
+          - /url: javascript:zh_tran('t');
+        - link [ref=f1e14] [cursor=pointer]:
+          - /url: http://mail.chinatax.gov.cn/
+      - link [ref=f1e16] [cursor=pointer]:
+        - /url: /chinatax/index.html
+      - generic [ref=f1e17]:
+        - generic [ref=f1e18]:
+          - definition [ref=f1e19]:
+            - textbox "请输入您要搜索的内容" [ref=f1e20]
+          - term [ref=f1e21]
+          - term [ref=f1e22]:
+            - button "搜一搜" [ref=f1e23] [cursor=pointer]
+        - generic:
+          - generic [ref=f1e24]: 本站热词：
+          - link "发票" [ref=f1e25] [cursor=pointer]:
+            - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票&left_right_index=0&searchSource=0
+          - link "小微企业" [ref=f1e26] [cursor=pointer]:
+            - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=小微企业&left_right_index=0&searchSource=0
+          - link "个人所得税" [ref=f1e27] [cursor=pointer]:
+            - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=个人所得税&left_right_index=0&searchSource=0
+          - link "发票查询" [ref=f1e28] [cursor=pointer]:
+            - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票查询&left_right_index=0&searchSource=0
+          - link "社保" [ref=f1e29] [cursor=pointer]:
+            - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=社保&left_right_index=0&searchSource=0
+    - list [ref=f1e32]:
+      - listitem [ref=f1e33]:
+        - link "首页" [ref=f1e34] [cursor=pointer]:
+          - /url: /chinatax/index.html
+      - listitem [ref=f1e36]:
+        - link "总局概况" [ref=f1e37] [cursor=pointer]:
+          - /url: /chinatax/n810209/index.html
+      - listitem [ref=f1e39]:
+        - link "信息公开" [ref=f1e40] [cursor=pointer]:
+          - /url: /chinatax/n810214/index.html
+      - listitem [ref=f1e42]:
+        - link "新闻发布" [ref=f1e43] [cursor=pointer]:
+          - /url: /chinatax/n810219//index.html
+      - listitem [ref=f1e45]:
+        - link "政策法规" [ref=f1e46] [cursor=pointer]:
+          - /url: https://fgk.chinatax.gov.cn
+      - listitem [ref=f1e48]:
+        - link "纳税服务" [ref=f1e49] [cursor=pointer]:
+          - /url: /chinatax/n810346/index.html
+      - listitem [ref=f1e51]:
+        - link "互动交流" [ref=f1e52] [cursor=pointer]:
+          - /url: /chinatax/n810356/index.html
+      - listitem [ref=f1e54]:
+        - link "专题专栏" [ref=f1e55] [cursor=pointer]:
+          - /url: /chinatax/n810219/n810744//index.html
+  - generic [ref=f1e57]:
+    - paragraph [ref=f1e59]:
+      - link "首页" [ref=f1e60] [cursor=pointer]:
+        - /url: /chinatax/index.html
+      - text: ">"
+      - link "税收政策" [ref=f1e61] [cursor=pointer]:
+        - /url: http://fgk.chinatax.gov.cn
+      - text: "> 最新文件"
+    - generic [ref=f1e62]:
+      - generic [ref=f1e64]:
+        - link "最新文件" [ref=f1e66] [cursor=pointer]:
+          - /url: /chinatax/n810341/n810755//index.html
+        - list [ref=f1e67]:
+          - listitem [ref=f1e68]:
+            - link "关于发行2021年印花税票的通告" [ref=f1e69] [cursor=pointer]:
+              - /url: /chinatax/n367/c5165983/content.html
+            - generic [ref=f1e70]: "[国家税务总局通告2021年第3号]"
+          - listitem [ref=f1e71]:
+            - link "关于企业所得税若干政策征管口径问题的公告" [ref=f1e72] [cursor=pointer]:
+              - /url: /chinatax/n362/c5165844/content.html
+            - generic [ref=f1e73]: "[国家税务总局公告2021年第17号]"
+          - listitem [ref=f1e74]:
+            - link "关于《中华人民共和国和西班牙王国对所得消除双重征税和防止逃避税的协定》及议定书生效执行的公告" [ref=f1e75] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5165841/content.html
+            - generic [ref=f1e76]: "[国家税务总局公告2021年第16号]"
+          - listitem [ref=f1e77]:
+            - link "关于调整税务总局政务公开领导小组成员的通知" [ref=f1e78] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5165541/content.html
+            - generic [ref=f1e79]: "[税总办宣传发〔2021〕37号]"
+          - listitem [ref=f1e80]:
+            - link "关于修改《重大税务案件审理办法》的决定" [ref=f1e81] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5165310/content.html
+            - generic [ref=f1e82]: "[国家税务总局令第51号]"
+          - listitem [ref=f1e83]:
+            - link "关于公布第七批全国税务领军人才学员选拔笔试考生名单及考试大纲的通告" [ref=f1e84] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5165314/content.html
+            - generic [ref=f1e85]: "[国家税务总局通告2021年第2号]"
+          - listitem [ref=f1e86]:
+            - link "关于发布《免征车辆购置税的设有固定装置的非运输专用作业车辆目录》（第二批）的公告" [ref=f1e87] [cursor=pointer]:
+              - /url: /chinatax/n371/c5165153/content.html
+            - generic [ref=f1e88]: "[国家税务总局 工业和信息化部公告2021年第14号]"
+          - listitem [ref=f1e89]:
+            - link "关于优化整合出口退税信息系统 更好服务纳税人有关事项的公告" [ref=f1e90] [cursor=pointer]:
+              - /url: /chinatax/n377/c5165307/content.html
+            - generic [ref=f1e91]: "[国家税务总局公告2021年第15号]"
+          - listitem [ref=f1e92]:
+            - link "关于通过公益性群众团体的公益性捐赠税前扣除有关事项的公告" [ref=f1e93] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5164938/content.html
+            - generic [ref=f1e94]: "[财政部 税务总局公告2021年第20号]"
+          - listitem [ref=f1e95]:
+            - link "关于继续实施企业改制重组有关土地增值税政策的公告" [ref=f1e96] [cursor=pointer]:
+              - /url: /chinatax/n359/c5165491/content.html
+            - generic [ref=f1e97]: "[财政部 税务总局公告2021年第21号]"
+          - listitem [ref=f1e98]:
+            - link "关于发布《北京2022年冬奥会和冬残奥会及其测试赛增值税退税管理办法》的公告" [ref=f1e99] [cursor=pointer]:
+              - /url: /chinatax/n359/c5164802/content.html
+            - generic [ref=f1e100]: "[国家税务总局公告2021年第13号]"
+          - listitem [ref=f1e101]:
+            - link "关于做好2021年城乡居民基本医疗保障工作的通知" [ref=f1e102] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5165228/content.html
+            - generic [ref=f1e103]: "[医保发〔2021〕32号]"
+          - listitem [ref=f1e104]:
+            - link "关于将国有土地使用权出让收入、矿产资源专项收入、海域使用金、无居民海岛使用金四项政府非税收入划转税务部门征收有关问题的通知" [ref=f1e105] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5164962/content.html
+            - generic [ref=f1e106]: "[财综〔2021〕19号]"
+          - listitem [ref=f1e107]:
+            - link "研发费用税前加计扣除新政指引" [active] [ref=f1e108] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5164426/content.html
+          - listitem [ref=f1e109]:
+            - link "关于土地闲置费 城镇垃圾处理费划转有关征管事项的公告" [ref=f1e110] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5164412/content.html
+            - generic [ref=f1e111]: "[国家税务总局 财政部 自然资源部 住房和城乡建设部 中国人民银行公告2021年第12号]"
+          - listitem [ref=f1e112]:
+            - link "关于对部分成品油征收进口环节消费税的公告" [ref=f1e113] [cursor=pointer]:
+              - /url: /chinatax/n360/c5164411/content.html
+            - generic [ref=f1e114]: "[财政部 海关总署 税务总局公告2021年第19号]"
+          - listitem [ref=f1e115]:
+            - link "关于延长部分扶贫税收优惠政策执行期限的公告" [ref=f1e116] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5164490/content.html
+            - generic [ref=f1e117]: "[财政部 税务总局 人力资源社会保障部 国家乡村振兴局公告2021年第18号]"
+          - listitem [ref=f1e118]:
+            - link "中华人民共和国工业和信息化部 国家发展改革委 财政部 国家税务总局公告2021年第10号" [ref=f1e119] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5163978/content.html
+            - generic [ref=f1e120]: "[中华人民共和国工业和信息化部 国家发展改革委 财政部 国家税务总局公告2021年第10号]"
+          - listitem [ref=f1e121]:
+            - link "关于印发《2021年助力小微企业发展“春雨润苗”专项行动方案》的通知" [ref=f1e122] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5163977/content.html
+            - generic [ref=f1e123]: "[税总办发〔2021〕23号]"
+          - listitem [ref=f1e124]:
+            - link "关于落实从事污染防治的第三方企业所得税政策有关问题的公告" [ref=f1e125] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5164225/content.html
+            - generic [ref=f1e126]: "[国家税务总局 国家发展改革委 生态环境部公告2021年第11号]"
+          - listitem [ref=f1e127]:
+            - link "关于发布计算环境保护税应税污染物排放量的排污系数和物料衡算方法的公告" [ref=f1e128] [cursor=pointer]:
+              - /url: /chinatax/n610/c5164066/content.html
+            - generic [ref=f1e129]: "[生态环境部 财政部 税务总局公告2021年第16号]"
+          - listitem [ref=f1e130]:
+            - link "关于明确先进制造业增值税期末留抵退税征管问题的公告" [ref=f1e131] [cursor=pointer]:
+              - /url: /chinatax/n359/c5164022/content.html
+            - generic [ref=f1e132]: "[国家税务总局公告2021年第10号]"
+          - listitem [ref=f1e133]:
+            - link "关于发布出口退税率文库2021B版的通知" [ref=f1e134] [cursor=pointer]:
+              - /url: /chinatax/n377/c5163925/content.html
+            - generic [ref=f1e135]: "[税总函〔2021〕77号]"
+          - listitem [ref=f1e136]:
+            - link "中华人民共和国工业和信息化部 国家发展改革委 财政部 国家税务总局公告2021年第9号" [ref=f1e137] [cursor=pointer]:
+              - /url: /chinatax/n810341/n810825/c101434/c5163819/content.html
+            - generic [ref=f1e138]: "[中华人民共和国工业和信息化部 国家发展改革委 财政部 国家税务总局公告2021年第9号]"
+          - listitem [ref=f1e139]:
+            - link "关于取消部分钢铁产品出口退税的公告" [ref=f1e140] [cursor=pointer]:
+              - /url: /chinatax/n377/c5163918/content.html
+            - generic [ref=f1e141]: "[财政部 税务总局公告2021年第16号]"
+        - link "更多>>" [ref=f1e144] [cursor=pointer]:
+          - /url: /chinatax/n810341/n810825/index.html?title=
+      - generic [ref=f1e146]:
+        - generic [ref=f1e147]:
+          - link "政策解读" [ref=f1e149] [cursor=pointer]:
+            - /url: /chinatax/n810341/n810760/index.html
+          - list [ref=f1e150]:
+            - listitem [ref=f1e151]:
+              - link "关于《国家税务总局关于企业所得税若干政策征管口径问题的公...[06-25]" [ref=f1e152] [cursor=pointer]:
+                - /url: /chinatax/n810341/n810760/c5165845/content.html
+            - listitem [ref=f1e153]:
+              - link "关于《国家税务总局关于〈中华人民共和国和西班牙王国对所得...[06-25]" [ref=f1e154] [cursor=pointer]:
+                - /url: /chinatax/n810341/n810760/c5165842/content.html
+            - listitem [ref=f1e155]:
+              - link "关于《国家税务总局关于优化整合出口退税信息系统 更好服务纳...[06-15]" [ref=f1e156] [cursor=pointer]:
+                - /url: /chinatax/n810341/n810760/c5165354/content.html
+            - listitem [ref=f1e157]:
+              - link "关于《国家税务总局关于修改〈重大税务案件审理办法〉的决定...[06-11]" [ref=f1e158] [cursor=pointer]:
+                - /url: /chinatax/n810341/n810760/c5165311/content.html
+            - listitem [ref=f1e159]:
+              - link "关于《国家税务总局 工业和信息化部关于发布〈免征车辆购置税...[06-09]" [ref=f1e160] [cursor=pointer]:
+                - /url: /chinatax/n810341/n810760/c5165154/content.html
+            - listitem [ref=f1e161]:
+              - link "关于《国家税务总局关于发布〈北京2022年冬奥会和冬残奥会及...[05-31]" [ref=f1e162] [cursor=pointer]:
+                - /url: /chinatax/n810341/n810760/c5164803/content.html
+            - listitem [ref=f1e163]:
+              - link "关于《国家税务总局等五部门关于土地闲置费 城镇垃圾处理费划...[05-14]" [ref=f1e164] [cursor=pointer]:
+                - /url: /chinatax/n810341/n810760/c5164417/content.html
+            - listitem [ref=f1e165]:
+              - link "关于《国家税务总局 国家发展改革委 生态环境部关于落实从事...[05-10]" [ref=f1e166] [cursor=pointer]:
+                - /url: /chinatax/n810341/n810760/c5164229/content.html
+        - generic [ref=f1e167]:
+          - link "媒体视点" [ref=f1e169] [cursor=pointer]:
+            - /url: /chinatax/n810219/n810780//index.html
+          - list [ref=f1e170]:
+            - listitem [ref=f1e171]:
+              - link "[新华社]前5个月全国新办涉税市场主体522.25万户[06-29]" [ref=f1e172] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5165954/content.html
+            - listitem [ref=f1e173]:
+              - link "[中国政府网]今年前5个月全国新办涉税市场主体达522.25万户[06-29]" [ref=f1e174] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5165953/content.html
+            - listitem [ref=f1e175]:
+              - link "[人民网]2021年版中国印花税票《中国共产党领导下的税收事业...[06-29]" [ref=f1e176] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5165952/content.html
+            - listitem [ref=f1e177]:
+              - link "[工人日报]财产和行为税合并申报首个征期成效初显[06-29]" [ref=f1e178] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5165951/content.html
+            - listitem [ref=f1e179]:
+              - link "[中新社]中荷税务局长会谈达成五项成果[06-28]" [ref=f1e180] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5165887/content.html
+            - listitem [ref=f1e181]:
+              - link "[经济参考报]坚守初心 税收为民[06-28]" [ref=f1e182] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5165886/content.html
+            - listitem [ref=f1e183]:
+              - link "[人民网]我国税收营商环境不断优化 外企对华投资信心足[06-28]" [ref=f1e184] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5165882/content.html
+            - listitem [ref=f1e185]:
+              - link "[法制网]外商投资“跑步”进入中国 日均新设120多家外企[06-28]" [ref=f1e186] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5165877/content.html
+  - generic [ref=f1e188]:
+    - link "中国政府网" [ref=f1e190] [cursor=pointer]:
+      - /url: https://www.gov.cn/
+    - generic [ref=f1e194]:
+      - term [ref=f1e196] [cursor=pointer]:
+        - text: 国家税务总局各省级税务局
+        - generic [ref=f1e197]: 
+      - term [ref=f1e199] [cursor=pointer]:
+        - text: 直属单位
+        - generic [ref=f1e200]: 
+      - term [ref=f1e202] [cursor=pointer]:
+        - text: 税务相关
+        - generic [ref=f1e203]: 
+      - term [ref=f1e205] [cursor=pointer]:
+        - text: 友情链接
+        - generic [ref=f1e206]: 
+  - generic [ref=f1e207]:
+    - generic [ref=f1e210]:
+      - list [ref=f1e211]:
+        - listitem [ref=f1e212]:
+          - link "访问统计" [ref=f1e213] [cursor=pointer]:
+            - /url: /chinatax/n1670141/index.html
+          - text: "|"
+        - listitem [ref=f1e214]:
+          - link "网站管理" [ref=f1e215] [cursor=pointer]:
+            - /url: /chinatax/n1262558///index.html
+          - text: "|"
+        - listitem [ref=f1e216]:
+          - link "联系我们" [ref=f1e217] [cursor=pointer]:
+            - /url: /chinatax/c101263/c61304/content.html
+          - text: "|"
+        - listitem [ref=f1e218]:
+          - link "网站地图" [ref=f1e219] [cursor=pointer]:
+            - /url: /chinatax/n1636341/index.html
+      - generic [ref=f1e220]:
+        - generic [ref=f1e221]: 主办单位：国家税务总局
+        - generic [ref=f1e222]: 版权所有：国家税务总局
+        - generic [ref=f1e223]: 地址：北京市海淀区羊坊店西路5号
+      - link [ref=f1e226] [cursor=pointer]:
+        - /url: http://bszs.conac.cn/sitename?method=show&id=0895F7C120836C12E053012819AC7E96
+      - generic [ref=f1e229]: 电脑版
+    - definition [ref=f1e232]:
+      - generic [ref=f1e233]: 网站标识码：bm29000002
+      - link "京ICP备13021685号-2" [ref=f1e235] [cursor=pointer]:
+        - /url: https://beian.miit.gov.cn
+      - link "京公网安备 11040102700073号" [ref=f1e237] [cursor=pointer]:
+        - /url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700073

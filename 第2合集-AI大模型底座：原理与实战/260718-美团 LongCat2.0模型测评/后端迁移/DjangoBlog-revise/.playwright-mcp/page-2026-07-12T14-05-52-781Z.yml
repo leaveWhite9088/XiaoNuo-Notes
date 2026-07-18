@@ -1,0 +1,285 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - banner [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - heading [level=1] [ref=f3e5]:
+          - link "且听风吟" [ref=f3e6] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/
+        - heading "大巧无工,重剑无锋." [level=2] [ref=f3e7]
+      - navigation [ref=f3e8]:
+        - link "跳至正文" [ref=f3e9] [cursor=pointer]:
+          - /url: "#content"
+        - list [ref=f3e11]:
+          - listitem [ref=f3e12]:
+            - link "首页" [ref=f3e13] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/
+          - listitem [ref=f3e14]:
+            - link "技术博客" [ref=f3e15] [cursor=pointer]:
+              - /url: /category/ji-zhu-bo-ke.html
+    - generic [ref=f3e16]:
+      - generic [ref=f3e17]:
+        - main [ref=f3e18]:
+          - article [ref=f3e19]:
+            - generic [ref=f3e20]:
+              - heading "Django 插件系统实战：给博客加上 8 个横向能力" [level=1] [ref=f3e21]
+              - generic [ref=f3e22]:
+                - link "发表评论" [ref=f3e23] [cursor=pointer]:
+                  - /url: /article/2026/7/10/4.html#comments
+                - generic [ref=f3e24]: 35 views
+              - generic [ref=f3e25]:
+                - generic [ref=f3e26]:
+                  - link "且听风吟" [ref=f3e27] [cursor=pointer]:
+                    - /url: http://www.lylinux.net
+                  - text: ›
+                - generic [ref=f3e28]:
+                  - link "技术博客" [ref=f3e29] [cursor=pointer]:
+                    - /url: /category/ji-zhu-bo-ke.html
+                  - text: ›
+                - text: Django 插件系统实战：给博客加上 8 个横向能力
+            - generic [ref=f3e30]:
+              - heading "一、Django 插件系统实战：给博客加上 8 个横向能力" [level=2] [ref=f3e31]
+              - paragraph [ref=f3e32]: 很多 Django 博客系统在业务膨胀之后，views.py 会变成一个"全家桶"——阅读计数、SEO、版权、懒加载、阅读时长全挤在一起。 每当想加或卸一个小功能，都必须动核心代码。
+              - paragraph [ref=f3e33]:
+                - text: 今天介绍的 DjangoBlog 插件系统用一个很轻量的机制解决了这个问题：
+                - strong [ref=f3e34]: Hook 发布订阅 + Filter 管道
+                - text: 。 整条链路只有 3 个文件 hooks.py / base.py / loader.py，但能挂载任意数量插件。
+              - heading "二、HookRegistry 如何工作" [level=2] [ref=f3e35]
+              - paragraph [ref=f3e36]: 核心代码在 ArticleDetailView.get_object() 的最后一句话：
+              - code [ref=f3e39]: obj = hooks.apply_filters('after_article_body_get', obj) or obj
+              - paragraph [ref=f3e40]: 这一行会按 priority 从 10 到 80 的顺序，把 article 对象依次喂给 8 个回调。 每个回调都在 article 身上贴一块数据或改写正文，最终模板里能直接消费。
+              - paragraph [ref=f3e41]: article 对象 → view_count → seo_optimizer → copyright → recommendation → external → lazy → reading_time → cloudflare_cache → 进模板
+              - heading "三、8 个内置插件一览" [level=2] [ref=f3e42]
+              - paragraph [ref=f3e43]: 下面每一节都对应一个真实插件，功能都跑在本文上：
+              - heading "3.1 view_count — 文章浏览计数" [level=3] [ref=f3e44]
+              - paragraph [ref=f3e45]: 插件每次被触发都调 article.views += 1 并保存数据库。 你阅读到此时这个数字已经不是第一次刷新的值——每次 F5 都会累加。本文本身在测时已经被看十几二十次。
+              - heading "3.2 seo_optimizer — SEO 增强" [level=3] [ref=f3e46]
+              - paragraph [ref=f3e47]: 插件会在 article 对象上挂 article.seo_title 和 article.seo_keywords 两个字段。 本系统已把它接进 的 标签，和 。 想看实际产出，可以在本页右键 → 查看页面源代码，搜 "keywords" 或 "og:title"，值就来自这篇文章的标题+标签名拼接。
+              - heading "3.3 article_copyright — 版权声明" [level=3] [ref=f3e48]
+              - paragraph [ref=f3e49]: 插件在每篇文末附加 CC BY-NC-SA 4.0 版权声明，署名为本文作者 admin。 在博客的实际部署里，这个声明会作为文章的一部分永久保留，转载时自动带出作者名。
+              - heading "3.4 article_recommendation — 智能推荐" [level=3] [ref=f3e50]
+              - paragraph [ref=f3e51]: 插件通过查询与本文共享 Django 或 Python 标签的文章，按发表状态过滤、去重、最多取 5 篇。 这一招其实很简单：
+              - code [ref=f3e54]: tag_ids = article.tags.values_list('pk', flat=True) related = Article.objects.filter(tags__in=tag_ids, status='p').exclude(pk=article.pk).distinct()[:5]
+              - heading "3.5 external_links — 外链识别" [level=3] [ref=f3e55]
+              - paragraph [ref=f3e56]: 插件用正则扫 article.body 把所有指向本站外的 http(s) 链接单独拉出来，模板里渲染成"本文引用"卡片。 一个典型用途是给出站链接自动加 target="_blank" 和小箭头图标，避免用户跳走。
+              - paragraph [ref=f3e57]:
+                - text: 插件现同时支持 HTML
+                - code [ref=f3e58]: href="..."
+                - text: 与 Markdown
+                - code [ref=f3e59]: "[text](url)"
+                - text: 两种语法，能可靠识别出站链接。 如需自定义匹配规则，只需修改
+                - code [ref=f3e60]: plugins/external_links/plugin.py
+                - text: 中的正则。
+              - heading "3.6 image_lazy_loading — 图片懒加载" [level=3] [ref=f3e61]
+              - paragraph [ref=f3e62]:
+                - text: 插件把正文里所有
+                - code [ref=f3e63]: <img loading="lazy">
+                - text: 标签自动改写为
+                - code [ref=f3e64]: <img loading="lazy" ...>
+                - text: 。 浏览器会推迟加载这些图片直到它们接近视口，首屏加载可提升 30% 以上。 下面这张 Django 文档示意图已经被插件改写了：
+              - paragraph [ref=f3e65]:
+                - img "Django 框架示意图" [ref=f3e66]
+              - paragraph [ref=f3e67]: 如果你"查看页面源代码"，可以看到这张图前面的 img 标签多了 loading="lazy"。
+              - heading "3.7 reading_time — 阅读时长估算" [level=3] [ref=f3e68]
+              - paragraph [ref=f3e69]: 插件按 字符数 / 300字/分钟 估算本文需多久读完，最少 1 分钟。 这个算法对中文其实偏低（中文均速约 400-500 字/分钟），但已经足够做阅读预期提示。
+              - heading "3.8 cloudflare_cache — CDN 缓存策略" [level=3] [ref=f3e70]
+              - paragraph [ref=f3e71]:
+                - text: 插件给 article 挂上 cf_cache_max_age = 2592000（30 天），并配合 view 层（dispatch 中）把值搬到
+                - code [ref=f3e72]: "Cache-Control: public, max-age=2592000"
+                - text: HTTP 响应头，CDN/浏览器即可按 30 天缓存本详情页。
+              - heading "四、怎么关掉其中任意一个" [level=2] [ref=f3e73]
+              - paragraph [ref=f3e74]: 优势不在于"能加"，而在于"能不动核心代码地卸"。
+              - paragraph [ref=f3e75]: 打开 DjangoBlog/settings.py，找到 ENABLED_PLUGINS 列表，删掉想要的插件字符串，重启 Django，对应功能立刻消失。
+              - paragraph [ref=f3e76]: 比如删掉 image_lazy_loading 后刷新本文，再"查看页面源代码"，会发现 img 标签已经没有了 loading="lazy"。 删掉 article_copyright，底部的黄色版权条就没了。
+              - paragraph [ref=f3e77]: 整条链路：settings.py → apps.py → loader.py → 少导入插件 → hooks._hooks[hook] 里少一个回调 → 少挂属性 → 模板 if 不渲染。
+              - heading "五、自己动手写一个插件" [level=2] [ref=f3e78]
+              - paragraph [ref=f3e79]: plugins/ 下新建目录 + 一个 plugin.py：
+              - code [ref=f3e82]: "from plugins.base import BasePlugin class Plugin(BasePlugin): name = 'my_plugin' description = '演示用' version = '1.0.0' def register(self, registry): registry.register_hook('after_article_body_get', self.run, priority=15) @staticmethod def run(article, *args, **kwargs): article.my_data = \"hello from plugin\" return article"
+              - paragraph [ref=f3e83]: 然后在 settings.py 的 ENABLED_PLUGINS 加入 my_plugin。
+              - paragraph [ref=f3e84]: 短短 14 行，横向能力就挂上去了。这就是 Hook 解耦的魅力——核心代码完全不感知这个插件的存在。
+              - heading "六、总结" [level=2] [ref=f3e85]
+              - paragraph [ref=f3e86]: 8 个插件 → 1 个钩子 → 0 处核心代码改动。
+              - paragraph [ref=f3e87]: DjangoBlog 插件系统是一个"轻量但完整"的参考实现： - 想要加功能 → 写一个新文件夹 + 注册一下 - 想要卸功能 → 删一个字符串 - 想要调顺序 → 改一下 priority - 出错 → 单个插件异常不影响其他（hooks.py 内部 try/except 兜底）
+              - paragraph [ref=f3e88]: 适用于任何需要在请求生命周期里"挂横向能力"的 Django 项目。
+            - generic [ref=f3e89]:
+              - text: 本条目发布于
+              - link [ref=f3e90] [cursor=pointer]:
+                - /url: /article/2026/7/10/4.html
+                - time [ref=f3e91]: 2026-07-10
+              - text: 。属于
+              - link "技术博客" [ref=f3e92] [cursor=pointer]:
+                - /url: /category/ji-zhu-bo-ke.html
+              - text: 分类， 被贴了
+              - link "Django" [ref=f3e93] [cursor=pointer]:
+                - /url: /tag/django.html
+              - text: ，
+              - link "Python" [ref=f3e94] [cursor=pointer]:
+                - /url: /tag/python.html
+              - text: ，
+              - link "插件系统" [ref=f3e95] [cursor=pointer]:
+                - /url: /tag/cha-jian-xi-tong.html
+              - text: 标签。
+              - generic [ref=f3e96]:
+                - text: 作者是
+                - link "admin" [ref=f3e98] [cursor=pointer]:
+                  - /url: /author/admin.html
+                - text: 。
+                - link "编辑" [ref=f3e100] [cursor=pointer]:
+                  - /url: /admin/blog/article/4/change/
+          - generic [ref=f3e101]:
+            - generic [ref=f3e102]:
+              - text: ⏱ 约
+              - strong [ref=f3e103]: "11"
+              - text: 分钟读完
+            - generic [ref=f3e104]:
+              - text: 👀
+              - strong [ref=f3e105]: "35"
+              - text: 次阅读
+            - generic [ref=f3e106]:
+              - text: 📎
+              - strong [ref=f3e107]: "1"
+              - text: 篇相关推荐
+          - complementary [ref=f3e108]:
+            - heading "相关推荐" [level=3] [ref=f3e109]
+            - list [ref=f3e110]:
+              - listitem [ref=f3e111]:
+                - link "为什么文章页需要 Cache-Control 响应头" [ref=f3e112] [cursor=pointer]:
+                  - /url: /article/2026/7/10/5.html
+                - text: · 4 阅读
+          - complementary [ref=f3e113]:
+            - heading "本文引用" [level=3] [ref=f3e114]
+            - list [ref=f3e115]:
+              - listitem [ref=f3e116]:
+                - link "https://docs.djangoproject.com/en/5.2/_images/trans-status.png" [ref=f3e117] [cursor=pointer]:
+                  - /url: https://docs.djangoproject.com/en/5.2/_images/trans-status.png
+          - generic [ref=f3e118]: 本文由 admin 创作，采用 CC BY-NC-SA 4.0 许可协议。转载请注明出处。
+          - generic [ref=f3e119]: 🛠 本页启用 8 个插件：view_count · seo_optimizer · copyright · recommendation · external_links · image_lazy_loading · reading_time · cloudflare_cache
+          - navigation [ref=f3e120]:
+            - heading "文章导航" [level=3] [ref=f3e121]
+            - link "← 为什么文章页需要 Cache-Control 响应头" [ref=f3e123] [cursor=pointer]:
+              - /url: /article/2026/7/10/5.html
+        - generic [ref=f3e124]:
+          - list [ref=f3e125]:
+            - listitem [ref=f3e126]:
+              - link "评论1" [ref=f3e127] [cursor=pointer]:
+                - /url: "#commentlist-container"
+          - list [ref=f3e129]:
+            - listitem [ref=f3e130]:
+              - generic [ref=f3e131]:
+                - link "admin" [ref=f3e134] [cursor=pointer]:
+                  - /url: /author/admin.html
+                - generic [ref=f3e135]:  2026年7月10日 23:26
+                - paragraph
+                - paragraph [ref=f3e136]: "123"
+                - paragraph
+                - link "回复给admin" [ref=f3e138] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - text: 回复
+        - generic [ref=f3e140]:
+          - heading "发表评论" [level=3] [ref=f3e141]
+          - generic [ref=f3e142]:
+            - paragraph [ref=f3e143]:
+              - generic [ref=f3e144]: "正文:"
+              - textbox "正文:" [ref=f3e145]
+            - paragraph
+            - paragraph
+            - generic [ref=f3e146]:
+              - generic [ref=f3e147]: 支持markdown
+              - button "发表评论" [ref=f3e148] [cursor=pointer]
+      - complementary [ref=f3e149]:
+        - complementary [ref=f3e150]:
+          - search [ref=f3e151]:
+            - generic [ref=f3e152]:
+              - generic [ref=f3e153]: 搜索：
+              - textbox [ref=f3e154]
+              - button "搜索" [ref=f3e155] [cursor=pointer]
+        - complementary [ref=f3e156]:
+          - heading "Views" [level=3] [ref=f3e157]
+          - list [ref=f3e158]:
+            - listitem [ref=f3e159]:
+              - link "Django 插件系统实战：给博客加上 8 个横向能力" [ref=f3e160] [cursor=pointer]:
+                - /url: /article/2026/7/10/4.html
+              - text: "- 35 views"
+            - listitem [ref=f3e161]:
+              - link "为什么文章页需要 Cache-Control 响应头" [ref=f3e162] [cursor=pointer]:
+                - /url: /article/2026/7/10/5.html
+              - text: "- 4 views"
+        - complementary [ref=f3e163]:
+          - heading "分类目录" [level=3] [ref=f3e164]
+          - list [ref=f3e165]:
+            - listitem [ref=f3e166]:
+              - link "技术博客" [ref=f3e167] [cursor=pointer]:
+                - /url: /category/ji-zhu-bo-ke.html
+        - complementary [ref=f3e168]:
+          - heading "近期评论" [level=3] [ref=f3e169]
+          - list [ref=f3e170]:
+            - listitem [ref=f3e171]:
+              - text: admin 发表在《
+              - link "Django 插件系统实战：给博客加上 8 个横向能力" [ref=f3e172] [cursor=pointer]:
+                - /url: /article/2026/7/10/4.html
+              - text: 》
+        - complementary [ref=f3e173]:
+          - heading "近期文章" [level=3] [ref=f3e174]
+          - list [ref=f3e175]:
+            - listitem [ref=f3e176]:
+              - link "Django 插件系统实战：给博客加上 8 个横向能力" [ref=f3e177] [cursor=pointer]:
+                - /url: /article/2026/7/10/4.html
+            - listitem [ref=f3e178]:
+              - link "为什么文章页需要 Cache-Control 响应头" [ref=f3e179] [cursor=pointer]:
+                - /url: /article/2026/7/10/5.html
+        - complementary [ref=f3e180]:
+          - heading "标签云" [level=3] [ref=f3e181]
+          - generic [ref=f3e182]:
+            - link "Django" [ref=f3e183] [cursor=pointer]:
+              - /url: /tag/django.html
+            - link "Python" [ref=f3e184] [cursor=pointer]:
+              - /url: /tag/python.html
+            - link "插件系统" [ref=f3e185] [cursor=pointer]:
+              - /url: /tag/cha-jian-xi-tong.html
+        - complementary [ref=f3e186]:
+          - heading "欢迎您star或者fork本站源代码" [level=3] [ref=f3e187]
+          - paragraph [ref=f3e189]:
+            - link [ref=f3e190] [cursor=pointer]:
+              - /url: https://github.com/liangliangyy/DjangoBlog
+              - img "GitHub stars" [ref=f3e191]
+            - link [ref=f3e192] [cursor=pointer]:
+              - /url: https://github.com/liangliangyy/DjangoBlog
+              - img "GitHub forks" [ref=f3e193]
+        - complementary [ref=f3e194]:
+          - heading "功能" [level=3] [ref=f3e195]
+          - list [ref=f3e196]:
+            - listitem [ref=f3e197]:
+              - link "管理站点" [ref=f3e198] [cursor=pointer]:
+                - /url: /admin/
+            - listitem [ref=f3e199]:
+              - link "登出" [ref=f3e200] [cursor=pointer]:
+                - /url: /logout/
+            - listitem [ref=f3e201]:
+              - link "GitBook" [ref=f3e202] [cursor=pointer]:
+                - /url: http://gitbook.lylinux.net
+        - generic "点我返回顶部" [ref=f3e203] [cursor=pointer]
+    - contentinfo [ref=f3e204]:
+      - generic [ref=f3e205]:
+        - text: Copyright© 2017
+        - link "且听风吟" [ref=f3e206] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/
+        - text: "|"
+        - link "SiteMap" [ref=f3e207] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/sitemap.xml
+        - text: "|"
+        - link "RSS Feed" [ref=f3e208] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/feed
+        - text: "| Hosting On"
+        - link "Linode" [ref=f3e209] [cursor=pointer]:
+          - /url: https://www.linode.com/?r=b0d38794d05ef8816b357a929106e89b7c6452f9
+        - text: "|"
+        - link "百度统计" [ref=f3e210] [cursor=pointer]:
+          - /url: https://tongji.baidu.com/sc-web/3478620/home/ico?siteId=11261596
+      - generic [ref=f3e211]:
+        - text: Powered by
+        - link "Django" [ref=f3e212] [cursor=pointer]:
+          - /url: https://www.djangoproject.com/
+        - text: "|"
+        - link "LiangLiangyy" [ref=f3e213] [cursor=pointer]:
+          - /url: https://github.com/liangliangyy/DjangoBlog
+        - text: "| 本页面加载耗时:0.690s"
+  - contentinfo

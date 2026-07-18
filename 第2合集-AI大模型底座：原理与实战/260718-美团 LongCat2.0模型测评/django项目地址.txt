@@ -1,0 +1,2 @@
+废弃仓库：https://github.com/jaapyang/DjangoBlog#
+更新仓库：https://github.com/liangliangyy/DjangoBlog

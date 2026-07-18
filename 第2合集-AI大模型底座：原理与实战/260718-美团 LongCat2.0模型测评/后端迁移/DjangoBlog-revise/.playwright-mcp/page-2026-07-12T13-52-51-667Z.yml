@@ -1,0 +1,25 @@
+- generic [ref=e2]:
+  - heading "Sign in with your Account" [level=2] [ref=e3]
+  - generic [ref=e5]:
+    - textbox "username" [ref=e6]
+    - textbox "password" [ref=e7]
+    - button "Sign in" [ref=e8]
+    - generic [ref=e10] [cursor=pointer]:
+      - checkbox "Stay signed in" [ref=e11]
+      - text: Stay signed in
+    - generic [ref=e12]:
+      - text: "快捷登录:"
+      - link [ref=e13] [cursor=pointer]:
+        - /url: /oauth/oauthlogin?type=weibo&next_url=/login/
+      - link [ref=e15] [cursor=pointer]:
+        - /url: /oauth/oauthlogin?type=google&next_url=/login/
+      - link [ref=e17] [cursor=pointer]:
+        - /url: /oauth/oauthlogin?type=github&next_url=/login/
+      - link [ref=e19] [cursor=pointer]:
+        - /url: /oauth/oauthlogin?type=facebook&next_url=/login/
+  - paragraph [ref=e21]:
+    - link "Create Account" [ref=e22] [cursor=pointer]:
+      - /url: /register/
+    - text: "|"
+    - link "Home Page" [ref=e23] [cursor=pointer]:
+      - /url: /

@@ -1,0 +1,32 @@
+[     623ms] [ERROR] 加载 AppConfig 配置出错 @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     685ms] [LOG] [2026-07-10T22:25:39.525] [DEBUG] [DDBase] - params erroro: jsonObj2Class @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     685ms] [LOG] [2026-07-10T22:25:39.525] [DEBUG] [DDBase] - params erroro: jsonObj2Class @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[     702ms] [LOG] enterpriseFeaturesConfig:  {title: 腾讯文档企业版, learnMore: Object, features: Array(4), button: Object} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1016ms] [LOG] 获取userInfo失败 TypeError: Cannot read properties of undefined (reading 'all')
+    at https://docs.gtimg.com/home/js/index-d74aff.js:2:983784
+    at h (https://docs.gtimg.com/home/js/index-d74aff.js:2:1840267)
+    at Generator.<anonymous> (https://docs.gtimg.com/home/js/index-d74aff.js:2:1841609)
+    at Generator.next (https://docs.gtimg.com/home/js/index-d74aff.js:2:1840696)
+    at r (https://docs.gtimg.com/home/js/index-d74aff.js:2:2141454)
+    at s (https://docs.gtimg.com/home/js/index-d74aff.js:2:2141657) @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1023ms] [LOG] {cgicode: 12100, msg: traceID:66167e333d6644f6ae65aac0c18a01a8 [errcode:12100:0], retcode: 12100} getStorageSpace @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1025ms] [LOG] null fetchUserInfo @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1101ms] [LOG] {val: Object} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1231ms] [LOG] [j-report] 准备主动上报数据： {"topic":"SDK-b99328fe37901c8f78c5","data":[{"message":"{\"level\":\"info\",\"ext1\":\"unknown-React\",\"custom_padId\":\"unknown\",\"custom_padType\":\"unknown\",\"custom_deviceType\":\"pc\",\"custom_webPageHostContainer\":\"chrome\",\"custom_eventName\":\"组件资源加载耗时\",\"custom_duration\":117,\"custom_url\":\"//docs.idqqimg.com/tim/docs/components/libs/react-common-16.13.1-2bf240.js\",\"custom_fileExtension\":\"js\"}","fields":"{\"id\":\"SDK-b99328fe37901c8f78c5\",\"uid\":\"\",\"aid\":\"j-report\",\"env\":\"production\",\"type\":\"custom_event\"}","timestamp":1783693540071}]} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1259ms] [LOG] [j-report] 准备主动上报数据： {"topic":"SDK-b99328fe37901c8f78c5","data":[{"message":"{\"level\":\"info\",\"ext1\":\"docs-component-official-footer\",\"custom_padId\":\"unknown\",\"custom_padType\":\"unknown\",\"custom_deviceType\":\"pc\",\"custom_webPageHostContainer\":\"chrome\",\"custom_eventName\":\"组件资源加载耗时\",\"custom_duration\":26,\"custom_url\":\"//docs.gtimg.com/docs_components/docs-component-official-footer.ceb62208.css\",\"custom_fileExtension\":\"css\"}","fields":"{\"id\":\"SDK-b99328fe37901c8f78c5\",\"uid\":\"\",\"aid\":\"j-report\",\"env\":\"production\",\"type\":\"custom_event\"}","timestamp":1783693540099}]} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1264ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://pingfore.qq.com/pingd?dm=docs.qq.com&url=/&arg=&rdm=&rurl=&rarg=&adt=&pf=Win32&scr=1560x1040&scl=24-bit&lang=zh-cn&java=0&tz=-8&flash=&pvid=1783169354329553&ty=&vs=4.1.14&ext=:0
+[    1264ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://pingfore.qq.com/pingd?dm=docs.qq.com&url=/&arg=&rdm=&rurl=&rarg=&adt=&pf=Win32&scr=1560x1040&scl=24-bit&lang=zh-cn&java=0&tz=-8&flash=&pvid=1783169354329553&ty=1&vs=4.1.14&ext=:0
+[    1322ms] [WARNING] i18n is not initialized, ready to initialize it... @ https://docs.gtimg.com/docs_components/docs-component-official-footer.9a35742b.js:1
+[    1326ms] [ERROR] 加载 AppConfig 配置出错 @ https://docs.gtimg.com/docs_components/docs-component-official-footer.9a35742b.js:1
+[    1327ms] [LOG] [j-report] 准备主动上报数据： {"topic":"SDK-b99328fe37901c8f78c5","data":[{"message":"{\"level\":\"info\",\"ext1\":\"docs-component-official-footer\",\"custom_padId\":\"unknown\",\"custom_padType\":\"unknown\",\"custom_deviceType\":\"pc\",\"custom_webPageHostContainer\":\"chrome\",\"custom_eventName\":\"组件资源加载耗时\",\"custom_duration\":67,\"custom_url\":\"//docs.gtimg.com/docs_components/docs-component-official-footer.9a35742b.js\",\"custom_fileExtension\":\"js\"}","fields":"{\"id\":\"SDK-b99328fe37901c8f78c5\",\"uid\":\"\",\"aid\":\"j-report\",\"env\":\"production\",\"type\":\"custom_event\"}","timestamp":1783693540168}]} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1383ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://docs.qq.com/:0
+[    1426ms] [LOG] [j-report] 主动上报成功： {code: 0, msg: dropped} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1428ms] [LOG] [j-report] 主动上报成功： {code: 0, msg: dropped} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    1429ms] [LOG] [j-report] 主动上报成功： {code: 0, msg: dropped} @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    3701ms] [WARNING] [DUI] 1.18.0-common/global.css 重复引入了 2 次 @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    3701ms] [WARNING] [DUI-MOBILE] common/global.css 存在多个版本:  0.85.1  1.1.0 @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    3701ms] [WARNING] [DUI-MOBILE] components/Loading/style/spin.css 存在多个版本:  0.85.1  1.1.0 @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    3702ms] [WARNING] [DUI-MOBILE] components/Button/style/index.css 存在多个版本:  0.85.1  1.1.0 @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    3702ms] [WARNING] [DUI-MOBILE] components/Snackbar/style/index.css 存在多个版本:  0.85.1  1.1.0 @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    3702ms] [WARNING] [DUI] 1.18.0-components/Dropdown/style/index.css 重复引入了 2 次 @ https://docs.gtimg.com/home/js/index-d74aff.js:1
+[    3722ms] [WARNING] [DUI] 1.18.0-components/Button/style/index.css 重复引入了 2 次 @ https://docs.gtimg.com/home/js/index-d74aff.js:1

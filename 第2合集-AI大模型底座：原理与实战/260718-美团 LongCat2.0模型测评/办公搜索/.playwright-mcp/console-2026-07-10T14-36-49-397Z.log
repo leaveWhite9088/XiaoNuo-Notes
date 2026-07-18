@@ -1,0 +1,5 @@
+[     498ms] [ERROR] Mixed Content: The page at 'https://fgk.chinatax.gov.cn/zcfgk/c100006/listflfg.html' was loaded over HTTPS, but requested an insecure script 'http://api.govwza.cn/cniil/assist.js?sid=2999&pos=left&bar=0'. This request has been blocked; the content must be served over HTTPS. @ https://fgk.chinatax.gov.cn/zcfgk/c100006/listflfg.html:0
+[     608ms] [LOG] 1:yeefx 易分析SDK版本 = 20230824 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[     608ms] [LOG] 2:yeefx 站点id = 10009148, cookie = 20260710223650003130298852963105, pageid = 1783694210000370 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[     610ms] [LOG] 3:yeefx 5 < 5 体验概率不满足 @ https://fxsjcj.kaipuyun.cn/yeefxkpycount.js:0
+[     683ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://fgk.chinatax.gov.cn/favicon.ico:0

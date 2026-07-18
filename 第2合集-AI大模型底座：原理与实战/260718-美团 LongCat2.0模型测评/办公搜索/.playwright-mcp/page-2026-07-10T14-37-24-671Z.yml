@@ -1,0 +1,463 @@
+- generic [ref=f1e1]:
+  - link "欢迎进入 国家税务总局政策法规库,盲人用户使用操作智能引导，请按快捷键Ctrl+Alt+R；阅读详细操作说明请按快捷键Ctrl+Alt+问号键。":
+    - /url: javascript:void(0)
+  - generic [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - link [ref=f1e8] [cursor=pointer]:
+          - /url: http://www.chinatax.gov.cn/eng/home.html
+        - link "繁" [ref=f1e11] [cursor=pointer]:
+          - /url: javascript:zh_tran('t');
+        - link [ref=f1e14] [cursor=pointer]:
+          - /url: http://mail.chinatax.gov.cn/
+        - link "登录" [ref=f1e17] [cursor=pointer]:
+          - /url: javascript:;
+      - link [ref=f1e19] [cursor=pointer]:
+        - /url: https://www.chinatax.gov.cn/chinatax/index.html
+      - generic [ref=f1e20]:
+        - generic [ref=f1e21]:
+          - definition [ref=f1e22]:
+            - textbox "请输入您要搜索的内容" [ref=f1e23]
+          - term [ref=f1e24]
+          - term [ref=f1e25]:
+            - button "搜一搜" [ref=f1e26] [cursor=pointer]
+        - generic:
+          - generic [ref=f1e27]: 本站热词：
+          - link "发票" [ref=f1e28] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票&left_right_index=0&searchSource=0
+          - link "小微企业" [ref=f1e29] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=小微企业&left_right_index=0&searchSource=0
+          - link "个人所得税" [ref=f1e30] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=个人所得税&left_right_index=0&searchSource=0
+          - link "发票查询" [ref=f1e31] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票查询&left_right_index=0&searchSource=0
+          - link "社保" [ref=f1e32] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=社保&left_right_index=0&searchSource=0
+    - list [ref=f1e35]:
+      - listitem [ref=f1e36]:
+        - link "首页" [ref=f1e37] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/index.html
+      - listitem [ref=f1e39]:
+        - link "总局概况" [ref=f1e40] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810209/index.html
+      - listitem [ref=f1e42]:
+        - link "信息公开" [ref=f1e43] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810214/index.html
+      - listitem [ref=f1e45]:
+        - link "新闻发布" [ref=f1e46] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810219//index.html
+      - listitem [ref=f1e48]:
+        - link "政策法规" [ref=f1e49] [cursor=pointer]:
+          - /url: /zcfgk/index.html
+      - listitem [ref=f1e51]:
+        - link "纳税服务" [ref=f1e52] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810346/index.html
+      - listitem [ref=f1e54]:
+        - link "互动交流" [ref=f1e55] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810356/index.html
+      - listitem [ref=f1e57]:
+        - link "专题专栏" [ref=f1e58] [cursor=pointer]:
+          - /url: https://www.chinatax.gov.cn/chinatax/n810219/n810744//index.html
+  - generic [ref=f1e61]:
+    - generic [ref=f1e62]:
+      - paragraph [ref=f1e63] [cursor=pointer]: 全部
+      - paragraph [ref=f1e64] [cursor=pointer]: 文件
+      - paragraph [ref=f1e65] [cursor=pointer]: 解读
+    - generic [ref=f1e66]:
+      - textbox "输入“年份 字号”即可检索库内文件 如“2026 1”" [ref=f1e67]: 研发费用加计扣除
+      - button "搜索" [ref=f1e68] [cursor=pointer]
+      - link "高级搜索" [ref=f1e69] [cursor=pointer]:
+        - /url: /zcfgk/c100028/search.html
+    - generic [ref=f1e70]:
+      - text: 搜索方式：
+      - paragraph [ref=f1e71] [cursor=pointer]: 精准
+      - paragraph [ref=f1e72] [cursor=pointer]: 模糊
+    - generic [ref=f1e73]:
+      - text: 热门关键词：
+      - generic [ref=f1e74] [cursor=pointer]: 个人所得税
+      - generic [ref=f1e75] [cursor=pointer]: 增值税
+      - generic [ref=f1e76] [cursor=pointer]: 企业所得税
+      - generic [ref=f1e77] [cursor=pointer]: 小微企业
+      - generic [ref=f1e78] [cursor=pointer]: 印花税
+  - generic [ref=f1e81]:
+    - generic [ref=f1e82]:
+      - text: 当前位置：
+      - link "首页" [ref=f1e83] [cursor=pointer]:
+        - /url: http://www.chinatax.gov.cn/chinatax/index.html
+      - text: ">"
+      - link "政策法规" [ref=f1e84] [cursor=pointer]:
+        - /url: /zcfgk/index.html
+      - text: "> 搜索"
+      - button "下载" [ref=f1e85] [cursor=pointer]
+    - generic [ref=f1e86]:
+      - generic [ref=f1e87]: 已选条件
+      - generic [ref=f1e88]:
+        - generic [ref=f1e89]:
+          - text: 关键词：
+          - generic [ref=f1e90] [cursor=pointer]: 研发费用加计扣除
+        - generic [ref=f1e444]:
+          - text: 年份：
+          - generic [ref=f1e445] [cursor=pointer]: "2023"
+      - generic [ref=f1e91]: 清空
+    - generic [ref=f1e93]:
+      - generic [ref=f1e94]:
+        - generic [ref=f1e95]:
+          - heading "类别" [level=3] [ref=f1e96]
+          - list [ref=f1e97]:
+            - listitem [ref=f1e98]:
+              - link "法律（0）" [ref=f1e99] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e100]:
+              - link "行政法规（0）" [ref=f1e101] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e102]:
+              - link "国务院文件（0）" [ref=f1e103] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e104]:
+              - link "税务部门规章（0）" [ref=f1e105] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e106]:
+              - link "财税文件（2）" [ref=f1e446] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e108]:
+              - link "税务规范性文件（1）" [ref=f1e447] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e110]:
+              - link "其他文件（1）" [ref=f1e448] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e112]:
+              - link "工作通知（2）" [ref=f1e449] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - generic [ref=f1e114]:
+          - heading "主题" [level=3] [ref=f1e115]
+          - list [ref=f1e116]:
+            - listitem [ref=f1e117]:
+              - link "税收政策（3）" [ref=f1e450] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e121]:
+              - link "非税收入政策（0）" [ref=f1e122] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e123]:
+              - link "社会保险费政策（0）" [ref=f1e124] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e125]:
+              - link "税费征管（0）" [ref=f1e451] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e127]:
+              - link "其他（1）" [ref=f1e452] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - generic [ref=f1e129]:
+          - heading "行业分类" [level=3] [ref=f1e130]
+          - list [ref=f1e131]:
+            - listitem [ref=f1e132]:
+              - link "农林业（0）" [ref=f1e133] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e134]:
+              - link "工业（2）" [ref=f1e453] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e136]:
+              - link "服务业（0）" [ref=f1e137] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e138]:
+              - link "金融业（0）" [ref=f1e139] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e140]:
+              - link "房地产业（0）" [ref=f1e141] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e142]:
+              - link "社会民生（0）" [ref=f1e454] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e144]:
+              - link "科技创新（2）" [ref=f1e455] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e146]:
+              - link "创业就业（0）" [ref=f1e147] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e148]:
+              - link "绿色发展（0）" [ref=f1e149] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e150]:
+              - link "区域发展（0）" [ref=f1e151] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e152]:
+              - link "涉外（0）" [ref=f1e456] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - generic [ref=f1e154]:
+          - heading "年份" [level=3] [ref=f1e155]
+          - list [ref=f1e156]:
+            - listitem [ref=f1e157]:
+              - link "2026（0）" [ref=f1e457] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e159]:
+              - link "2025（0）" [ref=f1e458] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e161]:
+              - link "2024（0）" [ref=f1e459] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e163]:
+              - link "2023（6）" [active] [ref=f1e359] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e165]:
+              - link "2022（0）" [ref=f1e460] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e167]:
+              - link "2021（0）" [ref=f1e461] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e169]:
+              - link "2020（0）" [ref=f1e462] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e171]:
+              - link "2019（0）" [ref=f1e463] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e173]:
+              - link "2018（0）" [ref=f1e464] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e175]:
+              - link "2017（0）" [ref=f1e465] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e177]:
+              - link "2016（0）" [ref=f1e178] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e179]:
+              - link "2015（0）" [ref=f1e466] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e181]:
+              - link "2014（0）" [ref=f1e182] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e183]:
+              - link "2013（0）" [ref=f1e184] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e185]:
+              - link "2012（0）" [ref=f1e186] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e187]:
+              - link "2011（0）" [ref=f1e188] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e189]:
+              - link "2010（0）" [ref=f1e190] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e191]:
+              - link "2009（0）" [ref=f1e192] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e193]:
+              - link "2008（0）" [ref=f1e194] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e195]:
+              - link "2007（0）" [ref=f1e196] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e197]:
+              - link "2006（0）" [ref=f1e198] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e199]:
+              - link "2005（0）" [ref=f1e200] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e201]:
+              - link "2004（0）" [ref=f1e202] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e203]:
+              - link "2003（0）" [ref=f1e204] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e205]:
+              - link "2002（0）" [ref=f1e206] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e207]:
+              - link "2001（0）" [ref=f1e208] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e209]:
+              - link "2000（0）" [ref=f1e210] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e211]:
+              - link "1999（0）" [ref=f1e212] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e213]:
+              - link "1998（0）" [ref=f1e214] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e215]:
+              - link "1997（0）" [ref=f1e216] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e217]:
+              - link "1996（0）" [ref=f1e218] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e219]:
+              - link "1995（0）" [ref=f1e220] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e221]:
+              - link "1994（0）" [ref=f1e222] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e223]:
+              - link "1993（0）" [ref=f1e224] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e225]:
+              - link "1992（0）" [ref=f1e226] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e227]:
+              - link "1991（0）" [ref=f1e228] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e229]:
+              - link "1990（0）" [ref=f1e230] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e231]:
+              - link "1989（0）" [ref=f1e232] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e233]:
+              - link "1988（0）" [ref=f1e234] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e235]:
+              - link "1987（0）" [ref=f1e236] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e237]:
+              - link "1986（0）" [ref=f1e238] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e239]:
+              - link "1985（0）" [ref=f1e240] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e241]:
+              - link "1984（0）" [ref=f1e242] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - generic [ref=f1e243]:
+          - heading "文件时效" [level=3] [ref=f1e244]
+          - list [ref=f1e245]:
+            - listitem [ref=f1e246]:
+              - link "全文有效（1）" [ref=f1e467] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e248]:
+              - link "已修改（0）" [ref=f1e468] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e250]:
+              - link "全文失效（0）" [ref=f1e251] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e252]:
+              - link "全文废止（0）" [ref=f1e469] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f1e254]:
+              - link "尚未生效（0）" [ref=f1e255] [cursor=pointer]:
+                - /url: javascript:void(0)
+        - heading "政策解读(0)" [level=3] [ref=f1e470] [cursor=pointer]
+      - generic [ref=f1e258]:
+        - generic [ref=f1e259]:
+          - generic [ref=f1e260]: 找到6条相关信息
+          - generic [ref=f1e261]:
+            - paragraph [ref=f1e270]:
+              - link "财税文件（2）" [ref=f1e471] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f1e272]:
+              - link "税务规范性文件（1）" [ref=f1e472] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f1e274]:
+              - link "其他文件（1）" [ref=f1e473] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - paragraph [ref=f1e276]:
+              - link "工作通知（2）" [ref=f1e474] [cursor=pointer]:
+                - /url: javascript:void(0)
+          - generic [ref=f1e282]:
+            - generic [ref=f1e283]: 排序：
+            - generic [ref=f1e284] [cursor=pointer]: 按相关度
+            - generic [ref=f1e285] [cursor=pointer]: 按日期
+            - generic [ref=f1e286] [cursor=pointer]: 按类别
+            - generic [ref=f1e287] [cursor=pointer]: 按热度
+          - generic [ref=f1e288]:
+            - generic [ref=f1e289]: 搜索位置：
+            - generic [ref=f1e290] [cursor=pointer]: 全文
+            - generic [ref=f1e291] [cursor=pointer]: 标题
+            - generic [ref=f1e292]: 时间不限
+        - list [ref=f1e377]:
+          - listitem [ref=f1e475]:
+            - checkbox [ref=f1e476]
+            - link "财政部 税务总局 国家发展改革委 工业和信息化部关于提高集成电路和工业母机企业研发费用加计扣除比例的公告" [ref=f1e477] [cursor=pointer]:
+              - /url: http://fgk.chinatax.gov.cn/zcfgk/c102416/c5213565/content.html
+            - generic [ref=f1e478]: 政部税务总局等部门制定。四企业享受研发费用加计扣除政策的其他政策口径和管理要求按照《财政部国家税务总局科技部关于完善研究开发费用税前加计扣除政策的通知财税〔2015〕119号《财政部税务总局科技部关于企业委托境外研究开发费用税前加计扣除有关政策问题的通知财税〔2018〕64号等文件相关规定执行。五本公告规定的税收优惠政策采用清单管理的由国家发展改革委工业和信息化部于每年3月底前按规定向财政部税务总局提供上一年度可享受优惠的企业清单；不采取清单管理的税务机关可按《财政部税务总局发展改革委工业和信息化部关于促进集成电路产业和软件产业高质量发展企业所得税政策的公告财政部税务总局发展改革委工业和信息化部公告2020年第45号规定的核查机制转请发展改革工业和信息化部门进行核查。特此公告。附件先进工业母机产品基本标准.doc财政部税务总局国家发展改革委工业和信息化部2023年9月12日
+            - paragraph [ref=f1e479]: 发文字号：财政部 税务总局 国家发展改革委 工业和信息化部公告2023年第44号成文日期：2023年09月12日
+          - listitem [ref=f1e480]:
+            - checkbox [ref=f1e481]
+            - link "国家税务总局 财政部关于优化预缴申报享受研发费用加计扣除政策有关事项的公告" [ref=f1e482] [cursor=pointer]:
+              - /url: http://fgk.chinatax.gov.cn/zcfgk/c100012/c5209840/content.html
+            - generic [ref=f1e483]: 实施条例等相关规定现就优化预缴申报享受研发费用加计扣除政策有关事项公告如下一企业7月份预缴申报第2季度按季预缴或6月份按月预缴企业所得税时能准确归集核算研发费用的可以结合自身生产经营实际情况自主选择就当年上半年研发费用享受加计扣除政策。对7月份预缴申报期未选择享受优惠的企业在10月份预缴申报或年度汇算清缴时能够准确归集核算研发费用的可结合自身生产经营实际情况自主选择在10月份预缴申报或年度汇算清缴时统一享受。二企业10月份预缴申报第3季度按季预缴或9月份按月预缴企业所得税时能准确归集核算研发费用的企业可结合自身生产经营实际情况自主选择就当年前三季度研发费用享受加计扣除政策。对10月份预缴申报期未选择享受优惠的企业在年度汇算清缴时能够准确归集核算研发费用的可结合自身生产经营实际情况自主选择在年度汇算清缴时统一享受。三企业享受研发费用加计扣除优惠政策采取“真实发生自行判别申报享受相关资料留存备查的办理方式由企业依据实际发生的研发费用支出自行计算加计扣除金额填报《中华人民共和国企业所得税月季度预缴纳税申报表A类享受税收优惠并根据享受加计扣除优惠的研发费用情况上半年或前三季度填写《研发费用加计扣除优惠明细表A107012。《研发费用加计扣除优惠明细表A107012与规定的其他资料一并留存备查。四本公告自2023年1月1日起施行。《国家税务总局关于企业预缴申报享受研发费用加计扣除优惠政策有关事项的公告2022年第10号同时废止。特此公告。国家税务总局财政部2023年6月21日
+            - paragraph [ref=f1e484]: 发文字号：国家税务总局 财政部公告2023年第11号成文日期：2023年06月21日时效性：全文有效
+          - listitem [ref=f1e485]:
+            - checkbox [ref=f1e486]
+            - link "国家税务总局关于接续推出和优化“便民办税春风行动”措施促进民营经济发展壮大服务高质量发展的通知" [ref=f1e487] [cursor=pointer]:
+              - /url: http://fgk.chinatax.gov.cn/zcfgk/c102424/c5215792/content.html
+            - generic [ref=f1e488]: 税人因各种原因未在今年7月征期内及时享受研发费用加计扣除政策的可在89月份由纳税人通过变更第二季度或6月份企业所得税预缴申报的方式补充享受；积极会同相关部门收集编发研发项目鉴定案例帮助符合条件的中小微企业充分准确享受研发费用加计扣除政策红利。六针对小规模纳税人减免增值税优惠小型微利企业和个体工商户所得税优惠等政策加大自主申报自行享受的落实力度不断拓展适用范围。七完善减税降费红利账单推送机制优化改进系统功能探索开展红利账单个性化定制化推送服务。二进一步便利税费办理八对“企业财务会计制度等11项证明材料采用调阅复用措施减少资料重复报送减轻办税缴费负担。九深化落实“个体工商户经营者身份证明等12项税务证明事项告知承诺制严控新设税务证明事项没有法律行政法规依据不得要求纳税人在申请办理税务事项前自行检测检验认证鉴定公证或提供证明等。十推广数字化电子发票助力中小企业数字化转型进一步降低中小企业制度性交易成本。十一持续优化增值税企业所得税个人所得税等税种申报预填服务在具备数据条件地区创新环境保护税纳税申报方式探索智能预填缩短填报时间。十二优化中小企业跨省迁移办理流程对符合条件的中小企业税务机关按规定及时办理迁出手续迁移信息同步推送至迁入地税务机关。十三进一步优化银税信用信息共享方式在保障数据安全维护纳税人合法权益的前提下帮助更多民营企业凭借良好纳税信用通过“银税互动获得融资支持。三进一步改进诉求响应十四充分发挥税费服务诉求解决机制作用税务总局各省税务局同步建立民营企业直联点常态化开展民营企业走访座谈系统梳理中小企业反映强烈的问题研究务实管用的解决措施及时响应纳税人缴费人合理诉求。十五组织税务系统延续开展中小企业服务季活动聚焦中小企业和个体工商户所需所盼拓展创新服务举措推动新出台的系列减税降费政策更好落实落细。十六进一步加强与工商联等部门联动积极面向民营企业开展多领域多层次线上线下相结合的税费专业培训辅导积极探索对不同类型民营企业提供个性化服务帮助处于转型升级阶段的民营企业提升合规能力。十七各地税务机关协同本地商会组织设立民营企业服务站或服务顾问深入开展普法答疑调解维权等工作及时满足企业税费咨询等服务需求。四进一步深化跨境服务十八简并企业报告境外投资和所得信息有关报表减少报送频次进一步降低企业申报负担。十九优化电子税务局国际贸易“单一窗口服务功能推行出口退税发票及出口报关单信息“免填报进一步提高民营企业等各类企业办理出口退税便利度。二十设立12366跨境服务咨询专线加强跨境经营高频疑难涉税问题的收集整理推出并不断完善“跨境纳税人疑难问题解答拓宽民营企业解疑释惑渠道。二十一结合民营企业境外投资特点在税务总局官网推出“海外税收案例库更新发布国别地区投资税收指南帮助“走出去民营企业防范税务风险提升税法遵从能力。二十二深化运用税收协定相互协商程序预约定价安排等国际税收法律工具更大力度地帮助民营企业等纳税人解决跨境涉税争议提高跨境经营的税收确定性。二十三依托“一带一路税收征管合作机制深化共建“一带一路国际税收合作为民营企业更好“走出去创造良好税收环境。五进一步优化执法方式二十四坚持依法依规征税收费坚决不收“过头税费拓展并畅通12366纳税缴费服务热线等投诉举报渠道对征收“过头税费行为发现一起严肃查处一起。二十五加快推进制定区域统一的税务行政处罚裁量基准促进区域间税收执法协同。二十六对符合条件确有困难的民营企业发生欠税税务机关辅导其制定清欠计划对按计划缴纳税款的暂不采取强制执行措施。二十七坚持教育与处罚相结合进一步严格落实“首违不罚制度对税务行政处罚“首违不罚事项清单中的14个事项首次发生且危害后果轻微在税务机关发现前主动改正或者在税务机关依法规定的期限内改正的不予行政处罚。二十八严格落实税务规范性文件公平竞争和权益性审核制度加强相关政策措施的审核力度切实维护中小微企业和个体工商户等民营经济纳税人合法权益确保对各类所有制企业一视同仁平等对待。各级税务机关要坚持以习近平新时代中国特色社会主义思想为指导完整准确全面贯彻新发展理念坚决贯彻落实“两个毫不动摇充分认识促进民营经济发展壮大的重要意义充分认识做好当前税务工作对推动国民经济持续恢复和高质量发展的重要意义切实增强使命感和责任感把认真抓好《意见落实认真贯彻中央政治局会议和国务院常务会议精神作为深入推进税务系统主题教育的重要任务紧密结合实际创造性开展工作依法依规为纳税人缴费人解难题办实事主动协同高效作为靠前贴近精细服务着力促进民营经济做大做优做强。要结合不断创新和发展“晋江经验的要求不断丰富完善税务部门服务中小微企业和个体工商户的措施办法及时总结推广各地税务机关特别是民营经济活力较强地区的好经验好做法对行之有效的经验做法固定下来形成制度确保党中央国务院促进民营经济发展壮大和新出台的系列减税降费政策等决策部署在税务系统不折不扣落地见效为服务高质量发展作出新的更大贡献。附件“便民办税春风行动任务安排表.xls国家税务总局2023年8月4日
+            - paragraph [ref=f1e489]: 发文字号：税总纳服函〔2023〕211号成文日期：2023年08月04日
+          - listitem [ref=f1e490]:
+            - checkbox [ref=f1e491]
+            - link "国家发展改革委等部门关于实施促进民营经济发展近期若干举措的通知" [ref=f1e492] [cursor=pointer]:
+              - /url: http://fgk.chinatax.gov.cn/zcfgk/c100013/c5210463/content.html
+            - generic [ref=f1e493]: 时点符合条件的行业企业可按规定申报享受研发费用加计扣除政策。责任单位税务总局财政部12.持续确保出口企业正常出口退税平均办理时间在6个工作日内将办理一类二类出口企业正常出口退免税的平均时间压缩在3个工作日内政策延续实施至2024年底。更新发布国别地区投资税收指南帮助民营企业更好防范跨境投资税收风险。责任单位税务总局13.延长普惠小微贷款支持工具期限至2024年底持续加大普惠金融支持力度。引导商业银行接入“信易贷地方征信平台等融资信用服务平台强化跨部门信用信息联通。扩大民营企业信用贷款规模。有效落实金融企业呆账核销管理制度。责任单位中国人民银行国家发展改革委金融监管总局14.将民营企业债券央地合作增信新模式扩大至全部符合发行条件的各类民营企业尽快形成更多示范案例。责任单位中国证监会国家发展改革委财政部15.适应民营中小微企业用地需求探索实行产业链供地对产业链关联项目涉及的多宗土地实行整体供应。责任单位自然资源部工业和信息化部16.除法律法规和相关政策规定外在城镇规划建设用地范围内供水供气供电企业的投资界面免费延伸至企业建筑区划红线。责任单位住房城乡建设部17.赋予民营企业职称评审权允许技术实力较强的规模以上民营企业单独或联合组建职称评审委员会开展自主评审。责任单位人力资源社会保障部三加强法治保障18.清理废除有违平等保护各类所有制经济原则的规章规范性文件加强对民营经济发展的保护和支持。责任单位司法部19.根据《中华人民共和国行政处罚法第三十三条在城市管理生态环保市场监管等重点领域分别明确不予处罚具体情形。出台《关于进一步规范监督行政罚款设定和实施的指导意见。开展行政法规和部门规章中罚款事项专项清理清理结果对社会公布。责任单位司法部生态环境部市场监管总局应急管理部四优化涉企服务20.全面构建亲清政商关系支持各地区探索以不同方式服务民营企业充分利用全国一体化政务服务平台等数字化手段提升惠企政策和服务效能多措并举帮助民营企业解决问题困难。责任单位全国工商联国家发展改革委21.建立涉企行政许可相关中介服务事项清单管理制度未纳入清单的事项一律不再作为行政审批的受理条件今后确需新设的依照法定程序设定并纳入清单管理。将中介服务事项纳入各级一体化政务服务平台实现机构选择费用支付报告上传服务评价等全流程线上办理公开接受社会监督。责任单位工业和信息化部市场监管总局国家发展改革委22.加大对拖欠民营企业账款的清理力度重点清理机关事业单位国有企业拖欠中小微企业账款。审计部门接受民营企业反映的欠款线索加强审计监督。责任单位工业和信息化部国家发展改革委财政部审计署国务院国资委市场监管总局23.全面落实简易注销普通注销制度完善企业注销“一网服务平台。完善歇业制度配套政策措施。责任单位市场监管总局人力资源社会保障部税务总局24.除依法需要保密外涉企政策制定和修订应充分听取企业家意见建议。涉企政策调整应设置合理过渡期。责任单位国家发展改革委五营造良好氛围25.分级畅通涉企投诉渠道在国务院“互联网＋督查平台开设涉企问题征集专题公告在国家政务服务平台投诉建议系统上开设涉企问题征集专栏各地区结合自身实际将涉企投诉事项纳入“12345热线等政务服务平台建立转办整改跟踪机制。持续开展万家民营企业评营商环境工作。责任单位国务院办公厅市场监管总局国家发展改革委全国工商联26.开展“打假治敲等专项行动依法打击蓄意炒作造谣抹黑民营企业和民营企业家的“网络黑嘴和“黑色产业链。责任单位公安部中国证监会全国工商联27.将各地区落实支持民营经济发展情况纳入国务院年度综合督查对发现的问题予以督促整改对好的经验做法予以宣传推广。设立中央预算内投资促进民间投资奖励支持专项每年向一批民间投资增速快占比高活力强措施实的市县提供奖励支持。责任单位国务院办公厅国家发展改革委28.按照国家有关规定对在民营经济发展工作中作出突出贡献的集体和个人予以表彰奖励弘扬企业家精神发挥先进标杆的示范引领作用。责任单位全国工商联国家发展改革委工业和信息化部国家发展改革委工业和信息化部财政部科技部中国人民银行税务总局市场监管总局金融监管总局2023年7月28日
+            - paragraph [ref=f1e494]: 发文字号：发改体改〔2023〕1054号成文日期：2023年07月28日
+          - listitem [ref=f1e495]:
+            - checkbox [ref=f1e496]
+            - link "国家税务总局关于落实落细税费优惠政策推出“便民办税春风行动”第三批措施的通知" [ref=f1e497] [cursor=pointer]:
+              - /url: http://fgk.chinatax.gov.cn/zcfgk/c102424/c5215816/content.html
+            - generic [ref=f1e498]: 企业活力支持外贸平稳发展。10.制定研发费用加计扣除政策指引结合优惠政策享受情况开展全方位宣传辅导帮助企业充分享受政策红利促进企业加大研发投入。三诉求响应提效11.通过“走流程听建议等方式大兴调查研究全面收集纳税人缴费人政策享受中遇到的问题困难和诉求及时处理研究反馈促进政策实施更加有力有效充分保障纳税人缴费人不折不扣享受政策红利。12.深化运用税收大数据识别纳税人缴费人在税费优惠政策办理服务等方面的潜在需求探索开展个性化集合式推送和纳税信用提示提醒帮助纳税人及时防范失信风险纠正失信行为促进税法遵从。四便捷办理提质13.持续推进“减证便民深入实施税务证明事项告知承诺制为纳税人申报享受税费优惠政策提供便利。14.持续优化电子税务局功能丰富应用场景推动个体工商户减半征收小型微利企业所得税优惠等延续优化税费优惠政策的申报实现信息系统自动计算减免税额自动预填申报提升纳税人缴费人办理体验确保税费优惠政策落准落稳。15.对在职职工人数30人以下的企业自动免征残保金确保优惠政策应享尽享。16.主动提示提醒并及时为符合残保金优惠政策条件的缴费人办理一季度已缴费款退费确保优惠政策落到实处。17.做好物流企业大宗商品仓储设施用地城镇土地使用税优惠政策追溯享受有关退抵税工作；施行城镇土地使用税按月申报的地区形成退抵税纳税人清单针对性推送预填好的退抵税申请表加快退抵税审核提高退抵税效率。18.进一步拓展不动产登记税费线上办理渠道利用税务APP微信小程序等为纳税人提供更加丰富的掌上服务更好满足纳税人个性化需求；加强相关部门间不动产登记税费信息共享提升办理质效。五规范执法提升19.规范促进涉税专业服务机构按照市场化原则为纳税人缴费人提供个性化服务帮助纳税人缴费人依法依规快速享受政策红利；严厉惩治不良涉税中介唆使误导纳税人缴费人实施税收违法行为防范纳税人缴费人信用受损维护国家税收安全。20.深入推进税务文书电子送达逐步减少纳税人签收纸质文书的情形减轻纳税人办税负担。各级税务机关要进一步增强责任感紧迫感强化系统思维和科学谋划因地制宜创造性开展工作抓好落实确保延续优化的减税降费政策全面落地见效尽心尽力为纳税人缴费人办实事解难题为经营主体纾困解难减负增效有力推动党中央国务院决策部署不折不扣落到实处。附件“便民办税春风行动第三批措施工作任务安排表.xls国家税务总局2023年4月4日
+            - paragraph [ref=f1e499]: 发文字号：税总纳服函〔2023〕38号成文日期：2023年04月04日
+          - listitem [ref=f1e500]:
+            - checkbox [ref=f1e501]
+            - link "财政部 税务总局关于进一步完善研发费用税前加计扣除政策的公告" [ref=f1e502] [cursor=pointer]:
+              - /url: http://fgk.chinatax.gov.cn/zcfgk/c102416/c5201978/content.html
+            - generic [ref=f1e503]: 成本的200%在税前摊销。二企业享受研发费用加计扣除政策的其他政策口径和管理要求按照《财政部国家税务总局科技部关于完善研究开发费用税前加计扣除政策的通知财税〔2015〕119号《财政部税务总局科技部关于企业委托境外研究开发费用税前加计扣除有关政策问题的通知财税〔2018〕64号等文件相关规定执行。三本公告自2023年1月1日起执行《财政部税务总局关于进一步完善研发费用税前加计扣除政策的公告财政部税务总局公告2021年第13号《财政部税务总局科技部关于进一步提高科技型中小企业研发费用税前加计扣除比例的公告财政部税务总局科技部公告2022年第16号《财政部税务总局科技部关于加大支持科技创新税前扣除力度的公告财政部税务总局科技部公告2022年第28号同时废止。特此公告。财政部税务总局2023年3月26日
+            - paragraph [ref=f1e504]: 发文字号：财政部 税务总局公告2023年第7号成文日期：2023年03月26日
+        - generic [ref=f1e505]:
+          - link "上一页" [ref=f1e506]:
+            - /url: javascript:;
+          - generic [ref=f1e507]:
+            - emphasis [ref=f1e508]
+            - emphasis [ref=f1e509]: "1"
+          - link "下一页" [ref=f1e510]:
+            - /url: javascript:;
+          - generic [ref=f1e511]:
+            - text: 到第
+            - textbox [ref=f1e512]: "1"
+            - text: 页
+            - button "确定" [ref=f1e513] [cursor=pointer]
+  - generic [ref=f1e294]:
+    - term [ref=f1e515]:
+      - link [ref=f1e516] [cursor=pointer]:
+        - /url: javascript:void(0);
+        - img "回到顶部" [ref=f1e517]
+    - generic [ref=f1e295]:
+      - link "中国政府网" [ref=f1e297] [cursor=pointer]:
+        - /url: https://www.gov.cn/
+      - generic [ref=f1e301]:
+        - term [ref=f1e303] [cursor=pointer]:
+          - text: 国家税务总局各省级税务局
+          - generic [ref=f1e304]: 
+        - term [ref=f1e306] [cursor=pointer]:
+          - text: 直属单位
+          - generic [ref=f1e307]: 
+        - term [ref=f1e309] [cursor=pointer]:
+          - text: 税务相关
+          - generic [ref=f1e310]: 
+        - term [ref=f1e312] [cursor=pointer]:
+          - text: 友情链接
+          - generic [ref=f1e313]: 
+  - generic [ref=f1e314]:
+    - generic [ref=f1e317]:
+      - list [ref=f1e318]:
+        - listitem [ref=f1e319]:
+          - link "访问统计" [ref=f1e320] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/n1670141/index.html
+          - text: "|"
+        - listitem [ref=f1e321]:
+          - link "网站管理" [ref=f1e322] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/n1262558///index.html
+          - text: "|"
+        - listitem [ref=f1e323]:
+          - link "联系我们" [ref=f1e324] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/c101263/c61304/content.html
+          - text: "|"
+        - listitem [ref=f1e325]:
+          - link "网站地图" [ref=f1e326] [cursor=pointer]:
+            - /url: http://www.chinatax.gov.cn/chinatax/n1636341/index.html
+      - generic [ref=f1e327]:
+        - generic [ref=f1e328]: 主办单位：国家税务总局
+        - generic [ref=f1e329]: 版权所有：国家税务总局
+        - generic [ref=f1e330]: 地址：北京市海淀区羊坊店西路5号
+      - link [ref=f1e333] [cursor=pointer]:
+        - /url: http://bszs.conac.cn/sitename?method=show&id=0895F7C120836C12E053012819AC7E96
+    - definition [ref=f1e338]:
+      - generic [ref=f1e339]: 网站标识码：bm29000002
+      - link "京ICP备13021685号-2" [ref=f1e341] [cursor=pointer]:
+        - /url: https://beian.miit.gov.cn
+      - link "京公网安备 11040102700073号" [ref=f1e343] [cursor=pointer]:
+        - /url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700073

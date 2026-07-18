@@ -1,0 +1,646 @@
+- generic [active] [ref=e1]:
+  - link "欢迎进入 国家税务总局,盲人用户使用操作智能引导，请按快捷键Ctrl+Alt+R；阅读详细操作说明请按快捷键Ctrl+Alt+问号键。":
+    - /url: javascript:void(0)
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link [ref=e8] [cursor=pointer]:
+        - /url: /eng/home.html
+      - link "繁" [ref=e11] [cursor=pointer]:
+        - /url: javascript:zh_tran('t');
+      - link [ref=e14] [cursor=pointer]:
+        - /url: http://mail.chinatax.gov.cn/
+    - link [ref=e16] [cursor=pointer]:
+      - /url: /chinatax/index.html
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - definition [ref=e19]:
+          - textbox "请输入您要搜索的内容" [ref=e20]
+        - term [ref=e21]
+        - term [ref=e22]:
+          - button "搜一搜" [ref=e23] [cursor=pointer]
+      - generic:
+        - generic [ref=e24]: 本站热词：
+        - link "发票" [ref=e25] [cursor=pointer]:
+          - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票&left_right_index=0&searchSource=0
+        - link "小微企业" [ref=e26] [cursor=pointer]:
+          - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=小微企业&left_right_index=0&searchSource=0
+        - link "个人所得税" [ref=e27] [cursor=pointer]:
+          - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=个人所得税&left_right_index=0&searchSource=0
+        - link "发票查询" [ref=e28] [cursor=pointer]:
+          - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=发票查询&left_right_index=0&searchSource=0
+        - link "社保" [ref=e29] [cursor=pointer]:
+          - /url: /search5/html/searchResult.html?siteCode=bm29000002&searchWord=社保&left_right_index=0&searchSource=0
+  - list [ref=e32]:
+    - listitem [ref=e33]:
+      - link "首页" [ref=e34] [cursor=pointer]:
+        - /url: /chinatax/index.html
+    - listitem [ref=e36]:
+      - link "总局概况" [ref=e37] [cursor=pointer]:
+        - /url: /chinatax/n810209/index.html
+    - listitem [ref=e39]:
+      - link "信息公开" [ref=e40] [cursor=pointer]:
+        - /url: /chinatax/n810214/index.html
+    - listitem [ref=e42]:
+      - link "新闻发布" [ref=e43] [cursor=pointer]:
+        - /url: /chinatax/n810219//index.html
+    - listitem [ref=e45]:
+      - link "政策法规" [ref=e46] [cursor=pointer]:
+        - /url: https://fgk.chinatax.gov.cn
+    - listitem [ref=e48]:
+      - link "纳税服务" [ref=e49] [cursor=pointer]:
+        - /url: /chinatax/n810346/index.html
+    - listitem [ref=e51]:
+      - link "互动交流" [ref=e52] [cursor=pointer]:
+        - /url: /chinatax/n810356/index.html
+    - listitem [ref=e54]:
+      - link "专题专栏" [ref=e55] [cursor=pointer]:
+        - /url: /chinatax/n810219/n810744//index.html
+  - generic [ref=e57]:
+    - generic [ref=e59]:
+      - generic [ref=e60]:
+        - term [ref=e62]:
+          - link "习近平对福建泉州晋江市一鞋厂火灾事故作出重要指示" [ref=e63] [cursor=pointer]:
+            - /url: https://www.news.cn/politics/leaders/20260709/231869b2963d48a1986fff5cf933c932/c.html
+        - generic [ref=e65]:
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e70]:
+                - definition [ref=e71]:
+                  - link "@国务院 我来说" [ref=e72] [cursor=pointer]:
+                    - /url: https://liuyan.www.gov.cn/2024wwzfgzbgtjy/bmdf.html?q=swzj
+                - term [ref=e75]:
+                  - link "@国务院 我来说" [ref=e76] [cursor=pointer]:
+                    - /url: https://liuyan.www.gov.cn/2024wwzfgzbgtjy/bmdf.html?q=swzj
+              - generic [ref=e78]:
+                - definition [ref=e79]:
+                  - link "国家科学技术奖励大会两院院士大会中国科协第十一次全国代表大会召开" [ref=e80] [cursor=pointer]:
+                    - /url: https://www.news.cn/politics/leaders/20260708/12261c65acab49f787e8ebce72b46015/c.html
+                - term [ref=e83]:
+                  - link "国家科学技术奖励大会两院院士大会中国科协第十一次全国代表大会召..." [ref=e84] [cursor=pointer]:
+                    - /url: https://www.news.cn/politics/leaders/20260708/12261c65acab49f787e8ebce72b46015/c.html
+              - generic [ref=e86]:
+                - definition [ref=e87]:
+                  - link "中央军委举行晋升上将军衔仪式" [ref=e88] [cursor=pointer]:
+                    - /url: https://www.news.cn/politics/leaders/20260703/e7a831d5766e4c9e89ca8b4c599e0625/c.html
+                - term [ref=e91]:
+                  - link "中央军委举行晋升上将军衔仪式" [ref=e92] [cursor=pointer]:
+                    - /url: https://www.news.cn/politics/leaders/20260703/e7a831d5766e4c9e89ca8b4c599e0625/c.html
+              - generic [ref=e94]:
+                - definition [ref=e95]:
+                  - link "庆祝中国共产党成立105周年大会在京隆重举行" [ref=e96] [cursor=pointer]:
+                    - /url: https://www.news.cn/politics/leaders/20260701/e0a55b3f159a4bd8b6954d9bbb14035f/c.html
+                - term [ref=e99]:
+                  - link "庆祝中国共产党成立105周年大会在京隆重举行" [ref=e100] [cursor=pointer]:
+                    - /url: https://www.news.cn/politics/leaders/20260701/e0a55b3f159a4bd8b6954d9bbb14035f/c.html
+              - generic [ref=e102]:
+                - definition [ref=e103]:
+                  - link "学习贯彻习近平党建思想" [ref=e104] [cursor=pointer]:
+                    - /url: /chinatax/c103157/xxgcxjpdjsx.html
+                - term [ref=e107]:
+                  - link "学习贯彻习近平党建思想" [ref=e108] [cursor=pointer]:
+                    - /url: /chinatax/c103157/xxgcxjpdjsx.html
+              - generic [ref=e110]:
+                - definition [ref=e111]:
+                  - link "树立和践行正确政绩观学习教育" [ref=e112] [cursor=pointer]:
+                    - /url: /chinatax/c103113/zjg.html
+                - term [ref=e115]:
+                  - link "树立和践行正确政绩观学习教育" [ref=e116] [cursor=pointer]:
+                    - /url: /chinatax/c103113/zjg.html
+              - generic [ref=e118]:
+                - definition [ref=e119]:
+                  - link "学习贯彻党的二十届四中全会精神" [ref=e120] [cursor=pointer]:
+                    - /url: /chinatax/c103089/esj4zqhindex.html
+                - term [ref=e123]:
+                  - link "学习贯彻党的二十届四中全会精神" [ref=e124] [cursor=pointer]:
+                    - /url: /chinatax/c103089/esj4zqhindex.html
+              - generic [ref=e126]:
+                - definition [ref=e127]:
+                  - link "@国务院 我来说" [ref=e128] [cursor=pointer]:
+                    - /url: https://liuyan.www.gov.cn/2024wwzfgzbgtjy/bmdf.html?q=swzj
+                - term [ref=e131]:
+                  - link "@国务院 我来说" [ref=e132] [cursor=pointer]:
+                    - /url: https://liuyan.www.gov.cn/2024wwzfgzbgtjy/bmdf.html?q=swzj
+              - generic [ref=e134]:
+                - definition [ref=e135]:
+                  - link "国家科学技术奖励大会两院院士大会中国科协第十一次全国代表大会召开" [ref=e136] [cursor=pointer]:
+                    - /url: https://www.news.cn/politics/leaders/20260708/12261c65acab49f787e8ebce72b46015/c.html
+                - term [ref=e139]:
+                  - link "国家科学技术奖励大会两院院士大会中国科协第十一次全国代表大会召..." [ref=e140] [cursor=pointer]:
+                    - /url: https://www.news.cn/politics/leaders/20260708/12261c65acab49f787e8ebce72b46015/c.html
+            - button "Previous slide" [ref=e141] [cursor=pointer]:
+              - generic [ref=e142]: 
+            - button "Next slide" [ref=e143] [cursor=pointer]:
+              - generic [ref=e144]: 
+          - generic [ref=e145]:
+            - list [ref=e146]:
+              - listitem [ref=e147]:
+                - link "习近平出席国家科学技术奖励大会两院院士大会中国科协第十一次全国代表大会并发表重要讲话" [ref=e148] [cursor=pointer]:
+                  - /url: https://www.news.cn/politics/leaders/20260708/311000a4af3843629bfc82cb6d84964a/c.html
+              - listitem [ref=e149]:
+                - link "习近平对防汛救灾工作作出重要指示" [ref=e150] [cursor=pointer]:
+                  - /url: https://www.news.cn/politics/leaders/20260707/f4d56e283da748a7a6a9bd7bd65e580a/c.html
+              - listitem [ref=e151]:
+                - link "习近平同黑山总统米拉托维奇就中国同黑山建交20周年互致贺电" [ref=e152] [cursor=pointer]:
+                  - /url: https://www.news.cn/20260706/2402199b00034e7985b7954a5e39d5d4/c.html
+            - link "查看更多" [ref=e154] [cursor=pointer]:
+              - /url: /chinatax/n810219/n1403167/index.html
+            - text: 
+      - link [ref=e156] [cursor=pointer]:
+        - /url: /chinatax/c103113/zjg.html
+      - generic [ref=e159]:
+        - text: 
+        - generic [ref=e160]:
+          - generic [ref=e162]:
+            - generic [ref=e164]:
+              - definition [ref=e165]:
+                - link "胡静林会见税务系统全国五一劳动奖受表彰代表" [ref=e166] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249454/content.html
+              - term [ref=e169]:
+                - link "胡静林会见税务系统全国五一劳动奖受表彰代表" [ref=e170] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249454/content.html
+            - generic [ref=e172]:
+              - definition [ref=e173]:
+                - link "胡静林会见俄罗斯联邦税务局局长丹尼尔·埃戈罗夫" [ref=e174] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249119/content.html
+              - term [ref=e177]:
+                - link "胡静林会见俄罗斯联邦税务局局长丹尼尔·埃戈罗夫" [ref=e178] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249119/content.html
+            - generic [ref=e180]:
+              - definition [ref=e181]:
+                - link "税务总局举行庆祝中国共产党成立105周年“七一”主题活动" [ref=e182] [cursor=pointer]:
+                  - /url: /chinatax//n810219/n810724/c5250673/content.html
+              - term [ref=e185]:
+                - link "税务总局举行庆祝中国共产党成立105周年“七一”主题活动" [ref=e186] [cursor=pointer]:
+                  - /url: /chinatax//n810219/n810724/c5250673/content.html
+            - generic [ref=e188]:
+              - definition [ref=e189]:
+                - link "国家税务总局召开党委理论学习中心组学习（扩大）会议 深入学习贯彻习近平党建思想牢固树立和践行正确政绩观" [ref=e190] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5250442/content.html
+              - term [ref=e193]:
+                - link "国家税务总局召开党委理论学习中心组学习（扩大）会议 深入学习贯彻习近平党建思想牢固树立和践行正确政绩观" [ref=e194] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5250442/content.html
+            - generic [ref=e196]:
+              - definition [ref=e197]:
+                - link "胡静林在内蒙古调研税务工作时强调 扎实开展税务系统学习教育 以实绩实效服务高质量发展" [ref=e198] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5250010/content.html
+              - term [ref=e201]:
+                - link "胡静林在内蒙古调研税务工作时强调 扎实开展税务系统学习教育 以实绩实效服务高质量发展" [ref=e202] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5250010/content.html
+            - generic [ref=e204]:
+              - definition [ref=e205]:
+                - link "胡静林会见优秀税务青年代表" [ref=e206] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249464/content.html
+              - term [ref=e209]:
+                - link "胡静林会见优秀税务青年代表" [ref=e210] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249464/content.html
+            - generic [ref=e212]:
+              - definition [ref=e213]:
+                - link "胡静林会见税务系统全国五一劳动奖受表彰代表" [ref=e214] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249454/content.html
+              - term [ref=e217]:
+                - link "胡静林会见税务系统全国五一劳动奖受表彰代表" [ref=e218] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249454/content.html
+            - generic [ref=e220]:
+              - definition [ref=e221]:
+                - link "胡静林会见俄罗斯联邦税务局局长丹尼尔·埃戈罗夫" [ref=e222] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249119/content.html
+              - term [ref=e225]:
+                - link "胡静林会见俄罗斯联邦税务局局长丹尼尔·埃戈罗夫" [ref=e226] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5249119/content.html
+            - generic [ref=e228]:
+              - definition [ref=e229]:
+                - link "税务总局举行庆祝中国共产党成立105周年“七一”主题活动" [ref=e230] [cursor=pointer]:
+                  - /url: /chinatax//n810219/n810724/c5250673/content.html
+              - term [ref=e233]:
+                - link "税务总局举行庆祝中国共产党成立105周年“七一”主题活动" [ref=e234] [cursor=pointer]:
+                  - /url: /chinatax//n810219/n810724/c5250673/content.html
+            - generic [ref=e236]:
+              - definition [ref=e237]:
+                - link "国家税务总局召开党委理论学习中心组学习（扩大）会议 深入学习贯彻习近平党建思想牢固树立和践行正确政绩观" [ref=e238] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5250442/content.html
+              - term [ref=e241]:
+                - link "国家税务总局召开党委理论学习中心组学习（扩大）会议 深入学习贯彻习近平党建思想牢固树立和践行正确政绩观" [ref=e242] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/c5250442/content.html
+          - generic [ref=e243]:
+            - button "Previous slide" [ref=e244] [cursor=pointer]
+            - generic [ref=e246]:
+              - button "Go to slide 1" [ref=e247] [cursor=pointer]
+              - button "Go to slide 2" [ref=e248] [cursor=pointer]
+              - button "Go to slide 3" [ref=e249] [cursor=pointer]
+            - button "Next slide" [ref=e250] [cursor=pointer]
+        - generic [ref=e252]:
+          - generic [ref=e254]:
+            - list [ref=e255]:
+              - listitem [ref=e256]:
+                - link "税务新闻" [ref=e257] [cursor=pointer]:
+                  - /url: /chinatax/n810219/n810724/common_list_swxw.html
+            - link "" [ref=e259] [cursor=pointer]:
+              - /url: /chinatax/n810219/n810724/common_list_swxw.html
+          - list [ref=e261]:
+            - listitem [ref=e262]:
+              - link "胡静林在树立和践行正确政绩观学习教育专题党课上强调坚持以习近平党建思想为指引深入扎实开展学习教育 以正确政绩观推动中国式现代..." [ref=e263] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810724/c5250902/content.html
+            - listitem [ref=e264]:
+              - link "税务总局举行庆祝中国共产党成立105周年“七一”主题活动" [ref=e265] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810724/c5250673/content.html
+            - listitem [ref=e266]:
+              - link "国家税务总局召开党委理论学习中心组学习（扩大）会议 深入学习贯彻习近平党建思想牢固树立和践行正确政绩观" [ref=e267] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810724/c5250442/content.html
+            - listitem [ref=e268]:
+              - link "胡静林在内蒙古调研税务工作时强调 扎实开展税务系统学习教育 以实绩实效服务高质量发展" [ref=e269] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810724/c5250010/content.html
+            - listitem [ref=e270]:
+              - link "税务部门曝光7起网红网店偷税案件 平台内经营者应依法诚信纳税" [ref=e271] [cursor=pointer]:
+                - /url: /chinatax/n810219/c102025/c5250924/content.html
+            - listitem [ref=e272]:
+              - link "多起网红和网店偷税案件再次被曝光！网红和网店应将合规经营作为立身之本" [ref=e273] [cursor=pointer]:
+                - /url: /chinatax/n810219/c102025/c5250923/content.html
+    - generic [ref=e276]:
+      - generic [ref=e277]:
+        - list [ref=e279]:
+          - listitem [ref=e280]:
+            - link "税务部门在行动" [ref=e281]:
+              - /url: javascript:;
+        - generic [ref=e284]:
+          - list [ref=e286]:
+            - listitem [ref=e287]:
+              - link "媒体视点" [ref=e288] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/common_mtsd_list.html
+          - list [ref=e289]:
+            - listitem [ref=e290]:
+              - link "[央视朝闻天下] 国家税务总局最新发票数据显示 今年前5个月工业企业..." [ref=e291] [cursor=pointer]:
+                - /url: /chinatax/n810351/c102272/c5250422/content.html
+            - listitem [ref=e292]:
+              - link "[央视新闻直播间] 发票数据显示 一季度全国违规开票企业户数和金额..." [ref=e293] [cursor=pointer]:
+                - /url: /chinatax/n810351/c102272/c5249220/content.html
+            - listitem [ref=e294]:
+              - link "[人民日报经济热点快评] 私户收款偷逃税，“美”在何处？" [ref=e295] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5249411/content.html
+            - listitem [ref=e296]:
+              - link "[新华社] 读懂超亿条税费服务诉求的“解题路径”" [ref=e297] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5250522/content.html
+            - listitem [ref=e298]:
+              - link "[经济日报] 成品油零售开启智慧开票新模式" [ref=e299] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5250416/content.html
+            - listitem [ref=e300]:
+              - link "[光明日报] 1至5月全国工业企业销售收入实现较快增长" [ref=e301] [cursor=pointer]:
+                - /url: /chinatax/n810219/n810780/c5250419/content.html
+        - link "税案通报" [ref=e303] [cursor=pointer]:
+          - /url: /chinatax/n810219/c102025/common_listwyc.html
+      - generic [ref=e305]:
+        - list [ref=e307]:
+          - listitem [ref=e308]:
+            - link "全面从严治党" [ref=e309] [cursor=pointer]:
+              - /url: /chinatax/n810219/n810744/c101733/index.html
+          - listitem [ref=e313]:
+            - link "进一步深化税收征管改革" [ref=e314] [cursor=pointer]:
+              - /url: /chinatax/n810219/n810744/c101763//index.html
+        - generic [ref=e318]:
+          - generic [ref=e319]:
+            - generic [ref=e320]:
+              - list [ref=e321]:
+                - listitem [ref=e322]:
+                  - link "政策发布" [ref=e323] [cursor=pointer]:
+                    - /url: http://fgk.chinatax.gov.cn/zcfgk/c100006/listflfg.html
+                - listitem [ref=e324]:
+                  - link "政策解读" [ref=e325] [cursor=pointer]:
+                    - /url: http://fgk.chinatax.gov.cn/zcfgk/c100015/list_zcjd.html
+                - listitem [ref=e326]:
+                  - link [ref=e327] [cursor=pointer]:
+                    - /url: /chinatax/n810214/c102374/c102375d//index.html?tab=tzgg
+              - generic [ref=e329]:
+                - link "" [ref=e330] [cursor=pointer]:
+                  - /url: http://fgk.chinatax.gov.cn/zcfgk/c100006/listflfg.html
+                - text:  
+            - generic [ref=e332]:
+              - generic [ref=e333]:
+                - text: 
+                - list [ref=e334]:
+                  - listitem [ref=e335]:
+                    - link "财政部 税务总局 工业和信息化部关于调整节能汽车、新能源汽车车船税优惠政策的公告" [ref=e336] [cursor=pointer]:
+                      - /url: http://fgk.chinatax.gov.cn/zcfgk/c102416/c5250801/content.html
+                  - listitem [ref=e337]:
+                    - link "财政部 海关总署 税务总局关于2027年第33届世界大学生冬季运动会税收政策的通知" [ref=e338] [cursor=pointer]:
+                      - /url: http://fgk.chinatax.gov.cn/zcfgk/c102416/c5250884/content.html
+                  - listitem [ref=e339]:
+                    - link "财政部 税务总局关于更新国产抗艾滋病病毒药物免税品种清单的公告" [ref=e340] [cursor=pointer]:
+                      - /url: http://fgk.chinatax.gov.cn/zcfgk/c102416/c5250687/content.html
+                  - listitem [ref=e341]:
+                    - link "人力资源社会保障部 教育部 财政部 国家税务总局关于失业保险支持企业稳岗扩岗的通知" [ref=e342] [cursor=pointer]:
+                      - /url: http://fgk.chinatax.gov.cn/zcfgk/c100013/c5250797/content.html
+                - text: 
+              - text:    
+          - text:      
+        - generic [ref=e343]:
+          - link [ref=e344] [cursor=pointer]:
+            - /url: http://fgk.chinatax.gov.cn/zcfgk/c100028/zcwj.html?siteCode=bm29000002&searchWord=&type=&pageSize=10&pageNum=0&orderBy=5&column=政策法规,政策解读,政策指引&label=文字政策解读,法律,行政法规,国务院文件,税务部门规章,税务规范性文件,财税文件,其他文件,工作通知,政策指引&likeDoc=0&wordPlace=0&indexCode=1&participleRule=5
+          - generic [ref=e347]:
+            - textbox "请输入文件名" [ref=e348]
+            - button "Submit" [ref=e349] [cursor=pointer]
+        - generic [ref=e350]:
+          - link "税务合规典型企业案例”" [ref=e351] [cursor=pointer]:
+            - /url: /chinatax/c103110/swhg.html
+          - link "税收服务“一带一路”专题" [ref=e353] [cursor=pointer]:
+            - /url: /chinatax/n810219/n810744/n1671176/index.html
+    - generic [ref=e359]:
+      - generic [ref=e360]:
+        - list [ref=e361]:
+          - listitem [ref=e362]:
+            - link "纳税服务" [ref=e363] [cursor=pointer]:
+              - /url: /chinatax/n810346/index.html
+        - link [ref=e365] [cursor=pointer]:
+          - /url: https://12366.chinatax.gov.cn/xiaohui/?guide=1.2
+      - generic [ref=e368]:
+        - list [ref=e370]:
+          - listitem [ref=e371]:
+            - link [ref=e372] [cursor=pointer]:
+              - /url: https://12366.chinatax.gov.cn
+              - paragraph [ref=e373]
+          - listitem [ref=e374]:
+            - link [ref=e375] [cursor=pointer]:
+              - /url: https://12366.chinatax.gov.cn/bsfw/onlinetaxation/main
+              - paragraph [ref=e376]
+        - list [ref=e378]:
+          - listitem [ref=e379]:
+            - link [ref=e380] [cursor=pointer]:
+              - /url: https://etax.chinatax.gov.cn/
+              - paragraph [ref=e381]
+              - paragraph [ref=e382]
+              - generic [ref=e383]:
+                - term [ref=e384]:
+                  - heading "自然人 电子税务局" [level=2] [ref=e385]: 自然人电子税务局
+                - definition [ref=e386]
+          - listitem [ref=e387]:
+            - link [ref=e388] [cursor=pointer]:
+              - /url: https://12366.chinatax.gov.cn/bsznBLH/main
+              - paragraph [ref=e389]
+              - paragraph [ref=e390]
+              - generic [ref=e391]:
+                - term [ref=e392]:
+                  - heading "办税 指南" [level=2] [ref=e393]: 办税指南
+                - definition [ref=e394]
+          - listitem [ref=e395]:
+            - link [ref=e396] [cursor=pointer]:
+              - /url: https://inv-veri.chinatax.gov.cn/
+              - paragraph [ref=e397]
+              - paragraph [ref=e398]
+              - generic [ref=e399]:
+                - term [ref=e400]:
+                  - heading "发票 查验" [level=2] [ref=e401]: 发票查验
+                - definition [ref=e402]
+          - listitem [ref=e403]:
+            - link [ref=e404] [cursor=pointer]:
+              - /url: https://12366.chinatax.gov.cn/sszyfw/bulletinBoard/main
+              - paragraph [ref=e405]
+              - paragraph [ref=e406]
+              - generic [ref=e407]:
+                - term [ref=e408]:
+                  - heading "涉税服务 机构" [level=2] [ref=e409]: 涉税服务机构
+                - definition [ref=e410]
+          - listitem [ref=e411]:
+            - link [ref=e412] [cursor=pointer]:
+              - /url: https://swcg.chinatax.gov.cn/
+              - paragraph [ref=e413]
+              - paragraph [ref=e414]
+              - generic [ref=e415]:
+                - term [ref=e416]:
+                  - heading "税务智慧 采购平台" [level=2] [ref=e417]: 税务智慧采购平台
+                - definition [ref=e418]
+          - listitem [ref=e419]:
+            - link [ref=e420] [cursor=pointer]:
+              - /url: /chinatax/n810346/c102299/index.html
+              - paragraph [ref=e421]
+              - paragraph [ref=e422]
+              - generic [ref=e423]:
+                - term [ref=e424]:
+                  - heading "A级纳税人 名单" [level=2] [ref=e425]: A级纳税人名单
+                - definition [ref=e426]
+          - listitem [ref=e427]:
+            - link [ref=e428] [cursor=pointer]:
+              - /url: /chinatax/c101249/n2020011502/index.html
+              - paragraph [ref=e429]
+              - paragraph [ref=e430]
+              - generic [ref=e431]:
+                - term [ref=e432]:
+                  - heading "重大违法 案件" [level=2] [ref=e433]: 重大违法案件
+                - definition [ref=e434]
+          - listitem [ref=e435]:
+            - link [ref=e436] [cursor=pointer]:
+              - /url: https://hd.chinatax.gov.cn/nszx2023/cktslcx2023.html
+              - paragraph [ref=e437]
+              - paragraph [ref=e438]
+              - generic [ref=e439]:
+                - term [ref=e440]:
+                  - heading "出口退税率 查询" [level=2] [ref=e441]: 出口退税率查询
+                - definition [ref=e442]
+          - listitem [ref=e443]:
+            - link [ref=e444] [cursor=pointer]:
+              - /url: /chinatax/c102276/c5181990/5181990/files/e6a0323aaef848c996da13198d4a07de.pdf
+              - paragraph [ref=e445]
+              - paragraph [ref=e446]
+              - generic [ref=e447]:
+                - term [ref=e448]:
+                  - heading "企业所得税 申报目录" [level=2] [ref=e449]: 企业所得税申报目录
+                - definition [ref=e450]
+          - listitem [ref=e451]:
+            - link [ref=e452] [cursor=pointer]:
+              - /url: /chinatax//n810346/c102373/c5187074/5187074/files/069b9cf7a76a4f0f9c0ed929571b6895.xlsx
+              - paragraph [ref=e453]
+              - paragraph [ref=e454]
+              - generic [ref=e455]:
+                - term [ref=e456]:
+                  - heading "减免税政策 代码目录" [level=2] [ref=e457]: 减免税政策代码目录
+                - definition [ref=e458]
+    - generic [ref=e460]:
+      - list [ref=e462]:
+        - listitem [ref=e463]:
+          - link "专题专栏" [ref=e464] [cursor=pointer]:
+            - /url: /chinatax/n810219/n810744//index.html
+      - list [ref=e466]:
+        - listitem [ref=e467]:
+          - link "学习贯彻习近平党建思想" [ref=e468] [cursor=pointer]:
+            - /url: /chinatax/c103157/xxgcxjpdjsx.html
+        - listitem [ref=e472]:
+          - link "树立和践行正确政绩观学习教育" [ref=e473] [cursor=pointer]:
+            - /url: /chinatax/c103113/zjg.html
+        - listitem [ref=e477]:
+          - link "合规经营 诚信纳税" [ref=e478] [cursor=pointer]:
+            - /url: /chinatax/c103042/hgjy.html
+        - listitem [ref=e482]:
+          - link "50个城市有奖发票兑奖流程" [ref=e483] [cursor=pointer]:
+            - /url: /chinatax/c103120/yjfp.html
+      - generic [ref=e487]:
+        - generic [ref=e489]:
+          - list [ref=e491]:
+            - listitem [ref=e492]:
+              - link "互动交流" [ref=e493] [cursor=pointer]:
+                - /url: /chinatax/n810356/index.html
+          - generic [ref=e494]:
+            - generic [ref=e496]:
+              - generic [ref=e497]:
+                - generic [ref=e498]:
+                  - list [ref=e499]:
+                    - listitem [ref=e500]:
+                      - link "意见征集" [ref=e501] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n810961/yjzj_zjjg_list.html
+                  - link "" [ref=e503] [cursor=pointer]:
+                    - /url: /chinatax/n810356/n810961/yjzj_zjjg_list.html
+                - generic [ref=e506]:
+                  - list [ref=e507]:
+                    - listitem [ref=e508]:
+                      - link "《国家税务总局关于土地增值税若干征管口径的公告（征求意见稿）》公开征求意见" [ref=e509] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n810961/c5244688/content.html
+                    - listitem [ref=e510]:
+                      - link "国家税务总局关于《税务人员税收业务违法行为处分规定（征求意见稿）》公开征求意见的通知" [ref=e511] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n810961/c5243363/content.html
+                    - listitem [ref=e512]:
+                      - link "国家税务总局关于《欠税公告办法（征求意见稿）》公开征求意见的通知" [ref=e513] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n810961/c5243174/content.html
+                  - text: 
+              - text:  
+            - generic [ref=e514]:
+              - generic [ref=e515]:
+                - generic [ref=e516]:
+                  - list [ref=e517]:
+                    - listitem [ref=e518]:
+                      - link "留言公开" [ref=e519] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n3255681/common_listwyc.html
+                  - link "" [ref=e521] [cursor=pointer]:
+                    - /url: /chinatax/n810356/n3255681/common_listwyc.html
+                - generic [ref=e524]:
+                  - list [ref=e525]:
+                    - listitem [ref=e526]:
+                      - link "我们是按季申报的小规模纳税人，今年第一季度跨地区提供建筑服务，不含税销售额30万元，需要在项目地预缴增..." [ref=e527] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n3255681/c5250677/content.html
+                    - listitem [ref=e528]:
+                      - link "我们是机械制造公司，是增值税一般纳税人，在销售机器设备的同时还提供安装服务，但是销售设备和提供安装服..." [ref=e529] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n3255681/c5250202/content.html
+                    - listitem [ref=e530]:
+                      - link "我们是一家生产制造公司，为了扩大生产，2025年12月购买了一套价值400万元的生产设备并于当月投入使用，这些..." [ref=e531] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n3255681/c5249544/content.html
+                    - listitem [ref=e532]:
+                      - link "小规模纳税人提供旅游服务，计算增值税应纳税额时，可以按规定从含税销售额中扣除支付给其他单位的住宿费、..." [ref=e533] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n3255681/c5249007/content.html
+                    - listitem [ref=e534]:
+                      - link "我们是一家制造公司，2025年11月签订合同时采购方就提前一次性预付了全额货款。2026年2月我们按约定发货交付..." [ref=e535] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n3255681/c5248548/content.html
+                    - listitem [ref=e536]:
+                      - link "我公司收到了一张进项发票但无法抵扣，经查询发现该发票已被红冲，可开票方红冲时并未告知我公司，如何防范..." [ref=e537] [cursor=pointer]:
+                        - /url: /chinatax/n810356/n3255681/c5247967/content.html
+                  - text: 
+              - text:  
+          - list [ref=e540]:
+            - listitem [ref=e541]:
+              - link [ref=e542] [cursor=pointer]:
+                - /url: https://fgk.chinatax.gov.cn/jzxx2023/jzxx2023.html
+                - paragraph [ref=e543]
+            - listitem [ref=e544]:
+              - link [ref=e545] [cursor=pointer]:
+                - /url: https://fgk.chinatax.gov.cn/jzxx2023/jzxx2023.html
+                - paragraph [ref=e546]
+            - listitem [ref=e547]:
+              - link [ref=e548] [cursor=pointer]:
+                - /url: https://fgk.chinatax.gov.cn/jzxx2023/jzxx2023.html
+                - paragraph [ref=e549]
+            - listitem [ref=e550]:
+              - link [ref=e551] [cursor=pointer]:
+                - /url: /chinatax/c103063/fpcx.html
+                - paragraph [ref=e552]
+        - generic [ref=e554]:
+          - link "新媒体" [ref=e556] [cursor=pointer]:
+            - /url: /chinatax/n810219/n101397//index.html
+          - generic [ref=e558]:
+            - definition [ref=e559]:
+              - link "@中国税务有回应丨小规模纳税人季度中间销售额超过500万元，一般纳税人生效时间为何时？" [ref=e560] [cursor=pointer]:
+                - /url: http://fgk.chinatax.gov.cn/zcfgk/c103097/c5250953/content.html
+            - term [ref=e563]:
+              - link "@中国税务有回应丨小规模纳税人季度中间销售额超过500万元，一般纳税人生效时间为何时？" [ref=e564] [cursor=pointer]:
+                - /url: http://fgk.chinatax.gov.cn/zcfgk/c103097/c5250953/content.html
+          - generic [ref=e565]:
+            - term [ref=e566]:
+              - link "创意视频｜靠拆分收入能省税？风险跟着都来了！" [ref=e567] [cursor=pointer]:
+                - /url: http://fgk.chinatax.gov.cn/zcfgk/c102439/c5250951/content.html
+            - definition [ref=e570]:
+              - list [ref=e571]:
+                - listitem [ref=e572]:
+                  - link "创意视频｜靠拆分收入能省税？风险跟着都来了！" [ref=e573] [cursor=pointer]:
+                    - /url: http://fgk.chinatax.gov.cn/zcfgk/c102439/c5250951/content.html
+                - listitem [ref=e574]:
+                  - link "漫解税收丨小规模纳税人发生应税交易，注意这3个风险点" [ref=e575] [cursor=pointer]:
+                    - /url: https://mp.weixin.qq.com/s/9HZEf1Wu24KDbGes0Ko95Q
+                - listitem [ref=e577]:
+                  - link "韩眼镜侃税：月入千万零申报？隐匿收入逃不掉！" [ref=e578] [cursor=pointer]:
+                    - /url: http://fgk.chinatax.gov.cn/zcfgk/c102439/c5250896/content.html
+  - generic [ref=e580]:
+    - generic [ref=e581]:
+      - term [ref=e583]:
+        - link "政策法规" [ref=e584] [cursor=pointer]:
+          - /url: https://fgk.chinatax.gov.cn
+      - term [ref=e586]:
+        - link "手机版" [ref=e587] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - term [ref=e589]:
+        - link "微信" [ref=e590] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - term [ref=e592]:
+        - link "新浪微博" [ref=e593] [cursor=pointer]:
+          - /url: /chinatax/n810356/n810951/n1056633/index.html
+      - term [ref=e595]:
+        - link [ref=e596] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - generic [ref=e597]: 个税app
+      - term [ref=e599]:
+        - link "智能咨询" [ref=e600] [cursor=pointer]:
+          - /url: https://12366.chinatax.gov.cn/xiaohui/?guide=1.2
+      - term [ref=e602]:
+        - link "点击打开无障碍浏览" [ref=e603] [cursor=pointer]:
+          - /url: javascript:void(0);
+    - term [ref=e605]:
+      - link [ref=e606] [cursor=pointer]:
+        - /url: javascript:void(0);
+  - generic [ref=e608]:
+    - link "中国政府网" [ref=e610] [cursor=pointer]:
+      - /url: https://www.gov.cn/
+    - generic [ref=e614]:
+      - term [ref=e616] [cursor=pointer]:
+        - text: 国家税务总局各省级税务局
+        - generic [ref=e617]: 
+      - term [ref=e619] [cursor=pointer]:
+        - text: 直属单位
+        - generic [ref=e620]: 
+      - term [ref=e622] [cursor=pointer]:
+        - text: 税务相关
+        - generic [ref=e623]: 
+      - term [ref=e625] [cursor=pointer]:
+        - text: 友情链接
+        - generic [ref=e626]: 
+  - generic [ref=e627]:
+    - generic [ref=e630]:
+      - list [ref=e631]:
+        - listitem [ref=e632]:
+          - link "访问统计" [ref=e633] [cursor=pointer]:
+            - /url: /chinatax/n1670141/index.html
+          - text: "|"
+        - listitem [ref=e634]:
+          - link "网站管理" [ref=e635] [cursor=pointer]:
+            - /url: /chinatax/n1262558///index.html
+          - text: "|"
+        - listitem [ref=e636]:
+          - link "联系我们" [ref=e637] [cursor=pointer]:
+            - /url: /chinatax/c101263/c61304/content.html
+          - text: "|"
+        - listitem [ref=e638]:
+          - link "网站地图" [ref=e639] [cursor=pointer]:
+            - /url: /chinatax/n1636341/index.html
+      - generic [ref=e640]:
+        - generic [ref=e641]: 主办单位：国家税务总局
+        - generic [ref=e642]: 版权所有：国家税务总局
+        - generic [ref=e643]: 地址：北京市海淀区羊坊店西路5号
+      - link [ref=e646] [cursor=pointer]:
+        - /url: http://bszs.conac.cn/sitename?method=show&id=0895F7C120836C12E053012819AC7E96
+    - definition [ref=e651]:
+      - generic [ref=e652]: 网站标识码：bm29000002
+      - link "京ICP备13021685号-2" [ref=e654] [cursor=pointer]:
+        - /url: https://beian.miit.gov.cn
+      - link "京公网安备 11040102700073号" [ref=e656] [cursor=pointer]:
+        - /url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700073
