@@ -1,0 +1,291 @@
+/* ─── Chapter 04: Recommend ─── */
+/* prefix: .rc- */
+
+/* ═══ Step 0 — Title ═══ */
+
+.rc-title-page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rc-title {
+  font-family: var(--font-display-cn);
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: rc-rise 700ms var(--ease-quart) 100ms forwards;
+}
+
+.rc-subtitle {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin: 0;
+  opacity: 0;
+  animation: rc-rise 600ms var(--ease-quart) 400ms forwards;
+}
+
+@keyframes rc-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══ Step 1-3 — Scenario pages ═══ */
+
+.rc-scene-page {
+  position: absolute;
+  inset: 0;
+  padding: 52px 80px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rc-scene-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+
+.rc-scene-title {
+  font-family: var(--font-display-cn);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: rc-rise 600ms var(--ease-quart) 100ms forwards;
+}
+
+.rc-scene-tag {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  opacity: 0;
+  animation: rc-rise 500ms var(--ease-quart) 300ms forwards;
+}
+
+.rc-scene-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Recommendation card */
+
+.rc-card {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--rc-color, var(--accent));
+  background: var(--surface-2);
+  opacity: 0;
+  transform: translateX(-16px);
+  animation: rc-slide 600ms var(--ease-quart) forwards;
+  overflow: hidden;
+}
+
+@keyframes rc-slide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.rc-card-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28px;
+  min-width: 100px;
+  background: color-mix(in srgb, var(--rc-color, var(--accent)) 8%, transparent);
+}
+
+.rc-card-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.rc-card-body {
+  flex: 1;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.rc-card-name {
+  font-family: var(--font-display-cn);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.rc-card-reason {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.rc-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 16px 24px;
+  gap: 6px;
+  min-width: 200px;
+}
+
+.rc-card-metric {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--text-mute);
+  white-space: nowrap;
+}
+
+.rc-card-metric b {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 17px;
+}
+
+/* ═══ Step 4 — 厂商专长速查 ═══ */
+
+.rc-grid-page {
+  position: absolute;
+  inset: 0;
+  padding: 44px 56px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rc-grid-title {
+  font-family: var(--font-display-cn);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 14px;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: rc-rise 600ms var(--ease-quart) 100ms forwards;
+}
+
+.rc-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.rc-vendor-card {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 20px;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--rc-color, var(--accent));
+  background: var(--surface-2);
+  opacity: 0;
+  transform: scale(0.94);
+  animation: rc-pop 600ms var(--ease-quart) forwards;
+  overflow: hidden;
+}
+
+@keyframes rc-pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rc-vendor-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.rc-vendor-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.rc-vendor-name {
+  font-family: var(--font-display-cn);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.rc-vendor-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rc-strength {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.rc-strength-icon {
+  font-size: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.rc-strength-text {
+  font-family: var(--font-body);
+  font-size: 22px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+.rc-weakness {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.rc-weakness-icon {
+  font-size: 18px;
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.rc-weakness-text {
+  font-family: var(--font-body);
+  font-size: 19px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}

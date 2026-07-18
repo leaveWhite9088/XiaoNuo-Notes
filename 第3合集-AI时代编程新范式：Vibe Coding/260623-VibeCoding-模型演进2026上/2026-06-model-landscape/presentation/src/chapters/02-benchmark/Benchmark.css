@@ -1,0 +1,659 @@
+/* ── Chapter 02: Benchmark · prefix .bm- ── */
+
+/* ── Step 0: Ranking table ── */
+.bm-ranking {
+  position: absolute;
+  inset: 0;
+  padding: 64px 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bm-ranking-title {
+  font-family: var(--font-display-cn);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.bm-ranking-subtitle {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin: 0 0 24px 0;
+}
+
+.bm-ranking-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.bm-ranking-row {
+  display: grid;
+  grid-template-columns: 36px 44px 240px 1fr 90px;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 0;
+  border-top: var(--rule-w) var(--rule-style) var(--rule);
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 500ms var(--ease-quart), transform 500ms var(--ease-quart);
+}
+
+.bm-ranking-row.bm-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.bm-ranking-ord {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 30px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+.bm-ranking-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.bm-ranking-name {
+  font-family: var(--font-display-cn);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bm-ranking-bar-wrap {
+  position: relative;
+  height: 30px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+
+.bm-ranking-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--vendor-color, var(--accent));
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 900ms var(--ease-expo);
+}
+
+.bm-ranking-row.bm-visible .bm-ranking-bar {
+  transform: scaleX(1);
+}
+
+.bm-ranking-score {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* domestic highlight */
+.bm-ranking-row.bm-domestic .bm-ranking-name {
+  color: var(--vendor-color, var(--accent));
+}
+
+/* Fable 5 banned row */
+.bm-ranking-row--banned {
+  border-top: 2px dashed var(--vendor-color, var(--accent));
+  margin-top: 4px;
+}
+
+.bm-ranking-row--banned .bm-ranking-name {
+  color: var(--text-mute);
+  text-decoration: line-through;
+}
+
+.bm-ranking-banned-tag {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-4deg);
+  font-family: var(--font-display-en);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vendor-color, var(--accent));
+  white-space: nowrap;
+}
+
+.bm-ranking-score--na {
+  font-size: 16px;
+  color: var(--text-mute);
+}
+
+
+/* ── Vendor page shared layout ── */
+.bm-vendor {
+  position: absolute;
+  inset: 0;
+  padding: 56px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bm-vendor-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 6px;
+}
+
+.bm-vendor-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.bm-vendor-name {
+  font-family: var(--font-display-en);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.bm-vendor-name-cn {
+  font-family: var(--font-display-cn);
+}
+
+.bm-vendor-rule {
+  height: 0;
+  border: 0;
+  border-top: 2px solid var(--vendor-color, var(--accent));
+  width: 120px;
+  margin: 10px 0 8px 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-cinematic) var(--ease-expo);
+}
+
+.bm-vendor-rule.bm-visible {
+  transform: scaleX(1);
+}
+
+.bm-vendor-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+}
+
+
+/* ── Benchmark chart area (left) ── */
+.bm-chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.bm-chart-section-title {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin: 0 0 16px 0;
+}
+
+.bm-chart-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 80px;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 0;
+  border-top: var(--rule-w) var(--rule-style) var(--rule);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 450ms var(--ease-quart), transform 450ms var(--ease-quart);
+}
+
+.bm-chart-row.bm-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bm-chart-model {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.bm-chart-bar-track {
+  height: 24px;
+  background: var(--surface-3);
+  position: relative;
+  overflow: hidden;
+}
+
+.bm-chart-bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--vendor-color, var(--accent));
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 800ms var(--ease-expo);
+}
+
+.bm-chart-row.bm-visible .bm-chart-bar-fill {
+  transform: scaleX(1);
+}
+
+/* muted bar for comparison / other vendor */
+.bm-chart-bar-fill.bm-muted {
+  background: var(--text-mute);
+  opacity: 0.3;
+}
+
+/* self-report warning */
+.bm-chart-bar-fill.bm-self-report {
+  background: var(--vendor-color, var(--accent));
+  opacity: 0.5;
+}
+
+.bm-chart-val {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--text-2);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.bm-self-report-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vendor-color, var(--accent));
+  border: 1px solid var(--vendor-color, var(--accent));
+  padding: 2px 6px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* reference lines (dashed) */
+.bm-ref-line {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-left: 1px dashed var(--text-faint);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 600ms var(--ease-quart);
+}
+
+.bm-ref-line.bm-visible {
+  opacity: 0.6;
+}
+
+.bm-ref-label {
+  position: absolute;
+  top: -18px;
+  left: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+
+/* ── Community quotes (right) ── */
+.bm-quotes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bm-quote {
+  border-left: 3px solid var(--vendor-color, var(--accent));
+  padding: 10px 0 10px 20px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 600ms var(--ease-quart), transform 600ms var(--ease-quart);
+}
+
+.bm-quote.bm-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.bm-quote-text {
+  font-family: var(--font-display-cn);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.45;
+  margin: 0 0 6px 0;
+}
+
+.bm-quote-text em {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  color: var(--vendor-color, var(--accent));
+}
+
+.bm-quote-source {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+/* key data callout */
+.bm-callout {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 16px 22px;
+  background: color-mix(in srgb, var(--vendor-color, var(--accent)) 8%, var(--surface));
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 500ms var(--ease-quart), transform 500ms var(--ease-quart);
+}
+
+.bm-callout.bm-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bm-callout-num {
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+  font-size: 46px;
+  color: var(--vendor-color, var(--accent));
+  line-height: 1;
+}
+
+.bm-callout-label {
+  font-family: var(--font-body);
+  font-size: 19px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+
+/* ── Step 7: Multi-vendor grid ── */
+.bm-multi {
+  position: absolute;
+  inset: 0;
+  padding: 64px 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bm-multi-title {
+  font-family: var(--font-display-cn);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 24px 0;
+}
+
+.bm-multi-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.bm-multi-card {
+  background: var(--surface-2);
+  border: var(--rule-w) var(--rule-style) var(--rule);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms var(--ease-quart), transform 600ms var(--ease-quart);
+}
+
+.bm-multi-card.bm-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bm-multi-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.bm-multi-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.bm-multi-vendor-name {
+  font-family: var(--font-display-en);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.bm-multi-vendor-name-cn {
+  font-family: var(--font-display-cn);
+}
+
+.bm-multi-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.bm-multi-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-top: var(--rule-w) var(--rule-style) var(--rule);
+}
+
+.bm-multi-stat-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.bm-multi-stat-val {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.bm-multi-stat-val.bm-warn {
+  color: var(--vendor-color, var(--accent));
+}
+
+.bm-multi-quote {
+  border-left: 2px solid var(--vendor-color, var(--accent));
+  padding: 8px 0 8px 14px;
+  margin-top: auto;
+}
+
+.bm-multi-quote-text {
+  font-family: var(--font-display-cn);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-2);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.bm-multi-quote-text em {
+  font-family: var(--font-display-en);
+  font-style: italic;
+}
+
+.bm-multi-quote-source {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-top: 4px;
+}
+
+
+/* ── Chart label group (for benchmark name columns) ── */
+.bm-chart-header {
+  display: grid;
+  grid-template-columns: 160px 1fr 80px;
+  gap: 14px;
+  padding: 0 0 6px 0;
+  margin-bottom: 4px;
+}
+
+.bm-chart-header-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.bm-chart-header-label:last-child {
+  text-align: right;
+}
+
+/* ── Hallucination visual ── */
+.bm-halluc-meter {
+  position: relative;
+  height: 14px;
+  background: var(--surface-3);
+  margin: 4px 0;
+  overflow: hidden;
+}
+
+.bm-halluc-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 900ms var(--ease-expo);
+}
+
+.bm-halluc-fill.bm-visible {
+  transform: scaleX(1);
+}
+
+/* ── Benchmark group title within chart ── */
+.bm-bench-group {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  padding: 14px 0 4px 0;
+  margin-top: 6px;
+}
+
+.bm-bench-group:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
+/* ── Vendor trait pills ── */
+.bm-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 4px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 500ms var(--ease-quart), transform 500ms var(--ease-quart);
+}
+
+.bm-traits.bm-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bm-trait {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  padding: 6px 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 400ms var(--ease-quart), transform 400ms var(--ease-quart);
+}
+
+.bm-traits.bm-visible .bm-trait {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bm-trait-icon {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.bm-trait--pro {
+  background: color-mix(in srgb, var(--vendor-color, var(--accent)) 10%, var(--surface));
+  color: var(--vendor-color, var(--accent));
+  border: 1px solid color-mix(in srgb, var(--vendor-color, var(--accent)) 25%, transparent);
+}
+
+.bm-trait--con {
+  background: var(--surface-2);
+  color: var(--text-mute);
+  border: 1px solid var(--rule);
+}
+
+/* smaller variant for multi-card */
+.bm-trait--sm {
+  font-size: 12px;
+  padding: 3px 8px;
+}
+
+.bm-multi-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}

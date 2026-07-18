@@ -1,0 +1,437 @@
+/* ─── Chapter 03: Pricing ─── */
+/* prefix: .pr- */
+
+/* ═══ Shared ═══ */
+
+.pr-chapter-title {
+  font-family: var(--font-display-cn);
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: pr-rise 700ms var(--ease-quart) 100ms forwards;
+}
+
+.pr-chapter-sub {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin: 0 0 28px;
+  opacity: 0;
+  animation: pr-rise 600ms var(--ease-quart) 300ms forwards;
+}
+
+.pr-section-title {
+  font-family: var(--font-display-cn);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: pr-rise 700ms var(--ease-quart) 100ms forwards;
+}
+
+@keyframes pr-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══ Step 0/1 — API 定价（每步一张全页表） ═══ */
+
+.pr-api-page {
+  position: absolute;
+  inset: 0;
+  padding: 56px 80px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pr-api-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pr-api-label {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-left: 4px;
+  opacity: 0;
+  animation: pr-rise 500ms var(--ease-quart) 200ms forwards;
+}
+
+.pr-api-table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pr-api-head {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--text);
+}
+
+.pr-api-hcell {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  font-weight: 600;
+  text-align: right;
+}
+
+.pr-api-hcell--model {
+  flex: 2.5;
+  text-align: left;
+}
+
+/* Rows */
+
+.pr-api-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rule);
+  border-left: 3px solid var(--row-color, transparent);
+  opacity: 0;
+  transform: translateY(8px);
+  animation: pr-row-in 500ms var(--ease-quart) forwards;
+}
+
+.pr-api-row--even {
+  background: var(--surface-2);
+}
+
+@keyframes pr-row-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pr-api-cell {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--text-2);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pr-api-cell--model {
+  flex: 2.5;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 22px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.pr-api-cell--output {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pr-api-cell--cache {
+  color: var(--text-faint);
+  font-size: 17px;
+}
+
+.pr-api-cell--ctx {
+  color: var(--text-faint);
+  font-size: 17px;
+}
+
+.pr-api-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ═══ Step 2 — 订阅卡片网格 ═══ */
+
+.pr-sub-page {
+  position: absolute;
+  inset: 0;
+  padding: 44px 56px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pr-sub-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+  overflow: hidden;
+}
+
+.pr-sub-card {
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--sub-color, var(--accent));
+  background: var(--surface-2);
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: pr-row-in 500ms var(--ease-quart) forwards;
+}
+
+.pr-sub-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.pr-sub-card-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.pr-sub-card-vendor {
+  font-family: var(--font-display-cn);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pr-sub-card-plans {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pr-sub-plan-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.pr-sub-plan-name {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  color: var(--text-mute);
+  min-width: 90px;
+}
+
+.pr-sub-plan-price {
+  font-family: var(--font-mono);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 80px;
+}
+
+.pr-sub-plan--free .pr-sub-plan-price {
+  color: var(--accent);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pr-sub-plan-quota {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--text-2);
+}
+
+.pr-sub-plan-note {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+/* ═══ Step 3 — 厂商速评 + 词云 ═══ */
+
+.pr-vendor-page {
+  position: absolute;
+  inset: 0;
+  padding: 52px 80px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pr-vendor-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.pr-vendor-card {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px 10px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--vendor-color, var(--accent));
+  background: var(--surface-2);
+  opacity: 0;
+  transform: scale(0.94);
+  animation: pr-card-pop 600ms var(--ease-quart) forwards;
+  overflow: hidden;
+}
+
+@keyframes pr-card-pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pr-vendor-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.pr-vendor-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.pr-vendor-name {
+  font-family: var(--font-display-cn);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Word cloud */
+
+.pr-wc {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 6px 10px;
+  padding: 4px 0;
+}
+
+.pr-wc-word {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: pr-wc-in 400ms var(--ease-quart) forwards;
+}
+
+@keyframes pr-wc-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ═══ Step 4 — 趋势 ═══ */
+
+.pr-trend-page {
+  position: absolute;
+  inset: 0;
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pr-trend-rule {
+  width: 80px;
+  margin: 0 0 48px;
+  opacity: 0;
+  animation: pr-rise 600ms var(--ease-quart) 200ms forwards;
+}
+
+.pr-trend-grid {
+  flex: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.pr-trend-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 28px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: pr-trend-in 800ms var(--ease-quart) forwards;
+}
+
+@keyframes pr-trend-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pr-trend-num {
+  font-family: var(--font-display-en);
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.pr-trend-label {
+  font-family: var(--font-display-cn);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.pr-trend-desc {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-mute);
+  max-width: 380px;
+}
