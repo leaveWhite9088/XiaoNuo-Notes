@@ -1,0 +1,402 @@
+{% extends "base.html" %}
+
+{% block title %}{{ video_info.title }} - Bilibili平台{% endblock %}
+
+{% block extra_css %}
+<style>
+    .video-player-container {
+        background-color: black;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    
+    .video-player {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .danmaku-container {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        max-height: 300px;
+        overflow-y: auto;
+        font-family: 'Courier New', monospace;
+    }
+    
+    .danmaku-item {
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 14px;
+    }
+    
+    .danmaku-time {
+        color: #FFB6C1;
+        margin-right: 10px;
+    }
+    
+    .comment-item {
+        padding: 15px 0;
+        border-bottom: 1px solid #E5E9EF;
+    }
+    
+    .comment-item:last-child {
+        border-bottom: none;
+    }
+    
+    .comment-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    
+    .comment-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .comment-author {
+        font-weight: 600;
+        color: #212121;
+    }
+    
+    .comment-time {
+        font-size: 12px;
+        color: #666;
+        margin-left: auto;
+    }
+    
+    .comment-content {
+        color: #212121;
+        line-height: 1.5;
+    }
+    
+    .video-detail-header {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .video-detail-info {
+        flex: 1;
+    }
+    
+    .video-detail-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #212121;
+    }
+    
+    .video-detail-meta {
+        display: flex;
+        gap: 20px;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+    
+    .video-detail-stats {
+        display: flex;
+        gap: 20px;
+        font-size: 14px;
+        color: #666;
+    }
+    
+    .video-detail-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .favorite-btn {
+        background-color: #FB7299;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .favorite-btn:hover {
+        background-color: #FF85A5;
+    }
+    
+    .favorite-btn.active {
+        background-color: #FFB6C1;
+    }
+    
+    .comment-input-container {
+        margin-top: 20px;
+    }
+    
+    .comment-input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #E5E9EF;
+        border-radius: 8px;
+        resize: vertical;
+        min-height: 80px;
+        font-family: inherit;
+    }
+    
+    .comment-submit {
+        margin-top: 10px;
+    }
+    
+    .danmaku-input-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .danmaku-input {
+        flex: 1;
+        padding: 8px 12px;
+        border: 1px solid #E5E9EF;
+        border-radius: 8px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="video-detail-page">
+    <div class="card">
+        <div class="video-detail-header">
+            <div class="video-detail-info">
+                <h1 class="video-detail-title">{{ video_info.title }}</h1>
+                <div class="video-detail-meta">
+                    <span>UP主: {{ video_info.owner.name }}</span>
+                    <span>发布时间: {{ video_info.pubdate|datetime_format }}</span>
+                    <span>时长: {{ video_info.duration|format_duration }}</span>
+                </div>
+                <div class="video-detail-stats">
+                    <span>播放: {{ video_info.stat.view|format_number }}</span>
+                    <span>弹幕: {{ video_info.stat.danmaku|format_number }}</span>
+                    <span>评论: {{ video_info.stat.reply|format_number }}</span>
+                    <span>收藏: {{ video_info.stat.favorite|format_number }}</span>
+                    <span>硬币: {{ video_info.stat.coin|format_number }}</span>
+                    <span>分享: {{ video_info.stat.share|format_number }}</span>
+                </div>
+                <div class="video-detail-actions">
+                    {% if current_user.is_authenticated %}
+                        <button class="favorite-btn {% if is_favorited %}active{% endif %}" 
+                                data-bvid="{{ video_info.bvid }}" 
+                                data-url="{{ url_for('video.favorite_video', bvid=video_info.bvid) }}">
+                            {% if is_favorited %}已收藏{% else %}收藏{% endif %}
+                        </button>
+                    {% endif %}
+                    <a href="{{ video_info.short_link }}" target="_blank" class="btn btn-outline">跳转官网</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-player-container">
+            {% if playurl %}
+                {% if playurl.dash %}
+                    <video class="video-player" controls>
+                        {% for video in playurl.dash.video %}
+                            <source src="{{ video.baseUrl }}" type="video/mp4">
+                        {% endfor %}
+                    </video>
+                {% elif playurl.url %}
+                    <video class="video-player" controls src="{{ playurl.url }}"></video>
+                {% else %}
+                    <div class="text-center p-4">
+                        <p>无法获取播放地址，请尝试其他视频</p>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="text-center p-4">
+                    <p>视频加载中...</p>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="card mt-4">
+            <h3 class="card-title">视频简介</h3>
+            <div class="mt-2">
+                <p>{{ video_info.desc }}</p>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <h3 class="card-title">弹幕</h3>
+            <div class="mt-3">
+                {% if danmakus %}
+                    <div class="danmaku-container">
+                        {% for danmaku in danmakus %}
+                            <div class="danmaku-item">
+                                <span class="danmaku-time">{{ danmaku.time|format_time }}</span>
+                                <span>{{ danmaku.text }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-muted">暂无弹幕</p>
+                {% endif %}
+                
+                {% if current_user.is_authenticated %}
+                    <div class="danmaku-input-container mt-3">
+                        <input type="text" name="message" placeholder="发送弹幕..." class="danmaku-input">
+                        <button class="btn btn-primary danmaku-submit" 
+                                data-url="{{ url_for('danmaku.send_danmaku', bvid=video_info.bvid, cid=video_info.cid) }}">
+                            发送
+                        </button>
+                    </div>
+                {% else %}
+                    <p class="text-muted mt-2">请先登录以发送弹幕</p>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <h3 class="card-title">评论</h3>
+            <div class="mt-3">
+                {% if comments %}
+                    {% for comment in comments %}
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <img src="{{ comment.member.avatar }}" alt="{{ comment.member.name }}" class="comment-avatar">
+                                <span class="comment-author">{{ comment.member.name }}</span>
+                                <span class="comment-time">{{ comment.ctime|datetime_format }}</span>
+                            </div>
+                            <div class="comment-content">
+                                {{ comment.content.message }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted">暂无评论</p>
+                {% endif %}
+                
+                {% if current_user.is_authenticated %}
+                    <div class="comment-input-container mt-3">
+                        <form action="{{ url_for('comment.send_comment', bvid=video_info.bvid) }}" method="post" class="comment-form">
+                            <textarea name="message" placeholder="发表评论..." class="comment-input"></textarea>
+                            <button type="submit" class="btn btn-primary comment-submit">发送评论</button>
+                        </form>
+                    </div>
+                {% else %}
+                    <p class="text-muted mt-2">请先登录以发表评论</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const favoriteBtn = document.querySelector('.favorite-btn');
+    if (favoriteBtn) {
+        favoriteBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const bvid = this.dataset.bvid;
+            const url = this.dataset.url;
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCsrfToken()
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.action === 'favorite') {
+                        this.classList.add('active');
+                        this.textContent = '已收藏';
+                    } else {
+                        this.classList.remove('active');
+                        this.textContent = '收藏';
+                    }
+                    showNotification(data.message, 'success');
+                } else {
+                    showNotification(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('收藏失败:', error);
+                showNotification('收藏失败，请重试', 'error');
+            });
+        });
+    }
+    
+    const danmakuSubmit = document.querySelector('.danmaku-submit');
+    if (danmakuSubmit) {
+        danmakuSubmit.addEventListener('click', function(e) {
+            e.preventDefault();
+            const input = document.querySelector('.danmaku-input');
+            const message = input.value.trim();
+            const url = this.dataset.url;
+            
+            if (!message) {
+                showNotification('弹幕内容不能为空', 'error');
+                return;
+            }
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCsrfToken()
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification(data.message, 'success');
+                    input.value = '';
+                    location.reload();
+                } else {
+                    showNotification(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('发送弹幕失败:', error);
+                showNotification('发送弹幕失败，请重试', 'error');
+            });
+        });
+    }
+    
+    function getCsrfToken() {
+        const meta = document.querySelector('meta[name="csrf-token"]');
+        return meta ? meta.content : '';
+    }
+    
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 9999;
+            animation: slideIn 0.3s ease-out;
+            background-color: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'fadeOut 0.3s ease-in';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+});
+</script>
+{% endblock %}

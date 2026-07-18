@@ -1,0 +1,67 @@
+GLM-5/
+├── backend/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── auth.py
+│   │   ├── comment.py
+│   │   ├── danmaku.py
+│   │   ├── user.py
+│   │   └── video.py
+│   ├── core/
+│   │   └── config.py
+│   ├── data/
+│   │   └── cookies/
+│   │       └── bilibili_cookie.json
+│   ├── models/
+│   │   └── schemas.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── auth_service.py
+│   │   ├── comment_service.py
+│   │   ├── danmaku_service.py
+│   │   ├── user_service.py
+│   │   └── video_service.py
+│   ├── utils/
+│   ├── main.py
+│   └── requirements.txt
+├── frontend/
+│   ├── public/
+│   │   └── bilibili.svg
+│   ├── src/
+│   │   ├── api/
+│   │   │   └── index.ts
+│   │   ├── assets/
+│   │   │   └── main.css
+│   │   ├── components/
+│   │   │   ├── AppHeader.vue
+│   │   │   ├── AppSidebar.vue
+│   │   │   └── VideoCard.vue
+│   │   ├── router/
+│   │   │   └── index.ts
+│   │   ├── stores/
+│   │   │   ├── index.ts
+│   │   │   ├── user.ts
+│   │   │   └── video.ts
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   ├── views/
+│   │   │   ├── Favorites.vue
+│   │   │   ├── History.vue
+│   │   │   ├── Home.vue
+│   │   │   ├── Login.vue
+│   │   │   ├── Search.vue
+│   │   │   └── Video.vue
+│   │   ├── App.vue
+│   │   ├── main.ts
+│   │   └── vite-env.d.ts
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   └── vite.config.ts
+├── .gitignore
+├── README.md
+├── start_all.sh
+├── start_backend.sh
+└── start_frontend.sh

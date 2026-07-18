@@ -1,0 +1,23 @@
+bilibili-platform/
+├── backend/
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── Login.js
+│   │   │   ├── UserCenter.js
+│   │   │   └── VideoDetail.js
+│   │   ├── utils/
+│   │   │   └── request.js
+│   │   ├── App.js
+│   │   ├── index.css
+│   │   └── index.js
+│   ├── package-lock.json
+│   └── package.json
+└── README.md

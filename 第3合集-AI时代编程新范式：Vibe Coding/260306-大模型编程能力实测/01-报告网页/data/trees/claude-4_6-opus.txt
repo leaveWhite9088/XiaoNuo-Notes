@@ -1,0 +1,12 @@
+bilibili-platform/
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── img/
+│   └── js/
+│       └── app.js
+├── templates/
+│   └── index.html
+├── app.py
+├── README.md
+└── requirements.txt

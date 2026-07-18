@@ -1,0 +1,23 @@
+DeepSeek-V3.2/
+├── app/
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   ├── auth.py
+│   │   ├── comment.py
+│   │   ├── user.py
+│   │   └── video.py
+│   └── config.py
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── images/
+│   │   └── default-avatar.png
+│   └── js/
+│       └── app.js
+├── templates/
+│   └── index.html
+├── main.py
+├── README.md
+├── requirements.txt
+├── start.sh
+└── test_app.py

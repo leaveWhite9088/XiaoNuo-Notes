@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bili-pink: #FB7299;
+  --bili-blue: #00AEEC;
+  --bili-bg: #F4F4F4;
+  --bili-text: #18191C;
+  --bili-text-gray: #9499A0;
+  --bili-border: #E3E5E7;
+  --bili-card-bg: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  background-color: var(--bili-bg);
+  color: var(--bili-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--bili-pink);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CCCFD6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A6AD;
+}
+
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-ellipsis-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gradient-bg {
+  background: linear-gradient(90deg, #FB7299 0%, #FF85A7 100%);
+}
+
+.masonry {
+  column-count: 5;
+  column-gap: 20px;
+}
+
+@media (max-width: 1280px) {
+  .masonry {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+}

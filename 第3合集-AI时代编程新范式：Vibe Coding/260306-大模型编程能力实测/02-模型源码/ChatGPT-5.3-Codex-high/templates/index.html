@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bilibili 视频平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="bg-layer"></div>
+    <header class="hero">
+      <div class="hero-title-wrap">
+        <h1 class="hero-title">Bilibili 视频平台</h1>
+        <p class="hero-subtitle">视频播放 / 信息展示 / 评论弹幕 / 登录互动 / 我的收藏</p>
+      </div>
+      <div class="hero-badge">bilibili-api 驱动</div>
+    </header>
+
+    <main class="dashboard">
+      <section class="panel search-panel">
+        <label class="panel-title">视频检索</label>
+        <div class="search-row">
+          <input id="queryInput" type="text" placeholder="输入 BV 号、av 号或 B站链接" />
+          <button id="loadVideoBtn" class="btn primary">加载视频</button>
+        </div>
+        <div class="search-tips">
+          示例：<code>BV11bAUzBEqG</code> 或 <code>https://www.bilibili.com/video/BV11bAUzBEqG</code>
+        </div>
+      </section>
+
+      <section class="panel player-panel">
+        <div class="panel-head">
+          <label class="panel-title">播放器</label>
+          <a id="officialLink" class="btn ghost" href="#" target="_blank" rel="noopener noreferrer">跳转B站官网</a>
+        </div>
+        <div class="player-shell">
+          <iframe id="playerFrame" title="B站播放器" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="panel info-panel">
+        <label class="panel-title">视频信息</label>
+        <div id="videoInfo" class="video-info empty">请先加载一个视频</div>
+      </section>
+
+      <section class="panel hot-panel">
+        <div class="panel-head">
+          <label class="panel-title">热门视频</label>
+          <button id="refreshHotBtn" class="btn ghost">刷新热门</button>
+        </div>
+        <div id="hotList" class="video-grid"></div>
+      </section>
+
+      <section class="panel auth-panel">
+        <label class="panel-title">账号登录</label>
+        <div id="authStatus" class="auth-status">正在检查登录状态...</div>
+        <div class="auth-grid">
+          <input id="sessdataInput" type="text" placeholder="SESSDATA（必填）" />
+          <input id="biliJctInput" type="text" placeholder="bili_jct（可选）" />
+          <input id="buvid3Input" type="text" placeholder="buvid3（可选）" />
+          <input id="buvid4Input" type="text" placeholder="buvid4（可选）" />
+          <input id="dedeUserIdInput" type="text" placeholder="DedeUserID（可选）" />
+          <input id="acTimeInput" type="text" placeholder="ac_time_value（可选）" />
+        </div>
+        <div class="btn-row">
+          <button id="cookieLoginBtn" class="btn primary">凭据登录</button>
+          <button id="startQrBtn" class="btn">二维码登录</button>
+          <button id="logoutBtn" class="btn danger">退出登录</button>
+        </div>
+        <div id="qrArea" class="qr-area hidden">
+          <img id="qrImage" alt="二维码登录" />
+          <p id="qrStatusText">请使用哔哩哔哩 App 扫码</p>
+        </div>
+      </section>
+
+      <section class="panel action-panel">
+        <label class="panel-title">互动操作（需登录）</label>
+        <textarea id="commentInput" placeholder="输入评论内容"></textarea>
+        <button id="sendCommentBtn" class="btn primary full">发送评论</button>
+        <div class="split"></div>
+        <div class="danmaku-row">
+          <input id="danmakuInput" type="text" placeholder="输入弹幕内容" />
+          <input id="dmTimeInput" type="number" min="0" step="0.1" placeholder="时间秒（如 12.5）" />
+        </div>
+        <button id="sendDanmakuBtn" class="btn primary full">发送弹幕</button>
+      </section>
+
+      <section class="panel comments-panel">
+        <div class="panel-head">
+          <label class="panel-title">评论区</label>
+          <button id="refreshCommentsBtn" class="btn ghost">刷新评论</button>
+        </div>
+        <div id="commentList" class="list-wrap"></div>
+      </section>
+
+      <section class="panel danmaku-panel">
+        <div class="panel-head">
+          <label class="panel-title">弹幕列表</label>
+          <button id="refreshDanmakuBtn" class="btn ghost">刷新弹幕</button>
+        </div>
+        <div id="danmakuList" class="list-wrap"></div>
+      </section>
+
+      <section class="panel fav-panel">
+        <div class="panel-head">
+          <label class="panel-title">我的收藏视频</label>
+          <button id="refreshFavBtn" class="btn ghost">刷新收藏</button>
+        </div>
+        <div id="favFolders" class="folder-tabs"></div>
+        <div id="favVideos" class="video-grid compact"></div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+

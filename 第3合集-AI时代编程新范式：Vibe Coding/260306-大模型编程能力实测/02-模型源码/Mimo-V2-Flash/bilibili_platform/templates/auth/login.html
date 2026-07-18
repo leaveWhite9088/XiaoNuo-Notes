@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}登录 - Bilibili平台{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h2 class="auth-title">登录</h2>
+    
+    {% if error %}
+        <div class="error-message">{{ error }}</div>
+    {% endif %}
+    
+    <form method="post" class="auth-form">
+        <div class="form-group">
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary w-full">登录</button>
+        </div>
+    </form>
+    
+    <div class="auth-links">
+        <p>还没有账号？<a href="{{ url_for('auth.register') }}">立即注册</a></p>
+    </div>
+    
+    <div class="bilibili-login-section mt-4">
+        <h3 class="card-title">B站账号登录</h3>
+        <p class="text-muted mt-2">登录B站账号以使用评论、弹幕等功能</p>
+        <div class="btn-group mt-3">
+            <a href="{{ url_for('auth.bilibili_qrcode_login') }}" class="btn btn-secondary">二维码登录</a>
+            <a href="{{ url_for('auth.bilibili_password_login') }}" class="btn btn-outline">账号密码登录</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

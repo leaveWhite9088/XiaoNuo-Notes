@@ -1,0 +1,61 @@
+bilibili_platform/
+├── config/
+│   ├── __init__.py
+│   └── settings.py
+├── instance/
+│   └── bilibili_platform.db
+├── src/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── bilibili_api.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── user.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   └── filters.py
+│   └── views/
+│       ├── __init__.py
+│       ├── auth.py
+│       ├── comment.py
+│       ├── danmaku.py
+│       ├── main.py
+│       ├── user.py
+│       └── video.py
+├── static/
+│   ├── css/
+│   │   ├── bilibili.css
+│   │   └── style.css
+│   ├── images/
+│   └── js/
+│       └── main.js
+├── templates/
+│   ├── auth/
+│   │   ├── bilibili_password.html
+│   │   ├── bilibili_qrcode.html
+│   │   ├── login.html
+│   │   └── register.html
+│   ├── user/
+│   │   ├── favorites.html
+│   │   └── profile.html
+│   ├── video/
+│   │   └── detail.html
+│   ├── 404.html
+│   ├── 500.html
+│   ├── base.html
+│   ├── index.html
+│   └── search.html
+├── app.py
+├── FINAL_SUMMARY.md
+├── PROJECT_CHECKLIST.md
+├── PROJECT_SUMMARY.md
+├── README.md
+├── requirements.txt
+├── run.py
+├── start.py
+├── start_server.py
+├── STARTUP.md
+├── test_api.py
+├── test_api_debug.py
+├── test_api_headers.py
+└── test_structure.py

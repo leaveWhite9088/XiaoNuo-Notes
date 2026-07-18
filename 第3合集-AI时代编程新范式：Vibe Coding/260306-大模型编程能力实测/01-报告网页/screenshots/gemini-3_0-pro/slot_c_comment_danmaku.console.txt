@@ -1,0 +1,40 @@
+Total messages: 33 (Errors: 23, Warnings: 0)
+Returning 27 messages for level "info"
+
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=8b0a906f:20102
+[ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/api/user/me:0
+[ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/api/user/me:0
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=8b0a906f:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=8b0a906f:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=8b0a906f:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=8b0a906f:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=8b0a906f:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=8b0a906f:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=8b0a906f:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=8b0a906f:4924
+[LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5174/@vite/client:864
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=9f703525:20102
+[ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/api/user/me:0
+[ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/api/user/me:0
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=9f703525:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=9f703525:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=9f703525:4924
+[ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=9f703525:4924
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=9f703525:20102
+[ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/api/user/me:0
+[ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/api/user/me:0
+[ERROR] An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=9f703525:14204
+[ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:8000/api/video/BV1aeAozTEGh/comments:0
+[ERROR] AxiosError: Request failed with status code 500
+    at settle (http://127.0.0.1:5174/node_modules/.vite/deps/axios.js?v=9f703525:1319:7)
+    at XMLHttpRequest.onloadend (http://127.0.0.1:5174/node_modules/.vite/deps/axios.js?v=9f703525:1682:7)
+    at Axios.request (http://127.0.0.1:5174/node_modules/.vite/deps/axios.js?v=9f703525:2328:41)
+    at async getVideoComments (http://127.0.0.1:5174/src/api.ts:27:20)
+    at async fetchData (http://127.0.0.1:5174/src/pages/VideoDetail.tsx:30:29) @ http://127.0.0.1:5174/src/pages/VideoDetail.tsx:36
+[ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:8000/api/video/BV1aeAozTEGh/comments:0
+[ERROR] AxiosError: Request failed with status code 500
+    at settle (http://127.0.0.1:5174/node_modules/.vite/deps/axios.js?v=9f703525:1319:7)
+    at XMLHttpRequest.onloadend (http://127.0.0.1:5174/node_modules/.vite/deps/axios.js?v=9f703525:1682:7)
+    at Axios.request (http://127.0.0.1:5174/node_modules/.vite/deps/axios.js?v=9f703525:2328:41)
+    at async getVideoComments (http://127.0.0.1:5174/src/api.ts:27:20)
+    at async fetchData (http://127.0.0.1:5174/src/pages/VideoDetail.tsx:30:29) @ http://127.0.0.1:5174/src/pages/VideoDetail.tsx:36

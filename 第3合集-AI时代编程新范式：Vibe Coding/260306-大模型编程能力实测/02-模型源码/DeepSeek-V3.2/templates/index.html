@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilibili视频平台</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 导航栏 -->
+        <header class="header">
+            <div class="logo">
+                <img src="/static/images/logo.png" alt="Bilibili" width="120">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索视频、UP主..." id="searchInput">
+                <button class="search-btn" onclick="searchVideo()">搜索</button>
+            </div>
+            <div class="user-area">
+                <button class="login-btn" onclick="showLogin()" id="loginBtn">登录</button>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <img src="" alt="头像" class="avatar" id="userAvatar">
+                    <span id="userName"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <!-- 视频播放区 -->
+            <div class="video-section">
+                <div class="video-player" id="videoPlayer">
+                    <div class="video-placeholder">
+                        <p>请输入视频BV号开始播放</p>
+                        <input type="text" id="bvidInput" placeholder="例如: BV1uv411q7Mv">
+                        <button onclick="loadVideo()">播放视频</button>
+                    </div>
+                </div>
+                
+                <!-- 视频信息 -->
+                <div class="video-info" id="videoInfo" style="display: none;">
+                    <h2 id="videoTitle"></h2>
+                    <div class="video-stats">
+                        <span id="videoViews"></span>
+                        <span id="videoLikes"></span>
+                        <span id="videoCoins"></span>
+                        <span id="videoFavorites"></span>
+                    </div>
+                    <div class="video-actions">
+                        <button onclick="likeVideo()" id="likeBtn">点赞</button>
+                        <button onclick="coinVideo()" id="coinBtn">投币</button>
+                        <button onclick="favoriteVideo()" id="favoriteBtn">收藏</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 评论和弹幕区 -->
+            <div class="interaction-section">
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showTab('danmaku')">弹幕</button>
+                    <button class="tab-btn" onclick="showTab('comments')">评论</button>
+                </div>
+                
+                <!-- 弹幕区 -->
+                <div class="tab-content active" id="danmakuTab">
+                    <div class="danmaku-input">
+                        <input type="text" id="danmakuText" placeholder="发送弹幕...">
+                        <button onclick="sendDanmaku()">发送</button>
+                    </div>
+                    <div class="danmaku-list" id="danmakuList"></div>
+                </div>
+                
+                <!-- 评论区 -->
+                <div class="tab-content" id="commentsTab">
+                    <div class="comment-input">
+                        <textarea id="commentText" placeholder="发表评论..."></textarea>
+                        <button onclick="sendComment()">发送</button>
+                    </div>
+                    <div class="comment-list" id="commentList"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 登录模态框 -->
+    <div class="modal" id="loginModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h3>登录Bilibili</h3>
+            <div id="qrCodeContainer"></div>
+            <div id="loginStatus"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

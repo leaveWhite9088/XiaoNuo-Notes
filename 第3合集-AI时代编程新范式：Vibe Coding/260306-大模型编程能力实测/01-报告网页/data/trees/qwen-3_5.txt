@@ -1,0 +1,55 @@
+bilibili-platform/
+├── backend/
+│   ├── src/
+│   │   ├── middleware/
+│   │   ├── routes/
+│   │   │   ├── comment.js
+│   │   │   ├── danmaku.js
+│   │   │   ├── favorite.js
+│   │   │   ├── search.js
+│   │   │   ├── user.js
+│   │   │   └── video.js
+│   │   ├── utils/
+│   │   │   └── bilibili.js
+│   │   └── index.js
+│   ├── .env
+│   ├── .env.example
+│   ├── package-lock.json
+│   └── package.json
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── CommentSection.js
+│   │   │   ├── Header.js
+│   │   │   ├── VideoCard.js
+│   │   │   └── VideoPlayer.js
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   └── useDanmaku.js
+│   │   ├── pages/
+│   │   │   ├── FavoritePage.js
+│   │   │   ├── HomePage.js
+│   │   │   └── VideoPage.js
+│   │   ├── styles/
+│   │   │   └── index.css
+│   │   ├── types/
+│   │   ├── utils/
+│   │   │   └── api.js
+│   │   ├── App.js
+│   │   ├── config-overrides.js
+│   │   └── index.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   └── tailwind.config.js
+├── .gitignore
+├── ARCHITECTURE.md
+├── check-install.sh
+├── package.json
+├── PROJECT_SUMMARY.md
+├── QUICKSTART.md
+├── README.md
+├── start.bat
+└── start.sh

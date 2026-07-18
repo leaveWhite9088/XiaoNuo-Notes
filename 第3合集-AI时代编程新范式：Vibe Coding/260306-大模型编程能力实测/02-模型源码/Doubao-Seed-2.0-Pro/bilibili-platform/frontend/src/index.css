@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+:root {
+  --bilibili-pink: #FB7299;
+  --bilibili-blue: #23ADE5;
+  --bilibili-gray: #F1F2F3;
+  --bilibili-text-gray: #999;
+  --bilibili-border: #e7e7e7;
+}
+
+/* 全局按钮样式 */
+.ant-btn-primary {
+  background-color: var(--bilibili-pink) !important;
+  border-color: var(--bilibili-pink) !important;
+}
+
+.ant-btn-primary:hover {
+  background-color: #ff85ad !important;
+  border-color: #ff85ad !important;
+}
+
+/* 导航栏样式 */
+.nav-bar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 视频卡片样式 */
+.video-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  background: #fff;
+}
+
+.video-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.video-card .cover {
+  position: relative;
+  width: 100%;
+  padding-top: 60%;
+  overflow: hidden;
+}
+
+.video-card .cover img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-card .cover .duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.video-card .info {
+  padding: 10px;
+}
+
+.video-card .info .title {
+  font-size: 14px;
+  line-height: 20px;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.video-card .info .up-name {
+  font-size: 12px;
+  color: var(--bilibili-text-gray);
+  margin-bottom: 4px;
+}
+
+.video-card .info .stats {
+  font-size: 12px;
+  color: var(--bilibili-text-gray);
+  display: flex;
+  gap: 16px;
+}

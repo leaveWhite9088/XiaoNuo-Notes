@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B站视频 - Bilibili Web</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+</head>
+<body>
+    <div id="app">
+        <!-- 顶部导航 -->
+        <header class="bili-header">
+            <div class="header-container">
+                <div class="header-left">
+                    <a href="#" class="logo" @click.prevent="goHome">
+                        <span class="logo-icon">B</span>
+                        <span class="logo-text">bilibili</span>
+                    </a>
+                    <nav class="header-nav">
+                        <a href="#" @click.prevent="goHome" class="nav-item active">首页</a>
+                        <a href="#" class="nav-item" @click.prevent="showHot">热门</a>
+                        <a href="#" class="nav-item" @click.prevent="showRank">排行榜</a>
+                    </nav>
+                </div>
+                <div class="header-center">
+                    <div class="search-box">
+                        <input type="text" v-model="searchKeyword" placeholder="搜索视频、番剧、UP主" @keyup.enter="searchVideos">
+                        <button class="search-btn" @click="searchVideos">
+                            <svg viewBox="0 0 20 20" width="16" height="16">
+                                <path fill="currentColor" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div v-if="!userInfo" class="login-area">
+                        <button class="login-btn" @click="showLoginModal = true">登录</button>
+                    </div>
+                    <div v-else class="user-area">
+                        <div class="user-avatar" @click="showUserPanel = !showUserPanel">
+                            <img :src="userInfo.face || 'https://static.hdslb.com/images/akari.jpg'" alt="头像">
+                        </div>
+                        <div v-if="showUserPanel" class="user-panel">
+                            <div class="user-panel-header">
+                                <img :src="userInfo.face || 'https://static.hdslb.com/images/akari.jpg'" alt="头像">
+                                <div class="user-panel-info">
+                                    <span class="uname">{{ userInfo.uname }}</span>
+                                    <span class="ulevel">LV{{ userInfo.level }}</span>
+                                </div>
+                            </div>
+                            <div class="user-panel-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">{{ userStats.following || 0 }}</span>
+                                    <span class="stat-label">关注</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">{{ userStats.follower || 0 }}</span>
+                                    <span class="stat-label">粉丝</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">{{ userStats.like || 0 }}</span>
+                                    <span class="stat-label">获赞</span>
+                                </div>
+                            </div>
+                            <div class="user-panel-actions">
+                                <a href="#" @click.prevent="showFavorites">我的收藏</a>
+                                <a href="#" @click.prevent="logout">退出登录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="bili-main">
+            <!-- 首页/热门视频列表 -->
+            <div v-if="currentView === 'home' || currentView === 'hot' || currentView === 'rank'" class="video-list-container">
+                <div class="page-title">
+                    <h2>{{ pageTitle }}</h2>
+                </div>
+                <div class="video-grid">
+                    <div v-for="video in videoList" :key="video.bvid" class="video-card" @click="playVideo(video)">
+                        <div class="video-cover">
+                            <img :src="video.pic" :alt="video.title">
+                            <div class="video-stats">
+                                <span class="views">
+                                    <svg viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10 4C5.582 4 2 7.582 2 12s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 14c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z"/><path fill="currentColor" d="M10 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                                    {{ formatNumber(video.play) }}
+                                </span>
+                                <span class="likes">
+                                    <svg viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                    {{ formatNumber(video.like) }}
+                                </span>
+                            </div>
+                            <span class="duration">{{ formatDuration(video.duration) }}</span>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">{{ video.title }}</h3>
+                            <div class="video-meta">
+                                <span class="author">{{ video.author }}</span>
+                                <span class="date">{{ video.pubdate }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="loading" class="loading">加载中...</div>
+                <div v-if="videoList.length === 0 && !loading" class="empty">暂无数据</div>
+            </div>
+
+            <!-- 视频播放页 -->
+            <div v-if="currentView === 'player'" class="player-container">
+                <div class="player-back">
+                    <a href="#" @click.prevent="goBack" class="back-btn">
+                        <svg viewBox="0 0 20 20" width="20" height="20"><path fill="currentColor" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"/></svg>
+                        返回
+                    </a>
+                </div>
+                <div class="player-layout">
+                    <div class="player-main">
+                        <div class="video-player">
+                            <video id="biliPlayer" controls :poster="currentVideo.pic">
+                                您的浏览器不支持 video 标签
+                            </video>
+                        </div>
+                        <div class="video-details">
+                            <h1 class="video-title">{{ currentVideo.title }}</h1>
+                            <div class="video-actions">
+                                <button class="action-btn" :class="{ active: isFavorited }" @click="toggleFavorite">
+                                    <svg viewBox="0 0 20 20" width="16" height="16"><path fill="currentColor" d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                    {{ isFavorited ? '已收藏' : '收藏' }}
+                                </button>
+                                <button class="action-btn">
+                                    <svg viewBox="0 0 20 20" width="16" height="16"><path fill="currentColor" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg>
+                                    点赞
+                                </button>
+                                <button class="action-btn" @click="openInBrowser">
+                                    <svg viewBox="0 0 20 20" width="16" height="16"><path fill="currentColor" d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 5a1 1 0 112 0v4.586l2.707 2.707a1 1 0 01-1.414 1.414l-3-3A1 1 0 019 10V5z"/></svg>
+                                    在B站打开
+                                </button>
+                            </div>
+                            <div class="video-stats-row">
+                                <span>{{ formatNumber(currentVideo.play) }}播放</span>
+                                <span>{{ formatNumber(currentVideo.like) }}点赞</span>
+                                <span>{{ formatNumber(currentVideo.coin) }}投币</span>
+                                <span>{{ formatNumber(currentVideo.favorite) }}收藏</span>
+                            </div>
+                            <div class="video-desc" v-if="currentVideo.desc">
+                                <p>{{ currentVideo.desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-sidebar">
+                        <div class="related-videos">
+                            <h3>相关推荐</h3>
+                            <div class="related-list">
+                                <div v-for="rel in relatedVideos" :key="rel.bvid" class="related-item" @click="playVideo(rel)">
+                                    <img :src="rel.pic" :alt="rel.title">
+                                    <div class="related-info">
+                                        <h4>{{ rel.title }}</h4>
+                                        <span>{{ rel.author }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评论区 -->
+                <div class="comments-section">
+                    <div class="comments-header">
+                        <h3>评论</h3>
+                        <span class="comments-count">{{ formatNumber(currentVideo.comment) }}条评论</span>
+                    </div>
+                    <div v-if="userInfo" class="comment-input-box">
+                        <img :src="userInfo.face || 'https://static.hdslb.com/images/akari.jpg'" alt="头像" class="comment-avatar">
+                        <div class="comment-input-area">
+                            <textarea v-model="newComment" placeholder="发表你的看法..." rows="3"></textarea>
+                            <button class="send-comment-btn" @click="sendComment" :disabled="!newComment.trim()">发布</button>
+                        </div>
+                    </div>
+                    <div v-else class="login-tip">
+                        <p>登录后参与评论 <button @click="showLoginModal = true">立即登录</button></p>
+                    </div>
+                    <div class="comments-list">
+                        <div v-for="comment in comments" :key="comment.rpid" class="comment-item">
+                            <img :src="comment.avatar" :alt="comment.uname" class="comment-avatar">
+                            <div class="comment-content">
+                                <div class="comment-header">
+                                    <span class="comment-author">{{ comment.uname }}</span>
+                                    <span class="comment-time">{{ comment.ctime }}</span>
+                                </div>
+                                <p class="comment-text">{{ comment.content }}</p>
+                                <div class="comment-actions">
+                                    <span class="like-count">{{ comment.like }} <button>👍</button></span>
+                                    <button @click="replyComment(comment)">回复</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="comments.length === 0" class="no-comments">暂无评论，快来抢沙发吧</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 搜索结果页 -->
+            <div v-if="currentView === 'search'" class="search-result-container">
+                <div class="page-title">
+                    <h2>搜索结果: {{ searchKeyword }}</h2>
+                </div>
+                <div class="video-grid">
+                    <div v-for="video in searchResults" :key="video.bvid" class="video-card" @click="playVideo(video)">
+                        <div class="video-cover">
+                            <img :src="video.pic" :alt="video.title">
+                            <div class="video-stats">
+                                <span class="views">{{ formatNumber(video.play) }}</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">{{ video.title }}</h3>
+                            <div class="video-meta">
+                                <span class="author">{{ video.author }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 收藏页 -->
+            <div v-if="currentView === 'favorites'" class="favorites-container">
+                <div class="page-title">
+                    <h2>我的收藏</h2>
+                </div>
+                <div class="video-grid">
+                    <div v-for="fav in favorites" :key="fav.bvid" class="video-card" @click="playVideo(fav)">
+                        <div class="video-cover">
+                            <img :src="fav.pic" :alt="fav.title">
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">{{ fav.title }}</h3>
+                            <div class="video-meta">
+                                <span class="author">{{ fav.author }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="favorites.length === 0" class="empty">暂无收藏</div>
+            </div>
+        </main>
+
+        <!-- 登录弹窗 -->
+        <div v-if="showLoginModal" class="modal-overlay" @click.self="showLoginModal = false">
+            <div class="login-modal">
+                <div class="modal-header">
+                    <h3>登录bilibili</h3>
+                    <button class="close-btn" @click="showLoginModal = false">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="login-methods">
+                        <div class="method-tabs">
+                            <button :class="{ active: loginMethod === 'qrcode' }" @click="loginMethod = 'qrcode'">二维码登录</button>
+                            <button :class="{ active: loginMethod === 'sessdata' }" @click="loginMethod = 'sessdata'">SESSDATA登录</button>
+                        </div>
+                        <div v-if="loginMethod === 'qrcode'" class="qrcode-login">
+                            <div class="qrcode-box">
+                                <img v-if="qrcodeUrl" :src="qrcodeUrl" alt="二维码">
+                                <div v-else class="loading">加载中...</div>
+                            </div>
+                            <p class="qrcode-tip">请使用B站客户端扫码登录</p>
+                            <button class="refresh-btn" @click="getQrcode">刷新二维码</button>
+                        </div>
+                        <div v-if="loginMethod === 'sessdata'" class="sessdata-login">
+                            <input type="text" v-model="sessdataInput" placeholder="输入SESSDATA" class="sessdata-input">
+                            <p class="sessdata-tip">在B站开发者工具或浏览器中获取SESSDATA</p>
+                            <button class="login-submit" @click="loginWithSessdata">登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 弹幕控制 -->
+        <div v-if="currentView === 'player' && showDanmaku" class="danmaku-control">
+            <div class="danmaku-toggle">
+                <label>
+                    <input type="checkbox" v-model="danmakuEnabled"> 弹幕
+                </label>
+            </div>
+            <div class="danmaku-send" v-if="userInfo">
+                <input type="text" v-model="danmakuText" placeholder="发送弹幕..." @keyup.enter="sendDanmaku">
+                <button @click="sendDanmaku">发送</button>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="bili-footer">
+            <p>&copy; 2024 Bilibili Web - 非官方第三方客户端</p>
+            <p>Powered by bilibili-api</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

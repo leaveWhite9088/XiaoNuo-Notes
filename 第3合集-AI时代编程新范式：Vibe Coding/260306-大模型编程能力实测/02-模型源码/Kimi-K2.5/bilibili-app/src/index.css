@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F1F2F3;
+  color: #18191C;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+:root {
+  --bilibili-pink: #FB7299;
+  --bilibili-blue: #00AEEC;
+  --bilibili-blue-light: #00B5E5;
+  --bilibili-bg: #F1F2F3;
+  --bilibili-text: #18191C;
+  --bilibili-text-secondary: #61666D;
+  --bilibili-text-tertiary: #9499A0;
+  --bilibili-border: #E3E5E7;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.video-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ant-btn-primary {
+  background: var(--bilibili-blue);
+  border-color: var(--bilibili-blue);
+}
+
+.ant-btn-primary:hover {
+  background: var(--bilibili-blue-light);
+  border-color: var(--bilibili-blue-light);
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--bilibili-blue);
+}
+
+.ant-tabs-ink-bar {
+  background: var(--bilibili-blue);
+}
+
+.ant-input:focus {
+  border-color: var(--bilibili-blue);
+  box-shadow: 0 0 0 2px rgba(0, 174, 236, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes danmaku-move {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .ant-layout-content {
+    padding: 16px !important;
+  }
+}

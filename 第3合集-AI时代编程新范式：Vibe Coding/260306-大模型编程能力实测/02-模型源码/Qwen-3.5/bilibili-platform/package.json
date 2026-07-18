@@ -1,0 +1,25 @@
+{
+  "name": "bilibili-platform",
+  "version": "1.0.0",
+  "description": "Full-stack Bilibili video platform clone",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "start:backend": "cd backend && npm run dev",
+    "start:frontend": "cd frontend && npm start",
+    "dev": "./start.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "bilibili",
+    "video",
+    "danmaku",
+    "react",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "MIT"
+}

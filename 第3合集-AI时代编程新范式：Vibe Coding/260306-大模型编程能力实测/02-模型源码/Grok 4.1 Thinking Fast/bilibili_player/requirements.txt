@@ -1,0 +1,6 @@
+bilibili-api-python==16.2.0
+PyQt6==6.6.1
+requests==2.31.0
+pillow==10.2.0
+qasync==0.27.1
+aiohttp==3.9.1

@@ -1,0 +1,32 @@
+Total messages: 15 (Errors: 12, Warnings: 0)
+Returning 13 messages for level "info"
+
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:5176/node_modules/.vite/deps/chunk-UTQ67KV7.js?v=da185a96:20102
+[ERROR] Access to XMLHttpRequest at 'https://api.bilibili.com/x/web-interface/view?bvid=BV1xx411c7mD' from origin 'http://127.0.0.1:5176' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5176/video/BV1xx411c7mD:0
+[ERROR] 获取视频详情失败: AxiosError: Network Error
+    at XMLHttpRequest.handleError (http://127.0.0.1:5176/node_modules/.vite/deps/axios.js?v=a8da3d82:1717:19)
+    at Axios.request (http://127.0.0.1:5176/node_modules/.vite/deps/axios.js?v=a8da3d82:2328:41)
+    at async getVideoInfo (http://127.0.0.1:5176/src/api/bilibili.ts:45:22)
+    at async loadVideoData (http://127.0.0.1:5176/src/pages/VideoDetail.tsx:47:18) @ http://127.0.0.1:5176/src/api/bilibili.ts:75
+[ERROR] Failed to load resource: net::ERR_FAILED @ https://api.bilibili.com/x/web-interface/view?bvid=BV1xx411c7mD:0
+[ERROR] Access to XMLHttpRequest at 'https://api.bilibili.com/x/web-interface/nav' from origin 'http://127.0.0.1:5176' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5176/video/BV1xx411c7mD:0
+[ERROR] 检查登录状态失败: AxiosError: Network Error
+    at XMLHttpRequest.handleError (http://127.0.0.1:5176/node_modules/.vite/deps/axios.js?v=a8da3d82:1717:19)
+    at Axios.request (http://127.0.0.1:5176/node_modules/.vite/deps/axios.js?v=a8da3d82:2328:41)
+    at async checkLoginStatus (http://127.0.0.1:5176/src/api/bilibili.ts:337:22)
+    at async initAuth (http://127.0.0.1:5176/src/App.tsx:40:22) @ http://127.0.0.1:5176/src/api/bilibili.ts:355
+[ERROR] Failed to load resource: net::ERR_FAILED @ https://api.bilibili.com/x/web-interface/nav:0
+[ERROR] Access to XMLHttpRequest at 'https://api.bilibili.com/x/web-interface/nav' from origin 'http://127.0.0.1:5176' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5176/video/BV1xx411c7mD:0
+[ERROR] 检查登录状态失败: AxiosError: Network Error
+    at XMLHttpRequest.handleError (http://127.0.0.1:5176/node_modules/.vite/deps/axios.js?v=a8da3d82:1717:19)
+    at Axios.request (http://127.0.0.1:5176/node_modules/.vite/deps/axios.js?v=a8da3d82:2328:41)
+    at async checkLoginStatus (http://127.0.0.1:5176/src/api/bilibili.ts:337:22)
+    at async initAuth (http://127.0.0.1:5176/src/App.tsx:40:22) @ http://127.0.0.1:5176/src/api/bilibili.ts:355
+[ERROR] Failed to load resource: net::ERR_FAILED @ https://api.bilibili.com/x/web-interface/nav:0
+[ERROR] Access to XMLHttpRequest at 'https://api.bilibili.com/x/web-interface/view?bvid=BV1xx411c7mD' from origin 'http://127.0.0.1:5176' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5176/video/BV1xx411c7mD:0
+[ERROR] 获取视频详情失败: AxiosError: Network Error
+    at XMLHttpRequest.handleError (http://127.0.0.1:5176/node_modules/.vite/deps/axios.js?v=a8da3d82:1717:19)
+    at Axios.request (http://127.0.0.1:5176/node_modules/.vite/deps/axios.js?v=a8da3d82:2328:41)
+    at async getVideoInfo (http://127.0.0.1:5176/src/api/bilibili.ts:45:22)
+    at async loadVideoData (http://127.0.0.1:5176/src/pages/VideoDetail.tsx:47:18) @ http://127.0.0.1:5176/src/api/bilibili.ts:75
+[ERROR] Failed to load resource: net::ERR_FAILED @ https://api.bilibili.com/x/web-interface/view?bvid=BV1xx411c7mD:0

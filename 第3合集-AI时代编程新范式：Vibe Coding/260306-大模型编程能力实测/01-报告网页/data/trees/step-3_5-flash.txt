@@ -1,0 +1,56 @@
+bilibili-clone/
+├── backend/
+│   ├── src/
+│   │   ├── middleware/
+│   │   │   └── auth.ts
+│   │   ├── routes/
+│   │   │   ├── auth.ts
+│   │   │   ├── comments.ts
+│   │   │   ├── danmaku.ts
+│   │   │   ├── index.ts
+│   │   │   ├── user.ts
+│   │   │   └── videos.ts
+│   │   ├── services/
+│   │   │   └── bilibili-api.ts
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   └── index.ts
+│   ├── .env
+│   ├── .env.example
+│   ├── package-lock.json
+│   ├── package.json
+│   └── tsconfig.json
+├── frontend/
+│   ├── public/
+│   │   └── bilibili-logo.svg
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── common/
+│   │   │   ├── layout/
+│   │   │   ├── search/
+│   │   │   └── video/
+│   │   ├── contexts/
+│   │   │   └── AuthContext.tsx
+│   │   ├── pages/
+│   │   │   ├── HomePage.tsx
+│   │   │   ├── LoginPage.tsx
+│   │   │   ├── UserCenterPage.tsx
+│   │   │   └── VideoPage.tsx
+│   │   ├── services/
+│   │   │   └── api.ts
+│   │   ├── styles/
+│   │   │   └── index.css
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   └── vite.config.ts
+├── run.sh
+└── SETUP.txt

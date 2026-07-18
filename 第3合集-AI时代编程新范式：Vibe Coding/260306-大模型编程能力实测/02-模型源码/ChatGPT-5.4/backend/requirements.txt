@@ -1,0 +1,7 @@
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+pydantic-settings==2.11.0
+bilibili-api-python==17.4.1
+aiohttp==3.12.15
+httpx==0.28.1
+certifi==2025.8.3

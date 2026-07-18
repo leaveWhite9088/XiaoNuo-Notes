@@ -1,0 +1,345 @@
+[
+  {
+    "model_id": "chatgpt-5_4",
+    "display_name": "ChatGPT-5.4",
+    "scores": {
+      "functionality": 6,
+      "runnability": 4,
+      "instruction_following": 4,
+      "ui_quality": 21,
+      "frontend_quality": 3,
+      "backend_quality": 34,
+      "architecture_quality": 7,
+      "docs_quality": 2,
+      "waste_control": 1,
+      "total": 82
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "chatgpt-5_3-codex-high",
+    "display_name": "ChatGPT-5.3-Codex-high",
+    "scores": {
+      "functionality": 6,
+      "runnability": 5,
+      "instruction_following": 4,
+      "ui_quality": 16,
+      "frontend_quality": 2,
+      "backend_quality": 33,
+      "architecture_quality": 6,
+      "docs_quality": 1,
+      "waste_control": 2,
+      "total": 75
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "claude-4_6-opus",
+    "display_name": "Claude-4.6-Opus",
+    "scores": {
+      "functionality": 6,
+      "runnability": 4,
+      "instruction_following": 4,
+      "ui_quality": 24,
+      "frontend_quality": 1,
+      "backend_quality": 25,
+      "architecture_quality": 5,
+      "docs_quality": 1,
+      "waste_control": 2,
+      "total": 72
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "glm-5",
+    "display_name": "GLM-5",
+    "scores": {
+      "functionality": 4,
+      "runnability": 4,
+      "instruction_following": 4,
+      "ui_quality": 18,
+      "frontend_quality": 2,
+      "backend_quality": 18,
+      "architecture_quality": 7,
+      "docs_quality": 1,
+      "waste_control": 2,
+      "total": 60
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "gemini-3_0-pro",
+    "display_name": "Gemini-3.0-Pro",
+    "scores": {
+      "functionality": 4,
+      "runnability": 3,
+      "instruction_following": 3,
+      "ui_quality": 20,
+      "frontend_quality": 2,
+      "backend_quality": 14,
+      "architecture_quality": 4,
+      "docs_quality": 1,
+      "waste_control": 0,
+      "total": 51
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "kimi-k2_5-v2",
+    "display_name": "Kimi-K2.5-V2",
+    "scores": {
+      "functionality": 3,
+      "runnability": 3,
+      "instruction_following": 3,
+      "ui_quality": 18,
+      "frontend_quality": 2,
+      "backend_quality": 15,
+      "architecture_quality": 5,
+      "docs_quality": 1,
+      "waste_control": 1,
+      "total": 51
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "mimo-v2-flash",
+    "display_name": "Mimo-V2-Flash",
+    "scores": {
+      "functionality": 4,
+      "runnability": 5,
+      "instruction_following": 2,
+      "ui_quality": 10,
+      "frontend_quality": 2,
+      "backend_quality": 19,
+      "architecture_quality": 6,
+      "docs_quality": 1,
+      "waste_control": 0,
+      "total": 49
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "step-3_5-flash",
+    "display_name": "Step-3.5-Flash",
+    "scores": {
+      "functionality": 1,
+      "runnability": 3,
+      "instruction_following": 2,
+      "ui_quality": 17,
+      "frontend_quality": 2,
+      "backend_quality": 11,
+      "architecture_quality": 5,
+      "docs_quality": 1,
+      "waste_control": 1,
+      "total": 43
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "qwen-3_5",
+    "display_name": "Qwen-3.5",
+    "scores": {
+      "functionality": 3,
+      "runnability": 2,
+      "instruction_following": 1,
+      "ui_quality": 11,
+      "frontend_quality": 2,
+      "backend_quality": 14,
+      "architecture_quality": 5,
+      "docs_quality": 2,
+      "waste_control": 0,
+      "total": 40
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "minimax-m2_5",
+    "display_name": "MiniMax-M2.5",
+    "scores": {
+      "functionality": 3,
+      "runnability": 4,
+      "instruction_following": 1,
+      "ui_quality": 12,
+      "frontend_quality": 1,
+      "backend_quality": 8,
+      "architecture_quality": 2,
+      "docs_quality": 1,
+      "waste_control": 2,
+      "total": 34
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "gemini-3_1-pro",
+    "display_name": "Gemini-3.1-Pro",
+    "scores": {
+      "functionality": 4,
+      "runnability": 3,
+      "instruction_following": 3,
+      "ui_quality": 9,
+      "frontend_quality": 1,
+      "backend_quality": 9,
+      "architecture_quality": 1,
+      "docs_quality": 0,
+      "waste_control": 2,
+      "total": 32
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "deepseek-v3_2",
+    "display_name": "DeepSeek-V3.2",
+    "scores": {
+      "functionality": 2,
+      "runnability": 3,
+      "instruction_following": 3,
+      "ui_quality": 0,
+      "frontend_quality": 1,
+      "backend_quality": 15,
+      "architecture_quality": 4,
+      "docs_quality": 1,
+      "waste_control": 2,
+      "total": 31
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "gemini-3_0-flash",
+    "display_name": "Gemini-3.0-flash",
+    "scores": {
+      "functionality": 2,
+      "runnability": 2,
+      "instruction_following": 3,
+      "ui_quality": 13,
+      "frontend_quality": 1,
+      "backend_quality": 5,
+      "architecture_quality": 2,
+      "docs_quality": 1,
+      "waste_control": 2,
+      "total": 31
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "部分成功"
+  },
+  {
+    "model_id": "kimi-k2_5",
+    "display_name": "Kimi-K2.5",
+    "scores": {
+      "functionality": 2,
+      "runnability": 4,
+      "instruction_following": 1,
+      "ui_quality": 14,
+      "frontend_quality": 3,
+      "backend_quality": 0,
+      "architecture_quality": 1,
+      "docs_quality": 1,
+      "waste_control": 1,
+      "total": 27
+    },
+    "tags": [
+      "前端壳",
+      "oneshot 失败"
+    ],
+    "oneshot_status": "失败"
+  },
+  {
+    "model_id": "doubao-seed-2_0-pro",
+    "display_name": "Doubao-Seed-2.0-Pro",
+    "scores": {
+      "functionality": 2,
+      "runnability": 1,
+      "instruction_following": 2,
+      "ui_quality": 10,
+      "frontend_quality": 1,
+      "backend_quality": 6,
+      "architecture_quality": 2,
+      "docs_quality": 1,
+      "waste_control": 1,
+      "total": 26
+    },
+    "tags": [
+      "oneshot 部分成功"
+    ],
+    "oneshot_status": "失败"
+  },
+  {
+    "model_id": "grok-4_1-thinking-fast",
+    "display_name": "Grok 4.1 Thinking Fast",
+    "scores": {
+      "functionality": 2,
+      "runnability": 2,
+      "instruction_following": 0,
+      "ui_quality": 4,
+      "frontend_quality": 0,
+      "backend_quality": 4,
+      "architecture_quality": 1,
+      "docs_quality": 2,
+      "waste_control": 1,
+      "total": 16
+    },
+    "tags": [
+      "偏题实现",
+      "oneshot 失败"
+    ],
+    "oneshot_status": "失败"
+  },
+  {
+    "model_id": "glm-4_6",
+    "display_name": "GLM-4.6",
+    "scores": {
+      "functionality": 0,
+      "runnability": 0,
+      "instruction_following": 0,
+      "ui_quality": 0,
+      "frontend_quality": 0,
+      "backend_quality": 0,
+      "architecture_quality": 0,
+      "docs_quality": 0,
+      "waste_control": 1,
+      "total": 1
+    },
+    "tags": [
+      "残缺样本",
+      "oneshot 失败"
+    ],
+    "oneshot_status": "失败"
+  }
+]

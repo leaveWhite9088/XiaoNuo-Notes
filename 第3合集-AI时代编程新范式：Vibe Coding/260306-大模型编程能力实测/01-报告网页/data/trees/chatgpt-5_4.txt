@@ -1,0 +1,39 @@
+ChatGPT-5.4/
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── main.py
+│   │   ├── schemas.py
+│   │   └── service.py
+│   ├── data/
+│   │   └── credential.json
+│   ├── requirements.txt
+│   └── run.py
+├── frontend/
+│   ├── public/
+│   │   └── vite.svg
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── react.svg
+│   │   ├── components/
+│   │   ├── lib/
+│   │   │   └── api.ts
+│   │   ├── types/
+│   │   │   └── api.ts
+│   │   ├── App.css
+│   │   ├── App.tsx
+│   │   ├── index.css
+│   │   └── main.tsx
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   ├── tsconfig.app.json
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   └── vite.config.ts
+├── .gitignore
+└── README.md

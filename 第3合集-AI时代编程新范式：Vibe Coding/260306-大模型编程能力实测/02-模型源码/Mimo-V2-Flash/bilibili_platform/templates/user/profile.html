@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}个人中心 - Bilibili平台{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 class="card-title">个人中心</h2>
+    
+    <div class="profile-card">
+        <img src="{{ current_user.avatar }}" alt="{{ current_user.username }}" class="profile-avatar">
+        <div class="profile-info">
+            <div class="profile-name">{{ current_user.username }}</div>
+            <div class="profile-bio">{{ current_user.bio or '暂无简介' }}</div>
+            <div class="mt-2 text-muted">
+                注册时间: {{ current_user.created_at|datetime_format }}
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <h3>账号信息</h3>
+        <div class="mt-2">
+            <p><strong>邮箱:</strong> {{ current_user.email }}</p>
+            <p><strong>用户ID:</strong> {{ current_user.id }}</p>
+        </div>
+    </div>
+    
+    <div class="bilibili-login-section mt-4">
+        <h3 class="card-title">B站账号状态</h3>
+        {% if current_user.get_bilibili_credentials() %}
+            <div class="bilibili-login-status">
+                <img src="{{ current_user.get_bilibili_user_info().face if current_user.get_bilibili_user_info() else '/static/images/default_avatar.png' }}" 
+                     alt="B站头像" class="bilibili-avatar">
+                <div class="bilibili-info">
+                    <div class="bilibili-name">
+                        {{ current_user.get_bilibili_user_info().name if current_user.get_bilibili_user_info() else '已登录' }}
+                    </div>
+                    <div class="bilibili-uid">
+                        UID: {{ current_user.get_bilibili_user_info().mid if current_user.get_bilibili_user_info() else '未知' }}
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group mt-3">
+                <button class="btn btn-secondary refresh-bilibili-btn" 
+                        data-url="{{ url_for('user.api_bilibili_info') }}">
+                    刷新信息
+                </button>
+                <a href="{{ url_for('user.api_bilibili_favorites') }}" class="btn btn-outline">
+                    查看B站收藏
+                </a>
+            </div>
+        {% else %}
+            <p class="text-muted">未登录B站账号</p>
+            <div class="btn-group mt-3">
+                <a href="{{ url_for('auth.bilibili_qrcode_login') }}" class="btn btn-primary">
+                    登录B站
+                </a>
+                <a href="{{ url_for('auth.bilibili_password_login') }}" class="btn btn-outline">
+                    账号密码登录
+                </a>
+            </div>
+        {% endif %}
+    </div>
+    
+    <div class="mt-4">
+        <h3>平台功能</h3>
+        <div class="btn-group mt-2">
+            <a href="{{ url_for('main.search') }}" class="btn btn-primary">搜索视频</a>
+            <a href="{{ url_for('user.favorites') }}" class="btn btn-secondary">我的收藏</a>
+            <a href="{{ url_for('auth.logout') }}" class="btn btn-outline">退出登录</a>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const refreshBtn = document.querySelector('.refresh-bilibili-btn');
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = this.dataset.url;
+            
+            fetch(url, {
+                method: 'GET',
+                headers: {
+                    'X-CSRFToken': getCsrfToken()
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showNotification(data.error, 'error');
+                } else {
+                    showNotification('B站信息已刷新', 'success');
+                    location.reload();
+                }
+            })
+            .catch(error => {
+                console.error('刷新B站信息失败:', error);
+                showNotification('刷新B站信息失败，请重试', 'error');
+            });
+        });
+    }
+    
+    function getCsrfToken() {
+        const meta = document.querySelector('meta[name="csrf-token"]');
+        return meta ? meta.content : '';
+    }
+    
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 9999;
+            animation: slideIn 0.3s ease-out;
+            background-color: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'fadeOut 0.3s ease-in';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,12 @@
+bilibili_clone/
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   ├── main.js
+│   │   └── video.js
+│   ├── index.html
+│   └── video.html
+├── cred.json
+├── main.py
+└── test_qr.py

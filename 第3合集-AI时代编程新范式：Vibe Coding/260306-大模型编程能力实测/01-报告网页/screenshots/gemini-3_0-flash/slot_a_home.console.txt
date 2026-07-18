@@ -1,0 +1,121 @@
+Total messages: 36 (Errors: 16, Warnings: 12)
+Returning 32 messages for level "info"
+
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=9f703525:20102
+[WARNING] No routes matched location "/favorites"  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-router-dom.js?v=9f703525:646
+[WARNING] No routes matched location "/favorites"  @ http://127.0.0.1:5174/node_modules/.vite/deps/react-router-dom.js?v=9f703525:646
+[ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/api/user/me:0
+[ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/api/user/me:0
+[LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5174/@vite/client:864
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:5175/node_modules/.vite/deps/react-dom_client.js?v=5b287549:14340
+[ERROR] Access to XMLHttpRequest at 'http://localhost:8000/api/video/info?bvid=BV1m8411H7He' from origin 'http://127.0.0.1:5175' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5175/:0
+[ERROR] Failed to fetch video data AxiosError: Network Error
+    at XMLHttpRequest.handleError (http://127.0.0.1:5175/node_modules/.vite/deps/axios.js?v=6a195761:2030:16)
+    at Axios$1.request (http://127.0.0.1:5175/node_modules/.vite/deps/axios.js?v=6a195761:2577:37)
+    at async fetchVideoData (http://127.0.0.1:5175/src/App.tsx:28:20) @ http://127.0.0.1:5175/src/App.tsx:34
+[ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:8000/api/video/info?bvid=BV1m8411H7He:0
+[ERROR] Access to XMLHttpRequest at 'http://localhost:8000/api/video/info?bvid=BV1m8411H7He' from origin 'http://127.0.0.1:5175' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5175/:0
+[ERROR] Failed to fetch video data AxiosError: Network Error
+    at XMLHttpRequest.handleError (http://127.0.0.1:5175/node_modules/.vite/deps/axios.js?v=6a195761:2030:16)
+    at Axios$1.request (http://127.0.0.1:5175/node_modules/.vite/deps/axios.js?v=6a195761:2577:37)
+    at async fetchVideoData (http://127.0.0.1:5175/src/App.tsx:28:20) @ http://127.0.0.1:5175/src/App.tsx:34
+[ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:8000/api/video/info?bvid=BV1m8411H7He:0
+[WARNING] Custom fetch error: De @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188
+[WARNING] Custom fetch error: De @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188
+[WARNING] TypeError: Cannot read properties of undefined (reading 'data')
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:6269
+    at d (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:6600)
+    at Generator.<anonymous> (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7943)
+    at Generator.next (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7029)
+    at dr (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4332)
+    at a (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4536)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4597
+    at new Promise (<anonymous>)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4476
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:7253 @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187
+[WARNING] TypeError: Cannot read properties of undefined (reading 'data')
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:6269
+    at d (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:6600)
+    at Generator.<anonymous> (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7943)
+    at Generator.next (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7029)
+    at dr (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4332)
+    at a (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4536)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4597
+    at new Promise (<anonymous>)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4476
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:7253 @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187
+[WARNING] Custom fetch error: De @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188
+[WARNING] TypeError: Cannot read properties of undefined (reading 'data')
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:6269
+    at d (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:6600)
+    at Generator.<anonymous> (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7943)
+    at Generator.next (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7029)
+    at dr (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4332)
+    at a (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4536)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4597
+    at new Promise (<anonymous>)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4476
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:7253 @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187
+[INFO] %c%s line-height: 30px; color: #FF6699 bili-fe-fp: 1.1.4 @ https://s1.hdslb.com/bfs/seed/jinkela/short/user-fingerprint/bili-user-fingerprint.min.js:0
+[ERROR] @bilibili/bili-user-fingerprint(report): report is not found @ https://s1.hdslb.com/bfs/seed/jinkela/short/user-fingerprint/bili-user-fingerprint.min.js:0
+[ERROR] Access to XMLHttpRequest at 'https://bvc.bilivideo.com/pbp/data?bvid=BV1m8411H7He&r=loader' from origin 'https://player.bilibili.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://player.bilibili.com/player.html?bvid=BV1m8411H7He&page=1&high_quality=1&as_wide=1&allowfullscreen=true:0
+[ERROR] Failed to load resource: net::ERR_FAILED @ https://bvc.bilivideo.com/pbp/data?bvid=BV1m8411H7He&r=loader:0
+[WARNING] Custom fetch error: De @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188
+[WARNING] TypeError: Cannot read properties of undefined (reading 'data')
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:6269
+    at d (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:6600)
+    at Generator.<anonymous> (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7943)
+    at Generator.next (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7029)
+    at dr (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4332)
+    at a (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4536)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4597
+    at new Promise (<anonymous>)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4476
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:7253 @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187
+[WARNING] Custom fetch error: De @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188
+[WARNING] TypeError: Cannot read properties of undefined (reading 'data')
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:6269
+    at d (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:6600)
+    at Generator.<anonymous> (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7943)
+    at Generator.next (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187:7029)
+    at dr (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4332)
+    at a (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4536)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4597
+    at new Promise (<anonymous>)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:4476
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:188:7253 @ https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:187
+Object
+Error: Request Error: unknow status
+    at we (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:5457)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:184:457
+    at d (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:181:4431)
+    at Generator.<anonymous> (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:181:5774)
+    at Generator.next (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:181:4860)
+    at me (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3177)
+    at a (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3381)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3442
+    at new Promise (<anonymous>)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3321
+Error: Request Error: unknow status
+    at we (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:5457)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:184:457
+    at d (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:181:4431)
+    at Generator.<anonymous> (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:181:5774)
+    at Generator.next (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:181:4860)
+    at me (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3177)
+    at a (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3381)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3442
+    at new Promise (<anonymous>)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3321
+U
+Error: Request Error: unknow status
+    at we (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:5457)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:184:457
+    at d (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:181:4431)
+    at Generator.<anonymous> (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:181:5774)
+    at Generator.next (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:181:4860)
+    at me (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3177)
+    at a (https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3381)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3442
+    at new Promise (<anonymous>)
+    at https://s1.hdslb.com/bfs/static/player/main/core.6dcbfdb4.js:182:3321

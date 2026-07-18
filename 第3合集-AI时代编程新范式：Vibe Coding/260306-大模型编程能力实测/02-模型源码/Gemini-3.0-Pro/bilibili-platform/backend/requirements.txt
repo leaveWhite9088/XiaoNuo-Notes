@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+bilibili-api-python
+pillow
+qrcode
+aiohttp
+python-multipart
+certifi

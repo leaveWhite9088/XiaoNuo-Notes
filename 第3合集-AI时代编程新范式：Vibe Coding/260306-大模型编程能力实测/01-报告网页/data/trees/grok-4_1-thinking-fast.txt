@@ -1,0 +1,28 @@
+bilibili_player/
+├── assets/
+├── config/
+├── src/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── auth_manager.py
+│   │   ├── bilibili_client.py
+│   │   └── data_models.py
+│   ├── ui/
+│   │   ├── __init__.py
+│   │   ├── comments_widget.py
+│   │   ├── login_dialog.py
+│   │   ├── main_window.py
+│   │   ├── styles.py
+│   │   └── video_player.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   └── logger.py
+│   ├── __init__.py
+│   └── main.py
+├── .gitignore
+├── DEVELOPMENT.md
+├── README.md
+├── requirements.txt
+├── run.py
+└── test_basic.py

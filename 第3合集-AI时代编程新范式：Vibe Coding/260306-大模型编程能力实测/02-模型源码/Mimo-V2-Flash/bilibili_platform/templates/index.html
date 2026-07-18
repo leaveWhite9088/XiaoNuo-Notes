@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}首页 - Bilibili平台{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 class="card-title">欢迎来到Bilibili平台</h2>
+    <p>这是一个基于Bilibili API开发的视频平台，支持视频播放、评论、弹幕等功能。</p>
+    
+    <div class="mt-4">
+        <h3>主要功能</h3>
+        <ul class="mt-2">
+            <li>视频搜索和播放</li>
+            <li>查看评论和弹幕</li>
+            <li>B站账号登录</li>
+            <li>发送评论和弹幕</li>
+            <li>收藏视频</li>
+            <li>查看个人收藏</li>
+        </ul>
+    </div>
+    
+    <div class="mt-4">
+        <h3>快速开始</h3>
+        <div class="mt-2">
+            {% if current_user.is_authenticated %}
+                <p>您已登录，可以开始使用平台功能。</p>
+                <div class="btn-group">
+                    <a href="{{ url_for('main.search') }}" class="btn btn-primary">搜索视频</a>
+                    <a href="{{ url_for('user.favorites') }}" class="btn btn-secondary">我的收藏</a>
+                </div>
+            {% else %}
+                <p>请先登录以使用所有功能。</p>
+                <div class="btn-group">
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-primary">登录</a>
+                    <a href="{{ url_for('auth.register') }}" class="btn btn-secondary">注册</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <h2 class="card-title">热门视频推荐</h2>
+    <div class="mt-3">
+        <p class="text-muted">搜索您感兴趣的视频开始观看</p>
+        <div class="mt-3">
+            <form action="{{ url_for('main.search') }}" method="get" class="search-form">
+                <div class="form-group">
+                    <input type="text" name="keyword" placeholder="输入视频标题或关键词..." class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">搜索</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <h2 class="card-title">使用说明</h2>
+    <div class="mt-3">
+        <ol>
+            <li>注册并登录平台账号</li>
+            <li>在B站登录页面使用二维码或账号密码登录B站</li>
+            <li>搜索您想看的视频</li>
+            <li>观看视频，查看评论和弹幕</li>
+            <li>发送评论和弹幕（需要B站登录）</li>
+            <li>收藏喜欢的视频</li>
+        </ol>
+    </div>
+</div>
+{% endblock %}

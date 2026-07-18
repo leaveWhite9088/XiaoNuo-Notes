@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilibili视频平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="#" class="logo">
+                    <i class="fas fa-tv"></i>
+                    <span>Bilibili</span>
+                </a>
+                <nav class="nav-menu">
+                    <a href="#" class="nav-item active" data-page="home">
+                        <i class="fas fa-home"></i> 首页
+                    </a>
+                    <a href="#" class="nav-item" data-page="popular">
+                        <i class="fas fa-fire"></i> 热门
+                    </a>
+                    <a href="#" class="nav-item" data-page="trending">
+                        <i class="fas fa-chart-line"></i> 排行榜
+                    </a>
+                </nav>
+            </div>
+            <div class="header-center">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索视频、UP主...">
+                    <button id="searchBtn" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="search-suggest" id="searchSuggest"></div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-section" id="userSection">
+                    <!-- 未登录状态 -->
+                    <div class="guest-state" id="guestState">
+                        <button class="login-btn" id="loginBtn">登录</button>
+                    </div>
+                    <!-- 已登录状态 -->
+                    <div class="user-state hidden" id="userState">
+                        <div class="user-menu-trigger">
+                            <img src="" alt="头像" class="user-avatar" id="userAvatar">
+                            <div class="user-dropdown">
+                                <div class="dropdown-user-info">
+                                    <span class="username" id="username"></span>
+                                </div>
+                                <a href="#" data-page="favorites"><i class="fas fa-star"></i> 我的收藏</a>
+                                <a href="#" data-page="history"><i class="fas fa-history"></i> 历史记录</a>
+                                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> 退出登录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="main-container">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>推荐</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active" data-page="home"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="#" data-page="popular"><i class="fas fa-fire"></i> 热门</a></li>
+                    <li><a href="#" data-page="trending"><i class="fas fa-chart-line"></i> 排行榜</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>分区</h3>
+                <ul class="sidebar-menu" id="partitionMenu">
+                    <!-- 动态生成分区 -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 内容区域 -->
+        <div class="content-area">
+            <!-- 首页 -->
+            <div class="page home-page active" id="homePage">
+                <div class="section-header">
+                    <h2><i class="fas fa-thumbs-up"></i> 推荐视频</h2>
+                </div>
+                <div class="video-grid" id="homeVideos">
+                    <!-- 动态生成视频卡片 -->
+                </div>
+            </div>
+
+            <!-- 热门页面 -->
+            <div class="page popular-page" id="popularPage">
+                <div class="section-header">
+                    <h2><i class="fas fa-fire"></i> 热门视频</h2>
+                </div>
+                <div class="video-grid" id="popularVideos">
+                    <!-- 动态生成视频卡片 -->
+                </div>
+            </div>
+
+            <!-- 排行榜页面 -->
+            <div class="page trending-page" id="trendingPage">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> 排行榜</h2>
+                </div>
+                <div class="video-list" id="trendingVideos">
+                    <!-- 动态生成排行视频 -->
+                </div>
+            </div>
+
+            <!-- 搜索结果页面 -->
+            <div class="page search-page" id="searchPage">
+                <div class="section-header">
+                    <h2>"<span id="searchKeyword"></span>" 的搜索结果</h2>
+                </div>
+                <div class="video-grid" id="searchResults">
+                    <!-- 动态生成搜索结果 -->
+                </div>
+            </div>
+
+            <!-- 视频详情页面 -->
+            <div class="page video-page" id="videoPage">
+                <div class="back-nav">
+                    <a href="#" onclick="switchPage('home'); return false;">
+                        <i class="fas fa-arrow-left"></i> 返回首页
+                    </a>
+                </div>
+                <div class="video-layout">
+                    <div class="video-main">
+                        <!-- 视频播放器 -->
+                        <div class="player-container">
+                            <div id="dplayer"></div>
+                        </div>
+                        
+                        <!-- 视频信息 -->
+                        <div class="video-info-section">
+                            <h1 class="video-title" id="videoTitle"></h1>
+                            <div class="video-meta">
+                                <span class="view-count"><i class="fas fa-play"></i> <span id="viewCount"></span></span>
+                                <span class="danmaku-count"><i class="fas fa-comment-dots"></i> <span id="danmakuCount"></span></span>
+                                <span class="publish-time"><i class="fas fa-clock"></i> <span id="publishTime"></span></span>
+                                <span class="online-count"><i class="fas fa-user"></i> <span id="onlineCount"></span>人正在看</span>
+                            </div>
+                            <div class="video-actions">
+                                <button class="action-btn like-btn" id="likeBtn">
+                                    <i class="fas fa-thumbs-up"></i> <span id="likeCount">点赞</span>
+                                </button>
+                                <button class="action-btn coin-btn" id="coinBtn">
+                                    <i class="fas fa-coins"></i> 投币
+                                </button>
+                                <button class="action-btn danmaku-btn" id="danmakuSendBtn">
+                                    <i class="fas fa-comment-dots"></i> 发弹幕
+                                </button>
+                                <button class="action-btn favorite-btn" id="favoriteBtn">
+                                    <i class="fas fa-star"></i> <span id="favoriteCount">收藏</span>
+                                </button>
+                                <button class="action-btn share-btn" id="shareBtn">
+                                    <i class="fas fa-share"></i> 分享
+                                </button>
+                                <a href="#" class="action-btn bili-btn" id="gotoBiliBtn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 前往B站
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- UP主信息 -->
+                        <div class="up-info" id="upInfo">
+                            <img src="" alt="UP主头像" class="up-avatar" id="upAvatar">
+                            <div class="up-detail">
+                                <div class="up-name" id="upName"></div>
+                                <div class="up-desc" id="upDesc"></div>
+                            </div>
+                            <button class="follow-btn" id="followBtn">+ 关注</button>
+                        </div>
+
+                        <!-- 评论区域 -->
+                        <div class="comments-section">
+                            <div class="comments-header">
+                                <h3>评论 <span class="comment-count" id="commentCount"></span></h3>
+                                <div class="comment-tabs">
+                                    <span class="active" data-mode="3">热门</span>
+                                    <span data-mode="2">最新</span>
+                                </div>
+                            </div>
+                            <!-- 评论输入框 -->
+                            <div class="comment-input-area">
+                                <div class="comment-avatar">
+                                    <img src="" alt="" id="commentAvatar">
+                                </div>
+                                <div class="comment-input-wrapper">
+                                    <textarea id="commentInput" placeholder="发一条友善的评论~" rows="3"></textarea>
+                                    <div class="comment-tools">
+                                        <div class="comment-emojis">
+                                            <i class="far fa-smile"></i>
+                                        </div>
+                                        <button class="send-comment-btn" id="sendCommentBtn">发表评论</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 评论列表 -->
+                            <div class="comments-list" id="commentsList">
+                                <!-- 动态生成评论 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧推荐 -->
+                    <div class="video-sidebar">
+                        <div class="related-videos">
+                            <h3>相关推荐</h3>
+                            <div class="related-list" id="relatedList">
+                                <!-- 动态生成相关视频 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 收藏页面 -->
+            <div class="page favorites-page" id="favoritesPage">
+                <div class="section-header">
+                    <h2><i class="fas fa-star"></i> 我的收藏</h2>
+                </div>
+                <div class="favorites-container">
+                    <div class="favorites-sidebar" id="favoritesSidebar">
+                        <!-- 收藏夹列表 -->
+                    </div>
+                    <div class="favorites-content">
+                        <div class="video-grid" id="favoritesVideos">
+                            <!-- 收藏视频列表 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 历史记录页面 -->
+            <div class="page history-page" id="historyPage">
+                <div class="section-header">
+                    <h2><i class="fas fa-history"></i> 历史记录</h2>
+                </div>
+                <div class="video-list" id="historyList">
+                    <!-- 历史记录列表 -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 登录弹窗 -->
+    <div class="modal-overlay hidden" id="loginModal">
+        <div class="modal login-modal">
+            <div class="modal-header">
+                <h3>扫码登录</h3>
+                <button class="modal-close" id="closeLoginModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="qr-code-container">
+                    <div class="qr-code" id="qrCode">
+                        <img src="" alt="登录二维码" id="qrCodeImg">
+                    </div>
+                    <p class="qr-tips">请使用Bilibili App扫码登录</p>
+                    <p class="qr-status" id="qrStatus">等待扫描...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹幕发送弹窗 -->
+    <div class="modal-overlay hidden" id="danmakuModal">
+        <div class="modal danmaku-modal">
+            <div class="modal-header">
+                <h3>发送弹幕</h3>
+                <button class="modal-close" id="closeDanmakuModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="danmakuInput" placeholder="发个弹幕见证当下~" maxlength="100">
+                <div class="danmaku-options">
+                    <div class="option-group">
+                        <label>位置:</label>
+                        <select id="danmakuMode">
+                            <option value="1">滚动</option>
+                            <option value="5">顶部</option>
+                            <option value="4">底部</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label>颜色:</label>
+                        <input type="color" id="danmakuColor" value="#FFFFFF">
+                    </div>
+                    <div class="option-group">
+                        <label>字号:</label>
+                        <select id="danmakuSize">
+                            <option value="18">小</option>
+                            <option value="25" selected>中</option>
+                            <option value="36">大</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="primary-btn" id="sendDanmakuBtn">发送弹幕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提示消息 -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

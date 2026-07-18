@@ -1,0 +1,20 @@
+ChatGPT-5.3-Codex-high/
+├── app/
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── auth_store.py
+│   │   └── bili_client.py
+│   ├── __init__.py
+│   ├── main.py
+│   └── models.py
+├── data/
+│   └── credential.json
+├── static/
+│   ├── app.js
+│   └── style.css
+├── templates/
+│   └── index.html
+├── .env.example
+├── .gitignore
+├── README.md
+└── requirements.txt

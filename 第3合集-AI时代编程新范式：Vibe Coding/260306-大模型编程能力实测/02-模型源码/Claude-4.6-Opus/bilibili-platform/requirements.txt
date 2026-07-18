@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+bilibili-api-python
+aiohttp
+qrcode[pil]
+Pillow
+python-multipart
+jinja2

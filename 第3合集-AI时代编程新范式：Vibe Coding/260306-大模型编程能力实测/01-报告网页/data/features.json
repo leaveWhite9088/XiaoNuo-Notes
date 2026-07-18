@@ -1,0 +1,580 @@
+[
+  {
+    "model_id": "chatgpt-5_4",
+    "display_name": "ChatGPT-5.4",
+    "feature_matrix": {
+      "playback": {
+        "status": "yes",
+        "summary": "可展示真实播放器并打开 B 站官网视频页；实测“跳转官网”按钮会新开 B 站视频标签页。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "标题、简介、UP 主、发布时间和统计信息均可展示。"
+      },
+      "comments": {
+        "status": "yes",
+        "summary": "评论链路可用，但需切到有评论的热门视频验证；实测 `BV1uLAdzhE1s` 成功渲染 3 条评论。"
+      },
+      "danmaku": {
+        "status": "yes",
+        "summary": "弹幕查看链路可用；默认热门视频 `BV1riAqzPEf1` 实测返回并渲染了 120 条弹幕。"
+      },
+      "login": {
+        "status": "yes",
+        "summary": "二维码可生成并持续轮询登录状态，但本轮未做真实扫码确认。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "已用真实凭据验证到登录态、个人资料和收藏读取；评论/弹幕提交入口仍未做真实副作用验证。"
+      },
+      "favorites": {
+        "status": "yes",
+        "summary": "已用真实凭据验证，`/api/me/favorites` 能返回真实收藏夹和收藏视频。"
+      }
+    }
+  },
+  {
+    "model_id": "chatgpt-5_3-codex-high",
+    "display_name": "ChatGPT-5.3-Codex-high",
+    "feature_matrix": {
+      "playback": {
+        "status": "yes",
+        "summary": "存在播放能力与官网跳转入口。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "存在视频信息展示。"
+      },
+      "comments": {
+        "status": "yes",
+        "summary": "存在评论查看能力。"
+      },
+      "danmaku": {
+        "status": "yes",
+        "summary": "存在弹幕查看能力。"
+      },
+      "login": {
+        "status": "yes",
+        "summary": "存在登录入口与流程 UI。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "真实登录态已验证，评论/弹幕输入区会解锁；但为避免副作用，本轮未实际发送评论和弹幕。"
+      },
+      "favorites": {
+        "status": "yes",
+        "summary": "已用真实凭据验证，页面能拉取并渲染真实收藏夹与收藏视频。"
+      }
+    }
+  },
+  {
+    "model_id": "claude-4_6-opus",
+    "display_name": "Claude-4.6-Opus",
+    "feature_matrix": {
+      "playback": {
+        "status": "yes",
+        "summary": "存在播放能力与官网跳转入口。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "存在视频信息展示。"
+      },
+      "comments": {
+        "status": "yes",
+        "summary": "存在评论查看能力。"
+      },
+      "danmaku": {
+        "status": "yes",
+        "summary": "存在弹幕查看能力。"
+      },
+      "login": {
+        "status": "yes",
+        "summary": "存在登录入口与流程 UI。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "凭据登录链路已实测成功；但收藏详情已出现真实运行错误，为避免副作用，本轮未继续实发评论和弹幕。"
+      },
+      "favorites": {
+        "status": "partial",
+        "summary": "真实凭据登录后可读取个人资料与收藏夹列表，但收藏夹详情接口返回错误，前端只显示“加载失败”。"
+      }
+    }
+  },
+  {
+    "model_id": "glm-5",
+    "display_name": "GLM-5",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "播放地址请求能返回真实 mp4 流，但前端实测仍停留在“您的浏览器不支持视频播放”的回退态。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "可展示标题、UP 主、统计、简介、标签和官网跳转。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论区 UI 已渲染，但后端 `get_comments()` 参数失配，实测只剩 `评论 (0)` 空态。"
+      },
+      "danmaku": {
+        "status": "partial",
+        "summary": "弹幕输入区和切换 UI 已做，但实测接口报“`不存在该分 p`”，列表无法正常加载。"
+      },
+      "login": {
+        "status": "partial",
+        "summary": "Cookie 登录表单完整，但扫码登录接口实测返回 400，二维码链路不可用。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "代码声明支持发评、发弹幕和收藏，但真实凭据验证时连用户信息与收藏读取都不稳定，因此不能按可用登录后链路计分。"
+      },
+      "favorites": {
+        "status": "partial",
+        "summary": "真实凭据文件被识别成已登录，但 `/api/user/favorites` 仍只返回空数组，收藏能力没有形成可信闭环。"
+      }
+    }
+  },
+  {
+    "model_id": "gemini-3_0-pro",
+    "display_name": "Gemini-3.0-Pro",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "详情页有真实播放器外壳，但后端 `get_download_url(fnval=1)` 参数已失配，前端实测拿到空 `src`。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "可展示搜索结果、标题、统计、简介与官网跳转链接。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论标题、输入框和计数存在，但 `/comments` 实测 500，页面没有真正评论列表。"
+      },
+      "danmaku": {
+        "status": "partial",
+        "summary": "弹幕侧栏和发送框已做，但后端 `Video.get_danmaku` 方法不存在，实测只剩空白列表。"
+      },
+      "login": {
+        "status": "yes",
+        "summary": "扫码登录页可正常生成二维码并轮询状态。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "评论和弹幕发送接口存在，匿名访问会正确返回 401，但本轮未做真实副作用验证。"
+      },
+      "favorites": {
+        "status": "no",
+        "summary": "前端未实现收藏页或个人中心，访问 `/favorites` 直接出现“无匹配路由”。"
+      }
+    }
+  },
+  {
+    "model_id": "kimi-k2_5-v2",
+    "display_name": "Kimi-K2.5-V2",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "详情页和播放器容器都做出来了，也保留了前往 B 站官网入口；但当前视频实测黑屏，并出现“视频加载失败”。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "标题、播放量、弹幕量、在线人数、UP 信息和相关推荐都能展示。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论区 UI 完整，但前端把 `oid` 传成 `undefined`，实测 `/api/comment/list` 返回 422，页面显示“加载评论失败”。"
+      },
+      "danmaku": {
+        "status": "partial",
+        "summary": "弹幕发送入口和 DPlayer 都在，但详情页实测同时出现弹幕加载失败和 `/v3/?id=...` 404。"
+      },
+      "login": {
+        "status": "partial",
+        "summary": "登录弹窗和二维码占位图能打开，但二维码生成直接报 `login_v2/login not defined`。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "后端声明支持发评、发弹幕、收藏和历史，但登录真实性和评论参数链路都断裂，本轮不能按真实提交成功计分。"
+      },
+      "favorites": {
+        "status": "partial",
+        "summary": "收藏页 UI 和门禁提示可见；更深层检查发现后端未登录时仍会返回 mock 收藏夹和 mock 收藏视频。"
+      }
+    }
+  },
+  {
+    "model_id": "mimo-v2-flash",
+    "display_name": "Mimo-V2-Flash",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "存在视频详情页和播放区域，但实测无法拿到播放地址。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "可展示标题、UP 主、发布时间和统计信息。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论区存在，但本轮匿名态仅看到空列表和登录门禁。"
+      },
+      "danmaku": {
+        "status": "partial",
+        "summary": "弹幕区存在，但本轮匿名态仅看到空列表和登录门禁。"
+      },
+      "login": {
+        "status": "yes",
+        "summary": "普通账户登录和 B 站登录入口均可进入。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "代码声明支持发评、发弹幕和收藏，但本轮未登录且匿名态未验证到成功提交。"
+      },
+      "favorites": {
+        "status": "partial",
+        "summary": "个人中心/收藏路由存在，匿名访问会被重定向到登录页。"
+      }
+    }
+  },
+  {
+    "model_id": "step-3_5-flash",
+    "display_name": "Step-3.5-Flash",
+    "feature_matrix": {
+      "playback": {
+        "status": "no",
+        "summary": "视频详情页实测直接返回 `Request failed with status code 500`，无法进入播放器。"
+      },
+      "video_info": {
+        "status": "no",
+        "summary": "详情页代码存在，但匿名访问真实视频路由时未能展示任何视频信息。"
+      },
+      "comments": {
+        "status": "no",
+        "summary": "评论区组件写在前端里，但详情页 500，实测根本到不了评论区域。"
+      },
+      "danmaku": {
+        "status": "no",
+        "summary": "弹幕组件写在前端里，但详情页 500，实测根本到不了弹幕区域。"
+      },
+      "login": {
+        "status": "partial",
+        "summary": "账号密码登录页 UI 完整，但页面同时伴随 `auth/status` 500，后端稳定性不足。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "代码声明支持登录后评论、弹幕和收藏，但本轮实际业务链路在详情接口阶段就已中断。"
+      },
+      "favorites": {
+        "status": "partial",
+        "summary": "`/user/favorites` 路由存在，未登录访问会重定向到登录页。"
+      }
+    }
+  },
+  {
+    "model_id": "qwen-3_5",
+    "display_name": "Qwen-3.5",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "直达视频页可看到播放器控件和官网跳转，但实测未看到稳定画面，播放器表现更像半成品壳。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "直达视频详情页可展示标题、统计、简介、UP 信息和官网跳转按钮。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论区和输入框已渲染，但实测控制台报数据结构错误，页面只剩 `0 条评论` 与空态。"
+      },
+      "danmaku": {
+        "status": "partial",
+        "summary": "弹幕开关和“登录发弹幕”入口存在，后端接口返回 200，但本轮未验证到稳定弹幕层与可用发送链路。"
+      },
+      "login": {
+        "status": "partial",
+        "summary": "代码里有二维码登录实现，但 `/login` 路由实测为空白无匹配页面，主交互入口并未接成可用登录流。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "收藏、发弹幕、发评 UI 都有入口，但登录流程失联，本轮无法验证真实提交。"
+      },
+      "favorites": {
+        "status": "partial",
+        "summary": "`/favorites` 页面可打开，未登录时会显示清晰的门禁空态。"
+      }
+    }
+  },
+  {
+    "model_id": "minimax-m2_5",
+    "display_name": "MiniMax-M2.5",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "存在视频详情页、播放区域和官网跳转按钮，但实测播放器没有拿到可播放流地址。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "标题、相关推荐、基础按钮和详情骨架都能展示。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论区结构完整，匿名点击评论/收藏会触发登录门禁，但本轮实测只看到空评论状态。"
+      },
+      "danmaku": {
+        "status": "partial",
+        "summary": "页面存在弹幕开关与发送链路代码，但本轮实测未看到真实弹幕列表或覆盖层。"
+      },
+      "login": {
+        "status": "partial",
+        "summary": "提供二维码登录与 SESSDATA 登录两种入口，但二维码接口实测 500。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "源码声明支持发评、发弹幕和收藏；本轮已用 `sessdata` 验证到真实登录态和用户信息读取，但未做有副作用提交。"
+      },
+      "favorites": {
+        "status": "partial",
+        "summary": "本轮已用 `sessdata` 登录，收藏列表接口被真实打到，但返回体解析失败，没有成功展示真实收藏清单。"
+      }
+    }
+  },
+  {
+    "model_id": "gemini-3_1-pro",
+    "display_name": "Gemini-3.1-Pro",
+    "feature_matrix": {
+      "playback": {
+        "status": "yes",
+        "summary": "实测可拉起真实播放地址，浏览器内可正常播放视频，并提供官网跳转。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "可展示标题、UP 主、播放量、发布时间等核心元信息。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论区 UI 已实现，但后端仍调用旧版 `comment.ResourceType`，实测只显示加载失败。"
+      },
+      "danmaku": {
+        "status": "no",
+        "summary": "源码和界面中都未实现弹幕查看或发送能力。"
+      },
+      "login": {
+        "status": "yes",
+        "summary": "扫码登录弹窗和轮询链路可正常拉起二维码。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "评论提交接口存在，匿名态会正确返回“未登录”，但本轮未做真实副作用验证。"
+      },
+      "favorites": {
+        "status": "no",
+        "summary": "未实现收藏页、个人中心或收藏视频入口，直达 `/favorites` 返回 404。"
+      }
+    }
+  },
+  {
+    "model_id": "deepseek-v3_2",
+    "display_name": "DeepSeek-V3.2",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "后端声明了播放链接接口，但网页入口未接入播放器页面。"
+      },
+      "video_info": {
+        "status": "partial",
+        "summary": "存在视频信息接口和模板代码，但浏览器实测无法从首页进入视频 UI。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论接口和前端模板代码存在，但当前构建下网页不可达。"
+      },
+      "danmaku": {
+        "status": "partial",
+        "summary": "弹幕接口和前端模板代码存在，但当前构建下网页不可达。"
+      },
+      "login": {
+        "status": "partial",
+        "summary": "扫码登录 API 已暴露，但登录模态框所属页面没有挂到首页路由。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "代码声明了评论、弹幕发送链路，但未形成可操作的浏览器成品。"
+      },
+      "favorites": {
+        "status": "partial",
+        "summary": "存在收藏接口，但没有可进入的个人中心页面。"
+      }
+    }
+  },
+  {
+    "model_id": "gemini-3_0-flash",
+    "display_name": "Gemini-3.0-flash",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "前端内嵌了 B 站官方播放器 iframe，首屏能看到播放器壳，但缺少后端支持时只剩外链黑屏/提示态。"
+      },
+      "video_info": {
+        "status": "partial",
+        "summary": "代码声明会拉取视频标题和统计，但后端未启动时前端实测没有任何视频元信息。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论标签、输入框和发送按钮存在，但列表与计数为空，真实请求直接网络失败。"
+      },
+      "danmaku": {
+        "status": "no",
+        "summary": "运行态前端没有独立弹幕列表或弹幕查看区域，不满足“查看弹幕”要求。"
+      },
+      "login": {
+        "status": "partial",
+        "summary": "登录按钮和扫码弹窗可打开，但二维码接口因后端未启动而停在“加载中”。"
+      },
+      "post_login_actions": {
+        "status": "partial",
+        "summary": "评论发送按钮存在，但后端断链时只会报网络错误，未形成可用互动链路。"
+      },
+      "favorites": {
+        "status": "no",
+        "summary": "前端没有收藏页、收藏标签或个人中心入口，访问 `/favorites` 也只回到同一单页壳。"
+      }
+    }
+  },
+  {
+    "model_id": "kimi-k2_5",
+    "display_name": "Kimi-K2.5",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "存在 `/video/:bvid` 页面和播放器组件，但实测视频详情请求被 CORS 拦截，页面一直停在“加载中...”。"
+      },
+      "video_info": {
+        "status": "partial",
+        "summary": "详情页和信息区代码完整，但浏览器直连 B 站接口失败，真实运行态无法展示任何视频元信息。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论组件与发送框都写好了，但视频页根本加载不出来，运行态无法进入评论区。"
+      },
+      "danmaku": {
+        "status": "partial",
+        "summary": "前端实现了弹幕层和弹幕列表组件，但视频详情链路被 CORS 卡死，实测无法查看真实弹幕。"
+      },
+      "login": {
+        "status": "partial",
+        "summary": "登录页 UI 完整，但密码登录实测只是写入本地 mock 用户，不是真实 B 站登录。"
+      },
+      "post_login_actions": {
+        "status": "no",
+        "summary": "评论、弹幕和收藏都依赖真实鉴权接口；mock 登录一进入业务页就会被 `checkLoginStatus()` 打回未登录。"
+      },
+      "favorites": {
+        "status": "partial",
+        "summary": "收藏页路由和界面都存在，但 mock 登录进入后会因为真实鉴权失败而重新退回“请先登录”。"
+      }
+    }
+  },
+  {
+    "model_id": "doubao-seed-2_0-pro",
+    "display_name": "Doubao-Seed-2.0-Pro",
+    "feature_matrix": {
+      "playback": {
+        "status": "partial",
+        "summary": "存在视频页和播放器区域，但详情与弹幕都主要依赖 mock/fallback，且外部 DPlayer 弹幕接口实测跨域失败。"
+      },
+      "video_info": {
+        "status": "partial",
+        "summary": "标题、统计、UP 信息都能展示，但视频详情默认由 fallback 数据填充，不是稳定的真实视频链路。"
+      },
+      "comments": {
+        "status": "partial",
+        "summary": "评论区 UI 能渲染，当前截图内容来自后端 fallback/mock 评论，不宜按真实评论读取计满。"
+      },
+      "danmaku": {
+        "status": "partial",
+        "summary": "弹幕发送输入框存在，但实测 DPlayer 的外部弹幕加载直接失败；后端返回的也是回退弹幕数据。"
+      },
+      "login": {
+        "status": "no",
+        "summary": "只写了扫码登录一种路径，但 `/api/login/qrcode` 实测直接返回 `getQrCode is not a function`。"
+      },
+      "post_login_actions": {
+        "status": "no",
+        "summary": "评论、弹幕和收藏都依赖登录；但登录根本没接通，本轮无法进入真实登录后能力。"
+      },
+      "favorites": {
+        "status": "no",
+        "summary": "收藏页路由实测空白无匹配，后端 `/api/user/favorites` 匿名返回“请先登录”。"
+      }
+    }
+  },
+  {
+    "model_id": "grok-4_1-thinking-fast",
+    "display_name": "Grok 4.1 Thinking Fast",
+    "feature_matrix": {
+      "playback": {
+        "status": "yes",
+        "summary": "桌面端形态下存在视频播放。"
+      },
+      "video_info": {
+        "status": "yes",
+        "summary": "桌面端界面包含信息区域。"
+      },
+      "comments": {
+        "status": "yes",
+        "summary": "桌面端实现评论组件。"
+      },
+      "danmaku": {
+        "status": "yes",
+        "summary": "桌面端实现弹幕组件。"
+      },
+      "login": {
+        "status": "yes",
+        "summary": "桌面端实现登录对话框。"
+      },
+      "post_login_actions": {
+        "status": "yes",
+        "summary": "桌面端声明支持发评/发弹幕/收藏。"
+      },
+      "favorites": {
+        "status": "yes",
+        "summary": "桌面端含收藏区。"
+      }
+    }
+  },
+  {
+    "model_id": "glm-4_6",
+    "display_name": "GLM-4.6",
+    "feature_matrix": {
+      "playback": {
+        "status": "no",
+        "summary": "无法验证，项目残缺。"
+      },
+      "video_info": {
+        "status": "no",
+        "summary": "无法验证。"
+      },
+      "comments": {
+        "status": "no",
+        "summary": "无法验证。"
+      },
+      "danmaku": {
+        "status": "no",
+        "summary": "无法验证。"
+      },
+      "login": {
+        "status": "no",
+        "summary": "无法验证。"
+      },
+      "post_login_actions": {
+        "status": "no",
+        "summary": "无法验证。"
+      },
+      "favorites": {
+        "status": "no",
+        "summary": "无法验证。"
+      }
+    }
+  }
+]

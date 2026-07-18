@@ -1,0 +1,10 @@
+fastapi==0.128.0
+uvicorn[standard]==0.35.0
+bilibili-api-python==17.4.1
+python-multipart==0.0.20
+qrcode==8.2
+pillow==11.3.0
+pydantic==2.12.0
+pydantic-settings==2.10.1
+aiofiles==24.1.0
+aiohttp==3.12.15

@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}B站二维码登录 - Bilibili平台{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h2 class="auth-title">B站二维码登录</h2>
+    
+    <div class="qrcode-container">
+        <div class="qrcode-image">
+            <img src="https://passport.bilibili.com/qrcode/getLoginUrl" alt="B站登录二维码" style="width: 100%; height: 100%;">
+        </div>
+        <p class="qrcode-instructions mt-3">
+            请使用B站手机APP扫描二维码登录
+        </p>
+    </div>
+    
+    <div class="mt-4">
+        <button class="btn btn-primary bilibili-login-btn w-full" 
+                data-url="{{ url_for('auth.api_bilibili_qrcode_login') }}">
+            确认登录
+        </button>
+    </div>
+    
+    <div class="mt-4">
+        <a href="{{ url_for('auth.bilibili_password_login') }}" class="btn btn-outline w-full">
+            使用账号密码登录
+        </a>
+    </div>
+    
+    <div class="mt-4">
+        <a href="{{ url_for('auth.login') }}" class="btn btn-secondary w-full">
+            返回平台登录
+        </a>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const loginBtn = document.querySelector('.bilibili-login-btn');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = this.dataset.url;
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCsrfToken()
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification(data.message, 'success');
+                    window.location.href = "{{ url_for('user.profile') }}";
+                } else {
+                    showNotification(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('登录失败:', error);
+                showNotification('登录失败，请重试', 'error');
+            });
+        });
+    }
+    
+    function getCsrfToken() {
+        const meta = document.querySelector('meta[name="csrf-token"]');
+        return meta ? meta.content : '';
+    }
+    
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 9999;
+            animation: slideIn 0.3s ease-out;
+            background-color: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'fadeOut 0.3s ease-in';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+});
+</script>
+{% endblock %}

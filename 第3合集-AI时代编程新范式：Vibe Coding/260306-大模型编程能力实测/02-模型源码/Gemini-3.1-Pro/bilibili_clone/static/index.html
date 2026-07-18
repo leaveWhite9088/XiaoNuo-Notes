@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tag to bypass referrer issues for Bilibili images/videos -->
+    <meta name="referrer" content="no-referrer">
+    <title>哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Include qrcode.js for QR rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">Bilibili Clone</a>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="输入BVID搜索视频 (如: BV1xx411c7mD)">
+            <button onclick="doSearch()">搜索</button>
+        </div>
+        <div class="nav-right">
+            <div id="user-avatar" class="avatar" style="display: none;">已登录</div>
+            <button id="login-btn" class="login-btn">登录</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 style="margin-bottom: 20px;">推荐视频 (示例)</h2>
+        <div class="video-grid">
+            <!-- Hardcoded some BVIDs to show, as fetching real recommendation requires WBI/complex API -->
+            <div class="video-card" onclick="window.location.href='/video.html?bvid=BV1xx411c7mD'">
+                <div style="background:#eee; height:120px; display:flex; align-items:center; justify-content:center;">视频示例 1</div>
+                <div class="video-info">
+                    <div class="video-title">示例视频 BV1xx411c7mD</div>
+                </div>
+            </div>
+            <div class="video-card" onclick="window.location.href='/video.html?bvid=BV17x411w7KC'">
+                <div style="background:#eee; height:120px; display:flex; align-items:center; justify-content:center;">视频示例 2</div>
+                <div class="video-info">
+                    <div class="video-title">示例视频 BV17x411w7KC</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>扫码登录</h2>
+            <div id="qrcode-container"></div>
+            <p id="login-status">正在获取二维码...</p>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

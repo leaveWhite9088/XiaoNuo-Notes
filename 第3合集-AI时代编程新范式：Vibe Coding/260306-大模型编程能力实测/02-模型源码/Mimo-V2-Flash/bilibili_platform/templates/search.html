@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}搜索 - Bilibili平台{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 class="card-title">视频搜索</h2>
+    
+    <form action="{{ url_for('main.search') }}" method="get" class="mt-3">
+        <div class="form-group">
+            <input type="text" name="keyword" placeholder="搜索视频..." value="{{ keyword }}" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">搜索</button>
+    </form>
+</div>
+
+{% if keyword %}
+<div class="card mt-4">
+    <h2 class="card-title">搜索结果</h2>
+    <div class="search-stats">
+        搜索关键词: <strong>{{ keyword }}</strong> | 第 {{ page }} 页
+    </div>
+    
+    {% if results %}
+        <div class="mt-3">
+            {% for result in results %}
+            <div class="video-card">
+                <a href="{{ url_for('video.video_detail', bvid=result.bvid) }}">
+                    <img src="{{ result.pic }}" alt="{{ result.title }}" class="video-card-image">
+                </a>
+                <div class="video-card-content">
+                    <div class="video-card-title">
+                        <a href="{{ url_for('video.video_detail', bvid=result.bvid) }}">{{ result.title }}</a>
+                    </div>
+                    <div class="video-card-meta">
+                        <span>UP主: {{ result.author }}</span> | 
+                        <span>播放: {{ result.play }}</span> | 
+                        <span>弹幕: {{ result.video_review }}</span> | 
+                        <span>时长: {{ result.duration }}</span>
+                    </div>
+                    <div class="video-card-stats">
+                        <span>收藏: {{ result.favorites }}</span>
+                        <span>硬币: {{ result.coins }}</span>
+                        <span>分享: {{ result.share }}</span>
+                    </div>
+                    <div class="mt-2">
+                        <a href="{{ url_for('video.video_detail', bvid=result.bvid) }}" class="btn btn-primary btn-sm">观看视频</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="pagination mt-4">
+            {% if page > 1 %}
+                <a href="{{ url_for('main.search', keyword=keyword, page=page-1) }}">上一页</a>
+            {% endif %}
+            <span class="current">第 {{ page }} 页</span>
+            {% if results|length >= 20 %}
+                <a href="{{ url_for('main.search', keyword=keyword, page=page+1) }}">下一页</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">🔍</div>
+            <p>没有找到相关视频</p>
+            <p class="text-muted mt-2">请尝试其他关键词</p>
+        </div>
+    {% endif %}
+</div>
+{% else %}
+<div class="card mt-4">
+    <h2 class="card-title">热门搜索</h2>
+    <div class="mt-3">
+        <div class="btn-group">
+            <a href="{{ url_for('main.search', keyword='动漫') }}" class="btn btn-outline">动漫</a>
+            <a href="{{ url_for('main.search', keyword='游戏') }}" class="btn btn-outline">游戏</a>
+            <a href="{{ url_for('main.search', keyword='音乐') }}" class="btn btn-outline">音乐</a>
+            <a href="{{ url_for('main.search', keyword='舞蹈') }}" class="btn btn-outline">舞蹈</a>
+            <a href="{{ url_for('main.search', keyword='科技') }}" class="btn btn-outline">科技</a>
+            <a href="{{ url_for('main.search', keyword='生活') }}" class="btn btn-outline">生活</a>
+            <a href="{{ url_for('main.search', keyword='鬼畜') }}" class="btn btn-outline">鬼畜</a>
+            <a href="{{ url_for('main.search', keyword='时尚') }}" class="btn btn-outline">时尚</a>
+            <a href="{{ url_for('main.search', keyword='娱乐') }}" class="btn btn-outline">娱乐</a>
+            <a href="{{ url_for('main.search', keyword='知识') }}" class="btn btn-outline">知识</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

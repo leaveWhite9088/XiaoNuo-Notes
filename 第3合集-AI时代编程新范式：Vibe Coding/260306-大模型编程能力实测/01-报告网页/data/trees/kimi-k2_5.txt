@@ -1,0 +1,42 @@
+bilibili-app/
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── api/
+│   │   └── bilibili.ts
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── CommentItem.tsx
+│   │   ├── DanmakuLayer.tsx
+│   │   ├── Header.tsx
+│   │   ├── VideoCard.tsx
+│   │   └── VideoPlayer.tsx
+│   ├── pages/
+│   │   ├── Favorites.tsx
+│   │   ├── Home.tsx
+│   │   ├── Login.tsx
+│   │   ├── Profile.tsx
+│   │   ├── Search.tsx
+│   │   └── VideoDetail.tsx
+│   ├── stores/
+│   │   ├── player.ts
+│   │   └── user.ts
+│   ├── types/
+│   │   └── index.ts
+│   ├── utils/
+│   │   └── format.ts
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts

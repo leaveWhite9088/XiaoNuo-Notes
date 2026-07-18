@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilibili 视频平台</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+</head>
+<body>
+
+<!-- ── 顶部导航 ──────────────────────────────────────── -->
+<header class="header">
+    <div class="header-logo" onclick="navigateTo('home')">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="8" fill="#fb7299"/>
+            <path d="M10 14h20v14a2 2 0 01-2 2H12a2 2 0 01-2-2V14z" fill="white" opacity=".9"/>
+            <rect x="15" y="18" width="3" height="6" rx="1.5" fill="#fb7299"/>
+            <rect x="22" y="18" width="3" height="6" rx="1.5" fill="#fb7299"/>
+            <path d="M13 14l3-4h8l3 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="header-logo-text">bilibili</span>
+    </div>
+
+    <div class="header-search">
+        <input type="text" id="search-input" placeholder="搜索视频..." onkeydown="if(event.key==='Enter')doSearch()">
+        <button class="header-search-btn" onclick="doSearch()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+        </button>
+    </div>
+
+    <nav class="header-nav">
+        <div class="header-nav-item" id="nav-home" onclick="navigateTo('home')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m3 9 9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+            首页
+        </div>
+        <div class="header-nav-item" id="nav-user" onclick="navigateTo('user')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            个人中心
+        </div>
+        <div id="login-area">
+            <button class="btn-login" id="btn-show-login" onclick="navigateTo('login')">登录</button>
+        </div>
+    </nav>
+</header>
+
+<!-- ── Toast 容器 ─────────────────────────────────────── -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- ── 主内容 ─────────────────────────────────────────── -->
+<main class="main-content">
+
+    <!-- ── 首页 ───────────────────────────────────────── -->
+    <div class="page active" id="page-home">
+        <div class="home-page">
+            <div class="section-title" id="home-title">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                热门推荐
+            </div>
+            <div class="video-grid" id="video-grid"></div>
+            <div class="load-more" id="load-more">
+                <button class="load-more-btn" onclick="loadMoreHot()">加载更多</button>
+            </div>
+            <div class="loading" id="home-loading" style="display:none">
+                <div class="loading-spinner"></div>
+                <p>加载中...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 视频播放页 ─────────────────────────────────── -->
+    <div class="page" id="page-video">
+        <div class="video-page">
+            <div class="video-main">
+                <!-- 播放器 -->
+                <div class="video-player-wrapper" id="video-player-wrapper">
+                    <div class="video-player-placeholder" id="video-placeholder">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <p>加载中...</p>
+                    </div>
+                </div>
+
+                <!-- 视频信息 -->
+                <div class="video-info-section" id="video-info-section">
+                    <div class="video-title" id="v-title">加载中...</div>
+                    <div class="video-meta" id="v-meta"></div>
+                    <div class="video-stats" id="v-stats"></div>
+                    <div class="video-owner" id="v-owner"></div>
+                    <div class="video-desc" id="v-desc"></div>
+                </div>
+
+                <!-- 评论 / 弹幕标签 -->
+                <div class="tabs">
+                    <div class="tab active" data-tab="comments" onclick="switchTab(this,'comments')">
+                        评论 <span class="tab-count" id="comment-count"></span>
+                    </div>
+                    <div class="tab" data-tab="danmaku" onclick="switchTab(this,'danmaku')">
+                        弹幕 <span class="tab-count" id="danmaku-count"></span>
+                    </div>
+                </div>
+
+                <!-- 评论区 -->
+                <div class="comment-section" id="tab-comments">
+                    <div class="comment-input-area" id="comment-input-area" style="display:none">
+                        <img id="comment-user-avatar" src="" alt="">
+                        <div class="comment-input-wrapper">
+                            <textarea class="comment-input" id="comment-input" placeholder="善语结善缘，恶言伤人心"></textarea>
+                            <div class="comment-input-actions">
+                                <button class="comment-send-btn" onclick="sendComment()">发表评论</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="comment-login-hint" style="text-align:center;padding:12px;font-size:14px;color:#999;margin-bottom:16px">
+                        <span onclick="navigateTo('login')" style="color:var(--bili-blue);cursor:pointer">登录</span> 后可发表评论
+                    </div>
+                    <ul class="comment-list" id="comment-list"></ul>
+                    <div class="comment-pagination" id="comment-pagination"></div>
+                    <div class="loading" id="comment-loading" style="display:none">
+                        <div class="loading-spinner"></div>
+                        <p>加载评论中...</p>
+                    </div>
+                </div>
+
+                <!-- 弹幕区 -->
+                <div class="danmaku-section" id="tab-danmaku" style="display:none">
+                    <div class="danmaku-send-area" id="danmaku-send-area" style="display:none">
+                        <input class="danmaku-input" id="danmaku-input" placeholder="发个弹幕试试~" maxlength="100">
+                        <button class="danmaku-send-btn" onclick="sendDanmaku()">发送</button>
+                    </div>
+                    <div id="danmaku-login-hint" style="text-align:center;padding:8px;font-size:14px;color:#999;margin-bottom:12px">
+                        <span onclick="navigateTo('login')" style="color:var(--bili-blue);cursor:pointer">登录</span> 后可发送弹幕
+                    </div>
+                    <div class="danmaku-list" id="danmaku-list"></div>
+                    <div class="loading" id="danmaku-loading" style="display:none">
+                        <div class="loading-spinner"></div>
+                        <p>加载弹幕中...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 侧栏 -->
+            <div class="video-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        相关推荐
+                    </div>
+                    <div id="related-list"></div>
+                    <div class="loading" id="related-loading" style="display:none">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 登录页 ─────────────────────────────────────── -->
+    <div class="page" id="page-login">
+        <div class="login-page">
+            <div class="login-card">
+                <h2>登录 bilibili</h2>
+                <p>登录后可发评论、弹幕，查看收藏</p>
+
+                <div class="login-tabs">
+                    <div class="login-tab active" onclick="switchLoginTab(this,'qrcode')">扫码登录</div>
+                    <div class="login-tab" onclick="switchLoginTab(this,'credential')">凭据登录</div>
+                </div>
+
+                <!-- 扫码登录 -->
+                <div id="login-qrcode-panel">
+                    <div class="login-qr-area" id="login-qr-area">
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                            <p>生成二维码中...</p>
+                        </div>
+                    </div>
+                    <div class="login-qr-status" id="login-qr-status">
+                        请使用 Bilibili APP 扫描二维码
+                    </div>
+                    <button class="load-more-btn" onclick="generateQRCode()" style="margin-top:16px">刷新二维码</button>
+                </div>
+
+                <!-- 凭据登录 -->
+                <div id="login-credential-panel" style="display:none">
+                    <div class="login-credential-form">
+                        <div class="login-form-group">
+                            <label>SESSDATA</label>
+                            <input type="text" id="input-sessdata" placeholder="从浏览器Cookie中获取">
+                        </div>
+                        <div class="login-form-group">
+                            <label>bili_jct</label>
+                            <input type="text" id="input-bili-jct" placeholder="从浏览器Cookie中获取">
+                        </div>
+                        <div class="login-form-group">
+                            <label>buvid3（可选）</label>
+                            <input type="text" id="input-buvid3" placeholder="从浏览器Cookie中获取">
+                        </div>
+                        <button class="login-submit-btn" onclick="loginWithCredential()">登录</button>
+                    </div>
+                    <div class="login-help">
+                        获取方法：登录 bilibili.com → F12打开开发者工具 → Application → Cookies → 复制对应值
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 个人中心 ───────────────────────────────────── -->
+    <div class="page" id="page-user">
+        <div class="user-page">
+            <div id="user-not-login" style="display:none">
+                <div class="empty-state">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                    <p>请先登录</p>
+                    <button class="btn-login" onclick="navigateTo('login')" style="margin-top:16px">去登录</button>
+                </div>
+            </div>
+            <div id="user-content" style="display:none">
+                <div class="user-profile-card" id="user-profile-card"></div>
+                <div id="user-fav-area">
+                    <div class="fav-section-title">
+                        <svg viewBox="0 0 24 24" fill="var(--bili-pink)" width="22"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        我的收藏夹
+                    </div>
+                    <div class="fav-list" id="fav-list"></div>
+                    <div id="fav-videos-area" style="display:none">
+                        <div class="fav-back-btn" onclick="showFavList()">
+                            ← 返回收藏夹列表
+                        </div>
+                        <div class="fav-videos-title" id="fav-videos-title"></div>
+                        <div class="video-grid" id="fav-video-grid"></div>
+                    </div>
+                </div>
+                <div class="loading" id="user-loading" style="display:none">
+                    <div class="loading-spinner"></div>
+                    <p>加载中...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

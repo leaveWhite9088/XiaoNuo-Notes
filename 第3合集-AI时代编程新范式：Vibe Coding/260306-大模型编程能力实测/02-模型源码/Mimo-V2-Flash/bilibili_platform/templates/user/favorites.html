@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}我的收藏 - Bilibili平台{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 class="card-title">我的收藏</h2>
+    
+    {% if favorites %}
+        <div class="favorite-list mt-3">
+            {% for favorite in favorites %}
+            <div class="favorite-item">
+                <a href="{{ url_for('video.video_detail', bvid=favorite.bvid) }}">
+                    <img src="{{ favorite.cover }}" alt="{{ favorite.title }}" class="img-cover">
+                </a>
+                <div class="favorite-item-info">
+                    <div class="favorite-item-title">
+                        <a href="{{ url_for('video.video_detail', bvid=favorite.bvid) }}">{{ favorite.title }}</a>
+                    </div>
+                    <div class="favorite-item-meta">
+                        <span>收藏时间: {{ favorite.created_at|datetime_format }}</span>
+                    </div>
+                    <div class="mt-2">
+                        <a href="{{ url_for('video.video_detail', bvid=favorite.bvid) }}" class="btn btn-primary btn-sm">观看</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state mt-4">
+            <div class="empty-state-icon">📚</div>
+            <p>暂无收藏</p>
+            <p class="text-muted mt-2">去搜索并收藏您喜欢的视频</p>
+            <div class="mt-3">
+                <a href="{{ url_for('main.search') }}" class="btn btn-primary">搜索视频</a>
+            </div>
+        </div>
+    {% endif %}
+    
+    <div class="mt-4">
+        <a href="{{ url_for('user.profile') }}" class="btn btn-secondary">返回个人中心</a>
+    </div>
+</div>
+{% endblock %}

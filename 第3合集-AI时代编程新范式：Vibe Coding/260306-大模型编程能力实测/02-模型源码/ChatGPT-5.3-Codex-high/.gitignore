@@ -1,0 +1,6 @@
+.venv/
+.venv312/
+.venv314/
+__pycache__/
+*.pyc
+data/credential.json

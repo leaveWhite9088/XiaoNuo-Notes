@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F4F5F7;
+}
+
+.bili-btn {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer;
+}
+
+.bili-btn-primary {
+  @apply bg-bili-pink text-white hover:bg-pink-600;
+}
+
+.bili-btn-secondary {
+  @apply bg-white border border-bili-border text-bili-text hover:bg-bili-hover;
+}
+
+.bili-card {
+  @apply bg-white rounded-lg overflow-hidden shadow-sm transition-shadow hover:shadow-md;
+}
+
+.bili-input {
+  @apply w-full px-4 py-2 border border-bili-border rounded-md focus:outline-none focus:ring-2 focus:ring-bili-pink focus:border-transparent;
+}

@@ -1,0 +1,906 @@
+/* Bilibili风格样式 */
+:root {
+    --bili-pink: #FB7299;
+    --bili-pink-light: #FFADD2;
+    --bili-blue: #00AEEC;
+    --bili-blue-light: #00C8FF;
+    --bili-white: #FFFFFF;
+    --bili-gray-1: #F4F5F7;
+    --bili-gray-2: #E3E5E7;
+    --bili-gray-3: #C9CCD0;
+    --bili-gray-4: #9499A0;
+    --bili-gray-5: #61666D;
+    --bili-gray-6: #18191C;
+    --bili-black: #000000;
+    --bili-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--bili-font);
+    background-color: var(--bili-gray-1);
+    color: var(--bili-gray-6);
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 顶部导航 */
+.bili-header {
+    background: var(--bili-white);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 2560px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--bili-pink);
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--bili-pink);
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.logo-text {
+    color: var(--bili-pink);
+}
+
+.header-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-item {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--bili-gray-6);
+    transition: all 0.2s;
+}
+
+.nav-item:hover {
+    background: var(--bili-gray-1);
+}
+
+.nav-item.active {
+    background: var(--bili-pink);
+    color: white;
+}
+
+/* 搜索框 */
+.header-center {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 24px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--bili-gray-1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 8px 16px;
+    border: none;
+    background: var(--bili-pink);
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-btn:hover {
+    background: #FA7299;
+}
+
+/* 用户区域 */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    padding: 8px 20px;
+    background: var(--bili-pink);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.login-btn:hover {
+    background: #FA7299;
+}
+
+.user-area {
+    position: relative;
+}
+
+.user-avatar img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.user-avatar img:hover {
+    border-color: var(--bili-pink);
+}
+
+.user-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 280px;
+    background: var(--bili-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    margin-top: 8px;
+    z-index: 200;
+}
+
+.user-panel-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--bili-gray-2);
+}
+
+.user-panel-header img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.user-panel-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.uname {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.ulevel {
+    font-size: 12px;
+    color: var(--bili-pink);
+    background: rgba(251, 114, 153, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.user-panel-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--bili-gray-2);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--bili-gray-4);
+}
+
+.user-panel-actions {
+    padding-top: 12px;
+    display: flex;
+    gap: 12px;
+}
+
+.user-panel-actions a {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--bili-gray-5);
+    transition: all 0.2s;
+}
+
+.user-panel-actions a:hover {
+    background: var(--bili-gray-1);
+    color: var(--bili-pink);
+}
+
+/* 主内容区 */
+.bili-main {
+    max-width: 2560px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    min-height: calc(100vh - 64px - 60px);
+}
+
+.page-title {
+    margin-bottom: 20px;
+}
+
+.page-title h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* 视频网格 */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background: var(--bili-white);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-cover {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.video-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 8px 8px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+}
+
+.video-stats span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.video-info {
+    padding: 12px;
+}
+
+.video-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 8px;
+    height: 40px;
+}
+
+.video-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--bili-gray-4);
+}
+
+/* 播放器 */
+.player-container {
+    max-width: 2560px;
+    margin: 0 auto;
+}
+
+.player-back {
+    margin-bottom: 16px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--bili-gray-5);
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.back-btn:hover {
+    color: var(--bili-pink);
+}
+
+.player-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 20px;
+}
+
+.video-player {
+    background: black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-player video {
+    width: 100%;
+    display: block;
+}
+
+.video-details {
+    margin-top: 16px;
+    background: var(--bili-white);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.video-details .video-title {
+    font-size: 18px;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.video-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid var(--bili-gray-3);
+    background: var(--bili-white);
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    border-color: var(--bili-pink);
+    color: var(--bili-pink);
+}
+
+.action-btn.active {
+    background: var(--bili-pink);
+    border-color: var(--bili-pink);
+    color: white;
+}
+
+.video-stats-row {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--bili-gray-4);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--bili-gray-2);
+    margin-bottom: 12px;
+}
+
+.video-desc {
+    font-size: 14px;
+    color: var(--bili-gray-5);
+    line-height: 1.6;
+}
+
+.video-desc p {
+    white-space: pre-wrap;
+}
+
+/* 侧边相关视频 */
+.player-sidebar {
+    background: var(--bili-white);
+    border-radius: 8px;
+    padding: 16px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+.related-videos h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.related-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.related-item {
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.related-item:hover {
+    background: var(--bili-gray-1);
+}
+
+.related-item img {
+    width: 120px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.related-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.related-info h4 {
+    font-size: 13px;
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.related-info span {
+    font-size: 12px;
+    color: var(--bili-gray-4);
+}
+
+/* 评论区 */
+.comments-section {
+    margin-top: 20px;
+    background: var(--bili-white);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.comments-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.comments-header h3 {
+    font-size: 18px;
+}
+
+.comments-count {
+    font-size: 14px;
+    color: var(--bili-gray-4);
+}
+
+.comment-input-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--bili-gray-2);
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.comment-input-area {
+    flex: 1;
+}
+
+.comment-input-area textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--bili-gray-2);
+    border-radius: 8px;
+    resize: none;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.comment-input-area textarea:focus {
+    border-color: var(--bili-pink);
+}
+
+.send-comment-btn {
+    margin-top: 8px;
+    padding: 8px 20px;
+    background: var(--bili-pink);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.send-comment-btn:hover:not(:disabled) {
+    background: #FA7299;
+}
+
+.send-comment-btn:disabled {
+    background: var(--bili-gray-3);
+    cursor: not-allowed;
+}
+
+.login-tip {
+    text-align: center;
+    padding: 20px;
+    background: var(--bili-gray-1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.login-tip button {
+    margin-left: 8px;
+    padding: 6px 16px;
+    background: var(--bili-pink);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.comment-item {
+    display: flex;
+    gap: 12px;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.comment-author {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--bili-gray-6);
+}
+
+.comment-time {
+    font-size: 12px;
+    color: var(--bili-gray-4);
+}
+
+.comment-text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--bili-gray-4);
+}
+
+.comment-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.no-comments {
+    text-align: center;
+    padding: 40px;
+    color: var(--bili-gray-4);
+}
+
+/* 登录弹窗 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.login-modal {
+    background: var(--bili-white);
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90vw;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--bili-gray-2);
+}
+
+.modal-header h3 {
+    font-size: 18px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--bili-gray-4);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.method-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.method-tabs button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--bili-gray-2);
+    background: var(--bili-white);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.method-tabs button.active {
+    border-color: var(--bili-pink);
+    color: var(--bili-pink);
+}
+
+.qrcode-login, .sessdata-login {
+    text-align: center;
+}
+
+.qrcode-box {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 16px;
+    background: var(--bili-gray-1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qrcode-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qrcode-tip, .sessdata-tip {
+    font-size: 14px;
+    color: var(--bili-gray-4);
+    margin-bottom: 16px;
+}
+
+.refresh-btn, .login-submit {
+    padding: 10px 24px;
+    background: var(--bili-pink);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.refresh-btn:hover, .login-submit:hover {
+    background: #FA7299;
+}
+
+.sessdata-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--bili-gray-2);
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* 弹幕控制 */
+.danmaku-control {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    background: var(--bili-white);
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 50;
+}
+
+.danmaku-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.danmaku-send {
+    display: flex;
+    gap: 8px;
+}
+
+.danmaku-send input {
+    padding: 6px 12px;
+    border: 1px solid var(--bili-gray-2);
+    border-radius: 6px;
+    font-size: 13px;
+    width: 150px;
+}
+
+.danmaku-send button {
+    padding: 6px 12px;
+    background: var(--bili-pink);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* 加载和空状态 */
+.loading, .empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--bili-gray-4);
+    font-size: 14px;
+}
+
+/* 页脚 */
+.bili-footer {
+    background: var(--bili-white);
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--bili-gray-4);
+}
+
+.bili-footer p {
+    margin: 4px 0;
+}
+
+/* 响应式 */
+@media (max-width: 1200px) {
+    .player-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .player-sidebar {
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-center {
+        display: none;
+    }
+    
+    .header-nav {
+        display: none;
+    }
+    
+    .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

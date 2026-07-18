@@ -1,0 +1,44 @@
+bilibili-platform/
+├── backend/
+│   ├── check_imports.py
+│   ├── check_imports_2.py
+│   ├── check_login.py
+│   ├── check_login_v2.py
+│   ├── check_login_v2_check.py
+│   ├── check_login_v2_dir.py
+│   ├── credential_store.py
+│   ├── credentials.json
+│   ├── main.py
+│   ├── requirements.txt
+│   └── test_login_v2.py
+└── frontend/
+    ├── bilibili-platform/
+    │   └── backend/
+    ├── public/
+    │   └── vite.svg
+    ├── src/
+    │   ├── assets/
+    │   │   └── react.svg
+    │   ├── components/
+    │   │   └── Header.tsx
+    │   ├── pages/
+    │   │   ├── Home.tsx
+    │   │   ├── Login.tsx
+    │   │   └── VideoDetail.tsx
+    │   ├── api.ts
+    │   ├── App.css
+    │   ├── App.tsx
+    │   ├── index.css
+    │   └── main.tsx
+    ├── .gitignore
+    ├── eslint.config.js
+    ├── index.html
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.js
+    ├── README.md
+    ├── tailwind.config.js
+    ├── tsconfig.app.json
+    ├── tsconfig.json
+    ├── tsconfig.node.json
+    └── vite.config.ts
