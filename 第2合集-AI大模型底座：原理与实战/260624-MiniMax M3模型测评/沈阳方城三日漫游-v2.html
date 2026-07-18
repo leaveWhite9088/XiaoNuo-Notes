@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>沈阳方城 · 三日漫游</title>
+<style>
+  :root {
+    /* oklch 调色板：朱红 + 灰泥 + 墨黑 + 金。纯黑纯白不用 */
+    --ink:        oklch(0.18 0.04 35);          /* 带红倾向的深墨，非纯黑 */
+    --ink-soft:   oklch(0.42 0.04 38);
+    --ink-faint:  oklch(0.62 0.03 42);
+    --paper:      oklch(0.965 0.012 75);        /* 偏暖的米白 */
+    --paper-2:    oklch(0.94 0.018 78);         /* 灰泥 */
+    --cinnabar:   oklch(0.50 0.18 32);          /* 主色：朱红 */
+    --cinnabar-d: oklch(0.38 0.16 30);
+    --gold:       oklch(0.72 0.12 75);
+    --jade:       oklch(0.55 0.08 155);         /* 极少量辅色：玉 */
+    --line:       oklch(0.85 0.02 70);
+    --shadow-1:   0 1px 0 oklch(0.18 0.04 35 / .04), 0 8px 24px oklch(0.18 0.04 35 / .06);
+    --shadow-2:   0 2px 0 oklch(0.18 0.04 35 / .06), 0 16px 40px oklch(0.18 0.04 35 / .10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); }
+  body {
+    color: var(--ink);
+    font-family: "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", ui-serif, serif;
+    font-feature-settings: "palt" 1, "liga" 1;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* 灰泥 texture — 用 SVG noise 内联 */
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-repeat: repeat;
+  }
+
+  .page { max-width: 920px; margin: 0 auto; padding: 80px 56px 120px; position: relative; }
+
+  /* ====== Hero — 故意打破 grid ====== */
+  .hero { position: relative; padding: 60px 0 64px; border-bottom: 1px solid var(--line); }
+  .hero-mark {
+    /* 印章感装饰：朱红方块 + 篆体 "方城" */
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px;
+    background: var(--cinnabar); color: var(--paper);
+    font-family: "Noto Serif CJK SC", serif;
+    font-weight: 900; font-size: 22px; letter-spacing: -2px;
+    box-shadow: 4px 4px 0 var(--cinnabar-d);
+    transform: rotate(-3deg);
+    margin-bottom: 32px;
+  }
+  .hero-eyebrow {
+    font-family: "Cormorant Garamond", "Noto Serif CJK SC", serif;
+    font-style: italic; font-size: 14px; color: var(--cinnabar);
+    letter-spacing: 4px; text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: "Noto Serif CJK SC", "STSong", "Songti SC", serif;
+    font-weight: 900;
+    font-size: clamp(48px, 7vw, 78px);
+    line-height: 1.0;
+    letter-spacing: -2px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .hero h1 .red { color: var(--cinnabar); }
+  .hero-sub {
+    font-size: 18px; color: var(--ink-soft);
+    max-width: 540px; margin-top: 18px; line-height: 1.6;
+  }
+  .hero-meta {
+    display: flex; gap: 32px; margin-top: 40px;
+    font-family: "Cormorant Garamond", "Noto Serif CJK SC", serif;
+    font-size: 13px; color: var(--ink-faint); letter-spacing: 2px; text-transform: uppercase;
+  }
+  .hero-meta b {
+    color: var(--ink); font-weight: 600; font-size: 18px;
+    display: block; margin-top: 2px; letter-spacing: 0;
+  }
+
+  /* ====== Section heading ====== */
+  .sec-head { margin: 64px 0 24px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: end; }
+  .sec-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 14px; color: var(--cinnabar);
+    letter-spacing: 3px; font-style: italic;
+  }
+  .sec-title {
+    font-size: 30px; font-weight: 800; letter-spacing: -0.5px;
+    color: var(--ink);
+  }
+  .sec-rule { height: 2px; background: var(--ink); margin: 8px 0 0; width: 56px; }
+  .sec-tag { font-size: 13px; color: var(--ink-faint); margin-top: 6px; font-style: italic; }
+
+  /* ====== Day — 故意打破对称：左侧大数字 + 右侧内容 ====== */
+  .day {
+    margin: 36px 0;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .day-no {
+    font-family: "Cormorant Garamond", "Noto Serif CJK SC", serif;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 0.9;
+    color: var(--cinnabar);
+    text-align: right;
+    padding-top: 8px;
+    letter-spacing: -3px;
+  }
+  .day-no small {
+    display: block;
+    font-size: 13px; color: var(--ink-soft); letter-spacing: 2px;
+    margin-top: 8px; font-style: italic; text-align: right;
+  }
+  .day-body { border-top: 1px solid var(--line); padding-top: 20px; }
+  .day-title {
+    font-size: 22px; font-weight: 800; color: var(--ink);
+    margin-bottom: 4px; letter-spacing: -0.3px;
+  }
+  .day-tag { font-size: 12px; color: var(--cinnabar); letter-spacing: 4px; font-weight: 700; }
+  .slot { display: grid; grid-template-columns: 70px 1fr; gap: 18px; margin: 18px 0; align-items: start; }
+  .slot-time {
+    font-family: "Cormorant Garamond", "Noto Serif CJK SC", serif;
+    font-weight: 600; color: var(--cinnabar-d);
+    font-size: 18px; padding-top: 2px;
+  }
+  .slot-body { color: var(--ink-soft); font-size: 15px; }
+  .slot-body strong { color: var(--ink); font-weight: 700; }
+  .slot-body .meta { color: var(--ink-faint); font-size: 12px; margin-top: 4px; font-style: italic; }
+
+  /* ====== Hotel：故意不用 card ====== */
+  .hotel-block {
+    margin: 36px 0;
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .hotel { padding: 0 24px; position: relative; }
+  .hotel:first-child { padding-left: 0; }
+  .hotel:not(:last-child)::after {
+    content: ''; position: absolute; right: 0; top: 12px; bottom: 12px;
+    width: 1px; background: var(--line);
+  }
+  .hotel-rank {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 11px; color: var(--cinnabar); letter-spacing: 4px;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .hotel-name {
+    font-size: 16px; font-weight: 700; color: var(--ink);
+    margin-bottom: 6px; line-height: 1.4;
+  }
+  .hotel-price {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px; font-weight: 600; color: var(--cinnabar);
+    margin: 8px 0;
+  }
+  .hotel-price small { font-size: 12px; color: var(--ink-faint); margin-left: 4px; letter-spacing: 0; }
+  .hotel-addr { font-size: 12px; color: var(--ink-faint); line-height: 1.5; }
+
+  /* ====== 美食：2x4 网格，但每格左边粗 border ====== */
+  .food-grid {
+    margin: 36px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .food {
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--line);
+    border-left: 3px solid var(--paper-2);
+    transition: border-color .2s;
+  }
+  .food:nth-child(odd) { border-right: 1px solid var(--line); }
+  .food:nth-child(2n) { padding-left: 24px; }
+  .food-name { font-size: 16px; font-weight: 700; color: var(--ink); }
+  .food-yrs { font-family: "Cormorant Garamond", serif; font-size: 11px; color: var(--cinnabar); font-style: italic; margin-left: 6px; }
+  .food-desc { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+  /* ====== Tips：横向四宫格 + 顶部小竖条 ====== */
+  .tips {
+    margin: 36px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .tip {
+    padding: 18px 18px 18px 22px;
+    border-left: 1px solid var(--line);
+    position: relative;
+  }
+  .tip:first-child { border-left: 0; padding-left: 0; }
+  .tip::before {
+    content: ''; position: absolute; left: 0; top: 18px; bottom: 18px;
+    width: 3px; background: var(--cinnabar);
+  }
+  .tip:first-child::before { left: 0; }
+  .tip-k {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 11px; color: var(--cinnabar); letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .tip-v { font-size: 13px; color: var(--ink); line-height: 1.5; }
+  .tip-v b { color: var(--cinnabar-d); }
+
+  /* ====== Quote — editorial pull-quote ====== */
+  .pullquote {
+    margin: 80px 0;
+    padding: 0 24px;
+    border-left: 3px solid var(--cinnabar);
+    font-size: 22px; font-weight: 600; color: var(--ink);
+    line-height: 1.5; max-width: 680px;
+  }
+  .pullquote-source { display: block; margin-top: 16px; font-size: 12px; color: var(--ink-faint); font-style: italic; letter-spacing: 1px; }
+
+  /* ====== Footer — colophon ====== */
+  .colophon {
+    margin-top: 80px; padding-top: 24px;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 11px; color: var(--ink-faint); letter-spacing: 1px;
+  }
+  .colophon b { color: var(--ink); font-weight: 600; }
+  .stamp {
+    display: inline-block; padding: 4px 10px;
+    border: 1.5px solid var(--cinnabar); color: var(--cinnabar);
+    font-family: "Noto Serif CJK SC", serif; font-weight: 700;
+    transform: rotate(-2deg); letter-spacing: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="hero-mark">方城</div>
+    <div class="hero-eyebrow">SHENYANG · 2026 SUMMER · 03—05.07</div>
+    <h1>盛京方城<br><span class="red">三日漫游</span></h1>
+    <p class="hero-sub">一宫两邻的绿瓦红墙、市井百年的头条胡同、灯火通明的百年老街——挑一个盛夏的周末，慢节奏走进 400 年东北第一城。</p>
+    <div class="hero-meta">
+      <div>时长<b>3 天</b></div>
+      <div>日期<b>7.3 — 7.5</b></div>
+      <div>主题<b>老城 · 商业街 · 烟火</b></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-num">— I</div>
+      <div>
+        <div class="sec-title">三日行程</div>
+        <div class="sec-rule"></div>
+        <div class="sec-tag">三天动线 · 中街为轴 · 步行可达</div>
+      </div>
+    </div>
+
+    <article class="day">
+      <div class="day-no">01<small>周五 · 7.3</small></div>
+      <div class="day-body">
+        <div class="day-tag">ARRIVAL · 中街</div>
+        <div class="day-title">抵达 · 头条胡同 · 夜色中街</div>
+        <div class="slot">
+          <div class="slot-time">15:00</div>
+          <div class="slot-body"><strong>汉庭中街故宫方城酒店</strong> 入住<br>北中街路 121 号 · 地铁 2 号线中街站。放下行李、空调回血。<div class="meta">飞猪"中街方城"关键词 top 1，舒适型 ¥3xx</div></div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">17:00</div>
+          <div class="slot-body"><strong>头条胡同 / 长安寺胡同</strong><br>本地人的逛吃起手式——老边饺子 180 年起步、马家烧麦清嘉庆元年，柳七爷小龙虾、青梅酒肆穿插。</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">19:30</div>
+          <div class="slot-body"><strong>中街主街夜游</strong><br>"四百年老街"，盛京百货 + 益田假日世界。「中街冰点城」吃半液（沈阳限定奶昔冰），看盛京龙城常驻灯组。</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-no">02<small>周六 · 7.4</small></div>
+      <div class="day-body">
+        <div class="day-tag">CULTURE · 宫 + 府 + 漫游</div>
+        <div class="day-title">故宫 · 大帅府 · 西→东胡同</div>
+        <div class="slot">
+          <div class="slot-time">08:30</div>
+          <div class="slot-body"><strong>沈阳故宫</strong> 1.5-2h<br>一开门就进。租讲解器（¥30），不租等于白来——大政殿、十王亭、文溯阁的故事自己看不出来。</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">11:00</div>
+          <div class="slot-body"><strong>张学良旧居（大帅府）</strong><br>故宫往南 800m。一座院子，半部民国史。中街「老边饺子」/「马家烧麦」吃午饭。</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">14:30</div>
+          <div class="slot-body"><strong>西 → 东胡同漫游</strong><br>翰墨胡同 → 干石桥胡同 → 中心庙胡同 → 古城广场 → 沈阳故宫后墙。沿途"沈阳"大字墙、微笑墙、灵蛇印章（方城游客中心可集）。</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">19:00</div>
+          <div class="slot-body"><strong>盛京龙城 + 汗王宫遗址</strong><br>盛京龙城 4F 故宫观景台（17:00 前免费），汗王宫遗址"沈阳"大字墙打卡。</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-no">03<small>周日 · 7.5</small></div>
+      <div class="day-body">
+        <div class="day-tag">DEPART · 商业街</div>
+        <div class="day-title">太原街 · 主角儿小镇 · 离沈</div>
+        <div class="slot">
+          <div class="slot-time">09:30</div>
+          <div class="slot-body"><strong>太原街商业圈</strong><br>沈阳第二商业街。百年老街、时尚商场、本地生活气息。地铁 2 号线"沈阳站"站直达。</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">13:00</div>
+          <div class="slot-body"><strong>主角儿古风演绎小镇</strong><br>红楼梦沉浸式主题——"梦回红楼"角色扮演 + 情景短剧 + 海棠诗会 + 再现金钗选美。2-3h。<div class="meta">⚠ 提前大众点评看评价，确认 7 月排期</div></div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">16:00</div>
+          <div class="slot-body"><strong>返程</strong><br>从汉庭退房，地铁 2 号线直达沈阳站 / 沈阳北站。晚班机走桃仙（浑南区）。</div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-num">— II</div>
+      <div>
+        <div class="sec-title">住宿</div>
+        <div class="sec-rule"></div>
+        <div class="sec-tag">中街为轴 · 地铁 2 号线覆盖全景点</div>
+      </div>
+    </div>
+    <div class="hotel-block">
+      <div class="hotel">
+        <div class="hotel-rank">— Main Pick</div>
+        <div class="hotel-name">汉庭沈阳中街故宫方城酒店</div>
+        <div class="hotel-price">¥3xx<small>/ 晚</small></div>
+        <div class="hotel-addr">北中街路 121 号<br>舒适型 · 中街站<br>飞猪"中街方城" top 1</div>
+      </div>
+      <div class="hotel">
+        <div class="hotel-rank">— Alt 1</div>
+        <div class="hotel-name">艾扉·中街方城故宫店</div>
+        <div class="hotel-price">¥3xx<small>/ 晚</small></div>
+        <div class="hotel-addr">沈河区南顺城街 46 号<br>舒适型 · 中街步行街</div>
+      </div>
+      <div class="hotel">
+        <div class="hotel-rank">— Alt 2</div>
+        <div class="hotel-name">奉天方城酒店</div>
+        <div class="hotel-price">¥2xx<small>/ 晚</small></div>
+        <div class="hotel-addr">西顺城街 247 号<br>经济型 · 怀远门站</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-num">— III</div>
+      <div>
+        <div class="sec-title">必吃清单</div>
+        <div class="sec-rule"></div>
+        <div class="sec-tag">老字号 · 市井烟火 · 网红穿插</div>
+      </div>
+    </div>
+    <div class="food-grid">
+      <div class="food"><div class="food-name">老边饺子<span class="food-yrs">— 180+ yrs</span></div><div class="food-desc">中街总店 · 鲜肉水饺 / 冰花饺</div></div>
+      <div class="food"><div class="food-name">马家烧麦<span class="food-yrs">— 1796</span></div><div class="food-desc">清嘉庆元年 · 沈河区 · 牛肉 / 三鲜</div></div>
+      <div class="food"><div class="food-name">中街冰点城</div><div class="food-desc">"半液" 沈阳限定奶冰 · 怀远门总店</div></div>
+      <div class="food"><div class="food-name">德氏制冰厂</div><div class="food-desc">中街店 · 东北老牌冷饮</div></div>
+      <div class="food"><div class="food-name">柳七爷小龙虾</div><div class="food-desc">中街方城店 · 网红人气</div></div>
+      <div class="food"><div class="food-name">青梅酒肆</div><div class="food-desc">中街方城店 · 餐酒馆</div></div>
+      <div class="food"><div class="food-name">盛京百货大家庭</div><div class="food-desc">炕头打卡 · 鸡架 / 烤冷面 / 大白梨</div></div>
+      <div class="food"><div class="food-name">东北菜馆</div><div class="food-desc">锅包肉 / 溜肉段（评价好的店都行）</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-num">— IV</div>
+      <div>
+        <div class="sec-title">实用贴士</div>
+        <div class="sec-rule"></div>
+        <div class="sec-tag">7 月 · 雨季 · 短袖+薄外套+雨具</div>
+      </div>
+    </div>
+    <div class="tips">
+      <div class="tip">
+        <div class="tip-k">Weather</div>
+        <div class="tip-v">28-31°C 高<br>19-22°C 低<br><b>多雷阵雨</b></div>
+      </div>
+      <div class="tip">
+        <div class="tip-k">Transit</div>
+        <div class="tip-v">地铁 2 号线全覆盖<br>中街 / 沈阳站 /<br>怀远门三站通用</div>
+      </div>
+      <div class="tip">
+        <div class="tip-k">Tickets</div>
+        <div class="tip-v">故宫 ¥50<br>帅府 ¥40<br><b>联票 ¥80 划算</b><br>胡同全免费</div>
+      </div>
+      <div class="tip">
+        <div class="tip-k">Tip</div>
+        <div class="tip-v">故宫/帅府<br>租讲解器<br>暴走 8-12 km<br>舒服的鞋</div>
+      </div>
+    </div>
+  </section>
+
+  <blockquote class="pullquote">
+    "留下一条街，护好一座城，守住老城的根与魂。"
+    <span class="pullquote-source">— 沈阳方城漫游定位语</span>
+  </blockquote>
+
+  <footer class="colophon">
+    <div>
+      <b>盛京方城三日漫游</b> · 7.3–7.5 2026<br>
+      <span style="margin-top:4px;display:inline-block">策划 · 史迪仔 · 2026.6.23</span>
+    </div>
+    <div style="text-align:right">
+      <div class="stamp">盛 京</div>
+      <div style="margin-top:12px">数据：飞猪 / 知乎 / 今日头条 / 抖音 / wttr.in</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

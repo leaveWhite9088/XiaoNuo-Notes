@@ -1,0 +1,7 @@
+国产大模型月报 HTML 用到的 Skill
+
+36kr-hotlist — https://clawhub.ai/skills?q=36kr
+xhs-cn — https://clawhub.ai/wscats/xhs-cn
+xpzouying/xiaohongshu-mcp — https://github.com/xpzouying/xiaohongshu-mcp
+impeccable-uxui — https://github.com/openclaw/skills
+minimax-mmx — https://github.com/MiniMaxio/mmx-cli

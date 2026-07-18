@@ -1,0 +1,7 @@
+沈阳旅行攻略任务用到的 Skill / MCP
+
+xhs-cn — https://clawhub.ai/wscats/xhs-cn
+xpzouying/xiaohongshu-mcp — https://github.com/xpzouying/xiaohongshu-mcp
+amap — https://lbs.amap.com/
+flyai — https://open.fly.ai/
+impeccable-uxui — https://github.com/openclaw/skills

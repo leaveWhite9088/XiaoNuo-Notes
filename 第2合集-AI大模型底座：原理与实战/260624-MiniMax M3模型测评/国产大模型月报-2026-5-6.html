@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国产大模型月报 · 2026.5—6</title>
+<style>
+  :root {
+    /* 深色科技感 + 朱红强调。避开 cyan-on-dark 和紫蓝渐变 */
+    --ink:        oklch(0.16 0.02 270);       /* 深墨 */
+    --ink-soft:   oklch(0.42 0.02 270);
+    --ink-faint:  oklch(0.58 0.015 270);
+    --paper:      oklch(0.985 0.005 90);      /* 极淡的暖白 */
+    --paper-2:    oklch(0.955 0.008 80);
+    --paper-3:    oklch(0.92 0.012 70);
+    --cinnabar:   oklch(0.55 0.20 28);        /* 朱红 */
+    --cinnabar-d: oklch(0.40 0.18 30);
+    --cinnabar-l: oklch(0.92 0.04 28);
+    --gold:       oklch(0.72 0.12 75);
+    --jade:       oklch(0.55 0.10 160);
+    --indigo:     oklch(0.45 0.10 270);
+    --line:       oklch(0.85 0.012 70);
+    --line-2:     oklch(0.78 0.015 70);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    color: var(--ink);
+    font-family: "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", ui-serif, serif;
+    font-feature-settings: "palt" 1, "liga" 1;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    background: var(--paper);
+    /* 极淡 noise */
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .page { max-width: 940px; margin: 0 auto; padding: 72px 52px 120px; }
+
+  /* ====== HERO ====== */
+  .hero { position: relative; padding: 40px 0 56px; border-bottom: 2px solid var(--ink); }
+  .hero-meta {
+    display: flex; gap: 24px; align-items: center; margin-bottom: 24px;
+    font-size: 12px; color: var(--ink-faint); letter-spacing: 3px; text-transform: uppercase;
+  }
+  .hero-meta .tag {
+    background: var(--cinnabar); color: var(--paper);
+    padding: 4px 10px; font-weight: 700; letter-spacing: 2px;
+  }
+  .hero h1 {
+    font-size: clamp(46px, 6.5vw, 76px); line-height: 0.95;
+    font-weight: 900; letter-spacing: -2px;
+    color: var(--ink); margin-bottom: 6px;
+  }
+  .hero h1 .accent { color: var(--cinnabar); font-style: italic; }
+  .hero-sub {
+    font-size: 19px; color: var(--ink-soft); max-width: 640px; margin-top: 20px;
+    line-height: 1.55;
+  }
+  .hero-data {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    margin-top: 44px; border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2);
+  }
+  .hd-cell {
+    padding: 18px 20px 18px 0; border-right: 1px solid var(--line-2);
+  }
+  .hd-cell:last-child { border-right: 0; padding-right: 0; }
+  .hd-k { font-size: 11px; color: var(--ink-faint); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+  .hd-v { font-size: 32px; font-weight: 800; color: var(--ink); letter-spacing: -1px; }
+  .hd-v small { font-size: 14px; color: var(--cinnabar-d); font-weight: 600; margin-left: 4px; }
+  .hd-v .sub { font-size: 11px; color: var(--ink-faint); display: block; font-weight: 400; margin-top: 4px; letter-spacing: 0.5px; font-style: italic; }
+
+  /* ====== SECTION HEAD ====== */
+  .sec { margin: 64px 0 0; }
+  .sec-head {
+    display: grid; grid-template-columns: auto 1fr; gap: 18px;
+    align-items: end; margin-bottom: 32px;
+  }
+  .sec-n {
+    font-family: "Cormorant Garamond", "Noto Serif CJK SC", serif;
+    font-size: 14px; color: var(--cinnabar); font-style: italic;
+    letter-spacing: 3px;
+  }
+  .sec-t { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; }
+  .sec-rule { width: 48px; height: 3px; background: var(--ink); margin-top: 6px; }
+  .sec-tag { font-size: 13px; color: var(--ink-faint); margin-top: 4px; font-style: italic; }
+
+  /* ====== TIMELINE ====== */
+  .timeline { border-left: 2px solid var(--ink); margin-left: 8px; padding-left: 28px; }
+  .tl-week {
+    margin: 28px 0;
+    position: relative;
+  }
+  .tl-week::before {
+    content: ''; position: absolute; left: -36px; top: 8px;
+    width: 12px; height: 12px; background: var(--paper);
+    border: 3px solid var(--cinnabar); border-radius: 50%;
+  }
+  .tl-wk-head {
+    display: flex; align-items: baseline; gap: 16px; margin-bottom: 14px;
+    padding-bottom: 6px; border-bottom: 1px solid var(--line);
+  }
+  .tl-wk-tag {
+    font-family: "Cormorant Garamond", "Noto Serif CJK SC", serif;
+    font-size: 13px; color: var(--cinnabar); font-style: italic;
+    letter-spacing: 2px;
+  }
+  .tl-wk-date { font-size: 18px; font-weight: 700; color: var(--ink); letter-spacing: -0.3px; }
+  .tl-wk-meta { font-size: 12px; color: var(--ink-faint); margin-left: auto; }
+  .tl-item {
+    display: grid; grid-template-columns: 64px 1fr; gap: 14px;
+    padding: 12px 0; align-items: baseline;
+    border-bottom: 1px dashed var(--line);
+  }
+  .tl-item:last-child { border-bottom: 0; }
+  .tl-day { font-family: "Cormorant Garamond", serif; font-size: 14px; color: var(--cinnabar-d); font-weight: 600; }
+  .tl-body strong { color: var(--ink); font-weight: 700; }
+  .tl-body .who { color: var(--cinnabar); font-weight: 700; }
+  .tl-body .tag {
+    display: inline-block; font-size: 10px; padding: 1px 6px;
+    background: var(--cinnabar-l); color: var(--cinnabar-d);
+    margin-left: 6px; letter-spacing: 1px; font-weight: 700;
+  }
+  .tl-body .tag.gray { background: var(--paper-2); color: var(--ink-soft); }
+  .tl-body .note { color: var(--ink-faint); font-size: 13px; display: block; margin-top: 2px; }
+
+  /* ====== VENDOR MATRIX ====== */
+  .vendors { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); }
+  .v-card {
+    padding: 24px 24px 20px 0;
+    border-bottom: 1px solid var(--line-2);
+    border-right: 1px solid var(--line-2);
+    position: relative;
+  }
+  .v-card:nth-child(2n) { padding-right: 0; padding-left: 24px; border-right: 0; }
+  .v-card:nth-last-child(-n+2) { border-bottom: 0; }
+  .v-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .v-name { font-size: 19px; font-weight: 800; color: var(--ink); letter-spacing: -0.3px; }
+  .v-name small { color: var(--cinnabar); font-weight: 700; font-size: 11px; letter-spacing: 1.5px; margin-left: 6px; vertical-align: middle; }
+  .v-pop { font-size: 11px; color: var(--ink-faint); letter-spacing: 1px; }
+  .v-move { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+  .v-move b { color: var(--cinnabar-d); font-weight: 700; }
+  .v-stat { display: flex; gap: 14px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+  .v-stat span { font-size: 11px; color: var(--ink-faint); }
+  .v-stat b { color: var(--ink); font-weight: 700; font-size: 13px; margin-left: 4px; }
+
+  /* ====== TREND OBSERVATIONS ====== */
+  .trends { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .trend {
+    border-top: 3px solid var(--cinnabar); padding: 16px 0 0;
+  }
+  .trend:nth-child(2) { border-top-color: var(--jade); }
+  .trend:nth-child(3) { border-top-color: var(--gold); }
+  .trend:nth-child(4) { border-top-color: var(--indigo); }
+  .t-k {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 12px; color: var(--cinnabar); letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .trend:nth-child(2) .t-k { color: var(--jade); }
+  .trend:nth-child(3) .t-k { color: var(--gold); }
+  .trend:nth-child(4) .t-k { color: var(--indigo); }
+  .t-t { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+  .t-b { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* ====== PULLQUOTE ====== */
+  .pq {
+    margin: 64px 0; padding: 0 24px;
+    border-left: 3px solid var(--cinnabar);
+    font-size: 21px; font-weight: 600; color: var(--ink);
+    line-height: 1.5; max-width: 720px;
+  }
+  .pq-src { display: block; font-size: 12px; color: var(--ink-faint); font-style: italic; margin-top: 14px; letter-spacing: 1px; }
+
+  /* ====== COLOPHON ====== */
+  .col {
+    margin-top: 80px; padding-top: 24px;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 11px; color: var(--ink-faint); letter-spacing: 1px;
+  }
+  .col b { color: var(--ink); font-weight: 600; }
+  .col .stamp {
+    display: inline-block; padding: 4px 10px;
+    border: 1.5px solid var(--cinnabar); color: var(--cinnabar);
+    font-weight: 700; transform: rotate(-2deg); letter-spacing: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="hero-meta">
+      <span class="tag">国产大模型月报</span>
+      <span>2026 · MAY — JUN</span>
+    </div>
+    <h1>过去一个月，<br><span class="accent">国产 AI 集体冲刺</span></h1>
+    <p class="hero-sub">12+ 次模型发布 · 9 家厂商 · 价格战白热化 · 智能体落地 · 具身智能爆发 —— 一份尽量不掺水的简报。</p>
+    <div class="hero-data">
+      <div class="hd-cell">
+        <div class="hd-k">Models Released</div>
+        <div class="hd-v">12<small>+</small></div>
+      </div>
+      <div class="hd-cell">
+        <div class="hd-k">Vendors Active</div>
+        <div class="hd-v">9</div>
+      </div>
+      <div class="hd-cell">
+        <div class="hd-k">Price Cut Peak</div>
+        <div class="hd-v">97.5<small>%</small></div>
+        <div class="hd-v sub">DeepSeek V4 · 6.3</div>
+      </div>
+      <div class="hd-cell">
+        <div class="hd-k">Context Peak</div>
+        <div class="hd-v">1M<span style="font-size:18px"> token</span></div>
+        <div class="hd-v sub">MiniMax M3 · 6.1</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-n">— I</div>
+      <div>
+        <div class="sec-t">时间线 · 按周</div>
+        <div class="sec-rule"></div>
+        <div class="sec-tag">从 5 月底到 6 月 22 日的关键发布</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-week">
+        <div class="tl-wk-head">
+          <span class="tl-wk-tag">W 22</span>
+          <span class="tl-wk-date">5.27 — 6.1</span>
+          <span class="tl-wk-meta">付费潮 + 百万上下文登场</span>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">5.27</div>
+          <div class="tl-body"><span class="tag">商业</span><span class="who">字节</span> 豆包试水收费；<span class="who">DeepSeek</span> 逆势降价。国产开始分化为「付费」与「普惠」两条路。<span class="note">2026 上半年的分水岭</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">5.29</div>
+          <div class="tl-body"><span class="who">阶跃星辰</span>开源 <strong>Step 3.7 Flash</strong>（MoE 196B 总参 / 11B 激活 / 400 tokens/s）<span class="tag gray">Agent</span><span class="note">专为高频 Agent 设计</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">5.30</div>
+          <div class="tl-body"><span class="who">Kimi</span> <strong>K2-Thinking</strong> 上线 Hugging Face（思考模型）。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.1</div>
+          <div class="tl-body"><span class="who">MiniMax</span> 发布 <strong>M3</strong>，100 万 token 上下文 + 自研 MSA 稀疏注意力 + 强 Coding。</div>
+        </div>
+      </div>
+
+      <div class="tl-week">
+        <div class="tl-wk-head">
+          <span class="tl-wk-tag">W 23</span>
+          <span class="tl-wk-date">6.2 — 6.8</span>
+          <span class="tl-wk-meta">Qwen3.7 多模态 + DeepSeek 暴降</span>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.2</div>
+          <div class="tl-body"><span class="who">阿里</span> 发布 <strong>Qwen3.7-Plus</strong> 多模态 Agent 模型，Vision Arena 全球前 5 / 中国第一。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.3</div>
+          <div class="tl-body"><span class="who">DeepSeek</span> V4 系列降价，<b>最高降幅 97.5%</b>。再次改写行业成本规则。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.6</div>
+          <div class="tl-body"><span class="who">腾讯混元</span> DiT 加速库发布，文生图推理时间 -75%。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.9</div>
+          <div class="tl-body"><span class="who">讯飞医疗</span> <strong>星火医疗大模型 V3.5</strong>，MedBench 中文医疗榜单登顶。</div>
+        </div>
+      </div>
+
+      <div class="tl-week">
+        <div class="tl-wk-head">
+          <span class="tl-wk-tag">W 24</span>
+          <span class="tl-wk-date">6.9 — 6.15</span>
+          <span class="tl-wk-meta">Coding 与多模态军备竞赛</span>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.11</div>
+          <div class="tl-body"><span class="who">讯飞</span> <strong>星火 X2-VL</strong> 多模态大模型发布 —— 当前唯一基于全国产算力训练的主流多模态大模型。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.12</div>
+          <div class="tl-body"><span class="who">Kimi</span> 发布并开源 <strong>K2.7 Code</strong>：长程编程能力提升，平均 token 消耗 -30%。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.15</div>
+          <div class="tl-body"><span class="who">Kimi</span> <strong>K2.7 Code 高速版</strong>：最高 260 tokens/s，向 Beta/API/Business 用户开放。</div>
+        </div>
+      </div>
+
+      <div class="tl-week">
+        <div class="tl-wk-head">
+          <span class="tl-wk-tag">W 25</span>
+          <span class="tl-wk-date">6.16 — 6.22</span>
+          <span class="tl-wk-meta">具身智能 + 智谱刷屏</span>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.16</div>
+          <div class="tl-body"><span class="who">阿里</span> 发布 <strong>Qwen-Robot 系列</strong> —— 首个完整具身智能模型系列（VLA 操作 + VLN 移动 + 世界模型）。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.21</div>
+          <div class="tl-body"><span class="who">字节 Seed</span> <strong>SpatialTree</strong> 收录 CVPR 2026 —— 空间智能新路线。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.22</div>
+          <div class="tl-body"><span class="who">智谱</span> <strong>GLM-5.2</strong> 大模型全面开源，刷屏科技圈、创投圈、中小企业圈。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-day">6.26</div>
+          <div class="tl-body"><span class="who">腾讯</span> 9 个旧版混元（HY2.0 / Turbos / T1 等）退役。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-n">— II</div>
+      <div>
+        <div class="sec-t">厂商矩阵 · 一图速览</div>
+        <div class="sec-rule"></div>
+        <div class="sec-tag">本月最值得关注的 9 家</div>
+      </div>
+    </div>
+    <div class="vendors">
+      <div class="v-card">
+        <div class="v-head"><div class="v-name">DeepSeek<small>深度求索</small></div><div class="v-pop">#1 价格战领袖</div></div>
+        <div class="v-move">V4 系列（4/24 发布，1.6T Pro + 284B Flash，MIT 开源）本月再降 <b>97.5%</b>，把行业价格打到地板。</div>
+        <div class="v-stat"><span>参数<b>1.6T</b></span><span>协议<b>MIT</b></span><span>降价<b>6.3</b></span></div>
+      </div>
+      <div class="v-card">
+        <div class="v-head"><div class="v-name">智谱 GLM<small>Z.ai</small></div><div class="v-pop">#2 国产开源 SOTA</div></div>
+        <div class="v-move">GLM-5.2（6/22）开源刷屏。GLM-5（744B / 激活 40B）早已 0day 适配昇腾，国产算力闭环。</div>
+        <div class="v-stat"><span>GLM-5.2<b>开源</b></span><span>GLM-5<b>744B</b></span><span>算力<b>昇腾</b></span></div>
+      </div>
+      <div class="v-card">
+        <div class="v-head"><div class="v-name">阿里 Qwen<small>通义千问</small></div><div class="v-pop">#3 矩阵最全</div></div>
+        <div class="v-move"><b>Qwen3.7-Plus</b>（多模态 Agent，6/2）+ <b>Qwen-Robot</b> 系列（具身智能，6/16）。同月两条产品线齐发。</div>
+        <div class="v-stat"><span>Vision<b>全球前 5</b></span><span>具身<b>3 模型</b></span></div>
+      </div>
+      <div class="v-card">
+        <div class="v-head"><div class="v-name">MiniMax M3<small>通用大模型</small></div><div class="v-pop">#4 长上下文之王</div></div>
+        <div class="v-move">M3（6/1）携 <b>100 万 token</b> 上下文 + 自研 MSA 稀疏注意力 + 强 Coding。已启动科创板辅导。</div>
+        <div class="v-stat"><span>上下文<b>1M</b></span><span>架构<b>MSA</b></span><span>特长<b>Coding</b></span></div>
+      </div>
+      <div class="v-card">
+        <div class="v-head"><div class="v-name">月之暗面 Kimi<small>Moonshot</small></div><div class="v-pop">#5 Coding 路线</div></div>
+        <div class="v-move">K2.7 Code（6/12）开源，token 消耗 -30%；6/15 推出高速版 260 tokens/s。</div>
+        <div class="v-stat"><span>K2.7<b>6.12</b></span><span>高速版<b>260 t/s</b></span></div>
+      </div>
+      <div class="v-card">
+        <div class="v-head"><div class="v-name">字节 豆包<small>火山引擎</small></div><div class="v-pop">#6 用户量断层</div></div>
+        <div class="v-move">豆包 DAU 已 2 亿（春节后）。本月试水收费 + Seed SpatialTree 收录 CVPR。Seed2.0 / Seedance 2.0 已稳一梯队。</div>
+        <div class="v-stat"><span>DAU<b>2 亿</b></span><span>收费<b>5.27</b></span></div>
+      </div>
+      <div class="v-card">
+        <div class="v-head"><div class="v-name">腾讯 混元<small>HY</small></div><div class="v-pop">#7 旧版退役</div></div>
+        <div class="v-move">DiT 加速库（6/6，生图 -75%）；6/26 起 9 个旧版（HY2.0 / Turbos / T1）停止调用。结构性升级。</div>
+        <div class="v-stat"><span>生图<b>-75%</b></span><span>旧版<b>6.26 停</b></span></div>
+      </div>
+      <div class="v-card">
+        <div class="v-head"><div class="v-name">阶跃星辰 Step<small>StepFun</small></div><div class="v-pop">#8 Agent 速度赛</div></div>
+        <div class="v-move">Step 3.7 Flash（5/29 开源）：196B 总参 / 11B 激活 / 400 tokens/s —— 走 Agent 速度路线，与 GLM/M3 错位竞争。</div>
+        <div class="v-stat"><span>速度<b>400 t/s</b></span><span>激活<b>11B</b></span></div>
+      </div>
+      <div class="v-card">
+        <div class="v-head"><div class="v-name">讯飞 星火<small>多模态 + 医疗</small></div><div class="v-pop">#9 全国产算力</div></div>
+        <div class="v-move"><b>X2-VL</b>（6/11 多模态）+ <b>医疗 V3.5</b>（6/9 MedBench 第一）。唯一基于全国产算力训练的主流多模态大模型。</div>
+        <div class="v-stat"><span>算力<b>全国产</b></span><span>医疗<b>第一</b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-n">— III</div>
+      <div>
+        <div class="sec-t">趋势观察 · 四个关键词</div>
+        <div class="sec-rule"></div>
+        <div class="sec-tag">这是我的判断，不一定对</div>
+      </div>
+    </div>
+    <div class="trends">
+      <div class="trend">
+        <div class="t-k">— Trend 01</div>
+        <div class="t-t">价格战白热化</div>
+        <div class="t-b">DeepSeek V4 降 97.5%（6/3）把行业打到地板；豆包却反向上线付费（5/27）。分化成「普惠」vs「付费」两派，6 月起定价权开始重排。</div>
+      </div>
+      <div class="trend">
+        <div class="t-t" style="color:var(--jade)">Coding 成兵家必争</div>
+        <div class="t-t">长上下文 + Coding</div>
+        <div class="t-b">MiniMax M3 百万 token、Kimi K2.7 Code 提效 30%、智谱 GLM 系列原生融合 —— 编程 Agent 是当前最具商业化确定性的场景。</div>
+      </div>
+      <div class="trend">
+        <div class="t-t" style="color:var(--gold)">具身智能集体入场</div>
+        <div class="t-t">具身智能爆发月</div>
+        <div class="t-b">阿里 Qwen-Robot（VLA + VLN + 世界模型）、讯飞 X2-VL（全国产）、字节 SpatialTree（CVPR 2026）。从「聊天机器人」转向「动手做事」。</div>
+      </div>
+      <div class="trend">
+        <div class="t-t" style="color:var(--indigo)">国产三剑客成型</div>
+        <div class="t-t">DeepSeek / 智谱 / MiniMax</div>
+        <div class="t-b">开源（SOTA + 极低成本）+ 全栈（模型 + 算力适配）+ 商业（Coding / 百万上下文）。三剑客在 6 月同时启动科创板辅导，资本 + 技术双线冲刺。</div>
+      </div>
+    </div>
+  </section>
+
+  <blockquote class="pq">
+    "一个月内 12+ 次模型发布，9 家厂商同场竞技。这不是 AI 行业的'六月'，是 AI 行业的'平常一周'。"
+    <span class="pq-src">— 编辑手记 · 2026.6.23</span>
+  </blockquote>
+
+  <footer class="col">
+    <div>
+      <b>国产大模型月报 · 2026.5—6</b><br>
+      <span style="margin-top:4px;display:inline-block">整理 · 史迪仔 · 2026.6.23</span>
+    </div>
+    <div style="text-align:right">
+      <div class="stamp">月 报</div>
+      <div style="margin-top:12px">数据：腾讯新闻 / CSDN / 36kr / 今日头条 / 抖音 / 飞书</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
