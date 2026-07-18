@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CodingPlan 速度横评 · 2026-03</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#fff;color:#1a1a2e;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  font-size:14px;line-height:1.6;
+}
+.page{max-width:1480px;margin:0 auto;padding:24px 36px 80px}
+
+/* ── Navigation ── */
+.top-nav{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:1px solid #e0e0e0;
+  padding:8px 36px;display:flex;flex-wrap:wrap;gap:2px 12px;
+  align-items:center;max-width:1480px;margin:0 auto;
+}
+.top-nav a{
+  font-size:12px;font-weight:600;color:#555;
+  text-decoration:none;padding:4px 8px;border-radius:3px;
+  transition:all .12s;white-space:nowrap;
+}
+.top-nav a:hover{background:#f0f0f5;color:#2563eb}
+.nav-sep{width:1px;height:14px;background:#ddd;margin:0 2px}
+
+/* ── Header ── */
+.header{padding:20px 0 16px;border-bottom:1px solid #e0e0e0;margin-bottom:32px}
+.header h1{font-size:24px;font-weight:900;color:#111;margin-bottom:6px;letter-spacing:-.02em}
+.header .subtitle{color:#555;font-size:13px;line-height:1.7;max-width:960px}
+.stats-row{display:flex;flex-wrap:wrap;gap:24px;margin-top:14px}
+.stat{display:flex;align-items:baseline;gap:6px}
+.stat .v{font-size:20px;font-weight:900;letter-spacing:-.02em}
+.stat .v.blue{color:#2563eb}.stat .v.green{color:#16a34a}.stat .v.red{color:#dc2626}
+.stat .l{font-size:11px;color:#888}
+
+/* ── Sections ── */
+.section{margin-bottom:44px}
+.section h2{
+  font-size:17px;font-weight:800;color:#111;
+  padding-bottom:7px;border-bottom:2px solid #111;
+  margin-bottom:12px;letter-spacing:-.01em;
+}
+.section .desc{color:#555;font-size:13px;margin-bottom:12px;line-height:1.65}
+
+/* ── Notes ── */
+.note-info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:3px;padding:8px 12px;font-size:12px;color:#1e40af;margin-bottom:12px;line-height:1.6}
+.note-warn{background:#fefce8;border:1px solid #fde68a;border-radius:3px;padding:8px 12px;font-size:12px;color:#854d0e;margin-bottom:12px;line-height:1.6}
+.note-err{background:#fef2f2;border:1px solid #fecaca;border-radius:3px;padding:8px 12px;font-size:12px;color:#991b1b;margin-bottom:10px;line-height:1.6}
+.note-err strong{color:#7f1d1d}
+
+/* ── Generic Table ── */
+.data-tbl{width:100%;border-collapse:collapse;font-size:13px}
+.data-tbl thead th{
+  background:#f7f8fa;padding:7px 10px;font-weight:700;
+  font-size:10.5px;color:#555;letter-spacing:.04em;text-transform:uppercase;
+  border-bottom:2px solid #d5d5d5;text-align:right;white-space:nowrap;
+}
+.data-tbl thead th:first-child,.data-tbl thead th:nth-child(2){text-align:left}
+.data-tbl tbody td{padding:5px 10px;border-bottom:1px solid #f0f0f0;text-align:right;vertical-align:middle}
+.data-tbl tbody td:first-child,.data-tbl tbody td:nth-child(2){text-align:left}
+.data-tbl tbody tr:hover td{background:#f5f7ff}
+.data-tbl .group-hdr th{background:#eef0f4;color:#666;font-size:10px;text-align:center;border-bottom:1px solid #ddd;padding:4px 8px}
+.data-tbl .group-hdr th:first-child,.data-tbl .group-hdr th:nth-child(2){text-align:left}
+.plan-col{font-size:11px;font-weight:700;color:#555;white-space:nowrap}
+.model-col{font-size:12px;font-weight:500;color:#1a1a2e;white-space:nowrap;min-width:160px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.na{color:#bbb;font-size:12px}
+.tbl-wrap{overflow-x:auto;border:1px solid #e0e0e0;border-radius:3px;max-height:700px;overflow-y:auto}
+
+/* ── Heatmap cells (Excel conditional formatting palette) ── */
+.h5{background:#c6efce;color:#006100;font-weight:700}
+.h4{background:#e2f0d9;color:#375623;font-weight:600}
+.h3{background:#fff2cc;color:#7f6000;font-weight:600}
+.h2{background:#fce4d6;color:#843c0c;font-weight:700}
+.h1{background:#ffc7ce;color:#9c0006;font-weight:700}
+
+/* ── Legend ── */
+.legend{display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:#f7f8fa;border:1px solid #e0e0e0;border-radius:3px;padding:6px 12px;font-size:11px;color:#555;margin-bottom:10px}
+.legend-swatch{width:14px;height:14px;border-radius:2px;display:inline-block;vertical-align:middle}
+.legend-item{display:flex;align-items:center;gap:4px;white-space:nowrap}
+
+/* ── Pricing ── */
+.prov-sep td{border-top:2px solid #d5d5d5!important}
+.prov-cell{vertical-align:top!important;min-width:140px}
+.prov-note{font-size:10px;color:#888;font-weight:400;line-height:1.4;margin-top:2px;white-space:normal;max-width:180px}
+.price-cell{font-weight:800;font-size:14px;white-space:nowrap}
+.price-unit{font-size:10px;color:#888;font-weight:400;margin-left:1px}
+.promo-cell{font-size:11px;color:#16a34a;font-weight:600}
+.models-cell{font-size:11px;color:#888;max-width:200px;line-height:1.4}
+
+/* ── Cross-provider ── */
+.cross-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cross-section{border:1px solid #e0e0e0;border-radius:3px;padding:14px 16px}
+.cross-section h3{font-size:14px;font-weight:700;margin-bottom:8px;color:#111}
+
+/* ── Method ── */
+.method-dl dt{font-weight:700;color:#111;margin-top:6px;font-size:13px}
+.method-dl dd{margin-left:0;margin-bottom:2px;color:#555;font-size:13px}
+
+/* ── Findings ── */
+.finding-list{counter-reset:f}
+.finding-item{
+  padding:8px 0;border-bottom:1px solid #f0f0f0;
+  font-size:13px;line-height:1.7;color:#555;
+  display:flex;gap:10px;
+}
+.finding-item::before{
+  counter-increment:f;content:counter(f);
+  font-size:13px;font-weight:900;color:#2563eb;
+  min-width:20px;text-align:center;flex-shrink:0;padding-top:1px;
+}
+.finding-item .ft{font-weight:700;color:#111;display:block;margin-bottom:1px}
+.finding-item strong{color:#111}
+
+/* ── Recommendations ── */
+.rec-block{margin-bottom:20px}
+.rec-block h3{font-size:15px;font-weight:700;margin-bottom:4px;color:#111}
+.rec-block .rb{font-size:13px;color:#555;line-height:1.7;margin-bottom:8px}
+
+/* ── Lineup table ── */
+.lineup-ok{color:#16a34a;font-weight:700}
+.lineup-fail{color:#dc2626;font-weight:700}
+.lineup-pending{color:#d97706;font-weight:700}
+
+/* ── Tabs ── */
+.tab-bar{display:flex;gap:2px;margin-bottom:10px}
+.tab-btn{
+  background:#f7f8fa;border:1px solid #e0e0e0;color:#555;
+  padding:5px 14px;border-radius:3px 3px 0 0;cursor:pointer;
+  font-size:12px;font-weight:600;transition:all .12s;outline:none;
+  border-bottom:none;
+}
+.tab-btn.active{background:#fff;color:#2563eb;border-bottom:2px solid #fff;margin-bottom:-1px;z-index:1;position:relative}
+.tab-panel{display:none;border:1px solid #e0e0e0;border-radius:0 3px 3px 3px;padding:0}
+.tab-panel.active{display:block}
+
+@media print{
+  .top-nav,.tab-bar{display:none}
+  .tbl-wrap,.tab-panel{max-height:none;overflow:visible}
+  .tab-panel{display:block!important;border:none!important}
+  body{font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="#header">概览</a>
+  <span class="nav-sep"></span>
+  <a href="#method">方法</a>
+  <a href="#pricing">定价</a>
+  <span class="nav-sep"></span>
+  <a href="#data">完整数据</a>
+  <a href="#scaling">上下文缩放</a>
+  <a href="#cross">跨厂商</a>
+  <span class="nav-sep"></span>
+  <a href="#score">评分</a>
+  <a href="#findings">发现</a>
+  <a href="#recommend">建议</a>
+</nav>
+
+<div class="page">
+
+<!-- ══════════ HEADER ══════════ -->
+<div id="header" class="header">
+  <h1>CodingPlan 速度横评报告 · 2026 年 3 月</h1>
+  <p class="subtitle">对 9 家平台的 Coding 订阅套餐进行系统性流式延迟基准测试。覆盖 4 档上下文规格（100 / 1K / 10K / 100K tokens），白天 &amp; 夜间双轮采样，每格 5 次有效重复。</p>
+  <div class="stats-row">
+    <div class="stat"><span class="v blue">9</span><span class="l">参测套餐</span></div>
+    <div class="stat"><span class="v blue">45</span><span class="l">参测模型</span></div>
+    <div class="stat"><span class="v blue">4</span><span class="l">上下文档位</span></div>
+    <div class="stat"><span class="v green">0.99s</span><span class="l">最快 TTFT</span></div>
+    <div class="stat"><span class="v green">147</span><span class="l">最高 TPS</span></div>
+    <div class="stat"><span class="v red">+1504%</span><span class="l">最大昼夜波动</span></div>
+  </div>
+</div>
+
+<!-- ══════════ LINEUP ══════════ -->
+<div id="lineup" class="section">
+  <h2>参测阵容</h2>
+  <table class="data-tbl">
+    <thead><tr>
+      <th style="text-align:left">套餐</th><th style="text-align:left">平台</th><th>模型数</th>
+      <th style="text-align:left">覆盖模型</th><th>白天</th><th>夜间</th><th style="text-align:left">备注</th>
+    </tr></thead>
+    <tbody>
+      <tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td>字节·火山引擎</td><td>6</td><td style="font-size:11px;color:#555">doubao-seed-2.0-pro, doubao-seed-2.0-code, doubao-seed-code, deepseek-v3.2, glm-4.7, kimi-k2.5</td><td class="lineup-ok">✓</td><td class="lineup-ok">✓</td><td>—</td></tr>
+      <tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td>智谱 BigModel</td><td>6</td><td style="font-size:11px;color:#555">glm-4.5-air, glm-4.5, glm-4.6, glm-4.7, glm-5, glm-5-turbo</td><td class="lineup-ok">✓</td><td class="lineup-ok">✓</td><td>—</td></tr>
+      <tr><td class="plan-col"><span class="dot" style="background:#7c3aed"></span>KIMI-Coding</td><td>月之暗面</td><td>1</td><td style="font-size:11px;color:#555">kimi-for-coding</td><td class="lineup-ok">✓</td><td class="lineup-ok">✓</td><td>—</td></tr>
+      <tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td>MiniMax</td><td>4</td><td style="font-size:11px;color:#555">m2.1, m2.5, m2.7, m2.7-highspeed</td><td class="lineup-ok">✓</td><td class="lineup-ok">✓</td><td>—</td></tr>
+      <tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td>阿里云百炼</td><td>8</td><td style="font-size:11px;color:#555">qwen3-coder-next/plus, qwen3.5-plus, qwen3-max, glm-4.7, glm-5, kimi-k2.5, minimax-m2.5</td><td class="lineup-ok">✓</td><td class="lineup-ok">✓</td><td>—</td></tr>
+      <tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动（参照组）</td><td>SiliconFlow</td><td>6</td><td style="font-size:11px;color:#555">kimi-k2.5, deepseek-v3.1-terminus/v3.2, glm-4.7, glm-5, minimax-m2.5</td><td class="lineup-ok">✓</td><td class="lineup-ok">✓</td><td>无 Coding Plan，按量付费 API</td></tr>
+      <tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td>腾讯云 LKEAP</td><td>8</td><td style="font-size:11px;color:#555">hunyuan-t1, hunyuan-2.0-thinking/instruct, hunyuan-turbos, tc-auto, kimi-k2.5, minimax-m2.5, glm-5</td><td class="lineup-ok">✓</td><td class="lineup-fail">缺失</td><td>夜测当晚 API Key 未续期失效</td></tr>
+      <tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td>Infini-AI</td><td>5</td><td style="font-size:11px;color:#555">kimi-k2.5, minimax-m2.5, minimax-m2.7, glm-5, deepseek-v3.2-thinking</td><td class="lineup-ok">✓</td><td class="lineup-ok">✓</td><td>—</td></tr>
+      <tr style="color:#aaa"><td class="plan-col"><span class="dot" style="background:#9ca3af"></span>优云智算-Coding</td><td>ModelVerse</td><td>2</td><td style="font-size:11px;color:#aaa">kimi-k2.5, minimax-m2.1</td><td class="lineup-fail">全部失败</td><td class="lineup-fail">全部失败</td><td>账号异常，不纳入比较</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══════════ METHOD ══════════ -->
+<div id="method" class="section">
+  <h2>测试方法</h2>
+  <dl class="method-dl">
+    <dt>指标定义</dt>
+    <dd><strong>TTFT</strong> = 首 Token 延迟（越低越好）；<strong>TPS</strong> = 解码吞吐 tokens/sec（越高越好）；<strong>总耗时</strong> = 完整响应时长（越低越好）。</dd>
+    <dt>合成上下文</dt>
+    <dd>用 5 类代码/文档/配置模板拼接成精确 token 数的仓库快照，tiktoken cl100k_base 编码，确保不同平台收到完全相同的输入。</dd>
+    <dt>客户端输出截断</dt>
+    <dd>max_output_tokens = 320。超出后客户端主动停止消费 SSE 流，避免不同平台输出长度差异导致总耗时失真。</dd>
+    <dt>采样规格</dt>
+    <dd>每格 5 次有效样本，网络/SSL/429/5xx 自动重试。4 档上下文：100 / 1K / 10K / 100K tokens。</dd>
+    <dt>昼夜双轮</dt>
+    <dd>夜间批次 2026-03-21 21:55，白天批次 2026-03-24 15:35。腾讯夜间 API Key 过期导致数据缺失。</dd>
+    <dt>排除项</dt>
+    <dd>优云智算账号状态异常，全部失败不纳入比较。无问芯穹 deepseek-v3.2-thinking @100K 两批均失败（上下文限制）。</dd>
+  </dl>
+</div>
+
+<!-- ══════════ PRICING ══════════ -->
+<div id="pricing" class="section">
+  <h2>套餐定价 &amp; 配额</h2>
+  <p class="desc">各平台月费档位、配额限制、当前促销及社区口碑。数据以官网为准，交叉验证 V2EX / 知乎 / 即刻等社区讨论，更新于 2026-03-29。</p>
+  <div class="note-warn">配额陷阱提醒：一次用户 prompt 在 Claude Code / Cline 中会触发 5–30 次 API 请求。标称 18,000 次/月的配额，实际可用对话轮次约 600–3,600 轮。各平台计量单位不统一（次请求 / prompt / token），直接比价需谨慎。</div>
+  <div class="tbl-wrap" style="max-height:none">
+    <table class="data-tbl" style="font-size:12.5px">
+      <thead><tr>
+        <th style="text-align:left;min-width:130px">提供商</th>
+        <th style="text-align:left">档位</th>
+        <th style="text-align:right">月费</th>
+        <th style="text-align:right">首月促销</th>
+        <th style="text-align:left">配额（5h / 周 / 月）</th>
+        <th style="text-align:right">模型数</th>
+        <th style="text-align:left">社区口碑</th>
+      </tr></thead>
+      <tbody>
+<!-- 火山 -->
+<tr class="prov-sep">
+  <td rowspan="3" class="prov-cell" style="border-left:3px solid #ea580c"><span class="dot" style="background:#ea580c"></span><strong>火山-Coding</strong><div class="prov-note">方舟 Coding Plan · 字节跳动</div></td>
+  <td>Lite</td><td style="text-align:right;font-weight:700">¥40/月</td><td style="text-align:right;color:#16a34a;font-weight:600">¥9.9</td>
+  <td>1,200次 / — / —</td><td style="text-align:right">6</td>
+  <td rowspan="3" style="font-size:11px;color:#555;max-width:180px;line-height:1.4">V2EX 差评较多：高峰 20s+ 等待、配额消耗快（按 API 请求计数非 prompt）。doubao-seed-2.0-pro 速度尚可，但其他模型体验不稳定。首购限量每日 10:30 抢购。</td>
+</tr>
+<tr><td>Pro</td><td style="text-align:right;font-weight:700">¥200/月</td><td style="text-align:right;color:#16a34a;font-weight:600">¥49.9</td><td>6,000次 / — / —</td><td style="text-align:right">6</td></tr>
+<tr><td>Max</td><td style="text-align:right;font-weight:700">¥400/月</td><td style="text-align:right;color:#888">—</td><td>— / — / —</td><td style="text-align:right">6</td></tr>
+<!-- GLM -->
+<tr class="prov-sep">
+  <td rowspan="3" class="prov-cell" style="border-left:3px solid #2563eb"><span class="dot" style="background:#2563eb"></span><strong>GLM-Coding</strong><div class="prov-note">智谱 BigModel · 2026.02.12 涨价 30%</div></td>
+  <td>Lite</td><td style="text-align:right;font-weight:700">¥49/月</td><td style="text-align:right;color:#888">已取消</td>
+  <td>80 prompt / 400 / —</td><td style="text-align:right">6</td>
+  <td rowspan="3" style="font-size:11px;color:#555;max-width:180px;line-height:1.4">模型质量公认最强（GLM-5 对标 Opus 4.6），但涨价后争议大。Lite 用户投诉 2 个 prompt 消耗 97% 额度。GLM-5 仅 Pro/Max 可用且消耗 3 倍配额。年付 Lite 仅 ¥34/月。</td>
+</tr>
+<tr><td>Pro</td><td style="text-align:right;font-weight:700">¥149/月</td><td style="text-align:right;color:#888">已取消</td><td>400 prompt / 2,000 / —</td><td style="text-align:right">7+</td></tr>
+<tr><td>Max</td><td style="text-align:right;font-weight:700">¥469/月</td><td style="text-align:right;color:#888">已取消</td><td>1,600 prompt / 8,000 / —</td><td style="text-align:right">7+</td></tr>
+<!-- KIMI -->
+<tr class="prov-sep">
+  <td rowspan="4" class="prov-cell" style="border-left:3px solid #7c3aed"><span class="dot" style="background:#7c3aed"></span><strong>KIMI-Coding</strong><div class="prov-note">月之暗面 · kimi-k2.5 专属</div></td>
+  <td>Andante</td><td style="text-align:right;font-weight:700">¥49/月</td><td style="text-align:right;color:#16a34a;font-weight:600">年付 ¥39/月</td>
+  <td>— / ~26 prompt / —</td><td style="text-align:right">1</td>
+  <td rowspan="4" style="font-size:11px;color:#555;max-width:180px;line-height:1.4">前端/视觉编码强（截图还原 80-90%），K2.5 代码专项训练。但周配额极紧（Andante 仅 ~26 轮/周），后端能力平庸。Allegretto 起支持 Agent Swarm 多智能体并行。</td>
+</tr>
+<tr><td>Moderato</td><td style="text-align:right;font-weight:700">¥99/月</td><td style="text-align:right;color:#16a34a;font-weight:600">年付 ¥79/月</td><td>— / ~104 prompt / —</td><td style="text-align:right">1</td></tr>
+<tr><td>Allegretto</td><td style="text-align:right;font-weight:700">¥199/月</td><td style="text-align:right;color:#888">—</td><td>— / ~520 prompt / —</td><td style="text-align:right">1</td></tr>
+<tr><td>Allegro</td><td style="text-align:right;font-weight:700">¥699/月</td><td style="text-align:right;color:#888">—</td><td>— / ~1,560 prompt / —</td><td style="text-align:right">1</td></tr>
+<!-- MiniMax -->
+<tr class="prov-sep">
+  <td rowspan="6" class="prov-cell" style="border-left:3px solid #0d9488"><span class="dot" style="background:#0d9488"></span><strong>MiniMax</strong><div class="prov-note">Token Plan · 2026.03.23 起新增周配额</div></td>
+  <td>标准 Starter</td><td style="text-align:right;font-weight:700">¥29/月</td><td style="text-align:right;color:#16a34a;font-weight:600">年付 ¥24/月</td>
+  <td>600次 / ~6,000 / —</td><td style="text-align:right">1</td>
+  <td rowspan="6" style="font-size:11px;color:#555;max-width:180px;line-height:1.4">M2.7 被称「国产 SOTA」（SWE-Pro 56%），速度 ~100 TPS。¥29 起步性价比高。3/23 起新增周配额 + 高峰限速（工作日 15:00-17:30），部分用户不满。极速版延迟更低。</td>
+</tr>
+<tr><td>标准 Plus</td><td style="text-align:right;font-weight:700">¥49/月</td><td style="text-align:right;color:#16a34a;font-weight:600">年付 ¥41/月</td><td>1,500次 / ~15,000 / —</td><td style="text-align:right">1</td></tr>
+<tr><td>标准 Max</td><td style="text-align:right;font-weight:700">¥119/月</td><td style="text-align:right;color:#16a34a;font-weight:600">年付 ¥99/月</td><td>4,500次 / ~45,000 / —</td><td style="text-align:right">1</td></tr>
+<tr><td>极速 Plus</td><td style="text-align:right;font-weight:700">¥98/月</td><td style="text-align:right;color:#16a34a;font-weight:600">年付 ¥82/月</td><td>1,500次 / ~15,000 / —</td><td style="text-align:right">1</td></tr>
+<tr><td>极速 Max</td><td style="text-align:right;font-weight:700">¥199/月</td><td style="text-align:right;color:#16a34a;font-weight:600">年付 ¥166/月</td><td>4,500次 / ~45,000 / —</td><td style="text-align:right">1</td></tr>
+<tr><td>极速 Ultra</td><td style="text-align:right;font-weight:700">¥899/月</td><td style="text-align:right;color:#16a34a;font-weight:600">年付 ¥749/月</td><td>30,000次 / ~300,000 / —</td><td style="text-align:right">1</td></tr>
+<!-- 阿里 -->
+<tr class="prov-sep">
+  <td rowspan="2" class="prov-cell" style="border-left:3px solid #ca8a04"><span class="dot" style="background:#ca8a04"></span><strong>阿里CodingPlan</strong><div class="prov-note">阿里云百炼 · Lite 已停售新用户</div></td>
+  <td>Lite（停售）</td><td style="text-align:right;font-weight:700">¥40/月</td><td style="text-align:right;color:#16a34a;font-weight:600">¥7.9</td>
+  <td>~2,000次 / ~9,000 / 18,000</td><td style="text-align:right">8</td>
+  <td rowspan="2" style="font-size:11px;color:#555;max-width:180px;line-height:1.4">模型最多（8 款跨 4 厂商），¥7.9 首月最低。但按自然月计费（月末买亏）、非阿里模型无缓存（配额消耗更快）、输出低至 2.4 TPS、内容审查严格（403 封禁）。Lite 已对新用户停售。</td>
+</tr>
+<tr><td>Pro</td><td style="text-align:right;font-weight:700">¥200/月</td><td style="text-align:right;color:#16a34a;font-weight:600">¥39.9</td><td>6,000次 / 45,000 / 90,000</td><td style="text-align:right">8</td></tr>
+<!-- 腾讯 -->
+<tr class="prov-sep">
+  <td rowspan="2" class="prov-cell" style="border-left:3px solid #16a34a"><span class="dot" style="background:#16a34a"></span><strong>腾讯CodingPlan</strong><div class="prov-note">腾讯云 LKEAP · 优惠至 4/19</div></td>
+  <td>Lite</td><td style="text-align:right;font-weight:700">¥40/月</td><td style="text-align:right;color:#16a34a;font-weight:600">¥7.9（次月 ¥20）</td>
+  <td>~1,200次 / ~9,000 / 18,000</td><td style="text-align:right">4+</td>
+  <td rowspan="2" style="font-size:11px;color:#555;max-width:180px;line-height:1.4">3/5 新上线，双协议支持（OpenAI + Anthropic），含混元自研模型。新推 Token Plan 被社区猛批「比 Coding Plan 贵数倍」。混元模型在独立测评中推理任务交白卷。企业生态集成是优势。</td>
+</tr>
+<tr><td>Pro</td><td style="text-align:right;font-weight:700">¥200/月</td><td style="text-align:right;color:#16a34a;font-weight:600">¥39.9（次月 ¥100）</td><td>~6,000次 / ~45,000 / 90,000</td><td style="text-align:right">4+</td></tr>
+<!-- 无问芯穹 -->
+<tr class="prov-sep">
+  <td rowspan="2" class="prov-cell" style="border-left:3px solid #db2777"><span class="dot" style="background:#db2777"></span><strong>无问芯穹-Coding</strong><div class="prov-note">Infini-AI · 多模型聚合</div></td>
+  <td>Lite</td><td style="text-align:right;font-weight:700">¥40/月</td><td style="text-align:right;color:#16a34a;font-weight:600">前 2 月 ¥19.9</td>
+  <td>1,000次 / 6,000 / 12,000</td><td style="text-align:right">8</td>
+  <td rowspan="2" style="font-size:11px;color:#555;max-width:180px;line-height:1.4">促销价 ¥19.9 性价比高，正价 ¥40 与阿里持平。无 RPM/TPM 限制，适合轻度使用。品牌知名度低，售后响应慢，模型更新不及大厂。</td>
+</tr>
+<tr><td>Pro</td><td style="text-align:right;font-weight:700">¥200/月</td><td style="text-align:right;color:#16a34a;font-weight:600">前 2 月 ¥99.9</td><td>5,000次 / 30,000 / 60,000</td><td style="text-align:right">8</td></tr>
+<!-- 硅基流动 -->
+<tr class="prov-sep">
+  <td rowspan="3" class="prov-cell" style="border-left:3px solid #059669"><span class="dot" style="background:#059669"></span><strong>硅基流动（参照组）</strong><div class="prov-note">SiliconFlow · 按量付费 · 非订阅制</div></td>
+  <td>GLM-5 Pro</td><td style="text-align:right;font-weight:700">¥4+22/M tok</td><td style="text-align:right;color:#888">—</td>
+  <td>RPM 500–10,000（按充值等级）</td><td style="text-align:right">30+</td>
+  <td rowspan="3" style="font-size:11px;color:#555;max-width:180px;line-height:1.4">纯按量付费，无月费。社区评价「体验丝滑」「把价格打下来了」。新注册送 ¥7 额度。R1 高峰可能等待数分钟。适合按需调用、多模型实验。</td>
+</tr>
+<tr><td>Kimi-K2.5 Pro</td><td style="text-align:right;font-weight:700">¥4+21/M tok</td><td style="text-align:right;color:#888">—</td><td>同上</td><td style="text-align:right">—</td></tr>
+<tr><td>DeepSeek-V3.2</td><td style="text-align:right;font-weight:700">¥2+3/M tok</td><td style="text-align:right;color:#888">—</td><td>同上</td><td style="text-align:right">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ MAIN DATA (TABBED: DAY / NIGHT) ══════════ -->
+<div id="data" class="section">
+  <h2>完整数据热力图</h2>
+  <p class="desc">所有模型 × 4 档上下文。热力图色阶基于绝对阈值，与实际使用体验对应。</p>
+  <div class="legend">
+    <span style="font-weight:700;color:#111;margin-right:4px">色阶：</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#c6efce"></span>优秀</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#e2f0d9"></span>良好</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#fff2cc"></span>一般</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#fce4d6"></span>较差</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#ffc7ce"></span>很差</span>
+    <span style="width:1px;height:14px;background:#ddd;margin:0 6px"></span>
+    <span style="color:#555">TTFT：≤1.5s 优秀 | 1.5-3s 良好 | 3-8s 一般 | 8-20s 较差 | &gt;20s 很差</span>
+  </div>
+  <div class="note-info">TPS：≥80 优秀 | 50-80 良好 | 30-50 一般 | 15-30 较差 | &lt;15 很差。总耗时阈值随上下文档位宽松。</div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="showTab('day-tab',this)">白天数据</button>
+    <button class="tab-btn" onclick="showTab('night-tab',this)">夜间数据</button>
+  </div>
+
+  <div id="day-tab" class="tab-panel active">
+    <div class="tbl-wrap">
+      <table class="data-tbl">
+        <thead>
+          <tr class="group-hdr"><th colspan="2"></th><th colspan="3">@100 tokens</th><th colspan="3">@1K tokens</th><th colspan="3">@10K tokens</th><th colspan="3">@100K tokens</th></tr>
+          <tr><th style="text-align:left">套餐</th><th style="text-align:left">模型</th><th>TTFT</th><th>TPS</th><th>耗时</th><th>TTFT</th><th>TPS</th><th>耗时</th><th>TTFT</th><th>TPS</th><th>耗时</th><th>TTFT</th><th>TPS</th><th>耗时</th></tr>
+        </thead>
+        <tbody>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.5</td><td class="h5">1.13</td><td class="h4">56</td><td class="h5">6.97</td><td class="h4">1.86</td><td class="h4">57</td><td class="h4">11.57</td><td class="h4">2.78</td><td class="h4">76</td><td class="h5">6.68</td><td class="h2">11.72</td><td class="h3">33</td><td class="h5">22.04</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.5-air</td><td class="h5">1.11</td><td class="h5">97</td><td class="h5">3.48</td><td class="h5">1.10</td><td class="h5">121</td><td class="h5">3.33</td><td class="h4">1.89</td><td class="h5">103</td><td class="h5">4.74</td><td class="h2">18.77</td><td class="h4">75</td><td class="h5">23.64</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.6</td><td class="h4">2.64</td><td class="h4">54</td><td class="h4">9.45</td><td class="h4">1.80</td><td class="h4">65</td><td class="h4">9.95</td><td class="h4">2.44</td><td class="h4">64</td><td class="h5">7.36</td><td class="h2">14.26</td><td class="h2">19</td><td class="h5">34.87</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.7</td><td class="h3">6.73</td><td class="h2">25</td><td class="h3">22.52</td><td class="h5">1.12</td><td class="h4">53</td><td class="h4">9.10</td><td class="h3">3.16</td><td class="h4">64</td><td class="h5">7.62</td><td class="h2">8.83</td><td class="h4">57</td><td class="h5">18.66</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-5</td><td class="h3">3.88</td><td class="h2">28</td><td class="h4">12.57</td><td class="h3">3.87</td><td class="h2">30</td><td class="h4">12.76</td><td class="h3">7.82</td><td class="h2">23</td><td class="h5">18.73</td><td class="h3">6.47</td><td class="h2">28</td><td class="h5">16.50</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-5-turbo</td><td class="h5">1.19</td><td class="h4">51</td><td class="h4">7.72</td><td class="h5">1.07</td><td class="h3">49</td><td class="h5">7.69</td><td class="h5">1.43</td><td class="h4">53</td><td class="h5">7.36</td><td class="h3">5.39</td><td class="h4">56</td><td class="h5">11.20</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">deepseek-v3.2</td><td class="h4">2.77</td><td class="h3">32</td><td class="h4">10.78</td><td class="h4">2.21</td><td class="h3">31</td><td class="h4">10.50</td><td class="h3">5.66</td><td class="h3">31</td><td class="h5">16.04</td><td class="h2">18.30</td><td class="h3">30</td><td class="h5">27.81</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">doubao-seed-2.0-code</td><td class="h2">10.04</td><td class="h3">48</td><td class="h3">16.84</td><td class="h2">9.45</td><td class="h3">47</td><td class="h4">16.47</td><td class="h2">12.00</td><td class="h4">51</td><td class="h5">18.31</td><td class="h1">45.12</td><td class="h4">53</td><td class="h5">51.20</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">doubao-seed-2.0-pro</td><td class="h4">2.18</td><td class="h5">84</td><td class="h5">6.04</td><td class="h4">2.39</td><td class="h5">86</td><td class="h5">6.20</td><td class="h3">3.29</td><td class="h4">76</td><td class="h5">7.55</td><td class="h2">12.18</td><td class="h4">77</td><td class="h5">16.36</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">doubao-seed-code</td><td class="h4">1.56</td><td class="h3">37</td><td class="h4">10.36</td><td class="h5">1.34</td><td class="h3">38</td><td class="h4">9.77</td><td class="h4">2.62</td><td class="h3">37</td><td class="h5">11.22</td><td class="h2">18.17</td><td class="h3">40</td><td class="h5">26.20</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">glm-4.7</td><td class="h1">28.86</td><td class="h3">32</td><td class="h2">39.36</td><td class="h1">27.06</td><td class="h3">36</td><td class="h3">37.13</td><td class="h1">21.52</td><td class="h2">27</td><td class="h4">33.66</td><td class="h1">80.07</td><td class="h3">42</td><td class="h4">87.95</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">kimi-k2.5</td><td class="h2">17.50</td><td class="h2">25</td><td class="h3">30.56</td><td class="h2">17.09</td><td class="h2">24</td><td class="h3">30.80</td><td class="h1">22.82</td><td class="h2">23</td><td class="h4">36.70</td><td class="h1">89.98</td><td class="h2">22</td><td class="h4">104.35</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">glm-4.7</td><td class="h3">3.24</td><td class="h4">74</td><td class="h4">7.60</td><td class="h3">3.95</td><td class="h4">78</td><td class="h5">8.09</td><td class="h4">2.76</td><td class="h3">41</td><td class="h5">12.17</td><td class="h2">14.15</td><td class="h4">66</td><td class="h5">20.21</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">glm-5</td><td class="h4">1.53</td><td class="h2">30</td><td class="h4">12.38</td><td class="h3">7.33</td><td class="h3">36</td><td class="h4">16.54</td><td class="h2">8.20</td><td class="h3">36</td><td class="h5">17.26</td><td class="h2">12.01</td><td class="h3">32</td><td class="h5">22.06</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">kimi-k2.5</td><td class="h1">23.35</td><td class="h3">38</td><td class="h3">30.19</td><td class="h2">10.94</td><td class="h3">34</td><td class="h3">21.55</td><td class="h3">6.75</td><td class="h3">39</td><td class="h5">14.51</td><td class="h1">28.75</td><td class="h2">29</td><td class="h5">51.19</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">minimax-m2.5</td><td class="h3">4.12</td><td class="h3">45</td><td class="h4">11.77</td><td class="h3">4.74</td><td class="h4">61</td><td class="h4">10.14</td><td class="h3">4.52</td><td class="h4">66</td><td class="h5">9.43</td><td class="h2">13.11</td><td class="h3">35</td><td class="h5">29.01</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3-coder-next</td><td class="h3">3.98</td><td class="h5">147</td><td class="h5">6.24</td><td class="h3">3.51</td><td class="h5">104</td><td class="h5">6.79</td><td class="h2">11.58</td><td class="h4">67</td><td class="h4">24.88</td><td class="h2">15.28</td><td class="h5">92</td><td class="h5">18.88</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3-coder-plus</td><td class="h3">3.04</td><td class="h3">46</td><td class="h4">8.20</td><td class="h3">3.22</td><td class="h3">47</td><td class="h4">9.61</td><td class="h3">4.41</td><td class="h4">53</td><td class="h5">10.15</td><td class="h1">28.09</td><td class="h4">66</td><td class="h5">32.74</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3-max-2026-01-23</td><td class="h4">2.49</td><td class="h3">31</td><td class="h4">11.59</td><td class="h4">2.37</td><td class="h3">32</td><td class="h4">12.07</td><td class="h3">4.88</td><td class="h2">30</td><td class="h5">15.20</td><td class="h2">11.02</td><td class="h3">33</td><td class="h5">20.41</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3.5-plus</td><td class="h3">3.73</td><td class="h4">61</td><td class="h4">8.97</td><td class="h3">4.54</td><td class="h4">64</td><td class="h4">9.53</td><td class="h3">4.48</td><td class="h4">76</td><td class="h5">8.93</td><td class="h2">8.58</td><td class="h5">125</td><td class="h5">11.19</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td class="model-col">m2.1</td><td class="h3">4.12</td><td class="h3">42</td><td class="h4">11.76</td><td class="h4">1.57</td><td class="h3">48</td><td class="h5">8.23</td><td class="h4">2.44</td><td class="h3">45</td><td class="h5">9.58</td><td class="h3">4.64</td><td class="h3">43</td><td class="h5">12.08</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td class="model-col">m2.5</td><td class="h4">2.12</td><td class="h3">36</td><td class="h4">11.06</td><td class="h5">1.42</td><td class="h4">51</td><td class="h5">7.59</td><td class="h3">5.54</td><td class="h3">48</td><td class="h5">13.32</td><td class="h2">8.34</td><td class="h5">102</td><td class="h5">12.80</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td class="model-col">m2.7</td><td class="h4">2.06</td><td class="h3">37</td><td class="h4">10.63</td><td class="h4">1.98</td><td class="h3">43</td><td class="h4">9.47</td><td class="h4">2.03</td><td class="h3">43</td><td class="h5">9.47</td><td class="h3">5.28</td><td class="h3">42</td><td class="h5">12.90</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#7c3aed"></span>KIMI-Coding</td><td class="model-col">kimi-for-coding</td><td class="h3">3.85</td><td class="h3">31</td><td class="h4">12.21</td><td class="h3">5.39</td><td class="h3">34</td><td class="h4">13.37</td><td class="h3">5.71</td><td class="h3">35</td><td class="h5">14.23</td><td class="h2">11.20</td><td class="h3">48</td><td class="h5">17.28</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">deepseek-v3.2-thinking</td><td class="h4">2.96</td><td class="h2">26</td><td class="h3">15.06</td><td class="h3">3.70</td><td class="h2">26</td><td class="h4">16.26</td><td class="h3">3.26</td><td class="h2">24</td><td class="h5">16.82</td><td class="na">—</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">glm-5</td><td class="h3">3.42</td><td class="h2">26</td><td class="h3">15.63</td><td class="h3">4.66</td><td class="h3">33</td><td class="h4">14.44</td><td class="h3">3.70</td><td class="h2">29</td><td class="h5">14.66</td><td class="h2">9.26</td><td class="h3">30</td><td class="h5">20.09</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">kimi-k2.5</td><td class="h1">38.17</td><td class="h2">25</td><td class="h2">51.10</td><td class="h2">14.61</td><td class="h2">26</td><td class="h3">27.02</td><td class="h3">7.76</td><td class="h2">25</td><td class="h5">20.78</td><td class="h2">18.87</td><td class="h2">25</td><td class="h5">31.97</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">minimax-m2.5</td><td class="h3">4.54</td><td class="h4">50</td><td class="h4">11.01</td><td class="h3">4.28</td><td class="h4">52</td><td class="h4">10.61</td><td class="h3">5.30</td><td class="h4">51</td><td class="h5">11.74</td><td class="h3">6.88</td><td class="h4">57</td><td class="h5">12.55</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">minimax-m2.7</td><td class="h3">3.67</td><td class="h3">47</td><td class="h4">10.50</td><td class="h3">3.19</td><td class="h4">53</td><td class="h4">9.43</td><td class="h3">3.87</td><td class="h4">53</td><td class="h5">9.95</td><td class="h3">7.49</td><td class="h3">48</td><td class="h5">14.26</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">auto</td><td class="h3">5.39</td><td class="h2">28</td><td class="h3">16.58</td><td class="h4">2.27</td><td class="h3">37</td><td class="h4">11.13</td><td class="h3">3.94</td><td class="h3">34</td><td class="h5">13.27</td><td class="h3">5.63</td><td class="h3">33</td><td class="h5">15.58</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-2.0-instruct</td><td class="h5">1.35</td><td class="h3">42</td><td class="h4">8.57</td><td class="h4">1.65</td><td class="h4">52</td><td class="h5">7.56</td><td class="h3">3.08</td><td class="h4">68</td><td class="h5">8.50</td><td class="h2">10.82</td><td class="h4">62</td><td class="h5">16.13</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-2.0-thinking</td><td class="h5">1.15</td><td class="h5">83</td><td class="h5">4.98</td><td class="h5">1.34</td><td class="h5">85</td><td class="h5">5.15</td><td class="h4">2.51</td><td class="h4">76</td><td class="h5">6.73</td><td class="h2">16.24</td><td class="h5">87</td><td class="h5">19.87</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">minimax-m2.5</td><td class="h4">1.72</td><td class="h3">31</td><td class="h4">11.97</td><td class="h5">1.33</td><td class="h3">41</td><td class="h4">9.16</td><td class="h4">1.92</td><td class="h3">40</td><td class="h5">9.85</td><td class="h3">3.24</td><td class="h3">43</td><td class="h5">10.66</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">kimi-k2.5</td><td class="h4">2.46</td><td class="h2">29</td><td class="h4">13.76</td><td class="h5">0.96</td><td class="h3">37</td><td class="h4">9.73</td><td class="h2">12.38</td><td class="h3">44</td><td class="h5">19.60</td><td class="h2">13.43</td><td class="h3">47</td><td class="h5">20.39</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">glm-5</td><td class="h3">3.96</td><td class="h2">28</td><td class="h3">33.88</td><td class="h4">2.02</td><td class="h3">32</td><td class="h4">12.66</td><td class="h4">2.64</td><td class="h2">30</td><td class="h5">13.76</td><td class="h3">5.18</td><td class="h3">39</td><td class="h5">13.54</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-t1</td><td class="h5">1.05</td><td class="h4">76</td><td class="h5">5.30</td><td class="h5">1.20</td><td class="h5">84</td><td class="h5">4.99</td><td class="h4">2.35</td><td class="h4">61</td><td class="h5">7.69</td><td class="h3">6.01</td><td class="h4">58</td><td class="h5">11.47</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-turbos</td><td class="h5">1.24</td><td class="h2">29</td><td class="h4">10.69</td><td class="h4">1.84</td><td class="h2">29</td><td class="h4">12.71</td><td class="h4">2.56</td><td class="h2">29</td><td class="h5">13.52</td><td class="h3">6.82</td><td class="h2">29</td><td class="h5">18.04</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">minimax-m2.5</td><td class="h4">2.19</td><td class="h4">72</td><td class="h4">7.96</td><td class="h4">1.61</td><td class="h5">85</td><td class="h5">6.23</td><td class="h4">1.89</td><td class="h4">79</td><td class="h5">6.41</td><td class="h3">3.77</td><td class="h4">74</td><td class="h5">8.62</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">glm-5</td><td class="h4">2.20</td><td class="h3">37</td><td class="h4">11.32</td><td class="h5">1.50</td><td class="h3">44</td><td class="h5">8.73</td><td class="h3">3.04</td><td class="h3">36</td><td class="h5">12.17</td><td class="h3">6.36</td><td class="h2">24</td><td class="h5">21.31</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">kimi-k2.5</td><td class="h5">0.99</td><td class="h2">29</td><td class="h4">12.26</td><td class="h5">1.37</td><td class="h2">29</td><td class="h4">12.39</td><td class="h4">1.75</td><td class="h3">33</td><td class="h5">11.59</td><td class="h3">5.65</td><td class="h3">30</td><td class="h5">16.31</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">glm-4.7</td><td class="h3">3.59</td><td class="h4">66</td><td class="h4">8.42</td><td class="h5">0.78</td><td class="h4">70</td><td class="h5">5.33</td><td class="h5">1.43</td><td class="h4">71</td><td class="h5">5.98</td><td class="h2">10.71</td><td class="h4">64</td><td class="h5">15.77</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">deepseek-v3.2</td><td class="h4">2.51</td><td class="h1">9</td><td class="h2">57.77</td><td class="h2">9.28</td><td class="h2">29</td><td class="h3">22.11</td><td class="h3">7.95</td><td class="h2">27</td><td class="h5">21.22</td><td class="h2">12.35</td><td class="h2">23</td><td class="h5">29.27</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">deepseek-v3.1-terminus</td><td class="h5">1.02</td><td class="h2">21</td><td class="h4">12.24</td><td class="h5">1.36</td><td class="h2">20</td><td class="h4">14.51</td><td class="h4">1.66</td><td class="h2">20</td><td class="h5">14.50</td><td class="h3">5.38</td><td class="h2">20</td><td class="h5">17.55</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#9ca3af"></span>优云智算-Coding</td><td class="model-col">kimi-k2.5</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#9ca3af"></span>优云智算-Coding</td><td class="model-col">minimax-m2.1</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="night-tab" class="tab-panel">
+    <div class="tbl-wrap">
+      <table class="data-tbl">
+        <thead>
+          <tr class="group-hdr"><th colspan="2"></th><th colspan="3">@100 tokens</th><th colspan="3">@1K tokens</th><th colspan="3">@10K tokens</th><th colspan="3">@100K tokens</th></tr>
+          <tr><th style="text-align:left">套餐</th><th style="text-align:left">模型</th><th>TTFT</th><th>TPS</th><th>耗时</th><th>TTFT</th><th>TPS</th><th>耗时</th><th>TTFT</th><th>TPS</th><th>耗时</th><th>TTFT</th><th>TPS</th><th>耗时</th></tr>
+        </thead>
+        <tbody>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.5</td><td class="h4">1.71</td><td class="h5">130</td><td class="h5">4.11</td><td class="h4">1.78</td><td class="h5">157</td><td class="h5">3.71</td><td class="h4">2.15</td><td class="h5">142</td><td class="h5">4.04</td><td class="h3">7.32</td><td class="h5">129</td><td class="h5">9.83</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.5-air</td><td class="h4">1.89</td><td class="h5">84</td><td class="h5">4.97</td><td class="h4">1.87</td><td class="h5">110</td><td class="h5">4.38</td><td class="h4">2.73</td><td class="h4">76</td><td class="h5">6.51</td><td class="h2">18.22</td><td class="h4">72</td><td class="h5">22.88</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.6</td><td class="h4">1.78</td><td class="h3">47</td><td class="h4">9.43</td><td class="h4">1.75</td><td class="h4">66</td><td class="h5">7.08</td><td class="h3">5.14</td><td class="h5">97</td><td class="h5">9.51</td><td class="h2">9.29</td><td class="h5">92</td><td class="h5">12.92</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.7</td><td class="h4">1.94</td><td class="h4">73</td><td class="h5">6.17</td><td class="h4">2.11</td><td class="h4">60</td><td class="h5">6.99</td><td class="h3">7.65</td><td class="h4">78</td><td class="h5">12.97</td><td class="h3">5.31</td><td class="h5">117</td><td class="h5">7.93</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-5</td><td class="h3">3.58</td><td class="h3">38</td><td class="h4">10.26</td><td class="h4">2.21</td><td class="h3">39</td><td class="h5">8.63</td><td class="h3">5.42</td><td class="h3">33</td><td class="h5">13.04</td><td class="h3">7.85</td><td class="h3">32</td><td class="h5">16.90</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-5-turbo</td><td class="h4">1.75</td><td class="h4">65</td><td class="h5">6.81</td><td class="h4">1.90</td><td class="h4">62</td><td class="h5">7.75</td><td class="h4">2.39</td><td class="h4">77</td><td class="h5">6.36</td><td class="h3">7.09</td><td class="h4">70</td><td class="h5">11.74</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">deepseek-v3.2</td><td class="h4">2.67</td><td class="h2">29</td><td class="h4">11.15</td><td class="h4">2.96</td><td class="h2">29</td><td class="h4">12.26</td><td class="h2">9.78</td><td class="h2">29</td><td class="h5">20.21</td><td class="h1">44.60</td><td class="h2">30</td><td class="h5">54.57</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">doubao-seed-2.0-code</td><td class="h3">3.38</td><td class="h3">49</td><td class="h4">9.92</td><td class="h3">5.98</td><td class="h4">64</td><td class="h4">11.11</td><td class="h3">6.29</td><td class="h4">69</td><td class="h5">11.06</td><td class="h1">29.30</td><td class="h4">59</td><td class="h5">34.74</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">doubao-seed-2.0-pro</td><td class="h3">3.02</td><td class="h5">91</td><td class="h5">6.59</td><td class="h4">2.35</td><td class="h5">101</td><td class="h5">5.57</td><td class="h3">6.91</td><td class="h5">93</td><td class="h5">10.38</td><td class="h1">20.65</td><td class="h4">80</td><td class="h5">24.68</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">doubao-seed-code</td><td class="h4">1.93</td><td class="h4">54</td><td class="h4">7.84</td><td class="h4">2.02</td><td class="h3">49</td><td class="h5">8.70</td><td class="h3">3.97</td><td class="h4">51</td><td class="h5">10.34</td><td class="h1">23.38</td><td class="h4">54</td><td class="h5">29.31</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">glm-4.7</td><td class="h4">2.71</td><td class="h3">40</td><td class="h4">10.89</td><td class="h3">3.41</td><td class="h3">35</td><td class="h4">13.86</td><td class="h3">6.46</td><td class="h3">39</td><td class="h5">14.63</td><td class="h1">39.86</td><td class="h3">37</td><td class="h5">48.65</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">kimi-k2.5</td><td class="h4">2.08</td><td class="h2">18</td><td class="h3">20.11</td><td class="h4">2.10</td><td class="h2">19</td><td class="h4">18.88</td><td class="h3">4.46</td><td class="h2">16</td><td class="h4">25.27</td><td class="h1">30.87</td><td class="h2">16</td><td class="h5">51.72</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">glm-4.7</td><td class="h4">1.85</td><td class="h4">73</td><td class="h5">6.29</td><td class="h4">2.23</td><td class="h4">80</td><td class="h5">6.27</td><td class="h4">2.83</td><td class="h5">82</td><td class="h5">6.79</td><td class="h2">8.83</td><td class="h5">87</td><td class="h5">12.55</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">glm-5</td><td class="h4">2.37</td><td class="h3">37</td><td class="h4">11.11</td><td class="h4">2.09</td><td class="h3">43</td><td class="h4">9.74</td><td class="h4">2.92</td><td class="h3">38</td><td class="h5">11.40</td><td class="h2">11.22</td><td class="h3">35</td><td class="h5">20.52</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">kimi-k2.5</td><td class="h3">5.65</td><td class="h2">21</td><td class="h3">22.78</td><td class="h3">5.31</td><td class="h2">17</td><td class="h3">28.02</td><td class="h3">6.24</td><td class="h2">20</td><td class="h4">24.26</td><td class="h2">9.20</td><td class="h3">41</td><td class="h5">16.73</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">minimax-m2.5</td><td class="h3">5.27</td><td class="h4">73</td><td class="h4">9.85</td><td class="h3">4.44</td><td class="h4">62</td><td class="h4">9.66</td><td class="h3">5.35</td><td class="h4">62</td><td class="h5">10.57</td><td class="h2">9.16</td><td class="h4">53</td><td class="h5">15.21</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3-coder-next</td><td class="h4">2.51</td><td class="h5">84</td><td class="h4">13.39</td><td class="h4">2.00</td><td class="h5">139</td><td class="h5">4.44</td><td class="h4">2.64</td><td class="h5">131</td><td class="h5">5.06</td><td class="h2">11.76</td><td class="h5">128</td><td class="h5">14.24</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3-coder-plus</td><td class="h4">1.96</td><td class="h3">49</td><td class="h5">6.86</td><td class="h4">2.49</td><td class="h3">49</td><td class="h5">8.88</td><td class="h4">2.86</td><td class="h4">50</td><td class="h5">8.94</td><td class="h2">19.36</td><td class="h4">69</td><td class="h5">23.89</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3-max-2026-01-23</td><td class="h3">3.94</td><td class="h3">31</td><td class="h4">13.28</td><td class="h4">1.99</td><td class="h3">32</td><td class="h4">11.05</td><td class="h3">6.04</td><td class="h3">31</td><td class="h5">15.95</td><td class="h1">20.38</td><td class="h3">34</td><td class="h5">29.63</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3.5-plus</td><td class="h4">2.30</td><td class="h4">53</td><td class="h4">8.42</td><td class="h4">2.32</td><td class="h4">58</td><td class="h5">7.91</td><td class="h3">5.63</td><td class="h5">96</td><td class="h5">8.98</td><td class="h3">7.37</td><td class="h5">118</td><td class="h5">11.38</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td class="model-col">m2.1</td><td class="h4">2.98</td><td class="h3">45</td><td class="h4">10.94</td><td class="h4">2.41</td><td class="h3">49</td><td class="h4">9.97</td><td class="h4">2.80</td><td class="h4">65</td><td class="h5">7.78</td><td class="h2">8.74</td><td class="h4">53</td><td class="h5">17.31</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td class="model-col">m2.5</td><td class="h3">3.13</td><td class="h4">62</td><td class="h4">8.35</td><td class="h4">2.86</td><td class="h4">52</td><td class="h4">9.84</td><td class="h3">3.87</td><td class="h4">64</td><td class="h5">8.89</td><td class="h3">7.85</td><td class="h3">39</td><td class="h5">22.50</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td class="model-col">m2.7</td><td class="h4">2.90</td><td class="h4">53</td><td class="h4">9.05</td><td class="h4">2.04</td><td class="h4">51</td><td class="h5">8.36</td><td class="h4">2.76</td><td class="h4">66</td><td class="h5">7.72</td><td class="h3">6.31</td><td class="h4">51</td><td class="h5">12.60</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#7c3aed"></span>KIMI-Coding</td><td class="model-col">kimi-for-coding</td><td class="h3">3.08</td><td class="h2">27</td><td class="h4">12.14</td><td class="h3">3.73</td><td class="h2">28</td><td class="h4">13.53</td><td class="h3">3.41</td><td class="h2">30</td><td class="h5">13.27</td><td class="h3">7.70</td><td class="h3">35</td><td class="h5">16.64</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">deepseek-v3.2-thinking</td><td class="h4">2.70</td><td class="h2">28</td><td class="h4">14.18</td><td class="h4">2.71</td><td class="h2">29</td><td class="h4">13.70</td><td class="h3">3.66</td><td class="h2">27</td><td class="h5">15.88</td><td class="na">—</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">glm-5</td><td class="h4">2.36</td><td class="h3">32</td><td class="h4">12.45</td><td class="h4">2.35</td><td class="h3">38</td><td class="h4">10.96</td><td class="h3">3.27</td><td class="h3">32</td><td class="h5">13.23</td><td class="h2">8.97</td><td class="h3">32</td><td class="h5">19.05</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">kimi-k2.5</td><td class="h4">2.38</td><td class="h2">28</td><td class="h4">13.92</td><td class="h3">3.97</td><td class="h2">27</td><td class="h4">16.04</td><td class="h3">3.29</td><td class="h2">25</td><td class="h5">15.96</td><td class="h2">9.60</td><td class="h2">26</td><td class="h5">21.81</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">minimax-m2.5</td><td class="h3">4.14</td><td class="h4">62</td><td class="h4">9.42</td><td class="h3">4.16</td><td class="h4">70</td><td class="h5">8.92</td><td class="h2">9.95</td><td class="h4">64</td><td class="h5">15.04</td><td class="h2">8.19</td><td class="h4">63</td><td class="h5">13.85</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">minimax-m2.7</td><td class="h3">4.12</td><td class="h3">47</td><td class="h4">11.12</td><td class="h3">3.25</td><td class="h4">50</td><td class="h4">9.76</td><td class="h3">3.99</td><td class="h3">49</td><td class="h5">10.62</td><td class="h3">6.69</td><td class="h4">50</td><td class="h5">13.21</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">auto</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-2.0-instruct</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-2.0-thinking</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">minimax-m2.5</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">kimi-k2.5</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">glm-5</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-t1</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-turbos</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td><td class="na" title="API Key 过期">缺失</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">minimax-m2.5</td><td class="h4">2.23</td><td class="h3">46</td><td class="h2">50.84</td><td class="h4">2.47</td><td class="h5">88</td><td class="h5">6.17</td><td class="h3">5.16</td><td class="h5">97</td><td class="h5">8.50</td><td class="h3">4.10</td><td class="h4">76</td><td class="h5">8.36</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">glm-5</td><td class="h5">0.78</td><td class="h4">57</td><td class="h5">6.40</td><td class="h5">0.78</td><td class="h4">61</td><td class="h5">6.04</td><td class="h5">0.98</td><td class="h4">55</td><td class="h5">6.82</td><td class="h3">3.77</td><td class="h3">48</td><td class="h5">10.52</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">kimi-k2.5</td><td class="h4">1.72</td><td class="h3">44</td><td class="h4">9.60</td><td class="h5">1.16</td><td class="h4">52</td><td class="h5">8.08</td><td class="h5">1.20</td><td class="h3">48</td><td class="h5">9.74</td><td class="h3">3.66</td><td class="h4">53</td><td class="h5">10.34</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">glm-4.7</td><td class="h5">0.60</td><td class="h4">73</td><td class="h5">4.96</td><td class="h5">0.76</td><td class="h4">77</td><td class="h5">4.91</td><td class="h5">0.75</td><td class="h4">74</td><td class="h5">5.08</td><td class="h4">2.45</td><td class="h4">77</td><td class="h5">6.61</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">deepseek-v3.2</td><td class="h4">2.60</td><td class="h3">34</td><td class="h4">12.10</td><td class="h4">2.49</td><td class="h3">31</td><td class="h4">13.04</td><td class="h3">4.29</td><td class="h3">34</td><td class="h5">13.85</td><td class="h3">6.93</td><td class="h2">18</td><td class="h5">30.10</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">deepseek-v3.1-terminus</td><td class="h4">1.64</td><td class="h2">20</td><td class="h4">13.25</td><td class="h4">2.46</td><td class="h2">19</td><td class="h4">16.94</td><td class="h4">2.11</td><td class="h2">18</td><td class="h5">16.68</td><td class="h3">7.45</td><td class="h2">17</td><td class="h5">23.03</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#9ca3af"></span>优云智算-Coding</td><td class="model-col">kimi-k2.5</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#9ca3af"></span>优云智算-Coding</td><td class="model-col">minimax-m2.1</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td class="na">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="scaling" class="section">
+  <h2>上下文缩放分析</h2>
+  <p class="desc">随上下文从 100 增长到 100K tokens，各模型 TPS 的保持情况（白天数据）。TPS 保持率 = TPS@100K ÷ TPS@100（越高越好，100% = 无衰减）。耗时倍增 = 总耗时@100K ÷ 总耗时@100。按保持率升序排列，衰减最严重的在上方。</p>
+  <div class="tbl-wrap">
+    <table class="data-tbl">
+      <thead><tr>
+        <th style="text-align:left">套餐</th><th style="text-align:left">模型</th>
+        <th>TPS @100</th><th>TPS @1K</th><th>TPS @10K</th><th>TPS @100K</th>
+        <th>TPS 保持率</th>
+        <th>耗时 @100</th><th>耗时 @100K</th><th>耗时倍增</th>
+      </tr></thead>
+      <tbody>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.6</td><td class="h4">54</td><td class="h4">65</td><td class="h4">64</td><td class="h2">19</td><td class="h2" style="font-weight:800">35%</td><td>9.4s</td><td>34.9s</td><td class="h4" style="font-weight:700">3.7×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.5</td><td class="h4">56</td><td class="h4">57</td><td class="h4">76</td><td class="h3">33</td><td class="h3" style="font-weight:800">59%</td><td>7.0s</td><td>22.0s</td><td class="h4" style="font-weight:700">3.2×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3-coder-next</td><td class="h5">147</td><td class="h5">104</td><td class="h4">67</td><td class="h5">92</td><td class="h3" style="font-weight:800">62%</td><td>6.2s</td><td>18.9s</td><td class="h4" style="font-weight:700">3.0×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">glm-5</td><td class="h3">37</td><td class="h3">44</td><td class="h3">36</td><td class="h2">24</td><td class="h3" style="font-weight:800">64%</td><td>11.3s</td><td>21.3s</td><td class="h5" style="font-weight:700">1.9×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">kimi-k2.5</td><td class="h3">38</td><td class="h3">34</td><td class="h3">39</td><td class="h2">29</td><td class="h4" style="font-weight:800">77%</td><td>30.2s</td><td>51.2s</td><td class="h5" style="font-weight:700">1.7×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-t1</td><td class="h4">76</td><td class="h5">84</td><td class="h4">61</td><td class="h4">58</td><td class="h4" style="font-weight:800">77%</td><td>5.3s</td><td>11.5s</td><td class="h4" style="font-weight:700">2.2×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">minimax-m2.5</td><td class="h3">45</td><td class="h4">61</td><td class="h4">66</td><td class="h3">35</td><td class="h4" style="font-weight:800">77%</td><td>11.8s</td><td>29.0s</td><td class="h4" style="font-weight:700">2.5×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.5-air</td><td class="h5">97</td><td class="h5">121</td><td class="h5">103</td><td class="h4">75</td><td class="h4" style="font-weight:800">77%</td><td>3.5s</td><td>23.6s</td><td class="h3" style="font-weight:700">6.8×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">glm-4.7</td><td class="h4">74</td><td class="h4">78</td><td class="h3">41</td><td class="h4">66</td><td class="h4" style="font-weight:800">89%</td><td>7.6s</td><td>20.2s</td><td class="h4" style="font-weight:700">2.7×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">kimi-k2.5</td><td class="h2">25</td><td class="h2">24</td><td class="h2">23</td><td class="h2">22</td><td class="h5" style="font-weight:800">91%</td><td>30.6s</td><td>104.3s</td><td class="h4" style="font-weight:700">3.4×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">doubao-seed-2.0-pro</td><td class="h5">84</td><td class="h5">86</td><td class="h4">76</td><td class="h4">77</td><td class="h5" style="font-weight:800">92%</td><td>6.0s</td><td>16.4s</td><td class="h4" style="font-weight:700">2.7×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">deepseek-v3.1-terminus</td><td class="h2">21</td><td class="h2">20</td><td class="h2">20</td><td class="h2">20</td><td class="h5" style="font-weight:800">94%</td><td>12.2s</td><td>17.6s</td><td class="h5" style="font-weight:700">1.4×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">glm-4.7</td><td class="h4">66</td><td class="h4">70</td><td class="h4">71</td><td class="h4">64</td><td class="h5" style="font-weight:800">96%</td><td>8.4s</td><td>15.8s</td><td class="h5" style="font-weight:700">1.9×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">deepseek-v3.2</td><td class="h3">32</td><td class="h3">31</td><td class="h3">31</td><td class="h3">30</td><td class="h5" style="font-weight:800">96%</td><td>10.8s</td><td>27.8s</td><td class="h4" style="font-weight:700">2.6×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">kimi-k2.5</td><td class="h2">25</td><td class="h2">26</td><td class="h2">25</td><td class="h2">25</td><td class="h5" style="font-weight:800">99%</td><td>51.1s</td><td>32.0s</td><td class="h5" style="font-weight:700">0.6×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-turbos</td><td class="h2">29</td><td class="h2">29</td><td class="h2">29</td><td class="h2">29</td><td class="h5" style="font-weight:800">99%</td><td>10.7s</td><td>18.0s</td><td class="h5" style="font-weight:700">1.7×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-5</td><td class="h2">28</td><td class="h2">30</td><td class="h2">23</td><td class="h2">28</td><td class="h5" style="font-weight:800">100%</td><td>12.6s</td><td>16.5s</td><td class="h5" style="font-weight:700">1.3×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">minimax-m2.7</td><td class="h3">47</td><td class="h4">53</td><td class="h4">53</td><td class="h3">48</td><td class="h5" style="font-weight:800">102%</td><td>10.5s</td><td>14.3s</td><td class="h5" style="font-weight:700">1.4×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">minimax-m2.5</td><td class="h4">72</td><td class="h5">85</td><td class="h4">79</td><td class="h4">74</td><td class="h5" style="font-weight:800">102%</td><td>8.0s</td><td>8.6s</td><td class="h5" style="font-weight:700">1.1×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td class="model-col">m2.1</td><td class="h3">42</td><td class="h3">48</td><td class="h3">45</td><td class="h3">43</td><td class="h5" style="font-weight:800">103%</td><td>11.8s</td><td>12.1s</td><td class="h5" style="font-weight:700">1.0×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">kimi-k2.5</td><td class="h2">29</td><td class="h2">29</td><td class="h3">33</td><td class="h3">30</td><td class="h5" style="font-weight:800">104%</td><td>12.3s</td><td>16.3s</td><td class="h5" style="font-weight:700">1.3×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-2.0-thinking</td><td class="h5">83</td><td class="h5">85</td><td class="h4">76</td><td class="h5">87</td><td class="h5" style="font-weight:800">104%</td><td>5.0s</td><td>19.9s</td><td class="h4" style="font-weight:700">4.0×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3-max-2026-01-23</td><td class="h3">31</td><td class="h3">32</td><td class="h2">30</td><td class="h3">33</td><td class="h5" style="font-weight:800">104%</td><td>11.6s</td><td>20.4s</td><td class="h5" style="font-weight:700">1.8×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">glm-5</td><td class="h2">30</td><td class="h3">36</td><td class="h3">36</td><td class="h3">32</td><td class="h5" style="font-weight:800">108%</td><td>12.4s</td><td>22.1s</td><td class="h5" style="font-weight:700">1.8×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">doubao-seed-code</td><td class="h3">37</td><td class="h3">38</td><td class="h3">37</td><td class="h3">40</td><td class="h5" style="font-weight:800">110%</td><td>10.4s</td><td>26.2s</td><td class="h4" style="font-weight:700">2.5×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-5-turbo</td><td class="h4">51</td><td class="h3">49</td><td class="h4">53</td><td class="h4">56</td><td class="h5" style="font-weight:800">110%</td><td>7.7s</td><td>11.2s</td><td class="h5" style="font-weight:700">1.5×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">doubao-seed-2.0-code</td><td class="h3">48</td><td class="h3">47</td><td class="h4">51</td><td class="h4">53</td><td class="h5" style="font-weight:800">111%</td><td>16.8s</td><td>51.2s</td><td class="h4" style="font-weight:700">3.0×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">minimax-m2.5</td><td class="h4">50</td><td class="h4">52</td><td class="h4">51</td><td class="h4">57</td><td class="h5" style="font-weight:800">112%</td><td>11.0s</td><td>12.6s</td><td class="h5" style="font-weight:700">1.1×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td class="model-col">m2.7</td><td class="h3">37</td><td class="h3">43</td><td class="h3">43</td><td class="h3">42</td><td class="h5" style="font-weight:800">113%</td><td>10.6s</td><td>12.9s</td><td class="h5" style="font-weight:700">1.2×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">glm-5</td><td class="h2">26</td><td class="h3">33</td><td class="h2">29</td><td class="h3">30</td><td class="h5" style="font-weight:800">114%</td><td>15.6s</td><td>20.1s</td><td class="h5" style="font-weight:700">1.3×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">auto</td><td class="h2">28</td><td class="h3">37</td><td class="h3">34</td><td class="h3">33</td><td class="h5" style="font-weight:800">114%</td><td>16.6s</td><td>15.6s</td><td class="h5" style="font-weight:700">0.9×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td><td class="model-col">glm-4.7</td><td class="h3">32</td><td class="h3">36</td><td class="h2">27</td><td class="h3">42</td><td class="h5" style="font-weight:800">129%</td><td>39.4s</td><td>88.0s</td><td class="h4" style="font-weight:700">2.2×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">minimax-m2.5</td><td class="h3">31</td><td class="h3">41</td><td class="h3">40</td><td class="h3">43</td><td class="h5" style="font-weight:800">138%</td><td>12.0s</td><td>10.7s</td><td class="h5" style="font-weight:700">0.9×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">glm-5</td><td class="h2">28</td><td class="h3">32</td><td class="h2">30</td><td class="h3">39</td><td class="h5" style="font-weight:800">142%</td><td>33.9s</td><td>13.5s</td><td class="h5" style="font-weight:700">0.4×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3-coder-plus</td><td class="h3">46</td><td class="h3">47</td><td class="h4">53</td><td class="h4">66</td><td class="h5" style="font-weight:800">143%</td><td>8.2s</td><td>32.7s</td><td class="h4" style="font-weight:700">4.0×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">hunyuan-2.0-instruct</td><td class="h3">42</td><td class="h4">52</td><td class="h4">68</td><td class="h4">62</td><td class="h5" style="font-weight:800">149%</td><td>8.6s</td><td>16.1s</td><td class="h5" style="font-weight:700">1.9×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#7c3aed"></span>KIMI-Coding</td><td class="model-col">kimi-for-coding</td><td class="h3">31</td><td class="h3">34</td><td class="h3">35</td><td class="h3">48</td><td class="h5" style="font-weight:800">158%</td><td>12.2s</td><td>17.3s</td><td class="h5" style="font-weight:700">1.4×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td><td class="model-col">kimi-k2.5</td><td class="h2">29</td><td class="h3">37</td><td class="h3">44</td><td class="h3">47</td><td class="h5" style="font-weight:800">164%</td><td>13.8s</td><td>20.4s</td><td class="h5" style="font-weight:700">1.5×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td><td class="model-col">qwen3.5-plus</td><td class="h4">61</td><td class="h4">64</td><td class="h4">76</td><td class="h5">125</td><td class="h5" style="font-weight:800">204%</td><td>9.0s</td><td>11.2s</td><td class="h5" style="font-weight:700">1.2×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td><td class="model-col">glm-4.7</td><td class="h2">25</td><td class="h4">53</td><td class="h4">64</td><td class="h4">57</td><td class="h5" style="font-weight:800">228%</td><td>22.5s</td><td>18.7s</td><td class="h5" style="font-weight:700">0.8×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td><td class="model-col">deepseek-v3.2</td><td class="h1">9</td><td class="h2">29</td><td class="h2">27</td><td class="h2">23</td><td class="h5" style="font-weight:800">248%</td><td>57.8s</td><td>29.3s</td><td class="h5" style="font-weight:700">0.5×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td><td class="model-col">m2.5</td><td class="h3">36</td><td class="h4">51</td><td class="h3">48</td><td class="h5">102</td><td class="h5" style="font-weight:800">285%</td><td>11.1s</td><td>12.8s</td><td class="h5" style="font-weight:700">1.2×</td></tr>
+<tr><td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td><td class="model-col">deepseek-v3.2-thinking</td><td class="h2">26</td><td class="h2">26</td><td class="h2">24</td><td class="na">—</td><td class="na">—</td><td>15.1s</td><td class="na">—</td><td class="na">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ CROSS-PROVIDER ══════════ -->
+<div id="cross" class="section">
+  <h2>同模型跨厂商比较</h2>
+  <p class="desc">相同基础模型在不同平台上的表现差异（白天数据），揭示平台基础设施和调度能力的差距。@100 和 @100K 两档对比。</p>
+  <div class="cross-grid">
+<div class="cross-section">
+            <h3>Kimi K2.5</h3>
+            <table class="data-tbl">
+                <thead><tr>
+                    <th style="text-align:left">平台</th>
+                    <th>TTFT @100</th><th>TPS @100</th><th>耗时 @100</th>
+                    <th>TTFT @100K</th><th>TPS @100K</th><th>耗时 @100K</th>
+                </tr></thead>
+                <tbody><tr>
+                <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动</td>
+                <td class="h5">0.99</td>
+                <td class="h2">29</td>
+                <td class="h4">12.26</td>
+                <td class="h3">5.65</td>
+                <td class="h3">30</td>
+                <td class="h5">16.31</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯</td>
+                <td class="h4">2.46</td>
+                <td class="h2">29</td>
+                <td class="h4">13.76</td>
+                <td class="h2">13.43</td>
+                <td class="h3">47</td>
+                <td class="h5">20.39</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#7c3aed"></span>KIMI</td>
+                <td class="h3">3.85</td>
+                <td class="h3">31</td>
+                <td class="h4">12.21</td>
+                <td class="h2">11.20</td>
+                <td class="h3">48</td>
+                <td class="h5">17.28</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山</td>
+                <td class="h2">17.50</td>
+                <td class="h2">25</td>
+                <td class="h3">30.56</td>
+                <td class="h1">89.98</td>
+                <td class="h2">22</td>
+                <td class="h4">104.35</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里</td>
+                <td class="h1">23.35</td>
+                <td class="h3">38</td>
+                <td class="h3">30.19</td>
+                <td class="h1">28.75</td>
+                <td class="h2">29</td>
+                <td class="h5">51.19</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹</td>
+                <td class="h1">38.17</td>
+                <td class="h2">25</td>
+                <td class="h2">51.10</td>
+                <td class="h2">18.87</td>
+                <td class="h2">25</td>
+                <td class="h5">31.97</td>
+            </tr></tbody>
+            </table>
+        </div>
+<div class="cross-section">
+            <h3>GLM-5</h3>
+            <table class="data-tbl">
+                <thead><tr>
+                    <th style="text-align:left">平台</th>
+                    <th>TTFT @100</th><th>TPS @100</th><th>耗时 @100</th>
+                    <th>TTFT @100K</th><th>TPS @100K</th><th>耗时 @100K</th>
+                </tr></thead>
+                <tbody><tr>
+                <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM</td>
+                <td class="h5">1.19</td>
+                <td class="h4">51</td>
+                <td class="h4">7.72</td>
+                <td class="h3">5.39</td>
+                <td class="h4">56</td>
+                <td class="h5">11.20</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里</td>
+                <td class="h4">1.53</td>
+                <td class="h2">30</td>
+                <td class="h4">12.38</td>
+                <td class="h2">12.01</td>
+                <td class="h3">32</td>
+                <td class="h5">22.06</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动</td>
+                <td class="h4">2.20</td>
+                <td class="h3">37</td>
+                <td class="h4">11.32</td>
+                <td class="h3">6.36</td>
+                <td class="h2">24</td>
+                <td class="h5">21.31</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹</td>
+                <td class="h3">3.42</td>
+                <td class="h2">26</td>
+                <td class="h3">15.63</td>
+                <td class="h2">9.26</td>
+                <td class="h3">30</td>
+                <td class="h5">20.09</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM</td>
+                <td class="h3">3.88</td>
+                <td class="h2">28</td>
+                <td class="h4">12.57</td>
+                <td class="h3">6.47</td>
+                <td class="h2">28</td>
+                <td class="h5">16.50</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯</td>
+                <td class="h3">3.96</td>
+                <td class="h2">28</td>
+                <td class="h3">33.88</td>
+                <td class="h3">5.18</td>
+                <td class="h3">39</td>
+                <td class="h5">13.54</td>
+            </tr></tbody>
+            </table>
+        </div>
+<div class="cross-section">
+            <h3>MiniMax M2.5</h3>
+            <table class="data-tbl">
+                <thead><tr>
+                    <th style="text-align:left">平台</th>
+                    <th>TTFT @100</th><th>TPS @100</th><th>耗时 @100</th>
+                    <th>TTFT @100K</th><th>TPS @100K</th><th>耗时 @100K</th>
+                </tr></thead>
+                <tbody><tr>
+                <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯</td>
+                <td class="h4">1.72</td>
+                <td class="h3">31</td>
+                <td class="h4">11.97</td>
+                <td class="h3">3.24</td>
+                <td class="h3">43</td>
+                <td class="h5">10.66</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax</td>
+                <td class="h4">2.12</td>
+                <td class="h3">36</td>
+                <td class="h4">11.06</td>
+                <td class="h2">8.34</td>
+                <td class="h5">102</td>
+                <td class="h5">12.80</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动</td>
+                <td class="h4">2.19</td>
+                <td class="h4">72</td>
+                <td class="h4">7.96</td>
+                <td class="h3">3.77</td>
+                <td class="h4">74</td>
+                <td class="h5">8.62</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里</td>
+                <td class="h3">4.12</td>
+                <td class="h3">45</td>
+                <td class="h4">11.77</td>
+                <td class="h2">13.11</td>
+                <td class="h3">35</td>
+                <td class="h5">29.01</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹</td>
+                <td class="h3">4.54</td>
+                <td class="h4">50</td>
+                <td class="h4">11.01</td>
+                <td class="h3">6.88</td>
+                <td class="h4">57</td>
+                <td class="h5">12.55</td>
+            </tr></tbody>
+            </table>
+        </div>
+<div class="cross-section">
+            <h3>DeepSeek V3.2</h3>
+            <table class="data-tbl">
+                <thead><tr>
+                    <th style="text-align:left">平台</th>
+                    <th>TTFT @100</th><th>TPS @100</th><th>耗时 @100</th>
+                    <th>TTFT @100K</th><th>TPS @100K</th><th>耗时 @100K</th>
+                </tr></thead>
+                <tbody><tr>
+                <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动</td>
+                <td class="h4">2.51</td>
+                <td class="h1">9</td>
+                <td class="h2">57.77</td>
+                <td class="h2">12.35</td>
+                <td class="h2">23</td>
+                <td class="h5">29.27</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山</td>
+                <td class="h4">2.77</td>
+                <td class="h3">32</td>
+                <td class="h4">10.78</td>
+                <td class="h2">18.30</td>
+                <td class="h3">30</td>
+                <td class="h5">27.81</td>
+            </tr><tr>
+                <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹</td>
+                <td class="h4">2.96</td>
+                <td class="h2">26</td>
+                <td class="h3">15.06</td>
+                <td class="na">—</td>
+                <td class="na">—</td>
+                <td class="na">—</td>
+            </tr></tbody>
+            </table>
+        </div>
+  </div>
+</div>
+
+
+<!-- ══════════ COMPOSITE SCORE ══════════ -->
+<div id="score" class="section">
+  <h2>综合体验评分</h2>
+  <h3 style="font-size:16px;font-weight:800;color:#111;margin-bottom:8px">白天综合评分（含劣化惩罚）</h3>
+  <p class="desc">基于白天实测数据的加权综合评分。TTFT 体验占 40%（对数评分，越低越好），TPS 体验占 60%（平方根评分，越高越好），按 4 档上下文加权（@100 30% + @1K 30% + @10K 25% + @100K 15%）得出基础分。再根据 @100K 昼夜 TTFT 劣化幅度施加惩罚系数（&gt;200% → ×0.70，&gt;100% → ×0.80，&gt;50% → ×0.90，&gt;20% → ×0.95）。无夜间数据的模型不扣分。</p>
+  <div class="legend">
+    <span style="font-weight:700;color:#111;margin-right:4px">分数色阶：</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#c6efce"></span>≥75 优秀</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#e2f0d9"></span>60-75 良好</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#fff2cc"></span>45-60 一般</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#fce4d6"></span>30-45 较差</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#ffc7ce"></span>&lt;30 很差</span>
+  </div>
+  <div class="tbl-wrap" style="max-height:none">
+    <table class="data-tbl">
+      <thead>
+        <tr class="group-hdr"><th colspan="3"></th><th colspan="4" style="text-align:center">分档得分（0.4×TTFT + 0.6×TPS）</th><th colspan="3"></th></tr>
+        <tr>
+          <th style="text-align:center;width:40px">#</th>
+          <th style="text-align:left">套餐</th>
+          <th style="text-align:left">模型</th>
+          <th>@100</th>
+          <th>@1K</th>
+          <th>@10K</th>
+          <th>@100K</th>
+          <th>基础分</th>
+          <th>劣化系数</th>
+          <th>最终分</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+        <td style="text-align:center;font-weight:900;color:#ca8a04;font-size:14px">1</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-4.5-air</td>
+        <td class="h5" style="font-weight:700">90.1</td>
+        <td class="h5" style="font-weight:700">91.1</td>
+        <td class="h5" style="font-weight:700">87.3</td>
+        <td class="h3" style="font-weight:700">56.2</td>
+        <td style="font-weight:700;text-align:right">84.6</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h5" style="font-weight:700">84.6</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:900;color:#ca8a04;font-size:14px">2</td>
+        <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td>
+        <td class="model-col">hunyuan-2.0-thinking</td>
+        <td class="h5" style="font-weight:700">85.5</td>
+        <td class="h5" style="font-weight:700">85.1</td>
+        <td class="h5" style="font-weight:700">77.2</td>
+        <td class="h4" style="font-weight:700">61.8</td>
+        <td style="font-weight:700;text-align:right">79.8</td>
+        <td style="color:#888;font-size:11px">无夜间数据</td>
+        <td class="h5" style="font-weight:700">79.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:900;color:#ca8a04;font-size:14px">3</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">minimax-m2.5</td>
+        <td class="h5" style="font-weight:700">77.0</td>
+        <td class="h5" style="font-weight:700">83.8</td>
+        <td class="h5" style="font-weight:700">80.6</td>
+        <td class="h4" style="font-weight:700">72.9</td>
+        <td style="font-weight:700;text-align:right">79.3</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h5" style="font-weight:700">79.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">4</td>
+        <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td>
+        <td class="model-col">hunyuan-t1</td>
+        <td class="h5" style="font-weight:700">83.7</td>
+        <td class="h5" style="font-weight:700">85.5</td>
+        <td class="h4" style="font-weight:700">72.4</td>
+        <td class="h4" style="font-weight:700">62.3</td>
+        <td style="font-weight:700;text-align:right">78.2</td>
+        <td style="color:#888;font-size:11px">无夜间数据</td>
+        <td class="h5" style="font-weight:700">78.2</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">5</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">doubao-seed-2.0-pro</td>
+        <td class="h5" style="font-weight:700">81.1</td>
+        <td class="h5" style="font-weight:700">81.0</td>
+        <td class="h4" style="font-weight:700">74.8</td>
+        <td class="h4" style="font-weight:700">61.7</td>
+        <td style="font-weight:700;text-align:right">76.6</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h4" style="font-weight:700">72.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">6</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">qwen3.5-plus</td>
+        <td class="h4" style="font-weight:700">68.2</td>
+        <td class="h4" style="font-weight:700">67.5</td>
+        <td class="h4" style="font-weight:700">71.9</td>
+        <td class="h4" style="font-weight:700">72.9</td>
+        <td style="font-weight:700;text-align:right">69.6</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h4" style="font-weight:700">69.6</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">7</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">qwen3-coder-next</td>
+        <td class="h5" style="font-weight:700">80.7</td>
+        <td class="h5" style="font-weight:700">81.9</td>
+        <td class="h3" style="font-weight:700">58.7</td>
+        <td class="h4" style="font-weight:700">64.1</td>
+        <td style="font-weight:700;text-align:right">73.1</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h4" style="font-weight:700">69.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">8</td>
+        <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td>
+        <td class="model-col">hunyuan-2.0-instruct</td>
+        <td class="h4" style="font-weight:700">68.6</td>
+        <td class="h4" style="font-weight:700">71.6</td>
+        <td class="h4" style="font-weight:700">72.6</td>
+        <td class="h3" style="font-weight:700">57.6</td>
+        <td style="font-weight:700;text-align:right">68.9</td>
+        <td style="color:#888;font-size:11px">无夜间数据</td>
+        <td class="h4" style="font-weight:700">68.9</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">9</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-5-turbo</td>
+        <td class="h4" style="font-weight:700">73.4</td>
+        <td class="h4" style="font-weight:700">73.3</td>
+        <td class="h4" style="font-weight:700">73.0</td>
+        <td class="h4" style="font-weight:700">62.6</td>
+        <td style="font-weight:700;text-align:right">71.7</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h4" style="font-weight:700">68.1</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">10</td>
+        <td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td>
+        <td class="model-col">m2.5</td>
+        <td class="h4" style="font-weight:700">62.3</td>
+        <td class="h4" style="font-weight:700">72.2</td>
+        <td class="h3" style="font-weight:700">59.0</td>
+        <td class="h4" style="font-weight:700">73.2</td>
+        <td style="font-weight:700;text-align:right">66.1</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h4" style="font-weight:700">66.1</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">11</td>
+        <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td>
+        <td class="model-col">minimax-m2.5</td>
+        <td class="h4" style="font-weight:700">61.4</td>
+        <td class="h4" style="font-weight:700">68.3</td>
+        <td class="h4" style="font-weight:700">65.1</td>
+        <td class="h4" style="font-weight:700">62.0</td>
+        <td style="font-weight:700;text-align:right">64.5</td>
+        <td style="color:#888;font-size:11px">无夜间数据</td>
+        <td class="h4" style="font-weight:700">64.5</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">12</td>
+        <td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td>
+        <td class="model-col">m2.7</td>
+        <td class="h4" style="font-weight:700">63.1</td>
+        <td class="h4" style="font-weight:700">66.2</td>
+        <td class="h4" style="font-weight:700">66.0</td>
+        <td class="h3" style="font-weight:700">56.8</td>
+        <td style="font-weight:700;text-align:right">63.8</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h4" style="font-weight:700">63.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">13</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">minimax-m2.7</td>
+        <td class="h4" style="font-weight:700">62.6</td>
+        <td class="h4" style="font-weight:700">66.5</td>
+        <td class="h4" style="font-weight:700">64.7</td>
+        <td class="h3" style="font-weight:700">55.9</td>
+        <td style="font-weight:700;text-align:right">63.3</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h4" style="font-weight:700">63.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">14</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-4.5</td>
+        <td class="h5" style="font-weight:700">75.8</td>
+        <td class="h4" style="font-weight:700">72.7</td>
+        <td class="h5" style="font-weight:700">76.4</td>
+        <td class="h2" style="font-weight:700">43.9</td>
+        <td style="font-weight:700;text-align:right">70.2</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h4" style="font-weight:700">63.2</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">15</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">minimax-m2.5</td>
+        <td class="h4" style="font-weight:700">61.9</td>
+        <td class="h4" style="font-weight:700">63.3</td>
+        <td class="h4" style="font-weight:700">60.8</td>
+        <td class="h4" style="font-weight:700">60.5</td>
+        <td style="font-weight:700;text-align:right">61.8</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h4" style="font-weight:700">61.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">16</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">glm-4.7</td>
+        <td class="h4" style="font-weight:700">74.3</td>
+        <td class="h4" style="font-weight:700">73.8</td>
+        <td class="h4" style="font-weight:700">62.5</td>
+        <td class="h3" style="font-weight:700">56.1</td>
+        <td style="font-weight:700;text-align:right">68.5</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h4" style="font-weight:700">61.6</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">17</td>
+        <td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td>
+        <td class="model-col">m2.1</td>
+        <td class="h3" style="font-weight:700">59.3</td>
+        <td class="h4" style="font-weight:700">70.2</td>
+        <td class="h4" style="font-weight:700">65.4</td>
+        <td class="h3" style="font-weight:700">58.6</td>
+        <td style="font-weight:700;text-align:right">64.0</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h4" style="font-weight:700">60.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">18</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-4.6</td>
+        <td class="h4" style="font-weight:700">68.6</td>
+        <td class="h5" style="font-weight:700">76.0</td>
+        <td class="h4" style="font-weight:700">73.2</td>
+        <td class="h2" style="font-weight:700">33.5</td>
+        <td style="font-weight:700;text-align:right">66.7</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h4" style="font-weight:700">60.0</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">19</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">qwen3-coder-plus</td>
+        <td class="h4" style="font-weight:700">63.9</td>
+        <td class="h4" style="font-weight:700">63.9</td>
+        <td class="h4" style="font-weight:700">63.4</td>
+        <td class="h3" style="font-weight:700">50.7</td>
+        <td style="font-weight:700;text-align:right">61.8</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h3" style="font-weight:700">58.7</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">20</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">minimax-m2.5</td>
+        <td class="h4" style="font-weight:700">60.7</td>
+        <td class="h4" style="font-weight:700">65.9</td>
+        <td class="h4" style="font-weight:700">68.2</td>
+        <td class="h2" style="font-weight:700">43.7</td>
+        <td style="font-weight:700;text-align:right">61.6</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h3" style="font-weight:700">58.5</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">21</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">doubao-seed-code</td>
+        <td class="h4" style="font-weight:700">65.2</td>
+        <td class="h4" style="font-weight:700">66.8</td>
+        <td class="h4" style="font-weight:700">61.1</td>
+        <td class="h2" style="font-weight:700">42.5</td>
+        <td style="font-weight:700;text-align:right">61.2</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h3" style="font-weight:700">58.2</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">22</td>
+        <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td>
+        <td class="model-col">hunyuan-turbos</td>
+        <td class="h4" style="font-weight:700">62.6</td>
+        <td class="h3" style="font-weight:700">59.8</td>
+        <td class="h3" style="font-weight:700">57.1</td>
+        <td class="h3" style="font-weight:700">47.6</td>
+        <td style="font-weight:700;text-align:right">58.1</td>
+        <td style="color:#888;font-size:11px">无夜间数据</td>
+        <td class="h3" style="font-weight:700">58.1</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">23</td>
+        <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td>
+        <td class="model-col">kimi-k2.5</td>
+        <td class="h3" style="font-weight:700">57.4</td>
+        <td class="h4" style="font-weight:700">68.4</td>
+        <td class="h3" style="font-weight:700">48.7</td>
+        <td class="h3" style="font-weight:700">49.1</td>
+        <td style="font-weight:700;text-align:right">57.3</td>
+        <td style="color:#888;font-size:11px">无夜间数据</td>
+        <td class="h3" style="font-weight:700">57.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">24</td>
+        <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td>
+        <td class="model-col">glm-5</td>
+        <td class="h3" style="font-weight:700">52.5</td>
+        <td class="h4" style="font-weight:700">60.7</td>
+        <td class="h3" style="font-weight:700">57.4</td>
+        <td class="h3" style="font-weight:700">55.6</td>
+        <td style="font-weight:700;text-align:right">56.6</td>
+        <td style="color:#888;font-size:11px">无夜间数据</td>
+        <td class="h3" style="font-weight:700">56.6</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">25</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-4.7</td>
+        <td class="h3" style="font-weight:700">45.5</td>
+        <td class="h4" style="font-weight:700">74.7</td>
+        <td class="h4" style="font-weight:700">70.9</td>
+        <td class="h3" style="font-weight:700">57.9</td>
+        <td style="font-weight:700;text-align:right">62.4</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h3" style="font-weight:700">56.2</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">26</td>
+        <td class="plan-col"><span class="dot" style="background:#16a34a"></span>腾讯CodingPlan</td>
+        <td class="model-col">auto</td>
+        <td class="h3" style="font-weight:700">49.5</td>
+        <td class="h4" style="font-weight:700">62.3</td>
+        <td class="h3" style="font-weight:700">55.8</td>
+        <td class="h3" style="font-weight:700">51.8</td>
+        <td style="font-weight:700;text-align:right">55.3</td>
+        <td style="color:#888;font-size:11px">无夜间数据</td>
+        <td class="h3" style="font-weight:700">55.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">27</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">glm-5</td>
+        <td class="h4" style="font-weight:700">62.5</td>
+        <td class="h4" style="font-weight:700">68.8</td>
+        <td class="h3" style="font-weight:700">59.2</td>
+        <td class="h3" style="font-weight:700">45.4</td>
+        <td style="font-weight:700;text-align:right">61.0</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h3" style="font-weight:700">54.9</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">28</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">kimi-k2.5</td>
+        <td class="h4" style="font-weight:700">64.1</td>
+        <td class="h4" style="font-weight:700">62.0</td>
+        <td class="h4" style="font-weight:700">62.3</td>
+        <td class="h3" style="font-weight:700">50.1</td>
+        <td style="font-weight:700;text-align:right">60.9</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h3" style="font-weight:700">54.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">29</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">deepseek-v3.2-thinking</td>
+        <td class="h3" style="font-weight:700">54.1</td>
+        <td class="h3" style="font-weight:700">52.0</td>
+        <td class="h3" style="font-weight:700">52.0</td>
+        <td class="na">—</td>
+        <td style="font-weight:700;text-align:right">52.7</td>
+        <td style="color:#888;font-size:11px">无夜间数据</td>
+        <td class="h3" style="font-weight:700">52.7</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">30</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">glm-5</td>
+        <td class="h4" style="font-weight:700">61.7</td>
+        <td class="h3" style="font-weight:700">50.6</td>
+        <td class="h3" style="font-weight:700">49.4</td>
+        <td class="h2" style="font-weight:700">43.2</td>
+        <td style="font-weight:700;text-align:right">52.5</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h3" style="font-weight:700">52.5</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">31</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">glm-4.7</td>
+        <td class="h4" style="font-weight:700">70.5</td>
+        <td class="h5" style="font-weight:700">83.3</td>
+        <td class="h5" style="font-weight:700">79.9</td>
+        <td class="h3" style="font-weight:700">58.5</td>
+        <td style="font-weight:700;text-align:right">74.9</td>
+        <td class="h1" style="font-weight:700">×0.7</td>
+        <td class="h3" style="font-weight:700">52.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">32</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">deepseek-v3.1-terminus</td>
+        <td class="h3" style="font-weight:700">59.1</td>
+        <td class="h3" style="font-weight:700">56.5</td>
+        <td class="h3" style="font-weight:700">55.1</td>
+        <td class="h2" style="font-weight:700">44.6</td>
+        <td style="font-weight:700;text-align:right">55.1</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h3" style="font-weight:700">52.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">33</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">qwen3-max-2026-01-23</td>
+        <td class="h3" style="font-weight:700">58.4</td>
+        <td class="h3" style="font-weight:700">59.4</td>
+        <td class="h3" style="font-weight:700">51.6</td>
+        <td class="h2" style="font-weight:700">44.6</td>
+        <td style="font-weight:700;text-align:right">54.9</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h3" style="font-weight:700">52.2</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">34</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">glm-5</td>
+        <td class="h3" style="font-weight:700">52.8</td>
+        <td class="h3" style="font-weight:700">53.7</td>
+        <td class="h3" style="font-weight:700">53.7</td>
+        <td class="h2" style="font-weight:700">44.9</td>
+        <td style="font-weight:700;text-align:right">52.1</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h3" style="font-weight:700">52.1</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">35</td>
+        <td class="plan-col"><span class="dot" style="background:#7c3aed"></span>KIMI-Coding</td>
+        <td class="model-col">kimi-for-coding</td>
+        <td class="h3" style="font-weight:700">54.5</td>
+        <td class="h3" style="font-weight:700">52.7</td>
+        <td class="h3" style="font-weight:700">52.7</td>
+        <td class="h3" style="font-weight:700">51.6</td>
+        <td style="font-weight:700;text-align:right">53.1</td>
+        <td class="h4" style="font-weight:600">×0.95</td>
+        <td class="h3" style="font-weight:700">50.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">36</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-5</td>
+        <td class="h3" style="font-weight:700">52.7</td>
+        <td class="h3" style="font-weight:700">53.9</td>
+        <td class="h2" style="font-weight:700">42.7</td>
+        <td class="h3" style="font-weight:700">47.6</td>
+        <td style="font-weight:700;text-align:right">49.8</td>
+        <td class="h5" style="font-weight:600">×1.0</td>
+        <td class="h3" style="font-weight:700">49.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">37</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">deepseek-v3.2</td>
+        <td class="h3" style="font-weight:700">58.0</td>
+        <td class="h3" style="font-weight:700">59.4</td>
+        <td class="h3" style="font-weight:700">50.7</td>
+        <td class="h2" style="font-weight:700">37.3</td>
+        <td style="font-weight:700;text-align:right">53.5</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h3" style="font-weight:700">48.1</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">38</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">doubao-seed-2.0-code</td>
+        <td class="h3" style="font-weight:700">52.8</td>
+        <td class="h3" style="font-weight:700">53.0</td>
+        <td class="h3" style="font-weight:700">52.1</td>
+        <td class="h3" style="font-weight:700">45.7</td>
+        <td style="font-weight:700;text-align:right">51.6</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h3" style="font-weight:700">46.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">39</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">deepseek-v3.2</td>
+        <td class="h2" style="font-weight:700">42.9</td>
+        <td class="h2" style="font-weight:700">44.3</td>
+        <td class="h2" style="font-weight:700">44.9</td>
+        <td class="h2" style="font-weight:700">37.7</td>
+        <td style="font-weight:700;text-align:right">43.1</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h2" style="font-weight:700">38.7</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">40</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">kimi-k2.5</td>
+        <td class="h2" style="font-weight:700">32.0</td>
+        <td class="h2" style="font-weight:700">37.6</td>
+        <td class="h2" style="font-weight:700">44.0</td>
+        <td class="h2" style="font-weight:700">34.1</td>
+        <td style="font-weight:700;text-align:right">37.0</td>
+        <td class="h3" style="font-weight:600">×0.9</td>
+        <td class="h2" style="font-weight:700">33.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">41</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">kimi-k2.5</td>
+        <td class="h2" style="font-weight:700">39.0</td>
+        <td class="h3" style="font-weight:700">45.2</td>
+        <td class="h3" style="font-weight:700">52.9</td>
+        <td class="h2" style="font-weight:700">34.3</td>
+        <td style="font-weight:700;text-align:right">43.6</td>
+        <td class="h1" style="font-weight:700">×0.7</td>
+        <td class="h2" style="font-weight:700">30.5</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">42</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">glm-4.7</td>
+        <td class="h2" style="font-weight:700">35.9</td>
+        <td class="h2" style="font-weight:700">38.0</td>
+        <td class="h2" style="font-weight:700">33.8</td>
+        <td class="h2" style="font-weight:700">40.9</td>
+        <td style="font-weight:700;text-align:right">36.8</td>
+        <td class="h2" style="font-weight:600">×0.8</td>
+        <td class="h1" style="font-weight:700">29.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">43</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">kimi-k2.5</td>
+        <td class="h2" style="font-weight:700">35.0</td>
+        <td class="h2" style="font-weight:700">34.6</td>
+        <td class="h2" style="font-weight:700">30.8</td>
+        <td class="h2" style="font-weight:700">30.1</td>
+        <td style="font-weight:700;text-align:right">33.1</td>
+        <td class="h2" style="font-weight:600">×0.8</td>
+        <td class="h1" style="font-weight:700">26.5</td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:32px;font-size:16px;font-weight:800;color:#111">夜间综合评分</h3>
+  <p class="desc">同一评分方法，使用夜间实测数据。夜间无劣化惩罚（本身就是基准时段）。腾讯因 API Key 过期无夜间数据，不参与此表。</p>
+  <div class="tbl-wrap" style="max-height:none">
+    <table class="data-tbl">
+      <thead>
+        <tr class="group-hdr"><th colspan="3"></th><th colspan="4" style="text-align:center">分档得分（0.4×TTFT + 0.6×TPS）</th><th></th></tr>
+        <tr>
+          <th style="text-align:center;width:40px">#</th>
+          <th style="text-align:left">套餐</th>
+          <th style="text-align:left">模型</th>
+          <th>@100</th>
+          <th>@1K</th>
+          <th>@10K</th>
+          <th>@100K</th>
+          <th>最终分</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+        <td style="text-align:center;font-weight:900;color:#ca8a04;font-size:14px">1</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-4.5</td>
+        <td class="h5" style="font-weight:700">88.0</td>
+        <td class="h5" style="font-weight:700">87.7</td>
+        <td class="h5" style="font-weight:700">86.2</td>
+        <td class="h4" style="font-weight:700">74.6</td>
+        <td class="h5" style="font-weight:700">85.5</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:900;color:#ca8a04;font-size:14px">2</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">glm-4.7</td>
+        <td class="h5" style="font-weight:700">85.6</td>
+        <td class="h5" style="font-weight:700">85.9</td>
+        <td class="h5" style="font-weight:700">84.9</td>
+        <td class="h5" style="font-weight:700">77.8</td>
+        <td class="h5" style="font-weight:700">84.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:900;color:#ca8a04;font-size:14px">3</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">qwen3-coder-next</td>
+        <td class="h5" style="font-weight:700">79.9</td>
+        <td class="h5" style="font-weight:700">86.8</td>
+        <td class="h5" style="font-weight:700">84.5</td>
+        <td class="h4" style="font-weight:700">69.4</td>
+        <td class="h5" style="font-weight:700">81.6</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">4</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-4.5-air</td>
+        <td class="h5" style="font-weight:700">82.3</td>
+        <td class="h5" style="font-weight:700">87.3</td>
+        <td class="h5" style="font-weight:700">76.5</td>
+        <td class="h3" style="font-weight:700">55.4</td>
+        <td class="h5" style="font-weight:700">78.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">5</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">glm-4.7</td>
+        <td class="h5" style="font-weight:700">78.7</td>
+        <td class="h5" style="font-weight:700">79.6</td>
+        <td class="h5" style="font-weight:700">78.2</td>
+        <td class="h4" style="font-weight:700">68.5</td>
+        <td class="h5" style="font-weight:700">77.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">6</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">doubao-seed-2.0-pro</td>
+        <td class="h5" style="font-weight:700">80.5</td>
+        <td class="h5" style="font-weight:700">85.5</td>
+        <td class="h4" style="font-weight:700">73.0</td>
+        <td class="h3" style="font-weight:700">56.8</td>
+        <td class="h5" style="font-weight:700">76.6</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">7</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">glm-5</td>
+        <td class="h5" style="font-weight:700">78.4</td>
+        <td class="h5" style="font-weight:700">79.9</td>
+        <td class="h5" style="font-weight:700">76.3</td>
+        <td class="h4" style="font-weight:700">62.8</td>
+        <td class="h5" style="font-weight:700">76.0</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">8</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">minimax-m2.5</td>
+        <td class="h4" style="font-weight:700">66.6</td>
+        <td class="h5" style="font-weight:700">81.4</td>
+        <td class="h5" style="font-weight:700">77.3</td>
+        <td class="h4" style="font-weight:700">72.8</td>
+        <td class="h4" style="font-weight:700">74.6</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">9</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-5-turbo</td>
+        <td class="h5" style="font-weight:700">76.2</td>
+        <td class="h4" style="font-weight:700">74.5</td>
+        <td class="h5" style="font-weight:700">78.0</td>
+        <td class="h4" style="font-weight:700">65.1</td>
+        <td class="h4" style="font-weight:700">74.5</td>
+    </tr>
+<tr>
+        <td style="text-align:center;font-weight:700;color:#555">10</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-4.7</td>
+        <td class="h5" style="font-weight:700">78.3</td>
+        <td class="h4" style="font-weight:700">72.9</td>
+        <td class="h4" style="font-weight:700">67.1</td>
+        <td class="h5" style="font-weight:700">77.9</td>
+        <td class="h4" style="font-weight:700">73.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">11</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-4.6</td>
+        <td class="h4" style="font-weight:700">68.9</td>
+        <td class="h5" style="font-weight:700">76.6</td>
+        <td class="h5" style="font-weight:700">77.3</td>
+        <td class="h4" style="font-weight:700">69.6</td>
+        <td class="h4" style="font-weight:700">73.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">12</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">qwen3.5-plus</td>
+        <td class="h4" style="font-weight:700">69.4</td>
+        <td class="h4" style="font-weight:700">71.3</td>
+        <td class="h5" style="font-weight:700">76.1</td>
+        <td class="h4" style="font-weight:700">74.5</td>
+        <td class="h4" style="font-weight:700">72.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">13</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">kimi-k2.5</td>
+        <td class="h4" style="font-weight:700">67.8</td>
+        <td class="h4" style="font-weight:700">74.0</td>
+        <td class="h4" style="font-weight:700">72.1</td>
+        <td class="h4" style="font-weight:700">65.2</td>
+        <td class="h4" style="font-weight:700">70.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">14</td>
+        <td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td>
+        <td class="model-col">m2.7</td>
+        <td class="h4" style="font-weight:700">67.3</td>
+        <td class="h4" style="font-weight:700">69.5</td>
+        <td class="h4" style="font-weight:700">72.9</td>
+        <td class="h3" style="font-weight:700">59.0</td>
+        <td class="h4" style="font-weight:700">68.1</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">15</td>
+        <td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td>
+        <td class="model-col">m2.5</td>
+        <td class="h4" style="font-weight:700">70.2</td>
+        <td class="h4" style="font-weight:700">67.1</td>
+        <td class="h4" style="font-weight:700">69.0</td>
+        <td class="h3" style="font-weight:700">51.3</td>
+        <td class="h4" style="font-weight:700">66.1</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">16</td>
+        <td class="plan-col"><span class="dot" style="background:#0d9488"></span>MiniMax-Coding</td>
+        <td class="model-col">m2.1</td>
+        <td class="h4" style="font-weight:700">63.7</td>
+        <td class="h4" style="font-weight:700">67.3</td>
+        <td class="h4" style="font-weight:700">72.4</td>
+        <td class="h3" style="font-weight:700">56.4</td>
+        <td class="h4" style="font-weight:700">65.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">17</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">minimax-m2.5</td>
+        <td class="h4" style="font-weight:700">69.2</td>
+        <td class="h4" style="font-weight:700">66.9</td>
+        <td class="h4" style="font-weight:700">65.1</td>
+        <td class="h3" style="font-weight:700">55.9</td>
+        <td class="h4" style="font-weight:700">65.5</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">18</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">minimax-m2.5</td>
+        <td class="h4" style="font-weight:700">67.6</td>
+        <td class="h4" style="font-weight:700">70.5</td>
+        <td class="h3" style="font-weight:700">59.3</td>
+        <td class="h4" style="font-weight:700">61.0</td>
+        <td class="h4" style="font-weight:700">65.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">19</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">qwen3-coder-plus</td>
+        <td class="h4" style="font-weight:700">69.0</td>
+        <td class="h4" style="font-weight:700">67.0</td>
+        <td class="h4" style="font-weight:700">66.2</td>
+        <td class="h3" style="font-weight:700">53.7</td>
+        <td class="h4" style="font-weight:700">65.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">20</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">doubao-seed-code</td>
+        <td class="h4" style="font-weight:700">71.2</td>
+        <td class="h4" style="font-weight:700">68.7</td>
+        <td class="h4" style="font-weight:700">63.6</td>
+        <td class="h3" style="font-weight:700">46.1</td>
+        <td class="h4" style="font-weight:700">64.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">21</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">doubao-seed-2.0-code</td>
+        <td class="h4" style="font-weight:700">64.3</td>
+        <td class="h4" style="font-weight:700">64.7</td>
+        <td class="h4" style="font-weight:700">66.0</td>
+        <td class="h3" style="font-weight:700">48.1</td>
+        <td class="h4" style="font-weight:700">62.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">22</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">minimax-m2.7</td>
+        <td class="h4" style="font-weight:700">61.5</td>
+        <td class="h4" style="font-weight:700">65.1</td>
+        <td class="h4" style="font-weight:700">62.7</td>
+        <td class="h3" style="font-weight:700">57.9</td>
+        <td class="h4" style="font-weight:700">62.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">23</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">glm-5</td>
+        <td class="h4" style="font-weight:700">61.9</td>
+        <td class="h4" style="font-weight:700">65.8</td>
+        <td class="h4" style="font-weight:700">60.6</td>
+        <td class="h3" style="font-weight:700">45.5</td>
+        <td class="h4" style="font-weight:700">60.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">24</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">glm-5</td>
+        <td class="h3" style="font-weight:700">59.4</td>
+        <td class="h4" style="font-weight:700">62.5</td>
+        <td class="h3" style="font-weight:700">56.5</td>
+        <td class="h3" style="font-weight:700">46.3</td>
+        <td class="h3" style="font-weight:700">57.6</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">25</td>
+        <td class="plan-col"><span class="dot" style="background:#2563eb"></span>GLM-Coding</td>
+        <td class="model-col">glm-5</td>
+        <td class="h3" style="font-weight:700">58.7</td>
+        <td class="h4" style="font-weight:700">63.5</td>
+        <td class="h3" style="font-weight:700">52.2</td>
+        <td class="h3" style="font-weight:700">47.8</td>
+        <td class="h3" style="font-weight:700">56.9</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">26</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">deepseek-v3.2-thinking</td>
+        <td class="h3" style="font-weight:700">56.0</td>
+        <td class="h3" style="font-weight:700">56.6</td>
+        <td class="h3" style="font-weight:700">52.7</td>
+        <td class="na">—</td>
+        <td class="h3" style="font-weight:700">55.3</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">27</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">deepseek-v3.2</td>
+        <td class="h3" style="font-weight:700">59.6</td>
+        <td class="h3" style="font-weight:700">58.4</td>
+        <td class="h3" style="font-weight:700">55.0</td>
+        <td class="h2" style="font-weight:700">40.6</td>
+        <td class="h3" style="font-weight:700">55.2</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">28</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">glm-4.7</td>
+        <td class="h4" style="font-weight:700">62.2</td>
+        <td class="h3" style="font-weight:700">57.7</td>
+        <td class="h3" style="font-weight:700">53.4</td>
+        <td class="h2" style="font-weight:700">38.5</td>
+        <td class="h3" style="font-weight:700">55.1</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">29</td>
+        <td class="plan-col"><span class="dot" style="background:#7c3aed"></span>KIMI-Coding</td>
+        <td class="model-col">kimi-for-coding</td>
+        <td class="h3" style="font-weight:700">54.3</td>
+        <td class="h3" style="font-weight:700">53.1</td>
+        <td class="h3" style="font-weight:700">55.1</td>
+        <td class="h3" style="font-weight:700">49.5</td>
+        <td class="h3" style="font-weight:700">53.4</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">30</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">qwen3-max-2026-01-23</td>
+        <td class="h3" style="font-weight:700">54.2</td>
+        <td class="h4" style="font-weight:700">60.8</td>
+        <td class="h3" style="font-weight:700">50.0</td>
+        <td class="h2" style="font-weight:700">38.2</td>
+        <td class="h3" style="font-weight:700">52.7</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">31</td>
+        <td class="plan-col"><span class="dot" style="background:#db2777"></span>无问芯穹-Coding</td>
+        <td class="model-col">kimi-k2.5</td>
+        <td class="h3" style="font-weight:700">57.1</td>
+        <td class="h3" style="font-weight:700">51.9</td>
+        <td class="h3" style="font-weight:700">52.5</td>
+        <td class="h2" style="font-weight:700">42.3</td>
+        <td class="h3" style="font-weight:700">52.2</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">32</td>
+        <td class="plan-col"><span class="dot" style="background:#059669"></span>硅基流动-Pro</td>
+        <td class="model-col">deepseek-v3.1-terminus</td>
+        <td class="h3" style="font-weight:700">55.2</td>
+        <td class="h3" style="font-weight:700">51.3</td>
+        <td class="h3" style="font-weight:700">51.8</td>
+        <td class="h2" style="font-weight:700">39.1</td>
+        <td class="h3" style="font-weight:700">50.8</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">33</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">deepseek-v3.2</td>
+        <td class="h3" style="font-weight:700">56.7</td>
+        <td class="h3" style="font-weight:700">55.8</td>
+        <td class="h2" style="font-weight:700">43.8</td>
+        <td class="h2" style="font-weight:700">34.9</td>
+        <td class="h3" style="font-weight:700">49.9</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">34</td>
+        <td class="plan-col"><span class="dot" style="background:#ea580c"></span>火山-Coding</td>
+        <td class="model-col">kimi-k2.5</td>
+        <td class="h3" style="font-weight:700">52.0</td>
+        <td class="h3" style="font-weight:700">52.6</td>
+        <td class="h2" style="font-weight:700">43.6</td>
+        <td class="h1" style="font-weight:700">26.0</td>
+        <td class="h3" style="font-weight:700">46.2</td>
+    </tr>
+<tr>
+        <td style="text-align:center;color:#888">35</td>
+        <td class="plan-col"><span class="dot" style="background:#ca8a04"></span>阿里CodingPlan</td>
+        <td class="model-col">kimi-k2.5</td>
+        <td class="h2" style="font-weight:700">44.8</td>
+        <td class="h2" style="font-weight:700">42.6</td>
+        <td class="h2" style="font-weight:700">43.1</td>
+        <td class="h3" style="font-weight:700">50.6</td>
+        <td class="h2" style="font-weight:700">44.6</td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ FINDINGS ══════════ -->
+<div id="findings" class="section">
+  <h2>核心发现</h2>
+  <p class="desc">聚焦四大主力新模型（Kimi-K2.5、GLM-5、MiniMax-M2.7、Qwen3.5-Plus）在各平台的白天/夜间表现。小模型（GLM-4.5-air 等）更适合工作流和系统集成，单独点评见上方评分表。</p>
+  <div class="finding-list">
+    <div class="finding-item"><div><span class="ft">Kimi-K2.5：平台差距远大于模型差距</span>同一个 K2.5，白天 @100 TTFT 在硅基流动 <strong>0.99s</strong>，在腾讯 <strong>2.46s</strong>，但在无问芯穹 <strong>38.17s</strong>（差 38 倍）、阿里 <strong>23.35s</strong>、火山 <strong>17.50s</strong>。@100K 更夸张：硅基 <strong>5.65s</strong> vs 火山 <strong>89.98s</strong>。夜间差距收窄但仍显著：硅基 3.66s vs 火山 30.87s。结论：K2.5 模型本身没问题，白天高峰在火山、阿里、无问芯穹三个平台严重劣化。</div></div>
+    <div class="finding-item"><div><span class="ft">GLM-5：旗舰模型但速度偏慢，自家平台最优</span>GLM-5（754B）在自家 GLM-Coding 白天 TTFT <strong>3.88s</strong>、TPS <strong>28</strong>、@100K 总耗时 <strong>16.50s</strong>。阿里 TTFT 1.53s 更快但 TPS 仅 30。硅基流动白天 2.20s 但 TPS 37。腾讯 TTFT 3.96s 且 @100K 总耗时异常高达 <strong>33.88s</strong>。夜间各平台表现接近，差距不大。TPS 全场 24–39，不算快但能力被社区评为「对标 Opus 4.6」。选 GLM-5 看重的是能力而非速度。</div></div>
+    <div class="finding-item"><div><span class="ft">MiniMax-M2.7：国产速度标杆，highspeed 版质变</span>标准版白天 @100 TPS <strong>37</strong>、@100K TPS <strong>42</strong>，四档稳定无衰减。highspeed 版 TPS 飙升到 <strong>57–64</strong>（+50%），@100K 总耗时 <strong>10.9s</strong>。夜间标准版 TPS 提升到 <strong>51</strong>，差距缩小。值得注意的是 M2.7 在无问芯穹白天 TPS <strong>47</strong>、TTFT 3.67s，比 MiniMax 自家标准版更快——说明无问芯穹对 MiniMax 模型的调度比对 Kimi 好得多。</div></div>
+    <div class="finding-item"><div><span class="ft">Qwen3.5-Plus：唯一 TPS 随上下文逆增的模型</span>阿里 qwen3.5-plus 白天 @100 TPS <strong>61</strong> → @1K <strong>53</strong> → @10K <strong>66</strong> → @100K 反升至 <strong>125</strong>，本次唯一不降反升的模型。@100K 总耗时仅 <strong>11.19s</strong>，在阿里平台所有模型中最快。夜间 @100K TPS <strong>118</strong> 同样亮眼。这个模型特别适合需要投喂大量上下文的场景。但 @100 短上下文 TPS 61 属于中等水平。</div></div>
+    <div class="finding-item"><div><span class="ft">Qwen3-Coder-Next：短上下文最快，长上下文衰减严重</span>白天 @100 TPS <strong>147</strong> 全场最高，@1K <strong>104</strong> 仍然领先。但 @10K 跌至 <strong>67</strong>（↓54%），@100K TPS <strong>92</strong> 虽然回升但总耗时 <strong>18.88s</strong>。夜间 @100K TPS <strong>128</strong> 表现更好。适合短平快任务（补全、格式转换），不适合大仓库分析。</div></div>
+    <div class="finding-item"><div><span class="ft">白天 vs 夜间：新模型劣化幅度普遍 50%–200%</span>@100K 上下文下，Kimi-K2.5 在火山白天 89.98s / 夜间 30.87s（+191%），在阿里白天 28.75s / 夜间 9.20s（+213%）。GLM-5 在 GLM 平台白天 6.47s / 夜间 7.85s（反而夜间更慢，-18%，异常稳定）。M2.7 白天 5.28s / 夜间 6.31s（-16%，稳定）。结论：自研模型在自家平台昼夜稳定，第三方模型在聚合平台白天显著劣化。</div></div>
+    <div class="finding-item"><div><span class="ft">KIMI-Coding 自有平台：稳但不快</span>kimi-for-coding（K2.5）在 KIMI 自有平台白天 @100 TTFT <strong>3.85s</strong>、TPS <strong>31</strong>，@100K TTFT <strong>11.20s</strong>、TPS <strong>48</strong>。昼夜波动极小（@100 仅 +45%）。但 TPS 在所有 K2.5 部署中只排中游——硅基流动夜间 TPS 53 更高。KIMI 平台的优势在稳定性而非极速。</div></div>
+    <div class="finding-item"><div><span class="ft">平台基础设施才是胜负手</span>同一个 Kimi-K2.5 在 7 个平台测试，白天 @100K 总耗时从 <strong>10.34s</strong>（硅基夜间）到 <strong>104.35s</strong>（火山白天）。同一个 GLM-5 从 <strong>10.52s</strong>（硅基夜间）到 <strong>33.88s</strong>（腾讯白天）。选对平台比选对模型更重要——这是本次横评最核心的结论。</div></div>
+  </div>
+</div>
+
+<!-- ══════════ RECOMMEND ══════════ -->
+<div id="recommend" class="section">
+  <h2>场景推荐</h2>
+  <p class="desc">基于实测数据，按三大实际使用场景给出选型建议。每个场景对模型代际、速度、稳定性的优先级不同。</p>
+
+  <div class="rec-block">
+    <h3>场景一：开发场景（Claude Code / Cursor / Cline）</h3>
+    <p class="rb">核心要求：<strong>最新大模型 + 白天稳定</strong>。开发场景直接影响编码效率，模型能力是第一优先——必须用最新代际大模型（GLM-5、Kimi-K2.5、M2.7、Qwen3.5-Plus 等），同时白天高峰期不能出现 10 倍级波动。长上下文（10K–100K）的支撑能力决定了能否处理大文件重构。早期模型（GLM-4.5-air、M2.1 等）能力不够，不适合此场景。</p>
+    <table class="data-tbl"><thead><tr><th style="text-align:left">推荐</th><th style="text-align:left">套餐 · 模型</th><th style="text-align:left">为什么选它</th><th style="text-align:right">白天实测</th><th style="text-align:right">月费</th></tr></thead><tbody>
+      <tr><td style="font-weight:700;color:#2563eb">能力首选</td><td>GLM-Coding · GLM-5</td><td>最新旗舰（754B），社区评价对标 Opus 4.6。昼夜稳定（@100K 白天 6.47s / 夜间 7.85s，波动 -18%）。仅 Pro/Max 可用，GLM-5 消耗 3 倍配额。</td><td style="text-align:right">TTFT 3.88s · TPS 28 · @100K 总耗时 16.5s</td><td style="text-align:right">¥149/月</td></tr>
+      <tr><td style="font-weight:700;color:#2563eb">前端首选</td><td>KIMI-Coding · kimi-for-coding</td><td>K2.5 代码专项训练，前端/视觉编码极强（截图还原 80-90%）。自有平台白天 @100K TTFT 11.20s，昼夜波动仅 +45%，本次最稳定的新大模型之一。</td><td style="text-align:right">TTFT 3.85s · TPS 31 · @100K 总耗时 17.3s</td><td style="text-align:right">¥49/月</td></tr>
+      <tr><td style="color:#555">高吞吐</td><td>阿里 · Qwen3.5-Plus</td><td>唯一 TPS 随上下文逆增的大模型（61→125）。@100K 总耗时仅 11.19s，阿里平台最快。适合大文件重构。</td><td style="text-align:right">TTFT 3.73s · TPS 61→125 · @100K 11.2s</td><td style="text-align:right">¥200/月</td></tr>
+      <tr><td style="color:#555">速度均衡</td><td>MiniMax · M2.7-highspeed</td><td>M2.7 被称「国产 SOTA」（SWE-Pro 56%），极速版 TPS 57–64，@100K 总耗时 10.9s。3/23 起新增周配额需注意。</td><td style="text-align:right">TPS 57–64 · @100K 10.9s</td><td style="text-align:right">¥98/月</td></tr>
+    </tbody></table>
+    <div class="note-warn">规避：K2.5 在火山白天 @100K 达 89.98s（夜间 30.87s）、阿里白天 28.75s（夜间 9.20s）——同模型在硅基流动仅 5.65s，问题在聚合平台对第三方模型的调度。建议 K2.5 优先走 KIMI 自有平台或硅基流动。</div>
+  </div>
+
+  <div class="rec-block">
+    <h3>场景二：OpenClaw / 龙虾（消息端 AI 智能体）</h3>
+    <p class="rb">核心要求：<strong>速度优先 + 昼夜稳定</strong>，模型代际可用中上代。OpenClaw 通过微信/飞书/Telegram 等消息平台下发指令，执行文件操作、Shell 命令等任务。用户发完消息后等待首字是主要体感摩擦点（TTFT &lt; 3s 为佳）。中代际模型（GLM-4.7、M2.7、GLM-4.5-air 等）在 tool calling 可靠性上已足够。避免 thinking/推理模型（会导致智能体长时间无响应）。</p>
+    <table class="data-tbl"><thead><tr><th style="text-align:left">推荐</th><th style="text-align:left">套餐 · 模型</th><th style="text-align:left">为什么选它</th><th style="text-align:right">实测数据</th><th style="text-align:right">月费</th></tr></thead><tbody>
+      <tr><td style="font-weight:700;color:#2563eb">首选</td><td>硅基流动 · GLM-4.7</td><td>夜间 TTFT 0.60s 全场最快，白天 3.59s 可接受。TPS 64–77 全档稳定，上下文保持率 96%。按量无月费。</td><td style="text-align:right">TTFT 0.60–3.59s · TPS 64–77</td><td style="text-align:right">按量付费</td></tr>
+      <tr><td style="font-weight:700;color:#2563eb">月套餐</td><td>GLM-Coding · GLM-4.5-air</td><td>TTFT 1.11s，TPS 97 出字流畅。昼夜稳定，消息端体验丝滑。Lite 即可覆盖。</td><td style="text-align:right">TTFT 1.11s · TPS 97</td><td style="text-align:right">¥49/月</td></tr>
+      <tr><td style="color:#555">新大模型</td><td>MiniMax · M2.7 标准</td><td>¥29 起步，M2.7 SWE-Pro 56%，速度 TPS 37–43。tool calling 可靠，适合自动化。如果需要更强能力可选新大模型。</td><td style="text-align:right">TTFT 2.06s · TPS 37–43</td><td style="text-align:right">¥29/月</td></tr>
+      <tr><td style="color:#555">极速</td><td>MiniMax · M2.7-highspeed</td><td>极速版延迟更低，TPS 57–64。对速度敏感的自动化任务首选。</td><td style="text-align:right">TPS 57–64</td><td style="text-align:right">¥98/月</td></tr>
+    </tbody></table>
+    <div class="note-info">OpenClaw 社区推荐：不要用 thinking/推理模型（如 hunyuan-t1、deepseek-thinking），丰富上下文会导致模型「思考」数分钟无响应。优先选非推理的标准模型。</div>
+  </div>
+
+  <div class="rec-block">
+    <h3>场景三：生产接入 / 系统集成</h3>
+    <p class="rb">核心要求：<strong>速度为最大优先</strong>。模型作为系统组件处理短平快任务（代码补全、格式转换、摘要生成），不负责长程 Agent 链。早期/小模型完全够用——GLM-4.5-air、M2.5、doubao-seed-code 等速度快、成本低。关键指标是 TPS 和 TTFT 稳定性。按量付费优于月套餐（成本可预测），需要高 RPM 限额。</p>
+    <table class="data-tbl"><thead><tr><th style="text-align:left">推荐</th><th style="text-align:left">套餐 · 模型</th><th style="text-align:left">为什么选它</th><th style="text-align:right">实测数据</th><th style="text-align:right">计费</th></tr></thead><tbody>
+      <tr><td style="font-weight:700;color:#2563eb">首选</td><td>硅基流动 · MiniMax-M2.5</td><td>@100K 总耗时 8.62s 全场最快。TPS 72–85 全档稳定，按量付费无配额上限，RPM 按充值等级可达 10,000。早期模型但速度极致。</td><td style="text-align:right">TPS 72–85 · 耗时 8.0–8.6s</td><td style="text-align:right">按量/M tok</td></tr>
+      <tr><td style="font-weight:700;color:#2563eb">低延迟</td><td>硅基流动 · GLM-4.7</td><td>夜间 TTFT 0.60s，TPS 64–77，四档无衰减（保持率 96%）。中代模型，性能稳定可承诺 SLA。</td><td style="text-align:right">TPS 64–77 · TTFT 0.60s</td><td style="text-align:right">按量/M tok</td></tr>
+      <tr><td style="color:#555">超高吞吐</td><td>GLM-Coding · GLM-4.5-air</td><td>TPS 97–121 出字极快，TTFT 1.11s。最适合高频短任务。早期模型但速度碾压新大模型。</td><td style="text-align:right">TPS 97–121 · TTFT 1.11s</td><td style="text-align:right">¥49/月</td></tr>
+      <tr><td style="color:#555">短上下文</td><td>阿里 · qwen3-coder-next</td><td>@100 TPS 147 全场最高。适合补全/格式转换等短任务。@10K+ 衰减严重，不适合长上下文。</td><td style="text-align:right">TPS 147(@100) · 67(@10K)</td><td style="text-align:right">¥200/月</td></tr>
+    </tbody></table>
+    <div class="note-info">生产选型要点：硅基流动社区口碑「体验丝滑」「把价格打下来了」，API 稳定性在国内平台中评价最高。按量付费避免配额陷阱，更适合生产环境成本核算。</div>
+  </div>
+
+  <div class="rec-block">
+    <h3>当前需规避的组合</h3>
+    <div class="note-err"><strong>优云智算</strong> — 测试期间全部模型不可用，整套产品当前不可用。</div>
+    <div class="note-err"><strong>无问芯穹 · kimi-k2.5</strong> — 白天 TTFT 38.2s（夜间 2.4s，+1504%），任何场景均不可用。同平台 minimax-m2.7 波动 &lt;10%，问题在模型调度而非平台。</div>
+    <div class="note-err"><strong>火山 · glm-4.7</strong> — 白天 TTFT 28.9s（夜间 2.7s，+965%），白天高峰完全不可用。同模型在硅基流动夜间仅 0.60s。</div>
+    <div class="note-err"><strong>火山 · kimi-k2.5</strong> — 白天 TTFT 17.5s（夜间 2.1s，+739%），同模型在硅基 0.99s、腾讯 2.46s，问题在火山侧。</div>
+    <div class="note-err"><strong>阿里 · kimi-k2.5</strong> — 白天 TTFT 23.3s，建议同平台转用 qwen3-coder-next（TTFT 3.73s，TPS 147）。</div>
+  </div>
+</div>
+
+</div><!-- /page -->
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
