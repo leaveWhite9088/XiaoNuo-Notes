@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:34:28.711Z",
+  "frontUrl": "http://localhost:3112",
+  "mode": "adversarial",
+  "model": "deepseek-v4.1-flash",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/deepseek-v4.1-flash/home.png",
+      "bytes": 836052
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/deepseek-v4.1-flash/feed.png",
+      "bytes": 947099
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/deepseek-v4.1-flash/hover.png",
+      "bytes": 758509
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/deepseek-v4.1-flash/menu.png",
+      "bytes": 703767
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/deepseek-v4.1-flash/search-suggest.png",
+      "bytes": 731416
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/deepseek-v4.1-flash/search-results.png",
+      "bytes": 384571
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/deepseek-v4.1-flash/category.png",
+      "bytes": 27069
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/deepseek-v4.1-flash/video.png",
+      "bytes": 26835
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:3112",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:3112/",
+      "brokenImages": 0,
+      "cardCount": 436,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1455,
+        "scrollHeight": 2178,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 868,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1457,
+        "scrollHeight": 3370,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "哔",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input[placeholder*=\"搜索\"]",
+      "index": 0,
+      "suggestionCount": 11
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://localhost:3112/",
+      "afterUrl": "http://localhost:3112/search?keyword=%E7%A7%91%E6%8A%80",
+      "resultCount": 0
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://localhost:3112/category/game",
+      "brokenImages": 0,
+      "cardCount": 436,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1455,
+        "scrollHeight": 2178,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": false,
+      "reason": "详情页未找到 video 元素",
+      "screenshotSaved": true
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 436,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1455,
+        "scrollHeight": 2178,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 868,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1457,
+        "scrollHeight": 3370,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 8,
+      "cardCount": 143,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2190,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:3112/video/BV1bxYV6BEwS"
+  },
+  "playback": {
+    "href": null,
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "beforeUrl": "http://localhost:3112/",
+    "afterUrl": "http://localhost:3112/video/BV1bxYV6BEwS",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "before": {
+      "found": false,
+      "currentTime": null,
+      "paused": null,
+      "readyState": null
+    },
+    "after": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 4
+    },
+    "mutedRequested": false,
+    "playRequested": false,
+    "currentTimeDelta": null,
+    "progressed": false
+  },
+  "errors": []
+}

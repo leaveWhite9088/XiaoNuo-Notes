@@ -1,0 +1,75 @@
+.home {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 顶部背景图：顶栏与分区栏悬浮其上，向下渐隐到页面底色 */
+.home__hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 240px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.home__hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1);
+}
+
+.home__hero-mask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(250, 250, 251, 0.9) 45%,
+    var(--bg-2) 100%
+  );
+}
+
+.home__main {
+  position: relative;
+  z-index: 10;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.home__loadmore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 72px;
+  margin-top: 12px;
+}
+
+.home__loadmore-btn {
+  height: 36px;
+  padding: 0 24px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text-2);
+  font-size: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.home__loadmore-btn:hover {
+  color: var(--brand-pink);
+}
+
+.home__loading,
+.home__end {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.home__error {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--text-2);
+  line-height: 2;
+}

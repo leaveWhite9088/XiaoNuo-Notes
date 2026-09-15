@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-12T20:00:10.000Z",
+  "status": "superseded",
+  "supersededAt": "2026-09-13T02:30:00.000Z",
+  "supersededBy": "2026-09-13 真人逐项实机体验评分",
+  "note": "本文件保留早期 AI 视觉盲评记录，仅供追溯，不再作为公开榜单依据。当前榜单由真人实机体验 90 分与 Codex 代码质量审查 10 分组成。",
+  "rubric": {
+    "total": 100,
+    "dimensions": [
+      { "key": "visual", "label": "视觉还原", "max": 35 },
+      { "key": "core", "label": "核心链路", "max": 30 },
+      { "key": "interaction", "label": "交互完成度", "max": 15 },
+      { "key": "stability", "label": "稳定性", "max": 10 },
+      { "key": "content", "label": "内容真实性", "max": 5 },
+      { "key": "engineering", "label": "工程质量", "max": 5 }
+    ],
+    "visualMethod": "三位独立评审分别给出视觉还原分，取中位数作为该样本的视觉分。"
+  },
+  "visualBlindRatings": [
+    { "blindId": "S01", "sampleId": "one-shot/minimax-m3", "raterTotals": [11, 13, 19.25], "median": 13 },
+    { "blindId": "S02", "sampleId": "adversarial/gpt-5.6-sol", "raterTotals": [21.25, 27.25, 23.25], "median": 23.25 },
+    { "blindId": "S03", "sampleId": "one-shot/qwen-3.8-max", "raterTotals": [17.5, 22.75, 20.25], "median": 20.25 },
+    { "blindId": "S04", "sampleId": "adversarial/gpt-6-astra", "raterTotals": [25.5, 29.5, 27.5], "median": 27.5 },
+    { "blindId": "S05", "sampleId": "one-shot/claude-opus-5", "raterTotals": [19.5, 29.5, 29.5], "median": 29.5 },
+    { "blindId": "S06", "sampleId": "adversarial/qwen-3.8-flash", "raterTotals": [20, 26.75, 23.25], "median": 23.25 },
+    { "blindId": "S07", "sampleId": "adversarial/glm-5.3", "raterTotals": [17.25, 26, 22.5], "median": 22.5 },
+    { "blindId": "S08", "sampleId": "adversarial/deepseek-v4.1-flash", "raterTotals": [14.25, 23.75, 23.75], "median": 23.75 },
+    { "blindId": "S09", "sampleId": "one-shot/glm-5.3", "raterTotals": [18.75, 28.75, 27.5], "median": 27.5 },
+    { "blindId": "S10", "sampleId": "one-shot/deepseek-v4.1-flash", "raterTotals": [19, 23, 26.25], "median": 23 },
+    { "blindId": "S11", "sampleId": "adversarial/kimi-k3", "raterTotals": [17.5, 29.5, 24], "median": 24 },
+    { "blindId": "S12", "sampleId": "one-shot/kimi-k3", "raterTotals": [16.25, 23.75, 23.75], "median": 23.75 },
+    { "blindId": "S13", "sampleId": "one-shot/gpt-5.6-sol", "raterTotals": [25.5, 28, 27.5], "median": 27.5 },
+    { "blindId": "S14", "sampleId": "adversarial/grok-4.6", "raterTotals": [23, 28, 28], "median": 28 },
+    { "blindId": "S15", "sampleId": "one-shot/grok-4.6", "raterTotals": [18.75, 28, 26.75], "median": 26.75 },
+    { "blindId": "S16", "sampleId": "adversarial/minimax-m3", "raterTotals": [9, 11, 18.5], "median": 11 },
+    { "blindId": "S17", "sampleId": "adversarial/claude-opus-5", "raterTotals": [18.5, 27.25, 27.25], "median": 27.25 },
+    { "blindId": "S18", "sampleId": "one-shot/qwen-3.8-flash", "raterTotals": [18.75, 23.25, 23.25], "median": 23.25 },
+    { "blindId": "S19", "sampleId": "one-shot/gpt-6-astra", "raterTotals": [26.75, 34.25, 33], "median": 33 },
+    { "blindId": "S20", "sampleId": "adversarial/qwen-3.8-max", "raterTotals": [18, 23.75, 23.25], "median": 23.25 }
+  ]
+}

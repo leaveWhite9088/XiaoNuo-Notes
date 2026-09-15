@@ -1,0 +1,350 @@
+.player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  color: #fff;
+  user-select: none;
+}
+
+.player.is-fullscreen {
+  border-radius: 0;
+  aspect-ratio: auto;
+  height: 100vh;
+}
+
+.player__stage {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+.player__video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+/* ----------------------------- 弹幕 ----------------------------- */
+
+.player__danmaku {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.player__danmaku.is-off {
+  opacity: 0;
+}
+
+.danmaku {
+  position: absolute;
+  white-space: nowrap;
+  font-weight: 500;
+  opacity: 0.92;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+  will-change: transform;
+}
+
+.danmaku--scroll {
+  left: 100%;
+  animation: danmaku-move 7s linear forwards;
+}
+
+.danmaku--top {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: danmaku-top 4s linear forwards;
+}
+
+.danmaku.is-self {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+@keyframes danmaku-move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100vw - 100%));
+  }
+}
+
+@keyframes danmaku-top {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+}
+
+/* ----------------------------- 中央按钮 / 提示 ----------------------------- */
+
+.player__big-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  backdrop-filter: blur(2px);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.player__big-play:hover {
+  background: var(--brand-pink);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.player__unmute {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 12px;
+}
+
+.player__unmute:hover {
+  background: var(--brand-pink);
+}
+
+/* ----------------------------- 控制条 ----------------------------- */
+
+.player__controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px 16px 8px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.player.show-controls .player__controls {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.player__progress {
+  position: relative;
+  height: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.player__progress-bg,
+.player__progress-buffer,
+.player__progress-played {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+  transition: height 0.15s;
+}
+
+.player__progress-bg {
+  right: 0;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.player__progress-buffer {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.player__progress-played {
+  background: var(--brand-pink);
+}
+
+.player__progress:hover .player__progress-bg,
+.player__progress:hover .player__progress-buffer,
+.player__progress:hover .player__progress-played {
+  height: 6px;
+}
+
+.player__progress-thumb {
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.15s;
+}
+
+.player__progress:hover .player__progress-thumb {
+  transform: translateY(-50%) scale(1);
+}
+
+.player__bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+}
+
+.player__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  color: #fff;
+  transition: color 0.2s, background 0.2s;
+}
+
+.player__btn:hover {
+  color: var(--brand-pink);
+}
+
+.player__btn.is-off {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.player__btn.is-active {
+  color: var(--brand-pink);
+}
+
+.player__btn--text {
+  width: auto;
+  padding: 0 8px;
+  font-size: 13px;
+}
+
+.player__time {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.player__danmaku-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  height: 32px;
+  margin: 0 8px;
+  padding: 0 4px 0 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.player__danmaku-input input {
+  flex: 1;
+  min-width: 0;
+  color: #fff;
+  font-size: 13px;
+}
+
+.player__danmaku-input input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.player__color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  flex: none;
+}
+
+.player__send {
+  height: 26px;
+  padding: 0 14px;
+  border-radius: 6px;
+  background: var(--brand-pink);
+  color: #fff;
+  font-size: 13px;
+  flex: none;
+}
+
+.player__send:hover {
+  background: var(--brand-pink-hover);
+}
+
+.player__right {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: none;
+}
+
+/* 悬浮小面板（音量 / 倍速） */
+.player__pop {
+  position: relative;
+}
+
+.player__pop-body {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  padding: 10px 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.16s, transform 0.16s, visibility 0.16s;
+}
+
+.player__pop:hover .player__pop-body {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.player__pop--volume .player__pop-body input[type='range'] {
+  width: 90px;
+  accent-color: var(--brand-pink);
+}
+
+.player__pop--speed .player__pop-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 76px;
+}
+
+.player__pop--speed .player__pop-body button {
+  height: 26px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.player__pop--speed .player__pop-body button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.player__pop--speed .player__pop-body button.is-active {
+  color: var(--brand-pink);
+}

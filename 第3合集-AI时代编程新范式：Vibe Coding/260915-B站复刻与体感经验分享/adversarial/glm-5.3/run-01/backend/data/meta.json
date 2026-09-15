@@ -1,0 +1,165 @@
+{
+  "fetchedAt": "2026-09-12T10:54:16.737Z",
+  "total": 510,
+  "regions": [
+    {
+      "rid": 1,
+      "key": "anime",
+      "label": "动画",
+      "group": "chips"
+    },
+    {
+      "rid": 3,
+      "key": "music",
+      "label": "音乐",
+      "group": "chips"
+    },
+    {
+      "rid": 129,
+      "key": "dance",
+      "label": "舞蹈",
+      "group": "chips"
+    },
+    {
+      "rid": 4,
+      "key": "game",
+      "label": "游戏",
+      "group": "chips"
+    },
+    {
+      "rid": 36,
+      "key": "knowledge",
+      "label": "知识",
+      "group": "chips"
+    },
+    {
+      "rid": 211,
+      "key": "food",
+      "label": "美食",
+      "group": "chips"
+    },
+    {
+      "rid": 160,
+      "key": "life",
+      "label": "生活",
+      "group": "chips"
+    },
+    {
+      "rid": 5,
+      "key": "ent",
+      "label": "娱乐",
+      "group": "chips"
+    },
+    {
+      "rid": 23,
+      "key": "movie",
+      "label": "电影",
+      "group": "menu"
+    },
+    {
+      "rid": 11,
+      "key": "tv",
+      "label": "电视剧",
+      "group": "menu"
+    },
+    {
+      "rid": 168,
+      "key": "guochuang",
+      "label": "国创",
+      "group": "menu"
+    },
+    {
+      "rid": 177,
+      "key": "doc",
+      "label": "纪录片",
+      "group": "menu"
+    },
+    {
+      "rid": 119,
+      "key": "guichu",
+      "label": "鬼畜",
+      "group": "menu"
+    },
+    {
+      "rid": 217,
+      "key": "animal",
+      "label": "动物圈",
+      "group": "menu"
+    },
+    {
+      "rid": 155,
+      "key": "fashion",
+      "label": "时尚",
+      "group": "menu"
+    },
+    {
+      "rid": 223,
+      "key": "car",
+      "label": "汽车",
+      "group": "menu"
+    },
+    {
+      "rid": 234,
+      "key": "sport",
+      "label": "运动",
+      "group": "menu"
+    }
+  ],
+  "regionCount": {
+    "anime": 30,
+    "music": 30,
+    "dance": 30,
+    "game": 30,
+    "knowledge": 30,
+    "food": 30,
+    "life": 30,
+    "ent": 30,
+    "movie": 30,
+    "tv": 30,
+    "bangumi": 0,
+    "guochuang": 30,
+    "doc": 30,
+    "guichu": 30,
+    "animal": 30,
+    "fashion": 30,
+    "car": 30,
+    "sport": 30
+  },
+  "clips": [
+    {
+      "file": "sintel-trailer.mp4",
+      "url": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+      "about": "Sintel 预告片"
+    },
+    {
+      "file": "bunny-trailer.mp4",
+      "url": "https://media.w3.org/2010/05/bunny/trailer.mp4",
+      "about": "Big Buck Bunny 预告片"
+    },
+    {
+      "file": "movie-300.mp4",
+      "url": "https://media.w3.org/2010/05/video/movie_300.mp4",
+      "about": "Blender 短片"
+    },
+    {
+      "file": "flower.mp4",
+      "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+      "about": "CC0 花朵"
+    },
+    {
+      "file": "bbb-1080.mp4",
+      "url": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_5MB.mp4",
+      "about": "Big Buck Bunny 1080p"
+    },
+    {
+      "file": "jellyfish-1080.mp4",
+      "url": "https://test-videos.co.uk/vids/jellyfish/mp4/h264/1080/Jellyfish_1080_10s_5MB.mp4",
+      "about": "水母 1080p"
+    },
+    {
+      "file": "sintel-1080.mp4",
+      "url": "https://test-videos.co.uk/vids/sintel/mp4/h264/1080/Sintel_1080_10s_5MB.mp4",
+      "about": "Sintel 1080p"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+node_modules
+client/dist
+server/node_modules
+client/node_modules
+.DS_Store
+*.log
+.verify
+client/public/_verify

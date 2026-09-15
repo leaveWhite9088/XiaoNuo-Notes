@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:23:37.851Z",
+  "frontUrl": "http://127.0.0.1:3301",
+  "mode": "one-shot",
+  "model": "gpt-6-astra",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-6-astra/home.png",
+      "bytes": 1259813
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-6-astra/feed.png",
+      "bytes": 940556
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-6-astra/hover.png",
+      "bytes": 1259813
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-6-astra/menu.png",
+      "bytes": 1258828
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-6-astra/search-suggest.png",
+      "bytes": 1201726
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-6-astra/search-results.png",
+      "bytes": 560740
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-6-astra/category.png",
+      "bytes": 567247
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-6-astra/video.png",
+      "bytes": 806691
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://127.0.0.1:3301",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://127.0.0.1:3301/",
+      "brokenImages": 0,
+      "cardCount": 53,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1508,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 53,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1508,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "href": "http://127.0.0.1:3301/video/BV1demo002"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "label": "更多"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "header form input",
+      "index": 0,
+      "suggestionCount": 0
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://127.0.0.1:3301/",
+      "afterUrl": "http://127.0.0.1:3301/?q=%E7%A7%91%E6%8A%80",
+      "resultCount": 4
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://127.0.0.1:3301/?category=%E6%B8%B8%E6%88%8F",
+      "brokenImages": 0,
+      "cardCount": 8,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 900,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "http://127.0.0.1:3301/video/BV1demo002",
+      "url": "http://127.0.0.1:3301/video/BV1demo002",
+      "playback": {
+        "href": "http://127.0.0.1:3301/video/BV1demo002",
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.144316,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.144316,
+        "progressed": true
+      },
+      "brokenImages": 0,
+      "cardCount": 24,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1326,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 53,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1508,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 53,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1508,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 24,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1326,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://127.0.0.1:3301/video/BV1demo002"
+  },
+  "playback": {
+    "href": "http://127.0.0.1:3301/video/BV1demo002",
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.144316,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.144316,
+    "progressed": true
+  },
+  "errors": []
+}

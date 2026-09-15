@@ -1,0 +1,118 @@
+.banner {
+  position: relative;
+  grid-column: span 2;
+  align-self: stretch;
+  width: 100%;
+  min-height: 200px;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  background: var(--bg-3);
+}
+
+.banner__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.banner__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.banner__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.banner:hover .banner__slide.is-active img {
+  transform: scale(1.03);
+}
+
+.banner__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 16px 14px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65));
+  color: #fff;
+}
+
+.banner__tag {
+  display: inline-block;
+  padding: 2px 8px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  background: var(--brand-pink);
+  font-size: 12px;
+}
+
+.banner__caption p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.banner__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.banner:hover .banner__arrow {
+  opacity: 1;
+}
+
+.banner__arrow:hover {
+  background: var(--brand-pink);
+}
+
+.banner__arrow--prev {
+  left: 10px;
+}
+
+.banner__arrow--next {
+  right: 10px;
+}
+
+.banner__dots {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  gap: 6px;
+}
+
+.banner__dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: width 0.2s, background 0.2s;
+}
+
+.banner__dots button.is-active {
+  width: 18px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+@media (max-width: 1000px) {
+  .banner {
+    grid-column: span 2;
+  }
+}

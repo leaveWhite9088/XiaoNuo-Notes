@@ -1,0 +1,45 @@
+.action-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 16px 0 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.action-bar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--text-2);
+  font-size: 13px;
+  transition: color 0.2s, transform 0.15s;
+}
+
+.action-bar__item:hover {
+  color: var(--brand-pink);
+  transform: translateY(-1px);
+}
+
+.action-bar__item.is-active {
+  color: var(--brand-pink);
+}
+
+.action-bar__tip {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-4);
+}
+
+.action-bar__toast {
+  position: absolute;
+  left: 0;
+  top: -34px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 12px;
+}

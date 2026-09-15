@@ -1,0 +1,120 @@
+.user-panel__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+
+.user-panel__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--brand-pink);
+}
+
+.user-panel__name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.user-panel__level {
+  padding: 0 5px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, #fb7299, #ff9db4);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.user-panel__vip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+  font-size: 12px;
+  color: #ff8a00;
+}
+
+.user-panel__stats,
+.user-panel__wallet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 6px;
+  border-top: 1px solid var(--line-light);
+}
+
+.user-panel__stats div,
+.user-panel__wallet div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.user-panel__stats strong,
+.user-panel__wallet strong {
+  font-size: 15px;
+}
+
+.user-panel__stats span,
+.user-panel__wallet span {
+  font-size: 12px;
+  color: var(--text3);
+}
+
+.user-panel__wallet-action button {
+  padding: 4px 14px;
+  border-radius: var(--radius-round);
+  border: 1px solid var(--brand-pink);
+  color: var(--brand-pink);
+  font-size: 12px;
+  transition: background 0.18s, color 0.18s;
+}
+
+.user-panel__wallet-action button:hover {
+  background: var(--brand-pink);
+  color: #fff;
+}
+
+.user-panel__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line-light);
+}
+
+.user-panel__grid button {
+  width: 100%;
+  padding: 8px 2px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  color: var(--text2);
+  transition: background 0.15s, color 0.15s;
+}
+
+.user-panel__grid button:hover {
+  background: var(--bg3);
+  color: var(--brand-pink);
+}
+
+.user-panel__footer {
+  padding-top: 8px;
+  border-top: 1px solid var(--line-light);
+  text-align: center;
+}
+
+.user-panel__footer button {
+  font-size: 12px;
+  color: var(--text3);
+}
+
+.user-panel__footer button:hover {
+  color: var(--brand-pink);
+}

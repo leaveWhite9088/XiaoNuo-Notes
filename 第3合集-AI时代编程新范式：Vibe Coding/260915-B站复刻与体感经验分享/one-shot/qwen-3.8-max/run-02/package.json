@@ -1,0 +1,16 @@
+{
+  "name": "bilibili-home-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "B站首页复刻 - React(Vite) 前端 3131 + Express 后端 5131",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix web install",
+    "dev": "concurrently -n server,web -c magenta,cyan \"npm --prefix server run dev\" \"npm --prefix web run dev\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:web": "npm --prefix web run dev",
+    "start": "npm --prefix server start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

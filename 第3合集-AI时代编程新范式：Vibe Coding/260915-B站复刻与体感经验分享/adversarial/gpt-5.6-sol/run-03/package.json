@@ -1,0 +1,35 @@
+{
+  "name": "bilibili-home-clone",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n SERVER,WEB -c green,cyan \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:web": "vite --host 0.0.0.0 --port 3402",
+    "dev:server": "nodemon server/index.js",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 3402 --strictPort",
+    "start": "node server/index.js",
+    "test": "vitest run",
+    "check": "npm run test && npm run build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "concurrently": "latest",
+    "cors": "latest",
+    "express": "latest",
+    "lucide-react": "latest",
+    "nodemon": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "jsdom": "^30.0.1",
+    "vitest": "^5.0.0"
+  }
+}

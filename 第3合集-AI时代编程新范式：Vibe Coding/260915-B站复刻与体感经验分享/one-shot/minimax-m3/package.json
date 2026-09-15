@@ -1,0 +1,15 @@
+{
+  "name": "bilibili-clone",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "B 站首页复刻 MVP（Vue 3 + Express）",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "node scripts/dev.js",
+    "build:frontend": "npm --prefix frontend run build",
+    "start:backend": "npm --prefix backend start"
+  }
+}

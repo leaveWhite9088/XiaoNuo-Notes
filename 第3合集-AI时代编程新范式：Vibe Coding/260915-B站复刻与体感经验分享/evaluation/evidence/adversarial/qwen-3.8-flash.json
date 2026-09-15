@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:35:19.510Z",
+  "frontUrl": "http://127.0.0.1:3142",
+  "mode": "adversarial",
+  "model": "qwen-3.8-flash",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/qwen-3.8-flash/home.png",
+      "bytes": 1214399
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/qwen-3.8-flash/feed.png",
+      "bytes": 1151057
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/qwen-3.8-flash/hover.png",
+      "bytes": 1219030
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/qwen-3.8-flash/menu.png",
+      "bytes": 1175424
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/qwen-3.8-flash/search-suggest.png",
+      "bytes": 1024684
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/qwen-3.8-flash/search-results.png",
+      "bytes": 133539
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/qwen-3.8-flash/category.png",
+      "bytes": 1228356
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/qwen-3.8-flash/video.png",
+      "bytes": 512264
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://127.0.0.1:3142",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://127.0.0.1:3142/",
+      "brokenImages": 0,
+      "cardCount": 24,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1673,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 48,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 3034,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "未登录",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input",
+      "index": 0,
+      "suggestionCount": 22
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://127.0.0.1:3142/",
+      "afterUrl": "http://127.0.0.1:3142/search?q=%E7%A7%91%E6%8A%80",
+      "resultCount": 1
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://127.0.0.1:3142/?cat=game",
+      "brokenImages": 21,
+      "cardCount": 45,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 2763,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": null,
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": null,
+        "kind": "programmatic-card"
+      },
+      "url": "http://127.0.0.1:3142/video/1",
+      "playback": {
+        "href": null,
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": null,
+          "kind": "programmatic-card"
+        },
+        "beforeUrl": "http://127.0.0.1:3142/",
+        "afterUrl": "http://127.0.0.1:3142/video/1",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "首页 / 热门 / 搞笑发送弹幕 14941%电量=1块钱！一线城市12小时极限消费体验！BV1NAY962EZQ2026-09-12 17:30搞笑 7.8万 1494 9846点赞 4247投币 2165收藏 174分享啊吗粽点赞 9846 · 弹幕 1494+ 关注简介这个惩罚真的难顶！！绝对不能输啊！！ 耗电赚钱太难了！！评论 6发布用用户30363Lv6好家伙，这数据我上我也行（狗头）昨天 767用用户07151Lv1这剪辑节奏教科书级别昨天 748用用户83938Lv2三连了，下次能不能出个 4K 版昨天 729用用户60726Lv3弹幕护体，名场面打卡昨天 710用用户37514Lv4UP主更新比我的论文进度快多了昨天 691用用户14302Lv5课代表总结：三分钟处是高光昨天 672相关推荐02:50《物业费最贵の一集》伤心欲茄222 · 339.7万18:20大揭秘！“害怕”到底是什么味道？？？-欣小萌- · 52.5万09:16来了一趟非洲最发达国家 打破好多刻板印象爱德黎子 · 20.9万35:16【开箱大乱斗】😡花好多钱买的集装箱开一半发现全是废纸....💔还能咸鱼翻身吗？-超级小能猫- · 31.1万1:20:22我倒是想有点班味｜丞相还挺忙·赖冠霖唐国强 · 66.8万10:24近期热点事件：9月神人合集（一）我是M菌 · 163.0万23:09你一定不能错过世界上最好听的音乐——巴西音乐!丨HOPICOHOPICO · 57.9万07:48内个奥特曼折磨护航怪兽一整局！十六van游戏 · 328.5万03:57冷知识：亚连的普攻能探草流夜一动不动 · 99.6万21:06文艺青年第一次来平遥，但不看电影BBGthisway · 19.8万06:22盘点那些选错受害者的倒霉罪犯万物好奇社 · 143.5万32:17如意金箍棒居然真的存在？！探秘世界遗留唯一超古代工程！Super也好君 · 78.4万02:25差一天就能看到糖花の“监狱vlog”了我不是黄毛- · 198.6万10:48猫和老鼠馋了我20年的火腿究竟有多好吃？直接馋哭了！NBzhuoc大 · 26.4万00:19我要闹了😭！！！卑微鸭嘎嘎 · 123.2万01:48当我背着8斤相机来到贵州cintia_ · 88.6万← 返回首页"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.164394,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.164394,
+        "progressed": true
+      },
+      "brokenImages": 0,
+      "cardCount": 16,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 2002,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 24,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1673,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 48,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 3034,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 16,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 2002,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://127.0.0.1:3142/video/1"
+  },
+  "playback": {
+    "href": null,
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "beforeUrl": "http://127.0.0.1:3142/",
+    "afterUrl": "http://127.0.0.1:3142/video/1",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "首页 / 热门 / 搞笑发送弹幕 14941%电量=1块钱！一线城市12小时极限消费体验！BV1NAY962EZQ2026-09-12 17:30搞笑 7.8万 1494 9846点赞 4247投币 2165收藏 174分享啊吗粽点赞 9846 · 弹幕 1494+ 关注简介这个惩罚真的难顶！！绝对不能输啊！！ 耗电赚钱太难了！！评论 6发布用用户30363Lv6好家伙，这数据我上我也行（狗头）昨天 767用用户07151Lv1这剪辑节奏教科书级别昨天 748用用户83938Lv2三连了，下次能不能出个 4K 版昨天 729用用户60726Lv3弹幕护体，名场面打卡昨天 710用用户37514Lv4UP主更新比我的论文进度快多了昨天 691用用户14302Lv5课代表总结：三分钟处是高光昨天 672相关推荐02:50《物业费最贵の一集》伤心欲茄222 · 339.7万18:20大揭秘！“害怕”到底是什么味道？？？-欣小萌- · 52.5万09:16来了一趟非洲最发达国家 打破好多刻板印象爱德黎子 · 20.9万35:16【开箱大乱斗】😡花好多钱买的集装箱开一半发现全是废纸....💔还能咸鱼翻身吗？-超级小能猫- · 31.1万1:20:22我倒是想有点班味｜丞相还挺忙·赖冠霖唐国强 · 66.8万10:24近期热点事件：9月神人合集（一）我是M菌 · 163.0万23:09你一定不能错过世界上最好听的音乐——巴西音乐!丨HOPICOHOPICO · 57.9万07:48内个奥特曼折磨护航怪兽一整局！十六van游戏 · 328.5万03:57冷知识：亚连的普攻能探草流夜一动不动 · 99.6万21:06文艺青年第一次来平遥，但不看电影BBGthisway · 19.8万06:22盘点那些选错受害者的倒霉罪犯万物好奇社 · 143.5万32:17如意金箍棒居然真的存在？！探秘世界遗留唯一超古代工程！Super也好君 · 78.4万02:25差一天就能看到糖花の“监狱vlog”了我不是黄毛- · 198.6万10:48猫和老鼠馋了我20年的火腿究竟有多好吃？直接馋哭了！NBzhuoc大 · 26.4万00:19我要闹了😭！！！卑微鸭嘎嘎 · 123.2万01:48当我背着8斤相机来到贵州cintia_ · 88.6万← 返回首页"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.164394,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.164394,
+    "progressed": true
+  },
+  "errors": []
+}

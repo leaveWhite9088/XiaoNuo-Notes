@@ -1,0 +1,228 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-height);
+  transition: background 0.25s var(--easing), box-shadow 0.25s var(--easing);
+}
+
+.header--transparent {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  color: #fff;
+}
+
+.header--solid {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(1.4) blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  color: var(--text1);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+  padding: 0 24px;
+  max-width: 2100px;
+  margin: 0 auto;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px 0 0;
+  margin-right: 4px;
+}
+
+.header__logo-text {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: currentColor;
+}
+
+.header--solid .header__logo-text {
+  color: var(--brand-pink);
+}
+
+.header__link,
+.header__entry {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  white-space: nowrap;
+  color: currentColor;
+  transition: background 0.18s, color 0.18s;
+}
+
+.header__entry {
+  flex-direction: column;
+  gap: 1px;
+  height: 48px;
+  padding: 6px 8px 4px;
+  font-size: 12px;
+}
+
+.header--transparent .header__link:hover,
+.header--transparent .header__entry:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.header--solid .header__link:hover,
+.header--solid .header__entry:hover {
+  color: var(--brand-pink);
+  background: rgba(251, 114, 153, 0.08);
+}
+
+.header__center {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.header__avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-right: 6px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fb7299, #ff9db4);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+}
+
+.header__avatar img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header__avatar-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+}
+
+.header__entry--vip {
+  color: #ff9800;
+}
+
+.header--solid .header__entry--vip {
+  color: #ff8a00;
+}
+
+.header__upload {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 34px;
+  margin-left: 8px;
+  padding: 0 16px;
+  border-radius: var(--radius-lg);
+  background: var(--brand-pink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.18s, transform 0.18s;
+}
+
+.header__upload:hover {
+  background: var(--brand-pink-hover);
+  transform: translateY(-1px);
+}
+
+.header__panel {
+  padding: 14px;
+}
+
+.header__simple-menu li button {
+  display: block;
+  width: 100%;
+  padding: 9px 10px;
+  text-align: left;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: var(--text1);
+  transition: background 0.15s, color 0.15s;
+}
+
+.header__simple-menu li button:hover {
+  background: var(--bg3);
+  color: var(--brand-pink);
+}
+
+.header__panel--qr {
+  text-align: center;
+}
+
+.header__qr p {
+  margin: 8px 0 2px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.header__qr span {
+  font-size: 12px;
+  color: var(--text3);
+}
+
+.header__qr-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  color: var(--brand-pink);
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(24, 25, 28, 0.06) 0 6px,
+      transparent 6px 12px
+    ),
+    #fff;
+}
+
+@media (max-width: 1440px) {
+  .header__link span,
+  .header__entry span {
+    display: none;
+  }
+  .header__logo-text,
+  .header__upload span {
+    display: inline;
+  }
+}

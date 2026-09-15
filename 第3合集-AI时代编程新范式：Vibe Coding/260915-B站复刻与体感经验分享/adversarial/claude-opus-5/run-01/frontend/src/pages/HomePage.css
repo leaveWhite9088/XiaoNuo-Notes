@@ -1,0 +1,39 @@
+.home {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+/* 顶栏后面的粉色渐变头图区，滚动时顶栏从透明过渡到白色 */
+.home__hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(135deg, #fb7299 0%, #ff9db4 40%, #9ad8f8 100%);
+}
+
+.home__hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.35), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.25), transparent 40%);
+}
+
+.home .home__content {
+  position: relative;
+  padding-top: calc(var(--header-height) + 14px);
+}
+
+.home__nav {
+  margin-top: 16px;
+}
+
+.home__sentinel {
+  display: flex;
+  justify-content: center;
+  padding: 28px 0 10px;
+  font-size: 13px;
+  color: var(--text3);
+}

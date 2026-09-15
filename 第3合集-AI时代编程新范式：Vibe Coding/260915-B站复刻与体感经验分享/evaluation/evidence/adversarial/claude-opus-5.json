@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:48:36.449Z",
+  "frontUrl": "http://127.0.0.1:3602",
+  "mode": "adversarial",
+  "model": "claude-opus-5",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/claude-opus-5/home.png",
+      "bytes": 960528
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/claude-opus-5/feed.png",
+      "bytes": 1007740
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/claude-opus-5/hover.png",
+      "bytes": 980515
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/claude-opus-5/menu.png",
+      "bytes": 983930
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/claude-opus-5/search-suggest.png",
+      "bytes": 978274
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/claude-opus-5/search-results.png",
+      "bytes": 969172
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/claude-opus-5/category.png",
+      "bytes": 952545
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/claude-opus-5/video.png",
+      "bytes": 697511
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://127.0.0.1:3602",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://127.0.0.1:3602/",
+      "brokenImages": 0,
+      "cardCount": 330,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 2367,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 8,
+      "cardCount": 650,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 3894,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+      "kind": "anchor"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "我",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input[placeholder*=\"搜索\"]",
+      "index": 0,
+      "suggestionCount": 10
+    },
+    "search-results": {
+      "pass": false,
+      "reason": "page.press timed out after 3000ms: Locator input[placeholder*=\"搜索\"] >> nth=0 matched 0 elements",
+      "screenshotSaved": true
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "🎮游戏",
+      "url": "http://127.0.0.1:3602/?channel=game",
+      "brokenImages": 0,
+      "cardCount": 186,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 1803,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+        "kind": "anchor"
+      },
+      "url": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+      "playback": {
+        "href": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+          "kind": "anchor"
+        },
+        "beforeUrl": "http://127.0.0.1:3602/",
+        "afterUrl": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "【春晚鬼畜】赵本山：我就是念诗之王！【改革春风吹满地】"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0.451304,
+          "paused": false,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.658451,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.207147,
+        "progressed": true
+      },
+      "brokenImages": 0,
+      "cardCount": 22,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 1981,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 330,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 2367,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 8,
+      "cardCount": 650,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 3894,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 22,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 1981,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://127.0.0.1:3602/video/BV1bW411n7fY"
+  },
+  "playback": {
+    "href": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+      "kind": "anchor"
+    },
+    "beforeUrl": "http://127.0.0.1:3602/",
+    "afterUrl": "http://127.0.0.1:3602/video/BV1bW411n7fY",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "【春晚鬼畜】赵本山：我就是念诗之王！【改革春风吹满地】"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0.451304,
+      "paused": false,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.658451,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.207147,
+    "progressed": true
+  },
+  "errors": []
+}

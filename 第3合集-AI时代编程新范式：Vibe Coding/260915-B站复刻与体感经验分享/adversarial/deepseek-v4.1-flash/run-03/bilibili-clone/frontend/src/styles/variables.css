@@ -1,0 +1,31 @@
+/* ===== bilibili 视觉规范：颜色 / 尺寸 / 圆角 / 阴影 ===== */
+:root {
+  --bili-pink: #fb7299;
+  --bili-pink-hover: #ff85ad;
+  --bili-pink-light: #fff0f5;
+  --bili-blue: #00aeec;
+  --bili-blue-hover: #33bff0;
+
+  --text-1: #18191c;
+  --text-2: #61666d;
+  --text-3: #9499a0;
+  --text-4: #c9ccd0;
+
+  --line: #e3e5e7;
+  --line-light: #f1f2f3;
+  --bg-page: #ffffff;
+  --bg-gray: #f6f7f8;
+  --bg-gray-deep: #f1f2f3;
+
+  --header-h: 64px;
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 10px;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-3: 0 8px 30px rgba(0, 0, 0, 0.14);
+
+  --font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial,
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}

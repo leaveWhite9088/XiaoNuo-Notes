@@ -1,0 +1,7 @@
+{
+  "name": "bilibili-live-showcase",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node server.mjs --open" },
+  "engines": { "node": ">=20" }
+}

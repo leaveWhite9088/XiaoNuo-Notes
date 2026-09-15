@@ -1,0 +1,73 @@
+@use './variables' as *;
+@use './reset';
+
+.container {
+  width: $container-width;
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+}
+
+/* 通用文字色 */
+.text-2 { color: $bili-text-2; }
+.text-3 { color: $bili-text-3; }
+
+/* 全局按钮风格 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: $radius-button;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-primary {
+  background: $bili-pink;
+  color: #fff;
+  &:hover { background: $bili-pink-soft; color: #fff; }
+}
+.btn-ghost {
+  background: transparent;
+  color: $bili-text-2;
+  border: 1px solid $bili-border;
+  &:hover { color: $bili-pink; border-color: $bili-pink; }
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d4d6d9; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #b4b7bb; }
+
+/* 路由过渡 */
+.fade-enter-active, .fade-leave-active { transition: opacity 0.2s; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
+
+/* 工具栏区 */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 0 12px;
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: $bili-text;
+    .icon {
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: $bili-pink;
+      border-radius: 2px;
+      margin-right: 8px;
+      vertical-align: -3px;
+    }
+  }
+  .more {
+    font-size: 12px;
+    color: $bili-text-3;
+    &:hover { color: $bili-pink; }
+  }
+}

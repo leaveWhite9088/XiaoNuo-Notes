@@ -1,0 +1,50 @@
+.danmaku-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.danmaku-item {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+  will-change: transform;
+}
+
+.danmaku-item--scroll {
+  left: 100%;
+  animation-name: danmaku-scroll;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.danmaku-item--top {
+  left: 50%;
+  transform: translateX(-50%);
+  animation-name: danmaku-top;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes danmaku-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100vw - 100%));
+  }
+}
+
+@keyframes danmaku-top {
+  0%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

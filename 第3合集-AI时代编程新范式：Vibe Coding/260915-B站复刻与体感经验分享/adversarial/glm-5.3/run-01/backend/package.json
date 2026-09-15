@@ -1,0 +1,16 @@
+{
+  "name": "bili-home-clone-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "哔哩哔哩首页复刻后端：数据 API(5802) + 封面/头像/示例视频静态资源",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "fetch:data": "node scripts/fetch-data.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

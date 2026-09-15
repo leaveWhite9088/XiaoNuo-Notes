@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:32:47.991Z",
+  "frontUrl": "http://localhost:3802",
+  "mode": "adversarial",
+  "model": "glm-5.3",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/glm-5.3/home.png",
+      "bytes": 1090933
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/glm-5.3/feed.png",
+      "bytes": 1075327
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/glm-5.3/hover.png",
+      "bytes": 1041552
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/glm-5.3/menu.png",
+      "bytes": 1104222
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/glm-5.3/search-suggest.png",
+      "bytes": 1046749
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/glm-5.3/search-results.png",
+      "bytes": 1041224
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/glm-5.3/category.png",
+      "bytes": 1083005
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/glm-5.3/video.png",
+      "bytes": 532297
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:3802",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:3802/",
+      "brokenImages": 0,
+      "cardCount": 30,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 2090,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 12,
+      "cardCount": 60,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 3770,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "javascript:;",
+      "kind": "programmatic-card"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "客",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input[placeholder*=\"搜索\"]",
+      "index": 0,
+      "suggestionCount": 2
+    },
+    "search-results": {
+      "pass": false,
+      "reason": "回车后 URL 和结果数量均未变化",
+      "screenshotSaved": true
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://localhost:3802/?category=game",
+      "brokenImages": 0,
+      "cardCount": 30,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 2140,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "javascript:;",
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": "javascript:;",
+        "kind": "programmatic-card"
+      },
+      "url": "http://localhost:3802/video/BV14W411g72d",
+      "playback": {
+        "href": "javascript:;",
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": "javascript:;",
+          "kind": "programmatic-card"
+        },
+        "beforeUrl": "http://localhost:3802/",
+        "afterUrl": "http://localhost:3802/video/BV14W411g72d",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "弹发送让子弹飞：普通话1.2亿播放98.5万弹幕2018-03-22 18:24电影 / 国产电影哔哩哔哩电影39.0万粉丝发消息+ 关注141.4万105.2万25.2万分享民国年间，花钱捐得县长的马邦德（葛优 饰）走马上任，遭劫匪张麻子（姜文 饰）一伙伏击。马为保命，谎称自己是县长的汤师爷。为汤师爷许下的财富所动，张麻子摇身一变，化身县长，带着手下上任。鹅城地处偏僻，一方霸主黄四郎（周润发 饰）只手遮天，全然不将新来的县长放在眼里。鹅城上空愁云密布，血雨腥风在所难免…… 展开更多评论 6.0万最热最新客0/200发布四年娱乐6天前画质 progres，耳朵怀孕7621回复吴允博-球球3分钟前弹幕里全是人才7434回复阿尔卑斯AERBEISI官方2天前看完了，浑身舒坦5855回复风生菌1周前名场面，先码后看4854回复腰魔8小时前泪目，最后一秒破防了4646回复叫父Superfast1个月前名场面，先码后看4503回复戈登拉姆齐Gordon2天前开头以为一般，后面直接封神1839回复大虾试车真香3分钟前名场面，先码后看1767回复在下刀哥6天前看完了，浑身舒坦1530回复野良不吃鱼a3分钟前前方高能预警，注意脚下1387回复-Milkk-8小时前进度条撑住啊，别走666回复终极小腾3周前这就是青春啊346回复对抗路第一人1周前字幕组辛苦了243回复我就是猫队长8小时前这期收藏了，慢慢品166回复连云港永康训犬6天前这期收藏了，慢慢品145回复舒澄YOLO3分钟前夹带私货警告（狗头）131回复大一动漫3小时前BGM 一响，DNA 动了4回复我太高兴了1小时前前排围观，沙发是我2回复阿蔡美食雕刻8小时前这运镜是用了心的2回复和平精英毁约y1小时前前方高能预警，注意脚下1回复相关推荐哈利·波特与魔法石（2001）7376.0万播放 · 107.5万弹幕【四川话】让子弹飞（2010）6188.1万播放 · 14.4万弹幕天气之子（2019）【新海诚】5114.4万播放 · 113.2万弹幕【喜剧/动作】武林外传（2011）4219.4万播放 · 26.4万弹幕【夏洛特烦恼】开心麻花巅峰代表作3579.6万播放 · 26.9万弹幕蝙蝠侠：黑暗骑士（2008）【希斯·莱杰/克里斯蒂安·贝尔/诺兰】3248.2万播放 · 18.9万弹幕紫罗兰永恒花园外传：永远与自动手记人偶（2019）【石川由依/寿美菜子/悠木碧】3124.4万播放 · 56.2万弹幕帝国的毁灭（2004）【布鲁诺·冈茨】3099.3万播放 · 19.8万弹幕全职高手之巅峰荣耀（2019）2558.0万播放 · 25.4万弹幕命运之夜——天之杯II ：迷失之蝶（2019）2431.7万播放 · 41.8万弹幕疯狂的麦克斯4：狂暴之路（2015）【汤姆·哈迪/查理兹·塞隆/尼古拉斯·霍尔特】1805.0万播放 · 7.8万弹幕【动画】妙先生（2020）1644.3万播放 · 7.0万弹幕"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.14547,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.14547,
+        "progressed": true
+      },
+      "brokenImages": 10,
+      "cardCount": 1,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 3278,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 30,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 2090,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 12,
+      "cardCount": 60,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 3770,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 10,
+      "cardCount": 1,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 3278,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:3802/video/BV14W411g72d"
+  },
+  "playback": {
+    "href": "javascript:;",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "javascript:;",
+      "kind": "programmatic-card"
+    },
+    "beforeUrl": "http://localhost:3802/",
+    "afterUrl": "http://localhost:3802/video/BV14W411g72d",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "弹发送让子弹飞：普通话1.2亿播放98.5万弹幕2018-03-22 18:24电影 / 国产电影哔哩哔哩电影39.0万粉丝发消息+ 关注141.4万105.2万25.2万分享民国年间，花钱捐得县长的马邦德（葛优 饰）走马上任，遭劫匪张麻子（姜文 饰）一伙伏击。马为保命，谎称自己是县长的汤师爷。为汤师爷许下的财富所动，张麻子摇身一变，化身县长，带着手下上任。鹅城地处偏僻，一方霸主黄四郎（周润发 饰）只手遮天，全然不将新来的县长放在眼里。鹅城上空愁云密布，血雨腥风在所难免…… 展开更多评论 6.0万最热最新客0/200发布四年娱乐6天前画质 progres，耳朵怀孕7621回复吴允博-球球3分钟前弹幕里全是人才7434回复阿尔卑斯AERBEISI官方2天前看完了，浑身舒坦5855回复风生菌1周前名场面，先码后看4854回复腰魔8小时前泪目，最后一秒破防了4646回复叫父Superfast1个月前名场面，先码后看4503回复戈登拉姆齐Gordon2天前开头以为一般，后面直接封神1839回复大虾试车真香3分钟前名场面，先码后看1767回复在下刀哥6天前看完了，浑身舒坦1530回复野良不吃鱼a3分钟前前方高能预警，注意脚下1387回复-Milkk-8小时前进度条撑住啊，别走666回复终极小腾3周前这就是青春啊346回复对抗路第一人1周前字幕组辛苦了243回复我就是猫队长8小时前这期收藏了，慢慢品166回复连云港永康训犬6天前这期收藏了，慢慢品145回复舒澄YOLO3分钟前夹带私货警告（狗头）131回复大一动漫3小时前BGM 一响，DNA 动了4回复我太高兴了1小时前前排围观，沙发是我2回复阿蔡美食雕刻8小时前这运镜是用了心的2回复和平精英毁约y1小时前前方高能预警，注意脚下1回复相关推荐哈利·波特与魔法石（2001）7376.0万播放 · 107.5万弹幕【四川话】让子弹飞（2010）6188.1万播放 · 14.4万弹幕天气之子（2019）【新海诚】5114.4万播放 · 113.2万弹幕【喜剧/动作】武林外传（2011）4219.4万播放 · 26.4万弹幕【夏洛特烦恼】开心麻花巅峰代表作3579.6万播放 · 26.9万弹幕蝙蝠侠：黑暗骑士（2008）【希斯·莱杰/克里斯蒂安·贝尔/诺兰】3248.2万播放 · 18.9万弹幕紫罗兰永恒花园外传：永远与自动手记人偶（2019）【石川由依/寿美菜子/悠木碧】3124.4万播放 · 56.2万弹幕帝国的毁灭（2004）【布鲁诺·冈茨】3099.3万播放 · 19.8万弹幕全职高手之巅峰荣耀（2019）2558.0万播放 · 25.4万弹幕命运之夜——天之杯II ：迷失之蝶（2019）2431.7万播放 · 41.8万弹幕疯狂的麦克斯4：狂暴之路（2015）【汤姆·哈迪/查理兹·塞隆/尼古拉斯·霍尔特】1805.0万播放 · 7.8万弹幕【动画】妙先生（2020）1644.3万播放 · 7.0万弹幕"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.14547,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.14547,
+    "progressed": true
+  },
+  "errors": []
+}

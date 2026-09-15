@@ -1,0 +1,189 @@
+{
+  "startedAt": "2026-09-13T01:04:26.975Z",
+  "finishedAt": "2026-09-13T01:05:45.596Z",
+  "total": 20,
+  "readyCount": 20,
+  "failedCount": 0,
+  "items": [
+    {
+      "sampleId": "one-shot--claude-opus-5",
+      "startState": "preparing",
+      "readyMs": 1005,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--claude-opus-5",
+      "startState": "preparing",
+      "readyMs": 4013,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "one-shot--deepseek-v4.1-flash",
+      "startState": "preparing",
+      "readyMs": 1004,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--deepseek-v4.1-flash",
+      "startState": "preparing",
+      "readyMs": 6009,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "one-shot--glm-5.3",
+      "startState": "preparing",
+      "readyMs": 4010,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--glm-5.3",
+      "startState": "preparing",
+      "readyMs": 4007,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "one-shot--gpt-5.6-sol",
+      "startState": "preparing",
+      "readyMs": 1006,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--gpt-5.6-sol",
+      "startState": "preparing",
+      "readyMs": 3006,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "one-shot--gpt-6-astra",
+      "startState": "preparing",
+      "readyMs": 1008,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--gpt-6-astra",
+      "startState": "preparing",
+      "readyMs": 4011,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "one-shot--grok-4.6",
+      "startState": "preparing",
+      "readyMs": 3011,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--grok-4.6",
+      "startState": "preparing",
+      "readyMs": 4008,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "one-shot--kimi-k3",
+      "startState": "preparing",
+      "readyMs": 4006,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--kimi-k3",
+      "startState": "preparing",
+      "readyMs": 3012,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "one-shot--minimax-m3",
+      "startState": "preparing",
+      "readyMs": 5010,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--minimax-m3",
+      "startState": "preparing",
+      "readyMs": 4010,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "one-shot--qwen-3.8-flash",
+      "startState": "preparing",
+      "readyMs": 3009,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--qwen-3.8-flash",
+      "startState": "preparing",
+      "readyMs": 3008,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "one-shot--qwen-3.8-max",
+      "startState": "preparing",
+      "readyMs": 4011,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    },
+    {
+      "sampleId": "adversarial--qwen-3.8-max",
+      "startState": "preparing",
+      "readyMs": 4007,
+      "frontStatus": 200,
+      "stopState": "idle",
+      "portsReleased": true,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "bili-home-replica",
+  "private": true,
+  "version": "1.0.0",
+  "description": "B 站首页复刻：Vite+React(TS) 前端(3141) / Express(TS) 后端(5141) / JSON 数据层",
+  "workspaces": ["web", "server"],
+  "scripts": {
+    "install:all": "npm install",
+    "seed": "node scripts/seed.mjs",
+    "dev": "concurrently -n server,web -c blue,green \"npm run dev -w server\" \"npm run dev -w web\"",
+    "dev:server": "npm run dev -w server",
+    "dev:web": "npm run dev -w web",
+    "start": "npm run dev",
+    "selfcheck": "node scripts/selfcheck.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

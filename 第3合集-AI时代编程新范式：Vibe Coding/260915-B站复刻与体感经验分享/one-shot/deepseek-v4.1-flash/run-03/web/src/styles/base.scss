@@ -1,0 +1,201 @@
+@use './variables.scss' as *;
+
+/* ------------------------------ Reset ------------------------------ */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $bg-body;
+  color: $text-1;
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background: transparent;
+  color: inherit;
+}
+
+/* ------------------------------ 滚动条 ------------------------------ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ------------------------------ 通用布局 ------------------------------ */
+.layout {
+  width: 100%;
+  /* 内容区净宽对齐真实站点：1520px 栅格 + 左右各 24px 内边距 */
+  max-width: $layout-width + $layout-padding * 2;
+  margin: 0 auto;
+  padding: 0 $layout-padding;
+}
+
+@mixin line-clamp($lines: 1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-clamp-1 {
+  @include line-clamp(1);
+}
+
+.text-clamp-2 {
+  @include line-clamp(2);
+}
+
+/* ------------------------------ 骨架屏 ------------------------------ */
+@keyframes sk-shine {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.skeleton {
+  background: #e9ebee;
+  background-image: linear-gradient(90deg, #e9ebee 0%, #f4f5f7 40%, #e9ebee 80%);
+  background-size: 400px 100%;
+  background-repeat: no-repeat;
+  animation: sk-shine 1.4s linear infinite;
+  border-radius: $radius-md;
+}
+
+/* ------------------------------ 通用按钮 ------------------------------ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 18px;
+  border-radius: $radius-md;
+  background: $brand-blue;
+  color: #fff;
+  font-size: 14px;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $brand-blue-hover;
+  }
+}
+
+.btn-pink {
+  background: $brand-pink;
+
+  &:hover {
+    background: $brand-pink-hover;
+  }
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 16px;
+  border: 1px solid $border-line;
+  border-radius: $radius-md;
+  color: $text-2;
+  background: #fff;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $brand-blue;
+    color: $brand-blue;
+  }
+}
+
+/* ------------------------------ 过渡 ------------------------------ */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.18s $ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.pop-enter-active {
+  transition: opacity 0.18s $ease, transform 0.18s $ease;
+}
+
+.pop-leave-active {
+  transition: opacity 0.14s $ease, transform 0.14s $ease;
+}
+
+.pop-enter-from,
+.pop-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}

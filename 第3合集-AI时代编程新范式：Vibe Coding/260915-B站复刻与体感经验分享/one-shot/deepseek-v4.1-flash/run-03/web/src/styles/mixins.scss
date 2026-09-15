@@ -1,0 +1,40 @@
+@use 'sass:math';
+@use './variables.scss' as *;
+
+/**
+ * 通用 mixin：卡片 hover、弹层、文本截断等前端复用样式。
+ */
+
+@mixin card-hover-lift {
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-card;
+  }
+}
+
+@mixin popover-surface {
+  background: #fff;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-pop;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin cover-ratio($w: 16, $h: 9) {
+  position: relative;
+  width: 100%;
+  padding-top: math.percentage(math.div($h, $w));
+}

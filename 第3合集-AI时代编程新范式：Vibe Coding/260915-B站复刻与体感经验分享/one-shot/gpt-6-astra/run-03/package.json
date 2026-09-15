@@ -1,0 +1,16 @@
+{
+  "name": "bilibili-home-recreation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/start.mjs",
+    "start": "node scripts/start.mjs",
+    "dev:frontend": "vite --host 127.0.0.1 --port 3301 --strictPort",
+    "dev:backend": "node server/index.js",
+    "build": "vite build",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": { "express": "^5.1.0", "lucide-react": "^0.468.0", "react": "^19.0.0", "react-dom": "^19.0.0", "react-router-dom": "^7.1.0" },
+  "devDependencies": { "@vitejs/plugin-react": "^4.3.4", "vite": "^6.1.0" }
+}

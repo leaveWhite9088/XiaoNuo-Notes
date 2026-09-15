@@ -1,0 +1,59 @@
+.hover-panel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hover-panel__body {
+  position: absolute;
+  top: calc(100% + 2px);
+  z-index: 120;
+  padding: 12px;
+  background: var(--bg1);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+  color: var(--text1);
+  animation: hover-panel-in 0.18s var(--easing);
+  cursor: default;
+}
+
+.hover-panel__body--center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hover-panel__body--left {
+  left: 0;
+}
+.hover-panel__body--right {
+  right: 0;
+}
+
+.hover-panel__arrow {
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+@keyframes hover-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) var(--panel-shift, translateX(0));
+  }
+}
+
+.hover-panel__body--center {
+  animation-name: hover-panel-in-center;
+}
+
+@keyframes hover-panel-in-center {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

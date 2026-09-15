@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:39:00.640Z",
+  "frontUrl": "http://127.0.0.1:5173",
+  "mode": "adversarial",
+  "model": "grok-4.6",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/grok-4.6/home.png",
+      "bytes": 1373712
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/grok-4.6/feed.png",
+      "bytes": 1287996
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/grok-4.6/hover.png",
+      "bytes": 1417344
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/grok-4.6/menu.png",
+      "bytes": 1250644
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/grok-4.6/search-suggest.png",
+      "bytes": 1227971
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/grok-4.6/search-results.png",
+      "bytes": 105225
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/grok-4.6/category.png",
+      "bytes": 272016
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/grok-4.6/video.png",
+      "bytes": 1236872
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://127.0.0.1:5173",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://127.0.0.1:5173/",
+      "brokenImages": 0,
+      "cardCount": 168,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 3705,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 168,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 3705,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+      "kind": "anchor"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "当前用户",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "header form input",
+      "index": 0,
+      "suggestionCount": 1
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://127.0.0.1:5173/",
+      "afterUrl": "http://127.0.0.1:5173/search?q=%E7%A7%91%E6%8A%80",
+      "resultCount": 1
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://127.0.0.1:5173/channel/game",
+      "brokenImages": 0,
+      "cardCount": 12,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 1126,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+        "kind": "anchor"
+      },
+      "url": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+      "playback": {
+        "href": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+          "kind": "anchor"
+        },
+        "beforeUrl": "http://127.0.0.1:5173/",
+        "afterUrl": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "来看一个羊肉店老板在上海，沉浸式参加一周一度「国际羊肉日」"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0.505469,
+          "paused": false,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.712596,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.207127,
+        "progressed": true
+      },
+      "brokenImages": 0,
+      "cardCount": 12,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2199,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 168,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 3705,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 168,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 3705,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 12,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2199,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://127.0.0.1:5173/video/BV1fd4y1c7mA"
+  },
+  "playback": {
+    "href": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+      "kind": "anchor"
+    },
+    "beforeUrl": "http://127.0.0.1:5173/",
+    "afterUrl": "http://127.0.0.1:5173/video/BV1fd4y1c7mA",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "来看一个羊肉店老板在上海，沉浸式参加一周一度「国际羊肉日」"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0.505469,
+      "paused": false,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.712596,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.207127,
+    "progressed": true
+  },
+  "errors": []
+}

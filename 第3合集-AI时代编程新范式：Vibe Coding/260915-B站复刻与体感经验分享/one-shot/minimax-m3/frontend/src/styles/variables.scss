@@ -1,0 +1,48 @@
+// B 站风格主题变量
+:root {
+  // 品牌色
+  --brand: #fb7299; // B 站粉
+  --brand-hover: #ff8fb1;
+  --brand-dark: #d65481;
+  --blue-link: #00aeec;
+  --blue-link-hover: #33c0f0;
+
+  // 文本
+  --text: #18191c;
+  --text-2: #61666d;
+  --text-3: #9499a0;
+  --text-link: #18191c;
+
+  // 背景
+  --bg: #ffffff;
+  --bg-2: #f6f7f8;
+  --bg-3: #f1f2f3;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f6f7f8;
+  --bg-tag: #f1f2f3;
+
+  // 边框
+  --border: #e3e5e7;
+  --border-2: #f1f2f3;
+
+  // 阴影
+  --shadow-1: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  // 头部
+  --header-bg: #ffffff;
+  --header-h: 64px;
+
+  // 圆角
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 12px;
+
+  // 字体
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC',
+    'Microsoft YaHei', 'Source Han Sans CN', sans-serif;
+
+  // 容器宽度
+  --container-w: 1280px;
+}

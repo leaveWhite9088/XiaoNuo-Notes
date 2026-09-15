@@ -1,0 +1,15 @@
+# 依赖
+node_modules/
+
+# 构建产物
+web/dist/
+
+# 数据库（由 npm run seed 生成，不入库）
+server/data/*.db
+server/data/*.db-shm
+server/data/*.db-wal
+server/data/raw-seed.json
+
+# 系统文件
+.DS_Store
+*.log

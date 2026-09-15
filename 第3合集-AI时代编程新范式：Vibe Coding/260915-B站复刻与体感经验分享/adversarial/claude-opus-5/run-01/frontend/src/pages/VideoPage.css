@@ -1,0 +1,74 @@
+.video-page {
+  padding-top: calc(var(--header-height) + 20px);
+  padding-bottom: 40px;
+  background: var(--bg-page);
+}
+
+.video-page__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 24px;
+  align-items: start;
+}
+
+.video-page__main {
+  min-width: 0;
+  padding: 18px 20px 22px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.video-page__toolbar {
+  margin-bottom: 8px;
+}
+
+.video-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 14px;
+  border-radius: var(--radius-round);
+  background: var(--bg3);
+  font-size: 13px;
+  color: var(--text2);
+  transition: background 0.18s, color 0.18s;
+}
+
+.video-page__back:hover {
+  background: rgba(251, 114, 153, 0.14);
+  color: var(--brand-pink);
+}
+
+.video-page__side {
+  min-width: 0;
+}
+
+.video-page--error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 160px 0;
+  color: var(--text2);
+}
+
+.video-page__skeleton-player {
+  aspect-ratio: 16 / 9;
+}
+
+.video-page__skeleton-line {
+  height: 20px;
+  margin-top: 14px;
+  width: 60%;
+}
+
+.video-page__skeleton-side {
+  height: 320px;
+}
+
+@media (max-width: 1200px) {
+  .video-page__inner {
+    grid-template-columns: 1fr;
+  }
+}

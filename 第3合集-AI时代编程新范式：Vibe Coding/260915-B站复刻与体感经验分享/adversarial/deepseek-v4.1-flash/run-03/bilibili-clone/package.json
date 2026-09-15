@@ -1,0 +1,25 @@
+{
+  "name": "bilibili-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "bilibili 首页复刻（V2 对抗开发 V0）：Vue3 前端 + Express 后端 + SQLite 数据层",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "db:ensure": "npm --prefix backend run db:ensure",
+    "seed": "npm --prefix backend run seed",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "npm run db:ensure && concurrently -n API,WEB -c magenta,cyan \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "start": "npm run dev",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "typecheck": "npm --prefix backend run typecheck && npm --prefix frontend run typecheck",
+    "test": "npm --prefix backend test && npm --prefix frontend test",
+    "e2e": "node scripts/e2e.mjs",
+    "fetch-data": "npm --prefix backend run fetch-data",
+    "fetch-banners": "npm --prefix backend run fetch-banners",
+    "normalize-media": "npm --prefix backend run normalize-media"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

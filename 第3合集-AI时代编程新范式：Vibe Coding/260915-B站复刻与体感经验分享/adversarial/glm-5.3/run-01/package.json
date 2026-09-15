@@ -1,0 +1,19 @@
+{
+  "name": "bili-home-clone",
+  "version": "0.1.0",
+  "private": true,
+  "description": "哔哩哔哩首页复刻（演示项目）：Vue3+Vite 前端(3802) / Express 后端(5802)",
+  "scripts": {
+    "setup": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "fetch:data": "npm --prefix backend run fetch:data",
+    "dev": "concurrently -n backend,frontend -c blue,magenta \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "start": "npm run dev",
+    "test": "npm --prefix backend test && npm --prefix frontend test",
+    "build": "npm --prefix frontend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

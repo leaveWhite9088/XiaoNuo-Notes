@@ -1,0 +1,16 @@
+{
+  "name": "bilibili-home-mvp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Bilibili homepage MVP clone with separate frontend, backend and data layers",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n server,client -c cyan,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "start": "npm run dev",
+    "start:server": "npm run start --prefix server",
+    "start:client": "npm run dev --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

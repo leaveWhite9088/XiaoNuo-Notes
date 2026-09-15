@@ -1,0 +1,22 @@
+{
+  "name": "bili-clone-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "B站首页复刻 · 后端服务（Express + node:sqlite 分层架构）",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node scripts/seed.mjs",
+    "reset": "node scripts/seed.mjs --force"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  }
+}

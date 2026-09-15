@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:34:58.129Z",
+  "frontUrl": "http://localhost:3141",
+  "mode": "one-shot",
+  "model": "qwen-3.8-flash",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-flash/home.png",
+      "bytes": 1002378
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-flash/feed.png",
+      "bytes": 746222
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-flash/hover.png",
+      "bytes": 1002978
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-flash/menu.png",
+      "bytes": 1005256
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-flash/search-suggest.png",
+      "bytes": 918027
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-flash/search-results.png",
+      "bytes": 158345
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-flash/category.png",
+      "bytes": 1004852
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-flash/video.png",
+      "bytes": 563130
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:3141",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:3141/",
+      "brokenImages": 0,
+      "cardCount": 72,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1087,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 72,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1087,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "我的",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input[placeholder*=\"搜索\"]",
+      "index": 0,
+      "suggestionCount": 23
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://localhost:3141/",
+      "afterUrl": "http://localhost:3141/?q=%E7%A7%91%E6%8A%80",
+      "resultCount": 1
+    },
+    "category": {
+      "pass": false,
+      "reason": "未找到精确文本“游戏”的 button 或 a",
+      "screenshotSaved": true
+    },
+    "video": {
+      "pass": true,
+      "href": null,
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": null,
+        "kind": "programmatic-card"
+      },
+      "url": "http://localhost:3141/video/BV1c5YM6rETF",
+      "playback": {
+        "href": null,
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": null,
+          "kind": "programmatic-card"
+        },
+        "beforeUrl": "http://localhost:3141/",
+        "afterUrl": "http://localhost:3141/video/BV1c5YM6rETF",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "← 返回首页›汽车生活▶ 演示播放器：真实视频源（本地 /media），点击控制条可播放/暂停/全屏解锁现实版“富豪主题公园” 探访欧洲老钱后花园摩纳哥▶ 210.2万 · 发射时间：2026-09-11|◎ 319 弹幕 · 时长 8:10👍 1.6万🪙 3500⭐ 4453↗ 分享 523终极小腾UP主 · mid 394609671（真实数据）＋ 关注简介（该视频作者未填写简介）#欧洲#旅行#emira#全新莲花ForMe#此生必开一次莲花#摩纳哥评论 477评论功能为复刻演示简化项（真实条数：477）相关推荐 · 真实同区视频5:09骨架王是为什么是限制卡？2026.10.1禁卡表是否会禁止？！游戏王小剧场13决斗者老马60.4万播放 · 621弹幕7:59下一个是谁幕后公开！（偶像来啦）力元君75.1万播放 · 1745弹幕8:23吃光20年红利，驾校的好日子，到头了【暗中观察471】IC实验室IC实验室71.9万播放 · 2492弹幕6:27我 来 同 你 玩 丨 二洲年快乐三角洲行动843.6万播放 · 23.7万弹幕3:34众望所归，今天带孙艺洲自律！花小龙oy166.8万播放 · 1343弹幕3:33经典镜头竟是演员下意识反应！有的是意外，有的也是导演真缺德！电影冷知识197.2万播放 · 385弹幕38:36热烈欢迎欧阳娜娜！我们的第二位00后嘉宾～看看喜欢搞婚庆的娜娜带了什么可爱（但没用）的小东西呢？papi酱134.9万播放 · 1.1万弹幕5:03“一饭温情相赠，千里以报恩深.”【红色高跟鞋DJ-降调】【涌泉相报の小曲】早睡起大王23.2万播放 · 398弹幕0:17所有人 感受奥黛塔的优雅小暮mumu126.5万播放 · 152弹幕13:31国补到手8499元！RTX5070游戏本？！神舟 战神T9如何平衡舍与得？二斤啦啦啦啦9.8万播放 · 266弹幕8:59【糖果】人类就要冲出太阳系了！然后被宇宙嫌弃了DiDi_OK207.7万播放 · 2297弹幕19:29【独家】《凡人修仙传之慕兰之战》第15集【总第191集】哔哩哔哩国创363.0万播放 · 7.9万弹幕"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.165734,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.165734,
+        "progressed": true
+      },
+      "brokenImages": 0,
+      "cardCount": 12,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1323,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 72,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1087,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 72,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1087,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 12,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1323,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:3141/video/BV1c5YM6rETF"
+  },
+  "playback": {
+    "href": null,
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "beforeUrl": "http://localhost:3141/",
+    "afterUrl": "http://localhost:3141/video/BV1c5YM6rETF",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "← 返回首页›汽车生活▶ 演示播放器：真实视频源（本地 /media），点击控制条可播放/暂停/全屏解锁现实版“富豪主题公园” 探访欧洲老钱后花园摩纳哥▶ 210.2万 · 发射时间：2026-09-11|◎ 319 弹幕 · 时长 8:10👍 1.6万🪙 3500⭐ 4453↗ 分享 523终极小腾UP主 · mid 394609671（真实数据）＋ 关注简介（该视频作者未填写简介）#欧洲#旅行#emira#全新莲花ForMe#此生必开一次莲花#摩纳哥评论 477评论功能为复刻演示简化项（真实条数：477）相关推荐 · 真实同区视频5:09骨架王是为什么是限制卡？2026.10.1禁卡表是否会禁止？！游戏王小剧场13决斗者老马60.4万播放 · 621弹幕7:59下一个是谁幕后公开！（偶像来啦）力元君75.1万播放 · 1745弹幕8:23吃光20年红利，驾校的好日子，到头了【暗中观察471】IC实验室IC实验室71.9万播放 · 2492弹幕6:27我 来 同 你 玩 丨 二洲年快乐三角洲行动843.6万播放 · 23.7万弹幕3:34众望所归，今天带孙艺洲自律！花小龙oy166.8万播放 · 1343弹幕3:33经典镜头竟是演员下意识反应！有的是意外，有的也是导演真缺德！电影冷知识197.2万播放 · 385弹幕38:36热烈欢迎欧阳娜娜！我们的第二位00后嘉宾～看看喜欢搞婚庆的娜娜带了什么可爱（但没用）的小东西呢？papi酱134.9万播放 · 1.1万弹幕5:03“一饭温情相赠，千里以报恩深.”【红色高跟鞋DJ-降调】【涌泉相报の小曲】早睡起大王23.2万播放 · 398弹幕0:17所有人 感受奥黛塔的优雅小暮mumu126.5万播放 · 152弹幕13:31国补到手8499元！RTX5070游戏本？！神舟 战神T9如何平衡舍与得？二斤啦啦啦啦9.8万播放 · 266弹幕8:59【糖果】人类就要冲出太阳系了！然后被宇宙嫌弃了DiDi_OK207.7万播放 · 2297弹幕19:29【独家】《凡人修仙传之慕兰之战》第15集【总第191集】哔哩哔哩国创363.0万播放 · 7.9万弹幕"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.165734,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.165734,
+    "progressed": true
+  },
+  "errors": []
+}

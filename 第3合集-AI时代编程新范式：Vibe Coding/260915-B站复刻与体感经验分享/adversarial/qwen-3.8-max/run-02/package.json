@@ -1,0 +1,21 @@
+{
+  "name": "bilibili-clone",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,web -c magenta,cyan \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:web": "npm --prefix web run dev",
+    "start": "npm --prefix server run start",
+    "fetch-data": "node scripts/fetch-data.mjs",
+    "install:all": "npm install && npm --prefix server install && npm --prefix web install",
+    "test": "node --test server/test/*.test.js web/test/*.test.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

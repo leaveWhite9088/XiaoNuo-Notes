@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d111b" />
+    <meta name="description" content="B站首页多模型成品对比与评分看板" />
+    <title>B站首页 · 模型作品评测看板</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="返回看板顶部">
+          <span class="brand-mark">哔</span>
+          <span>
+            <strong>首页复刻评测</strong>
+            <small>十款模型真实对比</small>
+          </span>
+        </a>
+        <div class="topbar-meta">
+          <span class="live-dot"></span>
+          <span id="data-status">正在载入评测数据</span>
+          <button class="ghost-button" id="refresh-data" type="button">刷新数据</button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero panel">
+          <div class="hero-copy">
+            <p class="eyebrow">B站首页复刻实测</p>
+            <h1>一眼看懂，谁把首页做得最好。</h1>
+            <p class="hero-description">
+              真人逐个操作并评价页面体验，Codex 只负责审查代码质量。切换生成方式和页面状态，直接比较十个模型的真实成品。
+            </p>
+            <p class="time-note">两种方式的总执行时间都控制在约30分钟；对抗审查达到时间即以当前结果收敛，不无限迭代。</p>
+            <div class="hero-actions" role="group" aria-label="榜单模式">
+              <button class="mode-button is-active" data-mode="one-shot" type="button">一次性指令直出</button>
+              <button class="mode-button" data-mode="adversarial" type="button">对抗性审查多轮结果</button>
+            </div>
+          </div>
+          <div class="hero-stat-grid" aria-label="评测概览">
+            <div class="hero-stat">
+              <strong id="model-count">10</strong>
+              <span>参评模型</span>
+            </div>
+            <div class="hero-stat">
+              <strong id="scene-count">6</strong>
+              <span>标准场景</span>
+            </div>
+            <div class="hero-stat accent-stat">
+              <strong id="ready-count">0</strong>
+              <span>已完成评分</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block" aria-labelledby="leaderboard-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">最终排序</p>
+              <h2 id="leaderboard-title">成品榜单</h2>
+            </div>
+            <div class="section-heading-note">满分 100 · 同分并列</div>
+          </div>
+          <div class="leaderboard-layout">
+            <div class="panel leaderboard-panel">
+              <div class="table-toolbar">
+                <div class="segmented" role="tablist" aria-label="榜单类型">
+                  <button class="rank-tab is-active" data-rank="one-shot" type="button" role="tab">一次性指令直出</button>
+                  <button class="rank-tab" data-rank="adversarial" type="button" role="tab">对抗性审查多轮结果</button>
+                  <button class="rank-tab" data-rank="delta" type="button" role="tab">多轮审查带来的分数变化</button>
+                </div>
+                <span class="table-hint" id="rank-hint">分数数据准备中</span>
+              </div>
+              <div class="rank-table-wrap">
+                <table class="rank-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">模型</th>
+                      <th scope="col">总分</th>
+                      <th scope="col">视觉</th>
+                      <th scope="col">流程</th>
+                      <th scope="col">操作</th>
+                      <th scope="col">体感</th>
+                      <th scope="col">现场</th>
+                    </tr>
+                  </thead>
+                  <tbody id="rank-body"></tbody>
+                </table>
+              </div>
+            </div>
+            <aside class="panel score-card">
+              <div class="score-card-header">
+                <span class="badge badge-blue">评分结构</span>
+                <span class="score-card-total">100 分</span>
+              </div>
+              <div class="score-breakdown" id="score-breakdown"></div>
+              <div class="score-source-note">
+                <strong>分数由谁给？</strong>
+                <span>真人实机体验 90 分</span>
+                <span>Codex 代码审查 10 分</span>
+              </div>
+              <p class="muted small-copy">外观、功能和操作感受以真人实测为准；Codex 只评价架构、注释和可维护性。</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section-block" aria-labelledby="guide-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">怎么选模型</p>
+              <h2 id="guide-title">按你的开发目标来选</h2>
+            </div>
+            <div class="section-heading-note">这只是本次样本的实测结论</div>
+          </div>
+          <div class="guide-grid" id="selection-guide"></div>
+          <article class="panel lessons-panel">
+            <div class="lessons-heading">
+              <span class="badge badge-blue">开发经验</span>
+              <h3>这次测试真正提醒我们的事</h3>
+            </div>
+            <div class="lessons-grid" id="development-notes"></div>
+          </article>
+        </section>
+
+        <section class="section-block" aria-labelledby="wall-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">页面总览</p>
+              <h2 id="wall-title">十模型页面墙</h2>
+            </div>
+            <div class="control-row">
+              <label class="select-label" for="wall-scene">场景</label>
+              <select id="wall-scene" class="select-control"></select>
+              <div class="small-mode-toggle" role="group" aria-label="页面墙模式">
+                  <button class="wall-mode is-active" data-mode="one-shot" type="button">一次性指令直出</button>
+                  <button class="wall-mode" data-mode="adversarial" type="button">对抗性审查多轮结果</button>
+              </div>
+            </div>
+          </div>
+          <div class="wall-grid" id="wall-grid"></div>
+        </section>
+
+        <section class="section-block" aria-labelledby="compare-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">双屏比较</p>
+              <h2 id="compare-title">同模型双屏对比</h2>
+            </div>
+            <div class="control-row">
+              <label class="select-label" for="compare-model">模型</label>
+              <select id="compare-model" class="select-control"></select>
+              <label class="select-label" for="compare-scene">场景</label>
+              <select id="compare-scene" class="select-control"></select>
+            </div>
+          </div>
+          <div class="compare-grid" id="compare-grid"></div>
+        </section>
+
+        <section class="section-block" aria-labelledby="detail-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">单项详情</p>
+              <h2 id="detail-title">模型详情</h2>
+            </div>
+            <div class="control-row">
+              <label class="select-label" for="detail-model">查看</label>
+              <select id="detail-model" class="select-control"></select>
+              <div class="small-mode-toggle" role="group" aria-label="详情模式">
+                <button class="detail-mode is-active" data-mode="one-shot" type="button">一次性指令直出</button>
+                <button class="detail-mode" data-mode="adversarial" type="button">对抗性审查多轮结果</button>
+              </div>
+            </div>
+          </div>
+          <div class="detail-grid" id="detail-grid"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>首页复刻评测看板</span>
+        <span>数据以最终评测结果为准</span>
+      </footer>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="截图预览">
+      <button class="lightbox-close" id="lightbox-close" type="button" aria-label="关闭预览">×</button>
+      <img id="lightbox-image" alt="放大截图" />
+      <p id="lightbox-caption"></p>
+    </div>
+    <div class="live-command-toast" id="live-command-note" hidden></div>
+
+    <script src="data/results.js"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

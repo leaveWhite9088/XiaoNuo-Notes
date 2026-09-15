@@ -1,0 +1,213 @@
+.bili-header {
+  position: relative;
+  z-index: 40;
+}
+.bili-header__bar {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  padding: 0 14px 0 18px;
+  gap: 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: background .2s ease, box-shadow .2s ease, color .2s ease;
+}
+.bili-header__bar.is-solid {
+  background: #fff;
+  color: var(--text-1);
+  box-shadow: 0 2px 4px rgba(0,0,0,.08);
+}
+.bili-header__bar.is-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.12) 70%, transparent);
+  color: #fff;
+}
+.bili-header__bar.is-overlay .entry-item,
+.bili-header__bar.is-overlay .right-item {
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,.35);
+}
+
+.left-entry, .right-entry {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: .5px;
+}
+.logo-link svg { width: 30px; height: 30px; }
+.entry-item {
+  position: relative;
+  padding: 0 10px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: .95;
+}
+.entry-item:hover { opacity: 1; }
+.entry-item.has-menu:hover .mini-menu,
+.right-item:hover .mini-menu { display: block; }
+
+.center-search {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.search-form {
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.88);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+.is-solid .search-form { background: #f1f2f3; }
+.search-form:focus-within,
+.search-form.is-open {
+  background: #fff;
+  border-color: var(--line);
+  box-shadow: var(--shadow);
+}
+.search-form input {
+  flex: 1;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  padding: 0 12px;
+  font-size: 14px;
+  color: var(--text-1);
+}
+.search-form button {
+  width: 48px;
+  height: 32px;
+  margin-right: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--bili-pink);
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.right-item {
+  position: relative;
+  min-width: 52px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 13px;
+  padding: 0 6px;
+}
+.right-item svg { width: 20px; height: 20px; }
+.upload-btn {
+  height: 34px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--bili-pink);
+  color: #fff !important;
+  flex-direction: row;
+  gap: 6px;
+  min-width: auto;
+  margin-left: 8px;
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.mini-menu {
+  display: none;
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: #fff;
+  color: var(--text-1);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 10px 0;
+  z-index: 80;
+}
+.mini-menu.wide { min-width: 280px; }
+.mini-menu a, .mini-menu .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--text-1);
+}
+.mini-menu a:hover, .mini-menu .row:hover { background: #f6f7f8; }
+.mini-menu .hint { color: var(--text-3); font-size: 12px; padding: 4px 16px 8px; }
+.suggest {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  color: var(--text-1);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  z-index: 90;
+}
+.suggest h4 {
+  margin: 0;
+  padding: 10px 14px 6px;
+  font-size: 13px;
+  color: var(--text-3);
+  font-weight: 500;
+}
+.suggest li {
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 13px;
+}
+.suggest li:hover { background: #f6f7f8; }
+.suggest .rank { color: var(--bili-pink); width: 18px; }
+.banner {
+  height: var(--banner-h);
+  background: #9ec9e8 center/cover no-repeat;
+  position: relative;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner-mask {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 50px;
+  background: linear-gradient(transparent, #fff);
+}
+
+@media (max-width: 1100px) {
+  .entry-item:nth-child(n+5),
+  .right-item span { display: none; }
+  .right-item { min-width: 40px; }
+}

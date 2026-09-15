@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:43:40.281Z",
+  "frontUrl": "http://127.0.0.1:3002",
+  "mode": "adversarial",
+  "model": "minimax-m3",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/minimax-m3/home.png",
+      "bytes": 287658
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/minimax-m3/feed.png",
+      "bytes": 412456
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/minimax-m3/hover.png",
+      "bytes": 292592
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/minimax-m3/menu.png",
+      "bytes": 288533
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/minimax-m3/search-suggest.png",
+      "bytes": 285514
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/minimax-m3/search-results.png",
+      "bytes": 288716
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/minimax-m3/category.png",
+      "bytes": 116707
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/minimax-m3/video.png",
+      "bytes": 29753
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://127.0.0.1:3002",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://127.0.0.1:3002/#/",
+      "brokenImages": 30,
+      "cardCount": 33,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2332,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 30,
+      "cardCount": 33,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2332,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "登录",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input[placeholder*=\"搜索\"]",
+      "index": 0,
+      "suggestionCount": 0
+    },
+    "search-results": {
+      "pass": false,
+      "reason": "回车后 URL 和结果数量均未变化",
+      "screenshotSaved": true
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://127.0.0.1:3002/#/c/game",
+      "brokenImages": 7,
+      "cardCount": 4,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 918,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": false,
+      "reason": "详情页未找到 video 元素",
+      "screenshotSaved": true
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 30,
+      "cardCount": 33,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2332,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 30,
+      "cardCount": 33,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2332,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 10,
+      "cardCount": 0,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 1893,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://127.0.0.1:3002/#/video/v1"
+  },
+  "playback": {
+    "href": null,
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "beforeUrl": "http://127.0.0.1:3002/#/",
+    "afterUrl": "http://127.0.0.1:3002/#/video/v1",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "before": {
+      "found": false,
+      "currentTime": null,
+      "paused": null,
+      "readyState": null
+    },
+    "after": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "mutedRequested": false,
+    "playRequested": false,
+    "currentTimeDelta": null,
+    "progressed": false
+  },
+  "errors": []
+}

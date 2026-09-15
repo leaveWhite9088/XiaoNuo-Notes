@@ -1,0 +1,57 @@
+.hover-panel {
+  position: relative;
+}
+
+.hover-panel__trigger {
+  cursor: pointer;
+}
+
+.hover-panel__body {
+  position: absolute;
+  top: calc(100% + 8px);
+  z-index: 120;
+  min-width: 160px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--bg-panel);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top center;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  color: var(--text-1);
+}
+
+/* 触发区与面板之间留一条"安全通道"，鼠标移动过去不会闪断 */
+.hover-panel__body::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  height: 12px;
+}
+
+.hover-panel__body--center {
+  left: 50%;
+  transform: translate(-50%, -6px) scale(0.98);
+}
+
+.hover-panel__body--left {
+  left: 0;
+}
+
+.hover-panel__body--right {
+  right: 0;
+}
+
+.hover-panel.is-open > .hover-panel__body {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.hover-panel.is-open > .hover-panel__body--center {
+  transform: translate(-50%, 0) scale(1);
+}

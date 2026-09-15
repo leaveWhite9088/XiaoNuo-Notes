@@ -1,0 +1,23 @@
+{
+  "name": "bilibili-home-replica",
+  "private": true,
+  "version": "0.1.0",
+  "description": "B 站首页复刻（前端 3142 / 后端 5142 / 数据层）",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "seed": "npm run seed -w server",
+    "build": "npm run build -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=18.11"
+  }
+}

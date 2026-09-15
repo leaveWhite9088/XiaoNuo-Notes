@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:48:04.451Z",
+  "frontUrl": "http://127.0.0.1:3601",
+  "mode": "one-shot",
+  "model": "claude-opus-5",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/claude-opus-5/home.png",
+      "bytes": 1266912
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/claude-opus-5/feed.png",
+      "bytes": 1295160
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/claude-opus-5/hover.png",
+      "bytes": 1251743
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/claude-opus-5/menu.png",
+      "bytes": 1237149
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/claude-opus-5/search-suggest.png",
+      "bytes": 1078002
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/claude-opus-5/search-results.png",
+      "bytes": 940849
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/claude-opus-5/category.png",
+      "bytes": 1078191
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/claude-opus-5/video.png",
+      "bytes": 1127054
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://127.0.0.1:3601",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://127.0.0.1:3601/",
+      "brokenImages": 18,
+      "cardCount": 340,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 2334,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 6,
+      "cardCount": 660,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 3847,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": false,
+      "reason": "page.hover timed out after 3000ms: Selector [data-eval-video-target=\"true\"] matched 1 elements, but none can receive input; element has visibility: hidden",
+      "screenshotSaved": true
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "Lv6哔哩哔哩用户Lv6 年度大会员37动态286关注42粉丝个人中心投稿管理我的收藏稍后再看历史记录退出登录",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input",
+      "index": 0,
+      "suggestionCount": 0
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://127.0.0.1:3601/",
+      "afterUrl": "http://127.0.0.1:3601/search?keyword=%E7%A7%91%E6%8A%80",
+      "resultCount": 24
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "🎮游戏",
+      "url": "http://127.0.0.1:3601/?channel=game",
+      "brokenImages": 0,
+      "cardCount": 159,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 1426,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "http://127.0.0.1:3601/video/BV1Lda4W1gYm",
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": "http://127.0.0.1:3601/video/BV1Lda4W1gYm",
+        "kind": "anchor"
+      },
+      "url": "http://127.0.0.1:3601/video/BV1Lda4W1gYm",
+      "playback": {
+        "href": "http://127.0.0.1:3601/video/BV1Lda4W1gYm",
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": "http://127.0.0.1:3601/video/BV1Lda4W1gYm",
+          "kind": "anchor"
+        },
+        "beforeUrl": "http://127.0.0.1:3601/",
+        "afterUrl": "http://127.0.0.1:3601/video/BV1Lda4W1gYm",
+        "beforeDetailState": {
+          "hasVideo": true,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "我花了 90 天，用 2000 张手绘还原了这段打斗"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0.451684,
+          "paused": false,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.661222,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.209538,
+        "progressed": true
+      },
+      "brokenImages": 4,
+      "cardCount": 40,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 2864,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 18,
+      "cardCount": 340,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 2334,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 6,
+      "cardCount": 660,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 3847,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 4,
+      "cardCount": 40,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1430,
+        "scrollHeight": 2864,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://127.0.0.1:3601/video/BV1Lda4W1gYm"
+  },
+  "playback": {
+    "href": "http://127.0.0.1:3601/video/BV1Lda4W1gYm",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://127.0.0.1:3601/video/BV1Lda4W1gYm",
+      "kind": "anchor"
+    },
+    "beforeUrl": "http://127.0.0.1:3601/",
+    "afterUrl": "http://127.0.0.1:3601/video/BV1Lda4W1gYm",
+    "beforeDetailState": {
+      "hasVideo": true,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "我花了 90 天，用 2000 张手绘还原了这段打斗"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0.451684,
+      "paused": false,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.661222,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.209538,
+    "progressed": true
+  },
+  "errors": []
+}

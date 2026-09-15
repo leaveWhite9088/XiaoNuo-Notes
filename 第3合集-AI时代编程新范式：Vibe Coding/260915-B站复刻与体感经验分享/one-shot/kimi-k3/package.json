@@ -1,0 +1,15 @@
+{
+  "name": "bili-home-mvp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Bilibili homepage replica MVP (React + Express)",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n server,client -c magenta,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

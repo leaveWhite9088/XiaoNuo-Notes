@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:45:14.572Z",
+  "frontUrl": "http://localhost:3401",
+  "mode": "one-shot",
+  "model": "gpt-5.6-sol",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-5.6-sol/home.png",
+      "bytes": 1339390
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-5.6-sol/feed.png",
+      "bytes": 1019889
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-5.6-sol/hover.png",
+      "bytes": 1335011
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-5.6-sol/menu.png",
+      "bytes": 1348156
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-5.6-sol/search-suggest.png",
+      "bytes": 1230409
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-5.6-sol/search-results.png",
+      "bytes": 896775
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-5.6-sol/category.png",
+      "bytes": 795396
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/gpt-5.6-sol/video.png",
+      "bytes": 775032
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:3401",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:3401/",
+      "brokenImages": 0,
+      "cardCount": 34,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1460,
+        "scrollHeight": 1589,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 34,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1460,
+        "scrollHeight": 1589,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://localhost:3401/video/BV2mQ7pL",
+      "kind": "anchor"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "登录",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input[placeholder*=\"搜索\"]",
+      "index": 0,
+      "suggestionCount": 0
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://localhost:3401/",
+      "afterUrl": "http://localhost:3401/",
+      "resultCount": 1
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://localhost:3401/",
+      "brokenImages": 0,
+      "cardCount": 1,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1460,
+        "scrollHeight": 978,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "http://localhost:3401/video/BV2mQ7pL",
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": "http://localhost:3401/video/BV2mQ7pL",
+        "kind": "anchor"
+      },
+      "url": "http://localhost:3401/video/BV2mQ7pL",
+      "playback": {
+        "href": "http://localhost:3401/video/BV2mQ7pL",
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": "http://localhost:3401/video/BV2mQ7pL",
+          "kind": "anchor"
+        },
+        "beforeUrl": "http://localhost:3401/",
+        "afterUrl": "http://localhost:3401/video/BV2mQ7pL",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "首页番剧直播游戏中心会员购漫画赛事更多 登录消息动态收藏历史创作中心 投稿 返回这才是夏天！海边公路旅行电影感记录 89.3万播放 3605弹幕09-10未经作者授权，禁止转载你的浏览器不支持视频播放。3605 条弹幕 弹幕礼仪发送9.8万点赞3.1万投币7.2万收藏分享分享沿着海岸线一路向南，把夏天的风和浪都装进镜头里。旅行大海公路片评论 2发布B哔哩小伙伴画面和音乐都好舒服，已经三连了！今天 · 32小路过的观众这种认真做内容的 UP 主值得被看见。今天 · 51是阿盐呀分享有趣、有用、有温度的内容+ 关注 12.8万相关推荐 换一换 125.8万 829408:42城市漫游｜在天台等待一场橘子味的日落UP 小野的放映室 · 昨天 66.7万 154210:06在家做出外酥里嫩的完美可颂，成功率超高UP 厨房实验员 · 3小时前 231.4万 1.2万04:36当古典乐遇上赛博朋克，会发生什么？UP 无限音轨 · 09-08 52.1万 287718:24我造了一间会呼吸的房子｜建筑设计全过程UP 构筑事务所 · 09-09 118.9万 670421:15独立游戏里的雨夜，氛围感直接拉满UP 像素信号 · 09-07 77.6万 223109:48手机也能拍大片？6 个运镜技巧一次学会UP 影像研究社 · 09-06"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 0
+        },
+        "after": {
+          "found": true,
+          "currentTime": 0,
+          "paused": false,
+          "readyState": 0
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 0,
+        "progressed": false
+      },
+      "brokenImages": 0,
+      "cardCount": 19,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1439,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 34,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1460,
+        "scrollHeight": 1589,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 34,
+      "scrollOverflow": {
+        "horizontal": true,
+        "vertical": true,
+        "scrollWidth": 1460,
+        "scrollHeight": 1589,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 19,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1439,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:3401/video/BV2mQ7pL"
+  },
+  "playback": {
+    "href": "http://localhost:3401/video/BV2mQ7pL",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://localhost:3401/video/BV2mQ7pL",
+      "kind": "anchor"
+    },
+    "beforeUrl": "http://localhost:3401/",
+    "afterUrl": "http://localhost:3401/video/BV2mQ7pL",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "首页番剧直播游戏中心会员购漫画赛事更多 登录消息动态收藏历史创作中心 投稿 返回这才是夏天！海边公路旅行电影感记录 89.3万播放 3605弹幕09-10未经作者授权，禁止转载你的浏览器不支持视频播放。3605 条弹幕 弹幕礼仪发送9.8万点赞3.1万投币7.2万收藏分享分享沿着海岸线一路向南，把夏天的风和浪都装进镜头里。旅行大海公路片评论 2发布B哔哩小伙伴画面和音乐都好舒服，已经三连了！今天 · 32小路过的观众这种认真做内容的 UP 主值得被看见。今天 · 51是阿盐呀分享有趣、有用、有温度的内容+ 关注 12.8万相关推荐 换一换 125.8万 829408:42城市漫游｜在天台等待一场橘子味的日落UP 小野的放映室 · 昨天 66.7万 154210:06在家做出外酥里嫩的完美可颂，成功率超高UP 厨房实验员 · 3小时前 231.4万 1.2万04:36当古典乐遇上赛博朋克，会发生什么？UP 无限音轨 · 09-08 52.1万 287718:24我造了一间会呼吸的房子｜建筑设计全过程UP 构筑事务所 · 09-09 118.9万 670421:15独立游戏里的雨夜，氛围感直接拉满UP 像素信号 · 09-07 77.6万 223109:48手机也能拍大片？6 个运镜技巧一次学会UP 影像研究社 · 09-06"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "found": true,
+      "currentTime": 0,
+      "paused": false,
+      "readyState": 0
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 0,
+    "progressed": false
+  },
+  "errors": []
+}

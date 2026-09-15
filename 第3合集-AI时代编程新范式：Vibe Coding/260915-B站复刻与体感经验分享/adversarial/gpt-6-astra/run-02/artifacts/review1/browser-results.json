@@ -1,0 +1,187 @@
+{
+  "time": "2026-09-12T11:36:27.996Z",
+  "spaceId": 33,
+  "results": [
+    {
+      "name": "端口、桌面布局、卡片 hover 与菜单",
+      "status": "PASS",
+      "details": {
+        "frontend": 3302,
+        "backend": 5302,
+        "width": 1440,
+        "scrollWidth": 1440,
+        "count": 20,
+        "hover": "1"
+      }
+    },
+    {
+      "name": "旧分页竞态：分类",
+      "status": "PASS",
+      "details": {
+        "ids": [
+          "/video/BV1demo005",
+          "/video/BV1demo014"
+        ],
+        "total": "2 个视频",
+        "more": false,
+        "disabled": false
+      }
+    },
+    {
+      "name": "旧分页竞态：搜索",
+      "status": "PASS",
+      "details": {
+        "ids": [
+          "/video/BV1demo008"
+        ],
+        "total": "1 个视频",
+        "more": false,
+        "disabled": false
+      }
+    },
+    {
+      "name": "旧分页竞态：换一换",
+      "status": "PASS",
+      "details": {
+        "ids": [
+          "/video/BV1demo002",
+          "/video/BV1demo003",
+          "/video/BV1demo004",
+          "/video/BV1demo005",
+          "/video/BV1demo006",
+          "/video/BV1demo007",
+          "/video/BV1demo008",
+          "/video/BV1demo009",
+          "/video/BV1demo010",
+          "/video/BV1demo011",
+          "/video/BV1demo012",
+          "/video/BV1demo013",
+          "/video/BV1demo014",
+          "/video/BV1demo015",
+          "/video/BV1demo016",
+          "/video/BV1demo017",
+          "/video/BV1demo018",
+          "/video/BV1demo019",
+          "/video/BV1demo020",
+          "/video/BV1demo001"
+        ],
+        "total": null,
+        "more": true,
+        "disabled": false
+      }
+    },
+    {
+      "name": "搜索建议缩短、关闭、清空后回车",
+      "status": "PASS",
+      "details": {
+        "searched": "http://localhost:3302/?q=%E7%8C%AB%E5%92%AA",
+        "afterClear": "http://localhost:3302/",
+        "errors": []
+      }
+    },
+    {
+      "name": "浏览器后退恢复 24 张卡片、排列和位置",
+      "status": "PASS",
+      "details": {
+        "count": 24,
+        "first": "/video/BV1demo002",
+        "scrollBefore": 650,
+        "scrollAfter": 650.5
+      }
+    },
+    {
+      "name": "分类与搜索历史条目后退恢复",
+      "status": "PASS",
+      "details": {
+        "category": "2 个视频",
+        "search": "1 个视频"
+      }
+    },
+    {
+      "name": "详情草稿隔离与重复弹幕可见",
+      "status": "PASS",
+      "details": {
+        "sends": [
+          {
+            "id": "1",
+            "text": "重复弹幕"
+          },
+          {
+            "id": "2",
+            "text": "重复弹幕"
+          }
+        ],
+        "drafts": {
+          "comment": "",
+          "danmaku": "",
+          "display": false
+        }
+      }
+    },
+    {
+      "name": "禁用提交的焦点循环、启用后循环和 Escape 恢复",
+      "status": "PASS",
+      "details": {
+        "login": true,
+        "feedback": true,
+        "focusRestored": true
+      }
+    },
+    {
+      "name": "真实媒体播放、暂停与原生进度条拖动：sintel",
+      "status": "PASS",
+      "details": {
+        "paused": {
+          "time": 1.029446,
+          "duration": 52.208333,
+          "frames": 29
+        },
+        "seek": {
+          "time": 31.568908,
+          "stable": true,
+          "paused": true,
+          "error": null
+        },
+        "returnedHome": true
+      }
+    },
+    {
+      "name": "真实媒体播放、暂停与原生进度条拖动：flower",
+      "status": "PASS",
+      "details": {
+        "paused": {
+          "time": 1.075582,
+          "duration": 5.055,
+          "frames": 37
+        },
+        "seek": {
+          "time": 3.056616,
+          "stable": true,
+          "paused": true,
+          "error": null
+        },
+        "returnedHome": true
+      }
+    },
+    {
+      "name": "封面占位和媒体失败重试分别验证",
+      "status": "PASS",
+      "details": {
+        "coverFallback": true,
+        "mediaError": true,
+        "retryRecovered": true
+      }
+    },
+    {
+      "name": "375px 窄屏布局、收藏历史和完整分类",
+      "status": "PASS",
+      "details": {
+        "width": 375,
+        "scrollWidth": 375,
+        "accessibleCategories": 23,
+        "favorites": true,
+        "history": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+:root {
+  --bili-pink: #fb7299;
+  --bili-pink-2: #ff6699;
+  --bili-blue: #00aeec;
+  --bili-orange: #ff7f24;
+  --bili-hot: #f69;
+  --text-1: #18191c;
+  --text-2: #61666d;
+  --text-3: #9499a0;
+  --text-white: #fff;
+  --bg: #ffffff;
+  --bg-2: #f1f2f3;
+  --bg-3: #f6f7f8;
+  --line: #e3e5e7;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --header-h: 64px;
+  --banner-h: 180px;
+  --sidebar-w: 64px;
+  --radius: 6px;
+  --font: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", "Hiragino Sans GB", system-ui, sans-serif;
+}

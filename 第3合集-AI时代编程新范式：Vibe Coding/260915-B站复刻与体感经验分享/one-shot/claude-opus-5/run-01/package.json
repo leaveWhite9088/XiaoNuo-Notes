@@ -1,0 +1,26 @@
+{
+  "name": "bilibili-home-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "B 站首页 / 播放页高仿复刻 —— React + Vite 前端(3601) + Express 后端(5601)",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "setup": "npm install && bash scripts/fetch-media.sh",
+    "media": "bash scripts/fetch-media.sh",
+    "dev": "concurrently -n server,web -c magenta,cyan \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "npm run dev --workspace server",
+    "dev:web": "npm run dev --workspace web",
+    "start": "npm run dev",
+    "build": "npm run build --workspace web",
+    "preview": "npm run preview --workspace web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

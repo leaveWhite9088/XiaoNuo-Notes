@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#080b13" />
+    <title>现场操作导演台 · B站首页模型评测</title>
+    <link rel="stylesheet" href="live.css" />
+  </head>
+  <body>
+    <div class="live-app">
+      <header class="live-topbar">
+        <a class="live-brand" href="index.html" aria-label="返回评测榜单">
+          <span class="live-brand-mark">哔</span>
+          <span>
+            <strong>现场操作导演台</strong>
+            <small>现场模型展示</small>
+          </span>
+        </a>
+        <p class="time-note">两种方式的总执行时间都控制在约30分钟；对抗审查达到时间即以当前结果收敛，不无限迭代。</p>
+        <div class="live-top-actions">
+          <button id="fullscreen-button" class="live-button subtle-button" type="button">进入全屏</button>
+          <a class="live-button subtle-button" href="index.html">返回榜单</a>
+        </div>
+      </header>
+
+      <div class="live-layout">
+        <aside class="sample-sidebar" aria-label="模型选择">
+          <div class="sidebar-heading">
+            <div>
+              <p class="live-eyebrow">现场选择</p>
+              <h1>选择模型</h1>
+            </div>
+            <span id="sample-count" class="count-badge">0 / 10</span>
+          </div>
+          <div class="mode-switch" role="group" aria-label="操作方式">
+            <button class="live-mode-button is-active" data-mode="one-shot" type="button">一次性指令直出</button>
+            <button class="live-mode-button" data-mode="adversarial" type="button">对抗性审查多轮结果</button>
+          </div>
+          <div id="model-list" class="model-list"></div>
+          <p class="keyboard-tip">← → 切换模型&nbsp;&nbsp;·&nbsp;&nbsp;Enter 启动</p>
+        </aside>
+
+        <main class="live-stage" aria-label="真实页面预览">
+          <div class="stage-toolbar">
+            <div class="selection-summary">
+              <p class="live-eyebrow">当前作品</p>
+              <h2 id="selection-title">正在载入模型目录</h2>
+              <p id="status-text" class="status-line">正在准备现场操作</p>
+            </div>
+            <div class="stage-controls" role="group" aria-label="现场控制">
+              <button id="previous-sample" class="icon-button" type="button" aria-label="上一位模型">←</button>
+              <button id="next-sample" class="icon-button" type="button" aria-label="下一位模型">→</button>
+              <button id="start-live" class="primary-button" type="button">一键启动</button>
+              <button id="refresh-live" class="secondary-button" type="button">刷新</button>
+              <button id="stop-live" class="secondary-button" type="button">停止</button>
+            </div>
+          </div>
+
+          <div class="stage-canvas">
+            <div id="stage-placeholder" class="stage-placeholder">
+              <div class="placeholder-orbit"><span></span><span></span><span></span></div>
+              <strong>选择模型后，点击“一键启动”</strong>
+              <p>准备完成后，真实页面会显示在这里。</p>
+            </div>
+            <iframe id="live-frame" title="当前作品真实页面" allow="autoplay; fullscreen" hidden></iframe>
+            <div id="frame-fallback" class="frame-fallback" hidden>
+              <strong>页面无法嵌入时，可单独打开作品</strong>
+              <a id="standalone-link" href="#" target="_blank" rel="noopener">单独打开作品 ↗</a>
+              <span>备用页面不带评分浮窗。</span>
+            </div>
+            <div id="service-help" class="service-help" hidden>
+              <strong>现场服务还没启动</strong>
+              <p>请先双击“启动实机演示”，再刷新这个页面。</p>
+            </div>
+          </div>
+
+          <div class="stage-footer">
+            <span id="last-updated">尚未启动作品</span>
+            <span>← → 切换&nbsp;·&nbsp;Enter 启动&nbsp;·&nbsp;Esc 退出全屏</span>
+          </div>
+        </main>
+      </div>
+
+      <aside id="score-panel" class="score-panel" aria-label="真人实测与Codex代码复核">
+        <div id="score-drag-handle" class="score-panel-header">
+          <div>
+            <p class="live-eyebrow">团队复核</p>
+            <h2>真人实测 + Codex代码复核</h2>
+          </div>
+          <button id="collapse-score" class="collapse-button" type="button" aria-expanded="true" aria-label="折叠评分面板">−</button>
+        </div>
+        <div id="score-panel-content" class="score-panel-content">
+          <div class="score-identity">
+            <div>
+              <strong id="score-model">尚未选择模型</strong>
+              <span id="score-mode">—</span>
+              <span id="score-harness">开发工具：—</span>
+            </div>
+            <div class="score-total-block">
+              <strong id="score-total">—</strong>
+              <span id="score-rank">尚未载入</span>
+            </div>
+          </div>
+          <div class="score-meta">
+            <span id="score-grade" class="grade-badge">—</span>
+            <span id="score-average">相对同方式平均值 —</span>
+          </div>
+          <div class="score-method-note"><span>真人实机体验 90 分</span><span>Codex 代码质量 10 分</span></div>
+          <div id="score-dimensions" class="score-dimensions"></div>
+          <div class="score-notes">
+            <div class="score-note">
+              <strong>你实测看到的亮点</strong>
+              <p id="score-strengths">选择模型后显示</p>
+            </div>
+            <div class="score-note">
+              <strong>你实测发现的问题</strong>
+              <p id="score-weaknesses">选择模型后显示</p>
+            </div>
+          </div>
+          <div class="score-tips">
+            <div class="tips-heading"><strong>现场操作建议</strong><span>3 条</span></div>
+            <ol id="score-tips-list"></ol>
+          </div>
+        </div>
+      </aside>
+
+      <div id="live-toast" class="live-toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <script src="data/results.js"></script>
+    <script src="live.js"></script>
+  </body>
+</html>

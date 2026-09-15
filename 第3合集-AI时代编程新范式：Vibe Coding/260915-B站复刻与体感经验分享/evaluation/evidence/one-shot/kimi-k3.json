@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:37:25.982Z",
+  "frontUrl": "http://localhost:5173",
+  "mode": "one-shot",
+  "model": "kimi-k3",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/kimi-k3/home.png",
+      "bytes": 138875
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/kimi-k3/feed.png",
+      "bytes": 282118
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/kimi-k3/hover.png",
+      "bytes": 1235314
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/kimi-k3/menu.png",
+      "bytes": 1254816
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/kimi-k3/search-suggest.png",
+      "bytes": 1178191
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/kimi-k3/search-results.png",
+      "bytes": 1084248
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/kimi-k3/category.png",
+      "bytes": 592280
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/kimi-k3/video.png",
+      "bytes": 1198293
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:5173",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:5173/",
+      "brokenImages": 16,
+      "cardCount": 36,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1177,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 15,
+      "cardCount": 36,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1177,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input[placeholder*=\"搜索\"]",
+      "index": 0,
+      "suggestionCount": 10
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://localhost:5173/",
+      "afterUrl": "http://localhost:5173/?q=%E7%A7%91%E6%8A%80",
+      "resultCount": 1
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://localhost:5173/?category=%E6%B8%B8%E6%88%8F",
+      "brokenImages": 8,
+      "cardCount": 24,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 919,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": null,
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": null,
+        "kind": "programmatic-card"
+      },
+      "url": "http://localhost:5173/video/BV1vvw9ngQpr",
+      "playback": {
+        "href": null,
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": null,
+          "kind": "programmatic-card"
+        },
+        "beforeUrl": "http://localhost:5173/",
+        "afterUrl": "http://localhost:5173/video/BV1vvw9ngQpr",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "【编舞】原创国风编舞《山河图》，美到窒息"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 0
+        },
+        "after": {
+          "found": true,
+          "currentTime": 0,
+          "paused": false,
+          "readyState": 0
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 0,
+        "progressed": false
+      },
+      "brokenImages": 11,
+      "cardCount": 1,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 2847,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 16,
+      "cardCount": 36,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1177,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 15,
+      "cardCount": 36,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1177,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 11,
+      "cardCount": 1,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 2847,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:5173/video/BV1vvw9ngQpr"
+  },
+  "playback": {
+    "href": null,
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "beforeUrl": "http://localhost:5173/",
+    "afterUrl": "http://localhost:5173/video/BV1vvw9ngQpr",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "【编舞】原创国风编舞《山河图》，美到窒息"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "found": true,
+      "currentTime": 0,
+      "paused": false,
+      "readyState": 0
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 0,
+    "progressed": false
+  },
+  "errors": []
+}

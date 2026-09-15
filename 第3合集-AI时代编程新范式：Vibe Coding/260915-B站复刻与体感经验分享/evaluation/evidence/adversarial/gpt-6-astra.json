@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:23:58.101Z",
+  "frontUrl": "http://127.0.0.1:3302",
+  "mode": "adversarial",
+  "model": "gpt-6-astra",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-6-astra/home.png",
+      "bytes": 1370573
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-6-astra/feed.png",
+      "bytes": 1065224
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-6-astra/hover.png",
+      "bytes": 1364438
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-6-astra/menu.png",
+      "bytes": 1264821
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-6-astra/search-suggest.png",
+      "bytes": 1179413
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-6-astra/search-results.png",
+      "bytes": 669588
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-6-astra/category.png",
+      "bytes": 569801
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-6-astra/video.png",
+      "bytes": 465231
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://127.0.0.1:3302",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://127.0.0.1:3302/",
+      "brokenImages": 0,
+      "cardCount": 60,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1808,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 60,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1808,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "href": "http://127.0.0.1:3302/video/BV1demo001"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "label": "更多"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "header form input",
+      "index": 0,
+      "suggestionCount": 0
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://127.0.0.1:3302/",
+      "afterUrl": "http://127.0.0.1:3302/?q=%E7%A7%91%E6%8A%80",
+      "resultCount": 4
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://127.0.0.1:3302/?category=%E6%B8%B8%E6%88%8F",
+      "brokenImages": 0,
+      "cardCount": 3,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 900,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "http://127.0.0.1:3302/video/BV1demo001",
+      "url": "http://127.0.0.1:3302/video/BV1demo001",
+      "playback": {
+        "href": "http://127.0.0.1:3302/video/BV1demo001",
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.144985,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.144985,
+        "progressed": true
+      },
+      "brokenImages": 0,
+      "cardCount": 24,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1349,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 60,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1808,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 60,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1808,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 24,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1349,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://127.0.0.1:3302/video/BV1demo001"
+  },
+  "playback": {
+    "href": "http://127.0.0.1:3302/video/BV1demo001",
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.144985,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.144985,
+    "progressed": true
+  },
+  "errors": []
+}

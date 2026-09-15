@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+.vite/
+
+# SQLite 运行时数据库（可由 npm run seed 重新生成）
+backend/data/bilibili.db
+backend/data/bilibili.db-shm
+backend/data/bilibili.db-wal

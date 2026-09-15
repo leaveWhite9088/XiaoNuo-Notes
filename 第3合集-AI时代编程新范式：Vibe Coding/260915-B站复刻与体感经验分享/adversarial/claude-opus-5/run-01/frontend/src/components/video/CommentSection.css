@@ -1,0 +1,155 @@
+.comments {
+  margin-top: 28px;
+  padding: 18px 20px 24px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.comments__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--line-light);
+  padding-bottom: 12px;
+}
+
+.comments__header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.comments__header h3 span {
+  color: var(--text3);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.comments__sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text3);
+}
+
+.comments__sort i {
+  width: 1px;
+  height: 12px;
+  background: var(--line);
+}
+
+.comments__sort button.is-active {
+  color: var(--text1);
+  font-weight: 600;
+}
+
+.comments__sort button:hover {
+  color: var(--brand-pink);
+}
+
+.comments__editor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.comments__avatar {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg3);
+}
+
+.comments__editor input {
+  flex: 1;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--bg3);
+  outline: none;
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.comments__editor input:focus {
+  background: #fff;
+  border-color: var(--brand-pink);
+}
+
+.comments__publish {
+  flex: none;
+  height: 36px;
+  padding: 0 20px;
+  border-radius: var(--radius-md);
+  background: var(--brand-blue);
+  color: #fff;
+  font-size: 13px;
+  transition: background 0.18s;
+}
+
+.comments__publish:hover {
+  background: var(--brand-blue-hover);
+}
+
+.comments__hint {
+  padding: 16px 0;
+  color: var(--text3);
+  font-size: 13px;
+}
+
+.comment {
+  display: flex;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line-light);
+}
+
+.comment__name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text2);
+}
+
+.comment__level {
+  padding: 0 4px;
+  border-radius: var(--radius-sm);
+  background: var(--bg3);
+  color: var(--brand-pink);
+  font-size: 11px;
+}
+
+.comment__content {
+  margin: 6px 0 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text1);
+  word-break: break-word;
+}
+
+.comment__meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 12px;
+  color: var(--text3);
+}
+
+.comment__meta button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text3);
+  transition: color 0.15s;
+}
+
+.comment__meta button:hover,
+.comment__meta button.is-liked {
+  color: var(--brand-pink);
+}

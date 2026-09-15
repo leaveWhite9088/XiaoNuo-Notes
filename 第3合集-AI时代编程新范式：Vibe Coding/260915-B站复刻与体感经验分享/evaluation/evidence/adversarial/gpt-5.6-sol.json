@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:45:54.762Z",
+  "frontUrl": "http://localhost:3402",
+  "mode": "adversarial",
+  "model": "gpt-5.6-sol",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-5.6-sol/home.png",
+      "bytes": 1061283
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-5.6-sol/feed.png",
+      "bytes": 918068
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-5.6-sol/hover.png",
+      "bytes": 1050228
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-5.6-sol/menu.png",
+      "bytes": 1065155
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-5.6-sol/search-suggest.png",
+      "bytes": 1037382
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-5.6-sol/search-results.png",
+      "bytes": 239870
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-5.6-sol/category.png",
+      "bytes": 1061283
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/gpt-5.6-sol/video.png",
+      "bytes": 923517
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:3402",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:3402/",
+      "brokenImages": 0,
+      "cardCount": 48,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1427,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 48,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1427,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://localhost:3402/video/BV1Hyr",
+      "kind": "anchor"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "个人中心",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "header form input",
+      "index": 0,
+      "suggestionCount": 3
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://localhost:3402/",
+      "afterUrl": "http://localhost:3402/?q=%E7%A7%91%E6%8A%80",
+      "resultCount": 0
+    },
+    "category": {
+      "pass": false,
+      "reason": "未找到精确文本“游戏”的 button 或 a",
+      "screenshotSaved": true
+    },
+    "video": {
+      "pass": true,
+      "href": "http://localhost:3402/video/BV1Hyr",
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": "http://localhost:3402/video/BV1Hyr",
+        "kind": "anchor"
+      },
+      "url": "http://localhost:3402/video/BV1Hyr",
+      "playback": {
+        "href": "http://localhost:3402/video/BV1Hyr",
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": "http://localhost:3402/video/BV1Hyr",
+          "kind": "anchor"
+        },
+        "beforeUrl": "http://localhost:3402/",
+        "afterUrl": "http://localhost:3402/video/BV1Hyr",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": true,
+          "detailHeading": "推荐"
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "bilibili首页番剧直播游戏中心会员购漫画赛事 下载客户端动态收藏历史 投稿 返回首页总要来趟有风的地方吧！把夏天装进镜头里126.8万播放 · 6842弹幕 · 发布于 昨天你的浏览器不支持视频播放。统一 5 秒演示视频 · 00:056842 人正在看，已装填 1000+ 条弹幕 弹幕Aa发送18.7万4.6万9.1万分享去山野，去海边，去一切有风的地方。愿这支短片能让你短暂离开忙碌的日常。生活统一演示片段界面复刻评论 1286游发布夏日气泡夏日气泡镜头和音乐都太舒服了，已经循环三遍！09-11 · 赞 386光光影收集计划用镜头记录每一个发光的日常发消息+ 关注 42.6万接下来播放点击播放65.2万00:05沉浸式整理书桌｜把普通一天过得闪闪发光UP小岛居住指南 · 09-05点击播放86.4万00:05一口气看懂：为什么我们会被一段旋律打动？UP看见声波 · 09-10点击播放233.1万00:05猫咪第一次见到扫地机器人，反应也太可爱了UP团子今天吃什么 · 09-09点击播放54.7万00:05在家也能做的焦糖舒芙蕾，松软得像云朵UP一颗小食堂 · 09-08点击播放178.9万00:05我把整座城市的日落，剪成了三分钟UP帧间旅行 · 09-07点击播放73.3万00:05这大概就是公路旅行最自由的样子UP向北开 · 09-06"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.148762,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.148762,
+        "progressed": true
+      },
+      "brokenImages": 0,
+      "cardCount": 25,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1214,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 48,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1427,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 48,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1427,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 25,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1214,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:3402/video/BV1Hyr"
+  },
+  "playback": {
+    "href": "http://localhost:3402/video/BV1Hyr",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://localhost:3402/video/BV1Hyr",
+      "kind": "anchor"
+    },
+    "beforeUrl": "http://localhost:3402/",
+    "afterUrl": "http://localhost:3402/video/BV1Hyr",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": true,
+      "detailHeading": "推荐"
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "bilibili首页番剧直播游戏中心会员购漫画赛事 下载客户端动态收藏历史 投稿 返回首页总要来趟有风的地方吧！把夏天装进镜头里126.8万播放 · 6842弹幕 · 发布于 昨天你的浏览器不支持视频播放。统一 5 秒演示视频 · 00:056842 人正在看，已装填 1000+ 条弹幕 弹幕Aa发送18.7万4.6万9.1万分享去山野，去海边，去一切有风的地方。愿这支短片能让你短暂离开忙碌的日常。生活统一演示片段界面复刻评论 1286游发布夏日气泡夏日气泡镜头和音乐都太舒服了，已经循环三遍！09-11 · 赞 386光光影收集计划用镜头记录每一个发光的日常发消息+ 关注 42.6万接下来播放点击播放65.2万00:05沉浸式整理书桌｜把普通一天过得闪闪发光UP小岛居住指南 · 09-05点击播放86.4万00:05一口气看懂：为什么我们会被一段旋律打动？UP看见声波 · 09-10点击播放233.1万00:05猫咪第一次见到扫地机器人，反应也太可爱了UP团子今天吃什么 · 09-09点击播放54.7万00:05在家也能做的焦糖舒芙蕾，松软得像云朵UP一颗小食堂 · 09-08点击播放178.9万00:05我把整座城市的日落，剪成了三分钟UP帧间旅行 · 09-07点击播放73.3万00:05这大概就是公路旅行最自由的样子UP向北开 · 09-06"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.148762,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.148762,
+    "progressed": true
+  },
+  "errors": []
+}

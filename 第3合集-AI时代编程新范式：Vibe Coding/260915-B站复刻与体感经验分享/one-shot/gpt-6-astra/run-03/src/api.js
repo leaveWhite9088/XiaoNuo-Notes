@@ -1,0 +1,1 @@
+export async function api(path,signal){const response=await fetch(`/api${path}`,{signal});if(!response.ok){const data=await response.json().catch(()=>({}));throw new Error(data.error||'网络请求失败，请稍后重试');}return response.json();}

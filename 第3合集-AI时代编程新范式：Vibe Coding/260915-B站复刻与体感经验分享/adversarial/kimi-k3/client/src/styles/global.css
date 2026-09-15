@@ -1,0 +1,65 @@
+:root {
+  --bili-pink: #fb7299;
+  --bili-pink-dark: #f06292;
+  --bili-pink-light: #fff0f4;
+  --bg-gray: #f6f7f8;
+  --card-white: #ffffff;
+  --text-main: #18191c;
+  --text-sub: #61666d;
+  --text-light: #9499a0;
+  --border-gray: #e3e5e7;
+  --bili-blue: #00a1d6;
+  --radius-card: 8px;
+  --shadow-header: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  background-color: var(--bg-gray);
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 数字格式化工具类占位（实际逻辑在 utils） */
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

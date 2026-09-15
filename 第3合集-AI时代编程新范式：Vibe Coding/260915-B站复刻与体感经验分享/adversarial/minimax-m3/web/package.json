@@ -1,0 +1,20 @@
+{
+  "name": "bilibili-mock-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 3002",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 3003"
+  },
+  "dependencies": {
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.77.2",
+    "vite": "^5.2.10"
+  }
+}

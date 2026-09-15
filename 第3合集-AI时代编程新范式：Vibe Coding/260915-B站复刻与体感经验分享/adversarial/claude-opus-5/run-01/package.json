@@ -1,0 +1,26 @@
+{
+  "name": "bilibili-home-clone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "B 站首页 + 视频详情/播放 复刻（React + TypeScript 前端 / Express + SQLite 后端）",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c magenta,cyan \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "build": "npm run build -w frontend",
+    "preview": "concurrently -n backend,preview -c magenta,cyan \"npm run start -w backend\" \"npm run preview -w frontend\"",
+    "seed": "node backend/scripts/fetch-seed.mjs",
+    "check": "npm run typecheck -w backend && npm run typecheck -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

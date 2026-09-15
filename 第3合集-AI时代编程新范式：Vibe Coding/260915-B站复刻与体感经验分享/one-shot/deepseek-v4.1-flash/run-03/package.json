@@ -1,0 +1,14 @@
+{
+  "name": "bilibili-home-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "B站首页复刻 · 前端 3111 / 后端 5111 / SQLite 数据层",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix web install",
+    "seed": "npm --prefix server run seed",
+    "seed:reset": "npm --prefix server run seed -- --force",
+    "dev:server": "npm --prefix server start",
+    "dev:web": "npm --prefix web run dev",
+    "build": "npm --prefix web run build"
+  }
+}

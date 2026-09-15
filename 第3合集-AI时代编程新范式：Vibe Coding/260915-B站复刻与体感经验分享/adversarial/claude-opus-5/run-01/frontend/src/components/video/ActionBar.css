@@ -1,0 +1,50 @@
+.action-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 14px 0 4px;
+}
+
+.action-bar__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 54px;
+  color: var(--text2);
+  font-size: 13px;
+  transition: color 0.18s, transform 0.18s;
+}
+
+.action-bar__btn:hover {
+  color: var(--brand-pink);
+  transform: translateY(-2px);
+}
+
+.action-bar__btn.is-active {
+  color: var(--brand-pink);
+}
+
+.action-bar.is-tripling .action-bar__btn {
+  animation: triple-pop 0.5s var(--easing);
+  color: var(--brand-pink);
+}
+
+@keyframes triple-pop {
+  40% {
+    transform: scale(1.22) translateY(-4px);
+  }
+}
+
+.action-bar__toast {
+  position: absolute;
+  left: 0;
+  top: -34px;
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  background: rgba(24, 25, 28, 0.86);
+  color: #fff;
+  font-size: 12px;
+  white-space: nowrap;
+}

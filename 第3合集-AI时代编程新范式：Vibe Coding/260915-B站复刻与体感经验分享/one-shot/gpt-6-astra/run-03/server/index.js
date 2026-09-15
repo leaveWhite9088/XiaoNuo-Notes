@@ -1,0 +1,16 @@
+import express from 'express';
+import { fileURLToPath } from 'node:url';
+import { videos, banners, categories, getVideos, suggestions } from './services/catalog.js';
+const app=express();
+app.use(express.json({limit:'16kb'}));
+app.use('/media',express.static(fileURLToPath(new URL('../public/media',import.meta.url)),{maxAge:'1d'}));
+app.get('/api/health',(_,res)=>res.json({status:'ok',port:5301}));
+app.get('/api/categories',(_,res)=>res.json(categories));
+app.get('/api/banners',(_,res)=>res.json(banners));
+app.get('/api/videos',(req,res)=>{const {q='',category='全部',sort='recommend'}=req.query; if([q,category,sort].some(v=>typeof v!=='string')) return res.status(400).json({error:'无效的查询参数'});res.json(getVideos({q,category,sort,page:Math.max(1,Number(req.query.page)||1),limit:Math.min(50,Math.max(1,Number(req.query.limit)||18))}));});
+app.get('/api/suggestions',(req,res)=>res.json(suggestions(typeof req.query.q==='string'?req.query.q:'')));
+app.get('/api/videos/:id',(req,res)=>{const video=videos.find(v=>v.id===req.params.id);if(!video)return res.status(404).json({error:'视频不存在'});res.json({...video,related:videos.filter(v=>v.id!==video.id).sort((a,b)=>Number(b.category===video.category)-Number(a.category===video.category)).slice(0,6)});});
+app.use('/api',(_,res)=>res.status(404).json({error:'接口不存在'}));
+const server=app.listen(5301,'127.0.0.1');
+server.once('listening',()=>console.log('API listening at http://127.0.0.1:5301'));
+server.on('error',error=>{console.error(`后端启动失败，固定端口 5301：${error.message}`);process.exit(1);});

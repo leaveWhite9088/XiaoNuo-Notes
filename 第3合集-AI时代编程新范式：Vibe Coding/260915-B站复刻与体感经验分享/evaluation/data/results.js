@@ -1,0 +1,1012 @@
+window.__EVALUATION_RESULTS__ = {
+  "schemaVersion": 1,
+  "status": "complete",
+  "updatedAt": "2026-09-13T02:30:00.000Z",
+  "scoreMethod": {
+    "humanExperience": {
+      "label": "真人实机体验",
+      "max": 90,
+      "dimensions": [
+        "visual",
+        "core",
+        "interaction",
+        "stability",
+        "content"
+      ]
+    },
+    "codeReview": {
+      "label": "Codex 代码审查",
+      "max": 10,
+      "dimensions": [
+        "engineering"
+      ]
+    },
+    "note": "页面外观、关键流程、操作体验、稳定性和内容真实性以真人逐项操作为准；Codex 只评代码架构与可维护性。"
+  },
+  "selectionGuide": [
+    {
+      "title": "想一次做出漂亮原型",
+      "models": [
+        "GPT-6 Astra",
+        "DeepSeek V4.1 Flash"
+      ],
+      "summary": "GPT-6 Astra 的首屏构图和视觉记忆最稳；DeepSeek V4.1 Flash 速度更快，真实内容和操作完成度更惊喜。"
+    },
+    {
+      "title": "愿意多轮打磨页面",
+      "models": [
+        "GPT-6 Astra",
+        "Grok 4.6",
+        "Qwen 3.8 Max"
+      ],
+      "summary": "GPT-6 Astra 多轮后综合完成度最高；Grok 4.6 和 Qwen 3.8 Max 的外观提升明显，但仍要人工收拢布局。"
+    },
+    {
+      "title": "更看重速度和成本",
+      "models": [
+        "DeepSeek V4.1 Flash",
+        "Qwen 3.8 Flash"
+      ],
+      "summary": "Flash 模型出结果快、成本低，适合先搭原型；结果波动更大，关键页面需要人亲自验收。"
+    },
+    {
+      "title": "非专业用户想长期维护",
+      "models": [
+        "Claude Opus 5",
+        "DeepSeek V4.1 Flash",
+        "Qwen 3.8 Max"
+      ],
+      "summary": "这几组代码目录和职责划分更清楚。无论选谁，都要提前限制文件范围，避免模型不断加补丁和无关文件。"
+    }
+  ],
+  "developmentNotes": [
+    "本次测试使用各模型当时更合适、也更接近大众使用方式的开发工具；框架层会明显影响最终成绩。",
+    "GPT 系列很容易为了安全和完成任务而过度设计。边界不清时，项目会快速增加补丁、文件和额外层级。",
+    "模型常形成相似的AI页面套路。没有明确设计稿和业务约束时，页面很容易同质化。",
+    "这次主要测试的是对B站既有样式的复刻能力，不等同于从零原创设计能力。",
+    "多轮审查不一定让结果更好。轻量模型尤其存在抽卡波动，需要保存好版本并设置停止时间。",
+    "思考强度会显著增加上下文和缓存成本。精准修改、定位、复核和高阶设计应选择不同档位，不要所有任务都用最高强度。"
+  ],
+  "dimensions": [
+    {
+      "key": "visual",
+      "label": "视觉还原",
+      "short": "视觉",
+      "max": 35
+    },
+    {
+      "key": "core",
+      "label": "核心流程",
+      "short": "流程",
+      "max": 20
+    },
+    {
+      "key": "interaction",
+      "label": "交互完成度",
+      "short": "交互",
+      "max": 15
+    },
+    {
+      "key": "stability",
+      "label": "稳定性",
+      "short": "稳定",
+      "max": 10
+    },
+    {
+      "key": "content",
+      "label": "内容与视频真实性",
+      "short": "内容",
+      "max": 10
+    },
+    {
+      "key": "engineering",
+      "label": "代码质量",
+      "short": "代码",
+      "max": 10
+    }
+  ],
+  "scenes": [
+    {
+      "id": "home-top",
+      "label": "首页首屏",
+      "short": "首屏"
+    },
+    {
+      "id": "home-scroll",
+      "label": "首页向下浏览一屏",
+      "short": "向下浏览"
+    },
+    {
+      "id": "card-hover",
+      "label": "视频卡 hover 与菜单",
+      "short": "卡片菜单"
+    },
+    {
+      "id": "search",
+      "label": "搜索建议和结果",
+      "short": "搜索"
+    },
+    {
+      "id": "category",
+      "label": "分类切换后的页面",
+      "short": "分类"
+    },
+    {
+      "id": "detail-player",
+      "label": "视频详情页播放状态",
+      "short": "详情播放"
+    }
+  ],
+  "models": [
+    {
+      "id": "claude-opus-5",
+      "name": "Claude Opus 5",
+      "harness": "Claude Code",
+      "oneShot": {
+        "status": "complete",
+        "total": 69,
+        "scores": {
+          "visual": 25,
+          "core": 13,
+          "interaction": 9,
+          "stability": 8,
+          "content": 4,
+          "engineering": 10
+        },
+        "strengths": "B站图标、色系和整体排版较美观，基础页面完整，代码组织也很清楚。",
+        "weaknesses": "分区图标大量使用表情符号，搜索结果贴近顶栏，视频与标题不对应且没有声音。",
+        "feeling": "整体比早期同类作品成熟很多，但视觉细节和真实视频仍明显欠缺。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/claude-opus-5/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/claude-opus-5/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/claude-opus-5/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/claude-opus-5/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/claude-opus-5/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/claude-opus-5/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 78,
+        "scores": {
+          "visual": 27,
+          "core": 15,
+          "interaction": 14,
+          "stability": 8,
+          "content": 4,
+          "engineering": 10
+        },
+        "strengths": "顶部操作比一次性版本丰富，页面完成度更高，代码结构保持清楚。",
+        "weaknesses": "部分图标仍像表情符号，整体排版略显奇怪，视频仍是重复使用的演示素材。",
+        "feeling": "多轮审查补足了操作细节，但没有解决页面风格和真实视频问题。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/claude-opus-5/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/claude-opus-5/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/claude-opus-5/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/claude-opus-5/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/claude-opus-5/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/claude-opus-5/video.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "harness": "DeepSeek Harness",
+      "oneShot": {
+        "status": "complete",
+        "total": 90,
+        "scores": {
+          "visual": 31,
+          "core": 18,
+          "interaction": 13,
+          "stability": 8,
+          "content": 10,
+          "engineering": 10
+        },
+        "strengths": "顶部背景、内容图片、分类和悬停操作都很接近B站，多个视频还能播放对应内容。",
+        "weaknesses": "手绘图标仍有小瑕疵，部分细节略显草率，需要再打磨一轮。",
+        "feeling": "轻量模型却做出了本组最完整的一次性版本，速度、外观和真实内容都很惊喜。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/deepseek-v4.1-flash/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/deepseek-v4.1-flash/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/deepseek-v4.1-flash/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/deepseek-v4.1-flash/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/deepseek-v4.1-flash/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/deepseek-v4.1-flash/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 64,
+        "scores": {
+          "visual": 23,
+          "core": 12,
+          "interaction": 10,
+          "stability": 6,
+          "content": 3,
+          "engineering": 10
+        },
+        "strengths": "列表内容仍然丰富，搜索和分类有基础操作，代码分层也比较完整。",
+        "weaknesses": "多轮后布局反而更不像B站，图标显得奇怪，详情视频也不再正常播放。",
+        "feeling": "这一轮明显抽到了较差结果，说明轻量模型的发挥上下限很大。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/deepseek-v4.1-flash/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/deepseek-v4.1-flash/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/deepseek-v4.1-flash/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/deepseek-v4.1-flash/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/deepseek-v4.1-flash/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/deepseek-v4.1-flash/video.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glm-5.3",
+      "name": "GLM-5.3",
+      "harness": "ZCode",
+      "oneShot": {
+        "status": "complete",
+        "total": 62,
+        "scores": {
+          "visual": 15,
+          "core": 14,
+          "interaction": 11,
+          "stability": 8,
+          "content": 4,
+          "engineering": 10
+        },
+        "strengths": "功能覆盖中规中矩，搜索、评论、悬停等基础操作大多能用，代码结构清楚。",
+        "weaknesses": "顶部栏被放到侧面，图标大量使用表情符号，布局方正老气，视频也是模拟内容。",
+        "feeling": "开发能力够用，但缺少多模态带来的空间理解，前端审美明显落后。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/glm-5.3/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/glm-5.3/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/glm-5.3/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/glm-5.3/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/glm-5.3/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/glm-5.3/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 72,
+        "scores": {
+          "visual": 25,
+          "core": 15,
+          "interaction": 12,
+          "stability": 8,
+          "content": 4,
+          "engineering": 8
+        },
+        "strengths": "多轮后终于把导航放回顶部，分类与数据加载完整，整体外观改善明显。",
+        "weaknesses": "视觉仍较机械，右侧排行榜和部分细节不够精致，视频内容依旧是模拟素材。",
+        "feeling": "审查确实修正了最明显的布局错误，但还没有进入第一梯队。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/glm-5.3/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/glm-5.3/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/glm-5.3/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/glm-5.3/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/glm-5.3/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/glm-5.3/video.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "name": "GPT-5.6 Sol",
+      "harness": "Codex",
+      "oneShot": {
+        "status": "complete",
+        "total": 58,
+        "scores": {
+          "visual": 23,
+          "core": 11,
+          "interaction": 6,
+          "stability": 7,
+          "content": 4,
+          "engineering": 7
+        },
+        "strengths": "顶部背景和整体轮廓像B站，该有的页面区域基本都有。",
+        "weaknesses": "细节比较毛坯，顶部与右侧缺少悬停反馈，分类简单，视频仍是重复演示素材。",
+        "feeling": "看起来方向正确，但精细度和操作完成度在前几款模型中最低。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/gpt-5.6-sol/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/gpt-5.6-sol/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/gpt-5.6-sol/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/gpt-5.6-sol/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/gpt-5.6-sol/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/gpt-5.6-sol/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 62,
+        "scores": {
+          "visual": 23,
+          "core": 12,
+          "interaction": 7,
+          "stability": 7,
+          "content": 4,
+          "engineering": 9
+        },
+        "strengths": "代码组织比一次性版本更清楚，页面整体稳定，基本功能仍然完整。",
+        "weaknesses": "多轮后外观变化不大，操作细节仍少，视频与标题不对应。",
+        "feeling": "审查主要改善了内部结构，用户能直接看到的提升并不明显。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/gpt-5.6-sol/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/gpt-5.6-sol/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/gpt-5.6-sol/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/gpt-5.6-sol/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/gpt-5.6-sol/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/gpt-5.6-sol/video.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "harness": "Codex",
+      "oneShot": {
+        "status": "complete",
+        "total": 83,
+        "scores": {
+          "visual": 35,
+          "core": 17,
+          "interaction": 11,
+          "stability": 9,
+          "content": 4,
+          "engineering": 7
+        },
+        "strengths": "首屏构图、B站风格背景、手绘图标和间距都非常精准，需求理解最稳定。",
+        "weaknesses": "顶部栏目悬停缺少反馈，视频只是少量演示素材反复使用，并非标题对应内容。",
+        "feeling": "一次成型的外观最强，几乎不用点评，但深入操作后能看出实现停在表层。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/gpt-6-astra/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/gpt-6-astra/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/gpt-6-astra/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/gpt-6-astra/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/gpt-6-astra/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/gpt-6-astra/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 86,
+        "scores": {
+          "visual": 35,
+          "core": 18,
+          "interaction": 13,
+          "stability": 9,
+          "content": 4,
+          "engineering": 7
+        },
+        "strengths": "秋日企划、页面比例和操作细节都非常像真实B站，整体完成度全场最高。",
+        "weaknesses": "视频仍未对应标题，部分深入功能只是表面完成，代码也存在集中和过度设计倾向。",
+        "feeling": "大模型的记忆和指令遵循优势非常明显，但真实内容和架构克制仍需要人把关。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/gpt-6-astra/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/gpt-6-astra/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/gpt-6-astra/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/gpt-6-astra/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/gpt-6-astra/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/gpt-6-astra/video.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "grok-4.6",
+      "name": "Grok 4.6",
+      "harness": "Grok Build",
+      "oneShot": {
+        "status": "complete",
+        "total": 69,
+        "scores": {
+          "visual": 25,
+          "core": 14,
+          "interaction": 8,
+          "stability": 7,
+          "content": 6,
+          "engineering": 9
+        },
+        "strengths": "整体布局尚可，真实封面让页面第一眼像一个可用的视频站。",
+        "weaknesses": "图标知识不够准确，顶部细节与悬停反馈少，页面对国内排版的记忆不稳定。",
+        "feeling": "大体像那么回事，但细看图标和操作就能发现抽卡感很强。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/grok-4.6/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/grok-4.6/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/grok-4.6/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/grok-4.6/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/grok-4.6/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/grok-4.6/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 82,
+        "scores": {
+          "visual": 30,
+          "core": 16,
+          "interaction": 12,
+          "stability": 8,
+          "content": 7,
+          "engineering": 9
+        },
+        "strengths": "多轮后去掉了不合适的表情图标，页面明显更真实，视频也能播放。",
+        "weaknesses": "分类在顶部和侧面重复，播放器功能仍不完整，页面组织还有些混乱。",
+        "feeling": "多轮打磨带来了明显提升，但仍需要人工收拢布局和播放器细节。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/grok-4.6/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/grok-4.6/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/grok-4.6/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/grok-4.6/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/grok-4.6/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/grok-4.6/video.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "harness": "Kimi CLI",
+      "oneShot": {
+        "status": "complete",
+        "total": 60,
+        "scores": {
+          "visual": 22,
+          "core": 13,
+          "interaction": 5,
+          "stability": 8,
+          "content": 4,
+          "engineering": 8
+        },
+        "strengths": "布局朴素正常，没有明显奇怪图标，已经做出的部分比较稳定。",
+        "weaknesses": "顶部几乎没有额外操作反馈，页面不够惊艳，视频依旧是与标题无关的演示素材。",
+        "feeling": "干净、稳定、能用，但缺少更深入的设计与操作细节。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/kimi-k3/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/kimi-k3/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/kimi-k3/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/kimi-k3/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/kimi-k3/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/kimi-k3/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 52,
+        "scores": {
+          "visual": 18,
+          "core": 10,
+          "interaction": 6,
+          "stability": 6,
+          "content": 3,
+          "engineering": 9
+        },
+        "strengths": "内部结构保持清楚，基础页面仍能运行，部分内容加载问题可以恢复。",
+        "weaknesses": "多轮后导航反而更奇怪，外观比一次性版本退步，视频仍是模拟内容。",
+        "feeling": "这一轮没有得到预期提升，说明多轮审查并不保证小模型稳定变好。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/kimi-k3/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/kimi-k3/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/kimi-k3/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/kimi-k3/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/kimi-k3/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/kimi-k3/video.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "minimax-m3",
+      "name": "MiniMax M3",
+      "harness": "MiniMax Code",
+      "oneShot": {
+        "status": "complete",
+        "total": 35,
+        "scores": {
+          "visual": 10,
+          "core": 6,
+          "interaction": 4,
+          "stability": 4,
+          "content": 2,
+          "engineering": 9
+        },
+        "strengths": "代码目录具备基本分层，页面至少能看出视频站的大致轮廓。",
+        "weaknesses": "图标、轮播数据和页面排版都明显偏离B站，很多素材是假数据，详情体验也不完整。",
+        "feeling": "与第一梯队已经拉开明显差距，是一次性版本中完成度最低的一组。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/minimax-m3/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/minimax-m3/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/minimax-m3/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/minimax-m3/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/minimax-m3/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/minimax-m3/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 41,
+        "scores": {
+          "visual": 13,
+          "core": 7,
+          "interaction": 5,
+          "stability": 5,
+          "content": 2,
+          "engineering": 9
+        },
+        "strengths": "多轮后首页轮廓稍有改善，代码结构仍有一定可维护性。",
+        "weaknesses": "对B站细节和操作的记忆仍然混乱，临时色块多，搜索与详情完成度很低。",
+        "feeling": "外观稍有进步，但核心体验仍与第一梯队明显脱节。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/minimax-m3/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/minimax-m3/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/minimax-m3/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/minimax-m3/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/minimax-m3/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/minimax-m3/video.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "qwen-3.8-flash",
+      "name": "Qwen 3.8 Flash",
+      "harness": "Claude Code + Qwen 3.8 Flash",
+      "oneShot": {
+        "status": "complete",
+        "total": 56,
+        "scores": {
+          "visual": 17,
+          "core": 11,
+          "interaction": 7,
+          "stability": 7,
+          "content": 4,
+          "engineering": 10
+        },
+        "strengths": "代码结构清楚，真实封面能够显示，基本搜索与分类功能存在。",
+        "weaknesses": "顶部图标和文字缺少打磨，搜索与分类位置奇怪，整体只是普通演示页面，视频也是模拟内容。",
+        "feeling": "速度快、能把事情做出来，但一次性版本的视觉与细节明显处于中等偏下。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/qwen-3.8-flash/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/qwen-3.8-flash/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/qwen-3.8-flash/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/qwen-3.8-flash/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/qwen-3.8-flash/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/qwen-3.8-flash/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 77,
+        "scores": {
+          "visual": 27,
+          "core": 15,
+          "interaction": 13,
+          "stability": 8,
+          "content": 4,
+          "engineering": 10
+        },
+        "strengths": "多轮后外观明显更像B站，颜色、页面操作和整体完成度都比较稳定。",
+        "weaknesses": "部分细节仍显得生硬，视频与标题不对应，精致度还没有进入最强一档。",
+        "feeling": "轻量模型配合稳定开发框架可以做出合格成品，但仍需要人工打磨细节。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/qwen-3.8-flash/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/qwen-3.8-flash/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/qwen-3.8-flash/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/qwen-3.8-flash/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/qwen-3.8-flash/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/qwen-3.8-flash/video.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "qwen-3.8-max",
+      "name": "Qwen 3.8 Max",
+      "harness": "Claude Code + Qwen 3.8 Max",
+      "oneShot": {
+        "status": "complete",
+        "total": 66,
+        "scores": {
+          "visual": 23,
+          "core": 13,
+          "interaction": 8,
+          "stability": 8,
+          "content": 4,
+          "engineering": 10
+        },
+        "strengths": "封面能够正常加载后，整体布局清晰干净，顶部知识和分区比Flash版本更准确。",
+        "weaknesses": "页面仍然简单，深入操作不多，视频与标题不对应。",
+        "feeling": "完成度和Kimi接近，胜在结构更清楚，但还没有明显亮点。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/one-shot/qwen-3.8-max/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/one-shot/qwen-3.8-max/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/one-shot/qwen-3.8-max/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/one-shot/qwen-3.8-max/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/one-shot/qwen-3.8-max/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/one-shot/qwen-3.8-max/video.png"
+          }
+        ]
+      },
+      "adversarial": {
+        "status": "complete",
+        "total": 81,
+        "scores": {
+          "visual": 29,
+          "core": 16,
+          "interaction": 14,
+          "stability": 8,
+          "content": 4,
+          "engineering": 10
+        },
+        "strengths": "多轮后页面比Flash版本更精美，每个分页都有反馈，B站风格还原较好。",
+        "weaknesses": "真实视频仍未对应标题，页面深度和第一梯队还有差距。",
+        "feeling": "多轮打磨效果明显，是千问系列里完成度最高的一组。",
+        "scenes": [
+          {
+            "id": "home-top",
+            "image": "assets/adversarial/qwen-3.8-max/home.png"
+          },
+          {
+            "id": "home-scroll",
+            "image": "assets/adversarial/qwen-3.8-max/feed.png"
+          },
+          {
+            "id": "card-hover",
+            "image": "assets/adversarial/qwen-3.8-max/hover.png"
+          },
+          {
+            "id": "search",
+            "image": "assets/adversarial/qwen-3.8-max/search-results.png"
+          },
+          {
+            "id": "category",
+            "image": "assets/adversarial/qwen-3.8-max/category.png"
+          },
+          {
+            "id": "detail-player",
+            "image": "assets/adversarial/qwen-3.8-max/video.png"
+          }
+        ]
+      }
+    }
+  ]
+};

@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:46:17.044Z",
+  "frontUrl": "http://localhost:5317",
+  "mode": "adversarial",
+  "model": "kimi-k3",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/kimi-k3/home.png",
+      "bytes": 918679
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/kimi-k3/feed.png",
+      "bytes": 814773
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/kimi-k3/hover.png",
+      "bytes": 1014447
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/kimi-k3/menu.png",
+      "bytes": 933486
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/kimi-k3/search-suggest.png",
+      "bytes": 928038
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/kimi-k3/search-results.png",
+      "bytes": 609965
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/kimi-k3/category.png",
+      "bytes": 906854
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/adversarial/kimi-k3/video.png",
+      "bytes": 791392
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:5317",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:5317/",
+      "brokenImages": 0,
+      "cardCount": 37,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1460,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 37,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1460,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": false,
+      "reason": "page.hover timed out after 3000ms: page.hover failed: element is not visible in the viewport",
+      "screenshotSaved": true
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "我的头像",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input[placeholder*=\"搜索\"]",
+      "index": 0,
+      "suggestionCount": 3
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://localhost:5317/",
+      "afterUrl": "http://localhost:5317/search?keyword=%E7%A7%91%E6%8A%80",
+      "resultCount": 7
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://localhost:5317/",
+      "brokenImages": 3,
+      "cardCount": 31,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1437,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "http://localhost:5317/video/BV1001xK4y62Z",
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": "http://localhost:5317/video/BV1001xK4y62Z",
+        "kind": "anchor"
+      },
+      "url": "http://localhost:5317/video/BV1001xK4y62Z",
+      "playback": {
+        "href": "http://localhost:5317/video/BV1001xK4y62Z",
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": "http://localhost:5317/video/BV1001xK4y62Z",
+          "kind": "anchor"
+        },
+        "beforeUrl": "http://localhost:5317/",
+        "afterUrl": "http://localhost:5317/video/BV1001xK4y62Z",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "【何同学】我做了一个新实验：让全家的设备听懂一句话 486.5万播放 6.2万弹幕 发布于 3小时前科技 点赞 2805币 投币 收藏 分享 老师好我叫何同学1056.2万粉丝+ 关注这次我们尝试把家里的所有智能设备串在一起，只用一句话就能控制。过程比想象中曲折得多……何同学智能家居实验评论 4发布白嫖使我快乐2小时前已收藏，回头慢慢研究 49回复前排围观3小时前这个剪辑绝了，转场丝滑 150回复首页通知书4小时前哈哈哈哈哈哈笑死我了 251回复三级号瑟瑟发抖5小时前看完了，干货满满，感谢分享 352回复接下来播放09:48影视飓风：8K 延时摄影，拍了整整 30 天的城市影视飓风312.7万播放 · 4.1万弹幕18:222024 年最值得买的五款手机横评，结果出乎意料科技美学156.3万播放 · 2.8万弹幕25:10新手向 Vue3 教程 第1期：从零搭建你的第一个项目A路人45.6万播放 · 1.2万弹幕15:47我拆解了 ChatGPT 级大模型的推理过程，用人话讲给你听硬核的半佛仙人203.4万播放 · 3.5万弹幕14:031000 元装机挑战：能玩 3A 大作吗？科技美学98.2万播放 · 1.9万弹幕13:11【硬核科普】为什么手机充电越来越快，电池却越来越不耐用硬核的半佛仙人178.4万播放 · 2.7万弹幕14:56【罗翔】网络喷子要负法律责任吗？罗翔说刑法789.3万播放 · 11.2万弹幕10:08【手工耿】我做了一个自动撸串机，朋友都说有用手工耿678.9万播放 · 12.4万弹幕31:45黑神话悟空 全Boss无伤速通 第一章ilem534.1万播放 · 8.7万弹幕13:26【绵羊料理】复刻米其林三星招牌菜，成本只要 30 块绵羊料理523.8万播放 · 7.8万弹幕"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 0
+        },
+        "after": {
+          "found": true,
+          "currentTime": 0,
+          "paused": false,
+          "readyState": 0
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 0,
+        "progressed": false
+      },
+      "brokenImages": 0,
+      "cardCount": 11,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1574,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 37,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1460,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 37,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1460,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 11,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1574,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:5317/video/BV1001xK4y62Z"
+  },
+  "playback": {
+    "href": "http://localhost:5317/video/BV1001xK4y62Z",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://localhost:5317/video/BV1001xK4y62Z",
+      "kind": "anchor"
+    },
+    "beforeUrl": "http://localhost:5317/",
+    "afterUrl": "http://localhost:5317/video/BV1001xK4y62Z",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "【何同学】我做了一个新实验：让全家的设备听懂一句话 486.5万播放 6.2万弹幕 发布于 3小时前科技 点赞 2805币 投币 收藏 分享 老师好我叫何同学1056.2万粉丝+ 关注这次我们尝试把家里的所有智能设备串在一起，只用一句话就能控制。过程比想象中曲折得多……何同学智能家居实验评论 4发布白嫖使我快乐2小时前已收藏，回头慢慢研究 49回复前排围观3小时前这个剪辑绝了，转场丝滑 150回复首页通知书4小时前哈哈哈哈哈哈笑死我了 251回复三级号瑟瑟发抖5小时前看完了，干货满满，感谢分享 352回复接下来播放09:48影视飓风：8K 延时摄影，拍了整整 30 天的城市影视飓风312.7万播放 · 4.1万弹幕18:222024 年最值得买的五款手机横评，结果出乎意料科技美学156.3万播放 · 2.8万弹幕25:10新手向 Vue3 教程 第1期：从零搭建你的第一个项目A路人45.6万播放 · 1.2万弹幕15:47我拆解了 ChatGPT 级大模型的推理过程，用人话讲给你听硬核的半佛仙人203.4万播放 · 3.5万弹幕14:031000 元装机挑战：能玩 3A 大作吗？科技美学98.2万播放 · 1.9万弹幕13:11【硬核科普】为什么手机充电越来越快，电池却越来越不耐用硬核的半佛仙人178.4万播放 · 2.7万弹幕14:56【罗翔】网络喷子要负法律责任吗？罗翔说刑法789.3万播放 · 11.2万弹幕10:08【手工耿】我做了一个自动撸串机，朋友都说有用手工耿678.9万播放 · 12.4万弹幕31:45黑神话悟空 全Boss无伤速通 第一章ilem534.1万播放 · 8.7万弹幕13:26【绵羊料理】复刻米其林三星招牌菜，成本只要 30 块绵羊料理523.8万播放 · 7.8万弹幕"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "found": true,
+      "currentTime": 0,
+      "paused": false,
+      "readyState": 0
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 0,
+    "progressed": false
+  },
+  "errors": []
+}

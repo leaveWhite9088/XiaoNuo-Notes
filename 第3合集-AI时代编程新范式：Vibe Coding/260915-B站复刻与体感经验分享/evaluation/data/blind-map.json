@@ -1,0 +1,25 @@
+{
+  "seed": "bili-2026-09-13",
+  "mapping": [
+    { "blindId": "S01", "sampleId": "one-shot/minimax-m3" },
+    { "blindId": "S02", "sampleId": "adversarial/gpt-5.6-sol" },
+    { "blindId": "S03", "sampleId": "one-shot/qwen-3.8-max" },
+    { "blindId": "S04", "sampleId": "adversarial/gpt-6-astra" },
+    { "blindId": "S05", "sampleId": "one-shot/claude-opus-5" },
+    { "blindId": "S06", "sampleId": "adversarial/qwen-3.8-flash" },
+    { "blindId": "S07", "sampleId": "adversarial/glm-5.3" },
+    { "blindId": "S08", "sampleId": "adversarial/deepseek-v4.1-flash" },
+    { "blindId": "S09", "sampleId": "one-shot/glm-5.3" },
+    { "blindId": "S10", "sampleId": "one-shot/deepseek-v4.1-flash" },
+    { "blindId": "S11", "sampleId": "adversarial/kimi-k3" },
+    { "blindId": "S12", "sampleId": "one-shot/kimi-k3" },
+    { "blindId": "S13", "sampleId": "one-shot/gpt-5.6-sol" },
+    { "blindId": "S14", "sampleId": "adversarial/grok-4.6" },
+    { "blindId": "S15", "sampleId": "one-shot/grok-4.6" },
+    { "blindId": "S16", "sampleId": "adversarial/minimax-m3" },
+    { "blindId": "S17", "sampleId": "adversarial/claude-opus-5" },
+    { "blindId": "S18", "sampleId": "one-shot/qwen-3.8-flash" },
+    { "blindId": "S19", "sampleId": "one-shot/gpt-6-astra" },
+    { "blindId": "S20", "sampleId": "adversarial/qwen-3.8-max" }
+  ]
+}

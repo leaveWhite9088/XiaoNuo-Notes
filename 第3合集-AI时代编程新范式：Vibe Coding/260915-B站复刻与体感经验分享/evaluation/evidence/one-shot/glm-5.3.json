@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:32:21.533Z",
+  "frontUrl": "http://localhost:3801",
+  "mode": "one-shot",
+  "model": "glm-5.3",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/glm-5.3/home.png",
+      "bytes": 1201037
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/glm-5.3/feed.png",
+      "bytes": 1280870
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/glm-5.3/hover.png",
+      "bytes": 1212040
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/glm-5.3/menu.png",
+      "bytes": 1055602
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/glm-5.3/search-suggest.png",
+      "bytes": 786094
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/glm-5.3/search-results.png",
+      "bytes": 353494
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/glm-5.3/category.png",
+      "bytes": 1201092
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/glm-5.3/video.png",
+      "bytes": 1181271
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:3801",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:3801/",
+      "brokenImages": 0,
+      "cardCount": 20,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1434,
+        "scrollHeight": 1779,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 40,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1434,
+        "scrollHeight": 2774,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input",
+      "index": 0,
+      "suggestionCount": 18
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://localhost:3801/",
+      "afterUrl": "http://localhost:3801/search?q=%E7%A7%91%E6%8A%80",
+      "resultCount": 0
+    },
+    "category": {
+      "pass": false,
+      "reason": "未找到精确文本“游戏”的 button 或 a",
+      "screenshotSaved": true
+    },
+    "video": {
+      "pass": true,
+      "href": null,
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": null,
+        "kind": "programmatic-card"
+      },
+      "url": "http://localhost:3801/video/BV1c5YM6rETF",
+      "playback": {
+        "href": null,
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": null,
+          "kind": "programmatic-card"
+        },
+        "beforeUrl": "http://localhost:3801/",
+        "afterUrl": "http://localhost:3801/video/BV1c5YM6rETF",
+        "beforeDetailState": {
+          "hasVideo": true,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "首页/其他分区/视频详情← 返回首页0:00 / 0:10弹倍速 1x解锁现实版“富豪主题公园” 探访欧洲老钱后花园摩纳哥210.8万3204782026-09-11 16:101.6万35044469稍后再看525终极小腾359.5万 粉丝+ 关注终极小腾 的作品（其他分区）欧洲旅行emira全新莲花ForMe此生必开一次莲花摩纳哥评论 60/500发表评论bili_演示用户我[smoke 自检] 2026-09-12T11:16:57.835Z8小时前 0回复bili_演示用户我界面复刻还原度不错，评论区功能正常 (GUI 自检)8小时前 0回复bili_演示用户我[smoke 自检] 2026-09-12T11:05:39.756Z8小时前 0回复驻木卫三后勤司司长光鲜亮丽的外表下，是人类金字塔顶端的一小撮人的狂欢13小时前 215回复Spikeyy富人的生活真是枯燥，怪不得要吃孩子12小时前 5回复以前小名叫小明最后图穷匕见是吧。散了散了9小时前 3回复相关推荐21世纪波兰依然被闪击73.2万燕三嘤嘤嘤小 兵 阿 嘎122.9万推背兔の印象之外｜易立竞对话埃安张雄：贴上标签只要三秒，撕掉要花多久？200.3万易立竞武汉没订奶学生“站后排喝水”：“刚好”不能成万能解释，一句“刚好” 堵不住所有追问121.5万大象新闻今天简单吃一份“桃花源记”95.7万牛正煵每说一个杰字，文明倒退一次446.2万兰斯的画室LanceStudio特厨探店 | 餐桌上有一座山？！维人和餐厅37.2万特厨隋坡这就是传说中的血脉压制吧！63.1万猫后生当我把“大地”穿在身上｜结合自然元素还原绝美大地女神249.5万o小庄o韩国回来的这五年，我为什么“消失了”？34.9万张玉安手把手教你复刻《百万英镑》牛排套餐，一口锅就能煎完！32.1万阿彭彭阿简单做个毛血旺！麻辣下饭好过瘾！配上红烧茄子和炒西瓜皮，根本满足啊63.9万了in林"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.187359,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.187359,
+        "progressed": true
+      },
+      "brokenImages": 3,
+      "cardCount": 14,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1434,
+        "scrollHeight": 1991,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 20,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1434,
+        "scrollHeight": 1779,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 40,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1434,
+        "scrollHeight": 2774,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 3,
+      "cardCount": 14,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1434,
+        "scrollHeight": 1991,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:3801/video/BV1c5YM6rETF"
+  },
+  "playback": {
+    "href": null,
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": null,
+      "kind": "programmatic-card"
+    },
+    "beforeUrl": "http://localhost:3801/",
+    "afterUrl": "http://localhost:3801/video/BV1c5YM6rETF",
+    "beforeDetailState": {
+      "hasVideo": true,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "首页/其他分区/视频详情← 返回首页0:00 / 0:10弹倍速 1x解锁现实版“富豪主题公园” 探访欧洲老钱后花园摩纳哥210.8万3204782026-09-11 16:101.6万35044469稍后再看525终极小腾359.5万 粉丝+ 关注终极小腾 的作品（其他分区）欧洲旅行emira全新莲花ForMe此生必开一次莲花摩纳哥评论 60/500发表评论bili_演示用户我[smoke 自检] 2026-09-12T11:16:57.835Z8小时前 0回复bili_演示用户我界面复刻还原度不错，评论区功能正常 (GUI 自检)8小时前 0回复bili_演示用户我[smoke 自检] 2026-09-12T11:05:39.756Z8小时前 0回复驻木卫三后勤司司长光鲜亮丽的外表下，是人类金字塔顶端的一小撮人的狂欢13小时前 215回复Spikeyy富人的生活真是枯燥，怪不得要吃孩子12小时前 5回复以前小名叫小明最后图穷匕见是吧。散了散了9小时前 3回复相关推荐21世纪波兰依然被闪击73.2万燕三嘤嘤嘤小 兵 阿 嘎122.9万推背兔の印象之外｜易立竞对话埃安张雄：贴上标签只要三秒，撕掉要花多久？200.3万易立竞武汉没订奶学生“站后排喝水”：“刚好”不能成万能解释，一句“刚好” 堵不住所有追问121.5万大象新闻今天简单吃一份“桃花源记”95.7万牛正煵每说一个杰字，文明倒退一次446.2万兰斯的画室LanceStudio特厨探店 | 餐桌上有一座山？！维人和餐厅37.2万特厨隋坡这就是传说中的血脉压制吧！63.1万猫后生当我把“大地”穿在身上｜结合自然元素还原绝美大地女神249.5万o小庄o韩国回来的这五年，我为什么“消失了”？34.9万张玉安手把手教你复刻《百万英镑》牛排套餐，一口锅就能煎完！32.1万阿彭彭阿简单做个毛血旺！麻辣下饭好过瘾！配上红烧茄子和炒西瓜皮，根本满足啊63.9万了in林"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.187359,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.187359,
+    "progressed": true
+  },
+  "errors": []
+}

@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:33:16.637Z",
+  "frontUrl": "http://localhost:3111",
+  "mode": "one-shot",
+  "model": "deepseek-v4.1-flash",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/deepseek-v4.1-flash/home.png",
+      "bytes": 1020635
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/deepseek-v4.1-flash/feed.png",
+      "bytes": 1086553
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/deepseek-v4.1-flash/hover.png",
+      "bytes": 877505
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/deepseek-v4.1-flash/menu.png",
+      "bytes": 1047272
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/deepseek-v4.1-flash/search-suggest.png",
+      "bytes": 771003
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/deepseek-v4.1-flash/search-results.png",
+      "bytes": 546836
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/deepseek-v4.1-flash/category.png",
+      "bytes": 293231
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/deepseek-v4.1-flash/video.png",
+      "bytes": 891098
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:3111",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:3111/",
+      "brokenImages": 0,
+      "cardCount": 227,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2529,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 447,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 3557,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://localhost:3111/video/BV1bW411n7fY",
+      "kind": "anchor"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "哔哩哔哩用户硬币：1286 · B币：32856关注128粉丝0收藏历史收藏创作中心设置退出登录",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input[placeholder*=\"搜索\"]",
+      "index": 0,
+      "suggestionCount": 54
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://localhost:3111/",
+      "afterUrl": "http://localhost:3111/search?keyword=%E7%A7%91%E6%8A%80",
+      "resultCount": 4
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://localhost:3111/category/game",
+      "brokenImages": 0,
+      "cardCount": 227,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2529,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": false,
+      "reason": "详情页未找到 video 元素",
+      "screenshotSaved": true
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 227,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2529,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 447,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 3557,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 0,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2489,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:3111/video/BV14W411g72d"
+  },
+  "playback": {
+    "href": "http://localhost:3111/video/BV14W411g72d",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://localhost:3111/video/BV14W411g72d",
+      "kind": "anchor"
+    },
+    "beforeUrl": "http://localhost:3111/",
+    "afterUrl": "http://localhost:3111/video/BV14W411g72d",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "before": {
+      "found": false,
+      "currentTime": null,
+      "paused": null,
+      "readyState": null
+    },
+    "after": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "mutedRequested": false,
+    "playRequested": false,
+    "currentTimeDelta": null,
+    "progressed": false
+  },
+  "errors": []
+}

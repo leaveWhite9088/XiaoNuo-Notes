@@ -1,0 +1,49 @@
+.side-toolbar {
+  position: fixed;
+  right: 16px;
+  bottom: 90px;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.side-toolbar__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text-2);
+  font-size: 11px;
+  box-shadow: var(--shadow-card);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.side-toolbar__btn:hover {
+  color: var(--brand-pink);
+  transform: translateY(-2px);
+}
+
+.side-toolbar__top {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s, color 0.2s;
+}
+
+.side-toolbar__top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 1100px) {
+  .side-toolbar {
+    display: none;
+  }
+}

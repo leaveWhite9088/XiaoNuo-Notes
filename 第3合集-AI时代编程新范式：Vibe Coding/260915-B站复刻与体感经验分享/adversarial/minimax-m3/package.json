@@ -1,0 +1,25 @@
+{
+  "name": "bilibili-homepage-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "B 站首页 + 视频详情 MVP 复刻，前端 Vue 3 + Vite，后端 Express + JSON Mock",
+  "scripts": {
+    "install:all": "npm install && npm --prefix web install",
+    "dev:server": "cross-env PORT=4040 node server/index.js",
+    "dev:web": "npm --prefix web run dev",
+    "dev": "node scripts/dev.js",
+    "build:web": "npm --prefix web run build",
+    "preview:web": "npm --prefix web run preview"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "puppeteer-core": "^25.10.0"
+  }
+}

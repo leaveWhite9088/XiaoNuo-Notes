@@ -1,0 +1,22 @@
+{
+  "name": "bilibili-home-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "B站首页复刻：Vue3+Vite 前端(3801) / Express 后端(5801)，含首页视频流、视频详情真实播放、hover 预览、菜单展开、搜索建议、分区筛选",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c yellow,cyan \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "fetch:data": "npm run fetch:data -w server",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "check": "node scripts/smoke.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

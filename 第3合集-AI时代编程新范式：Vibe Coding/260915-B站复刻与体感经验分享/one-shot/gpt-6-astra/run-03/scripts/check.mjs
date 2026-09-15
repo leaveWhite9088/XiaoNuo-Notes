@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+const frontend='http://127.0.0.1:3301',backend='http://127.0.0.1:5301';
+let checks=0;
+async function test(name,fn){await fn();console.log(`PASS ${name}`);checks++;}
+const get=async path=>{const r=await fetch(frontend+path);assert.equal(r.status,200);return r.json();};
+await test('后端健康与固定端口',async()=>{const r=await fetch(backend+'/api/health');assert.deepEqual(await r.json(),{status:'ok',port:5301});});
+await test('React 首页可访问',async()=>{const r=await fetch(frontend);assert.equal(r.status,200);assert.match(await r.text(),/src\/main.jsx/);});
+const catalog=await get('/api/videos');
+await test('视频数据层返回 18 条记录',async()=>assert.equal(catalog.items.length,18));
+await test('分类筛选',async()=>{const r=await get('/api/videos?category='+encodeURIComponent('美食'));assert.ok(r.items.length>0);assert.ok(r.items.every(v=>v.category==='美食'));});
+await test('关键词搜索',async()=>{const r=await get('/api/videos?q='+encodeURIComponent('我的世界'));assert.equal(r.total,1);assert.match(r.items[0].title,/我的世界/);});
+await test('搜索建议',async()=>{const r=await get('/api/suggestions?q='+encodeURIComponent('日食'));assert.ok(r.includes('日食记'));});
+await test('空搜索结果',async()=>assert.equal((await get('/api/videos?q=xyznotfound')).total,0));
+await test('分页不重复',async()=>{const a=await get('/api/videos?limit=3&page=1'),b=await get('/api/videos?limit=3&page=2');assert.equal(a.items.length,3);assert.ok(a.hasMore);assert.ok(!a.items.some(x=>b.items.some(y=>y.id===x.id)));});
+await test('详情与关联推荐',async()=>{const r=await get('/api/videos/'+catalog.items[0].id);assert.equal(r.id,catalog.items[0].id);assert.ok(r.related.length>0);assert.ok(r.related.every(x=>x.id!==r.id));});
+await test('不存在的视频返回 404',async()=>assert.equal((await fetch(backend+'/api/videos/invalid')).status,404));
+await test('所有本地图片有效',async()=>{for(const v of catalog.items){const r=await fetch(frontend+v.cover);assert.equal(r.status,200);assert.match(r.headers.get('content-type'),/image\//);assert.ok((await r.arrayBuffer()).byteLength>1000);}});
+await test('本地视频支持 Range 实际播放与拖动',async()=>{const r=await fetch(frontend+'/media/sample.mp4',{headers:{Range:'bytes=0-1023'}});assert.equal(r.status,206);assert.equal(r.headers.get('content-type'),'video/mp4');assert.equal((await r.arrayBuffer()).byteLength,1024);});
+await test('详情直达和刷新',async()=>{const r=await fetch(frontend+'/video/'+catalog.items[0].id);assert.equal(r.status,200);assert.match(await r.text(),/id="root"/);});
+console.log(`\n${checks} 项检查全部通过。`);

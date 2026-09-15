@@ -1,0 +1,17 @@
+{
+  "name": "@bili/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "B 站复刻项目的数据服务 (Express, 端口 5601)",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

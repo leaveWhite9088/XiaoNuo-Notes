@@ -1,0 +1,120 @@
+.search-page {
+  min-height: 100vh;
+  padding-top: var(--header-height);
+}
+
+.search-page__main {
+  padding-top: 22px;
+  padding-bottom: 30px;
+}
+
+.search-page__head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.search-page__head h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.search-page__head em {
+  font-style: normal;
+  color: var(--brand-pink);
+}
+
+.search-page__head span {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.search-page__filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--line-regular);
+}
+
+.search-page__orders {
+  display: flex;
+  gap: 6px;
+}
+
+.search-page__orders button {
+  height: 30px;
+  padding: 0 14px;
+  border-radius: 15px;
+  font-size: 13px;
+  color: var(--text-2);
+  background: #fff;
+}
+
+.search-page__orders button:hover {
+  color: var(--brand-pink);
+}
+
+.search-page__orders button.is-active {
+  background: var(--brand-pink);
+  color: #fff;
+}
+
+.search-page__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.search-page__chips button {
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 13px;
+  font-size: 12px;
+  color: var(--text-2);
+  background: var(--bg-3);
+}
+
+.search-page__chips button:hover {
+  color: var(--brand-pink);
+}
+
+.search-page__chips button.is-active {
+  background: rgba(251, 114, 153, 0.15);
+  color: var(--brand-pink);
+}
+
+.search-page__empty {
+  padding: 80px 0;
+  text-align: center;
+  color: var(--text-2);
+}
+
+.search-page__empty a {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--brand-blue);
+}
+
+.search-page__footer {
+  display: flex;
+  justify-content: center;
+  padding: 28px 0 10px;
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.search-page__footer button {
+  height: 36px;
+  padding: 0 24px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text-2);
+  box-shadow: var(--shadow-card);
+}
+
+.search-page__footer button:hover {
+  color: var(--brand-pink);
+}

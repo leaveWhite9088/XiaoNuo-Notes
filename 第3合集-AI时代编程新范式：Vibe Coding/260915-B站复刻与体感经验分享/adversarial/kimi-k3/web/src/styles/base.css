@@ -1,0 +1,58 @@
+:root {
+  --brand: #fb7299;
+  --brand-dark: #f25d8e;
+  --bg: #f6f7f8;
+  --panel: #ffffff;
+  --text: #18191c;
+  --sub: #61666d;
+  --line: #e3e5e7;
+  --radius: 8px;
+  --header-h: 64px;
+  --side-w: 76px;
+  --side-w-open: 208px;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

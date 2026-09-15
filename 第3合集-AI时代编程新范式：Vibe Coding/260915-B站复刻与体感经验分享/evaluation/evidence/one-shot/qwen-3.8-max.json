@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:30:40.690Z",
+  "frontUrl": "http://localhost:3131",
+  "mode": "one-shot",
+  "model": "qwen-3.8-max",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-max/home.png",
+      "bytes": 151847
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-max/feed.png",
+      "bytes": 827088
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-max/hover.png",
+      "bytes": 1128983
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-max/menu.png",
+      "bytes": 1087390
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-max/search-suggest.png",
+      "bytes": 1087101
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-max/search-results.png",
+      "bytes": 417019
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-max/category.png",
+      "bytes": 319952
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/qwen-3.8-max/video.png",
+      "bytes": 379404
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://localhost:3131",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://localhost:3131/",
+      "brokenImages": 39,
+      "cardCount": 120,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1582,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 19,
+      "cardCount": 120,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1582,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://localhost:3131/video/BV1BF4z1Z6d8",
+      "kind": "anchor"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "复刻菌LV6 · 正式会员个人中心历史记录我的收藏稍后再看离线缓存退出登录",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "input",
+      "index": 0,
+      "suggestionCount": 0
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://localhost:3131/",
+      "afterUrl": "http://localhost:3131/?keyword=%E7%A7%91%E6%8A%80",
+      "resultCount": 5
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "游戏",
+      "url": "http://localhost:3131/?category=%E6%B8%B8%E6%88%8F",
+      "brokenImages": 1,
+      "cardCount": 24,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 900,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "http://localhost:3131/video/BV1BF4z1Z6d8",
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": "http://localhost:3131/video/BV1BF4z1Z6d8",
+        "kind": "anchor"
+      },
+      "url": "http://localhost:3131/video/BV1BF4z1Z6d8",
+      "playback": {
+        "href": "http://localhost:3131/video/BV1BF4z1Z6d8",
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": "http://localhost:3131/video/BV1BF4z1Z6d8",
+          "kind": "anchor"
+        },
+        "beforeUrl": "http://localhost:3131/",
+        "afterUrl": "http://localhost:3131/video/BV1BF4z1Z6d8",
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 0
+        },
+        "after": {
+          "found": true,
+          "currentTime": 0.362,
+          "paused": false,
+          "readyState": 3
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 0.362,
+        "progressed": true
+      },
+      "brokenImages": 1,
+      "cardCount": 25,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1198,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 39,
+      "cardCount": 120,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1582,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 19,
+      "cardCount": 120,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1582,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 1,
+      "cardCount": 25,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1440,
+        "scrollHeight": 1198,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://localhost:3131/video/BV1BF4z1Z6d8"
+  },
+  "playback": {
+    "href": "http://localhost:3131/video/BV1BF4z1Z6d8",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://localhost:3131/video/BV1BF4z1Z6d8",
+      "kind": "anchor"
+    },
+    "beforeUrl": "http://localhost:3131/",
+    "afterUrl": "http://localhost:3131/video/BV1BF4z1Z6d8",
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "found": true,
+      "currentTime": 0.362,
+      "paused": false,
+      "readyState": 3
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 0.362,
+    "progressed": true
+  },
+  "errors": []
+}

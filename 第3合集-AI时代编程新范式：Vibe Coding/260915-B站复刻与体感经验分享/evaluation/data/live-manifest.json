@@ -1,0 +1,806 @@
+{
+  "version": 1,
+  "samples": [
+    {
+      "sampleId": "one-shot--claude-opus-5",
+      "modelId": "claude-opus-5",
+      "modelName": "Claude Opus 5",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/claude-opus-5/run-01",
+      "frontPort": 3601,
+      "backPort": 5601,
+      "frontUrl": "http://127.0.0.1:3601",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3601",
+            "--strictPort"
+          ],
+          "relativeCwd": "web"
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--claude-opus-5",
+      "modelId": "claude-opus-5",
+      "modelName": "Claude Opus 5",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/claude-opus-5/run-01",
+      "frontPort": 3602,
+      "backPort": 5602,
+      "frontUrl": "http://127.0.0.1:3602",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "backend"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3602",
+            "--strictPort"
+          ],
+          "relativeCwd": "frontend"
+        }
+      ]
+    },
+    {
+      "sampleId": "one-shot--deepseek-v4.1-flash",
+      "modelId": "deepseek-v4.1-flash",
+      "modelName": "DeepSeek V4.1 Flash",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/deepseek-v4.1-flash/run-03",
+      "frontPort": 3111,
+      "backPort": 5111,
+      "frontUrl": "http://127.0.0.1:3111",
+      "installDirs": [
+        ".",
+        "server",
+        "web"
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3111",
+            "--strictPort"
+          ],
+          "relativeCwd": "web"
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--deepseek-v4.1-flash",
+      "modelId": "deepseek-v4.1-flash",
+      "modelName": "DeepSeek V4.1 Flash",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/deepseek-v4.1-flash/run-03/bilibili-clone",
+      "frontPort": 3112,
+      "backPort": 5112,
+      "frontUrl": "http://127.0.0.1:3112",
+      "installDirs": [
+        ".",
+        "backend",
+        "frontend"
+      ],
+      "beforeStart": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "db:ensure"
+          ],
+          "relativeCwd": "."
+        }
+      ],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "backend"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3112",
+            "--strictPort"
+          ],
+          "relativeCwd": "frontend"
+        }
+      ]
+    },
+    {
+      "sampleId": "one-shot--glm-5.3",
+      "modelId": "glm-5.3",
+      "modelName": "GLM-5.3",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/glm-5.3/run-01",
+      "frontPort": 3801,
+      "backPort": 5801,
+      "frontUrl": "http://127.0.0.1:3801",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3801",
+            "--strictPort"
+          ],
+          "relativeCwd": "client"
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--glm-5.3",
+      "modelId": "glm-5.3",
+      "modelName": "GLM-5.3",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/glm-5.3/run-01",
+      "frontPort": 3802,
+      "backPort": 5802,
+      "frontUrl": "http://127.0.0.1:3802",
+      "installDirs": [
+        ".",
+        "backend",
+        "frontend"
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "backend"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3802",
+            "--strictPort"
+          ],
+          "relativeCwd": "frontend"
+        }
+      ]
+    },
+    {
+      "sampleId": "one-shot--gpt-5.6-sol",
+      "modelId": "gpt-5.6-sol",
+      "modelName": "GPT-5.6 Sol",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/gpt-5.6-sol/run-02",
+      "frontPort": 3401,
+      "backPort": 5401,
+      "frontUrl": "http://127.0.0.1:3401",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "node",
+          "args": [
+            "server/index.js"
+          ],
+          "relativeCwd": "."
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev:web",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3401",
+            "--strictPort"
+          ],
+          "relativeCwd": "."
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--gpt-5.6-sol",
+      "modelId": "gpt-5.6-sol",
+      "modelName": "GPT-5.6 Sol",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/gpt-5.6-sol/run-03",
+      "frontPort": 3402,
+      "backPort": 5402,
+      "frontUrl": "http://127.0.0.1:3402",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "node",
+          "args": [
+            "server/index.js"
+          ],
+          "relativeCwd": "."
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev:web",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3402",
+            "--strictPort"
+          ],
+          "relativeCwd": "."
+        }
+      ]
+    },
+    {
+      "sampleId": "one-shot--gpt-6-astra",
+      "modelId": "gpt-6-astra",
+      "modelName": "GPT-6 Astra",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/gpt-6-astra/run-03",
+      "frontPort": 3301,
+      "backPort": 5301,
+      "frontUrl": "http://127.0.0.1:3301",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "node",
+          "args": [
+            "server/index.js"
+          ],
+          "relativeCwd": "."
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev:frontend",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3301",
+            "--strictPort"
+          ],
+          "relativeCwd": "."
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--gpt-6-astra",
+      "modelId": "gpt-6-astra",
+      "modelName": "GPT-6 Astra",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/gpt-6-astra/run-02",
+      "frontPort": 3302,
+      "backPort": 5302,
+      "frontUrl": "http://127.0.0.1:3302",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "node",
+          "args": [
+            "server/index.js"
+          ],
+          "relativeCwd": "."
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev:web",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3302",
+            "--strictPort"
+          ],
+          "relativeCwd": "."
+        }
+      ]
+    },
+    {
+      "sampleId": "one-shot--grok-4.6",
+      "modelId": "grok-4.6",
+      "modelName": "Grok 4.6",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/grok-4.6",
+      "frontPort": 5174,
+      "backPort": 3002,
+      "frontUrl": "http://127.0.0.1:5174",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "node",
+          "args": [
+            "server/index.js"
+          ],
+          "relativeCwd": "."
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev:client",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "5174",
+            "--strictPort"
+          ],
+          "relativeCwd": "."
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--grok-4.6",
+      "modelId": "grok-4.6",
+      "modelName": "Grok 4.6",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/grok-4.6",
+      "frontPort": 5173,
+      "backPort": 3001,
+      "frontUrl": "http://127.0.0.1:5173",
+      "installDirs": [
+        ".",
+        "server",
+        "client"
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "5173",
+            "--strictPort"
+          ],
+          "relativeCwd": "client"
+        }
+      ]
+    },
+    {
+      "sampleId": "one-shot--kimi-k3",
+      "modelId": "kimi-k3",
+      "modelName": "Kimi K3",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/kimi-k3",
+      "frontPort": 5173,
+      "backPort": 3001,
+      "frontUrl": "http://127.0.0.1:5173",
+      "installDirs": [
+        ".",
+        "server",
+        "client"
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "5173",
+            "--strictPort"
+          ],
+          "relativeCwd": "client"
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--kimi-k3",
+      "modelId": "kimi-k3",
+      "modelName": "Kimi K3",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/kimi-k3",
+      "frontPort": 5317,
+      "backPort": 3317,
+      "frontUrl": "http://127.0.0.1:5317",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "5317",
+            "--strictPort"
+          ],
+          "relativeCwd": "client"
+        }
+      ]
+    },
+    {
+      "sampleId": "one-shot--minimax-m3",
+      "modelId": "minimax-m3",
+      "modelName": "MiniMax M3",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/minimax-m3",
+      "frontPort": 3001,
+      "backPort": 3002,
+      "frontUrl": "http://127.0.0.1:3001",
+      "installDirs": [
+        ".",
+        "backend",
+        "frontend"
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "backend"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3001",
+            "--strictPort"
+          ],
+          "relativeCwd": "frontend"
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--minimax-m3",
+      "modelId": "minimax-m3",
+      "modelName": "MiniMax M3",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/minimax-m3",
+      "frontPort": 3002,
+      "backPort": 4040,
+      "frontUrl": "http://127.0.0.1:3002",
+      "installDirs": [
+        ".",
+        "web"
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev:server"
+          ],
+          "relativeCwd": "."
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3002",
+            "--strictPort"
+          ],
+          "relativeCwd": "web"
+        }
+      ]
+    },
+    {
+      "sampleId": "one-shot--qwen-3.8-flash",
+      "modelId": "qwen-3.8-flash",
+      "modelName": "Qwen 3.8 Flash",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/qwen-3.8-flash/run-02",
+      "frontPort": 3141,
+      "backPort": 5141,
+      "frontUrl": "http://127.0.0.1:3141",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3141",
+            "--strictPort"
+          ],
+          "relativeCwd": "web"
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--qwen-3.8-flash",
+      "modelId": "qwen-3.8-flash",
+      "modelName": "Qwen 3.8 Flash",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/qwen-3.8-flash/run-02",
+      "frontPort": 3142,
+      "backPort": 5142,
+      "frontUrl": "http://127.0.0.1:3142",
+      "installDirs": [
+        "."
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3142",
+            "--strictPort"
+          ],
+          "relativeCwd": "client"
+        }
+      ]
+    },
+    {
+      "sampleId": "one-shot--qwen-3.8-max",
+      "modelId": "qwen-3.8-max",
+      "modelName": "Qwen 3.8 Max",
+      "mode": "one-shot",
+      "modeLabel": "一次性指令直出",
+      "sourcePath": "one-shot/qwen-3.8-max/run-02",
+      "frontPort": 3131,
+      "backPort": 5131,
+      "frontUrl": "http://127.0.0.1:3131",
+      "installDirs": [
+        ".",
+        "server",
+        "web"
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3131",
+            "--strictPort"
+          ],
+          "relativeCwd": "web"
+        }
+      ]
+    },
+    {
+      "sampleId": "adversarial--qwen-3.8-max",
+      "modelId": "qwen-3.8-max",
+      "modelName": "Qwen 3.8 Max",
+      "mode": "adversarial",
+      "modeLabel": "对抗性审查多轮结果",
+      "sourcePath": "adversarial/qwen-3.8-max/run-02",
+      "frontPort": 3132,
+      "backPort": 5132,
+      "frontUrl": "http://127.0.0.1:3132",
+      "installDirs": [
+        ".",
+        "server",
+        "web"
+      ],
+      "beforeStart": [],
+      "commands": [
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "start"
+          ],
+          "relativeCwd": "server"
+        },
+        {
+          "executable": "npm",
+          "args": [
+            "run",
+            "dev",
+            "--",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "3132",
+            "--strictPort"
+          ],
+          "relativeCwd": "web"
+        }
+      ]
+    }
+  ]
+}

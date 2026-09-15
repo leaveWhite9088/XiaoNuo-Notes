@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T19:42:15.169Z",
+  "frontUrl": "http://127.0.0.1:5174",
+  "mode": "one-shot",
+  "model": "grok-4.6",
+  "taskSpaceId": 7,
+  "page": "p1",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1,
+    "mobile": false
+  },
+  "screenshots": {
+    "home": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/grok-4.6/home.png",
+      "bytes": 1615800
+    },
+    "feed": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/grok-4.6/feed.png",
+      "bytes": 1431264
+    },
+    "hover": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/grok-4.6/hover.png",
+      "bytes": 1542757
+    },
+    "menu": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/grok-4.6/menu.png",
+      "bytes": 1406305
+    },
+    "search-suggest": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/grok-4.6/search-suggest.png",
+      "bytes": 1273421
+    },
+    "search-results": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/grok-4.6/search-results.png",
+      "bytes": 185948
+    },
+    "category": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/grok-4.6/category.png",
+      "bytes": 915340
+    },
+    "video": {
+      "path": "/Users/mumuxsy/Desktop/临时工作目录/video-260909-B站首页制作/evaluation/assets/one-shot/grok-4.6/video.png",
+      "bytes": 426106
+    }
+  },
+  "checks": {
+    "viewport": {
+      "pass": true,
+      "requested": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "storage_clear": {
+      "pass": true,
+      "origin": "http://127.0.0.1:5174",
+      "storageTypes": "local_storage,session_storage,indexeddb,cache_storage,service_workers"
+    },
+    "home": {
+      "pass": true,
+      "url": "http://127.0.0.1:5174/",
+      "brokenImages": 0,
+      "cardCount": 37,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 1915,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "pass": true,
+      "brokenImages": 0,
+      "cardCount": 72,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2499,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "hover": {
+      "pass": true,
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://127.0.0.1:5174/video/BV1hx4y1s7Qm",
+      "kind": "anchor"
+    },
+    "menu": {
+      "pass": true,
+      "found": true,
+      "selector": "[data-eval-account-target=\"true\"]",
+      "label": "暮色小电视年度大会员个人中心投稿管理推荐服务退出登录",
+      "strategy": "header-account"
+    },
+    "search-suggest": {
+      "pass": true,
+      "selector": "header form input",
+      "index": 0,
+      "suggestionCount": 0
+    },
+    "search-results": {
+      "pass": true,
+      "beforeUrl": "http://127.0.0.1:5174/",
+      "afterUrl": "http://127.0.0.1:5174/search?q=%E7%A7%91%E6%8A%80",
+      "resultCount": 2
+    },
+    "category": {
+      "pass": true,
+      "found": true,
+      "text": "🎮游戏",
+      "url": "http://127.0.0.1:5174/?channel=game",
+      "brokenImages": 0,
+      "cardCount": 6,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 1058,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "video": {
+      "pass": true,
+      "href": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd",
+      "target": {
+        "selector": "[data-eval-video-target=\"true\"]",
+        "href": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd",
+        "kind": "anchor"
+      },
+      "url": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd",
+      "playback": {
+        "href": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd",
+        "target": {
+          "selector": "[data-eval-video-target=\"true\"]",
+          "href": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd",
+          "kind": "anchor"
+        },
+        "beforeUrl": "http://127.0.0.1:5174/",
+        "afterUrl": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd",
+        "beforeDetailState": {
+          "hasVideo": false,
+          "hasPlayer": false,
+          "hasDetailHeading": false,
+          "detailHeading": ""
+        },
+        "detailState": {
+          "hasVideo": true,
+          "hasPlayer": true,
+          "hasDetailHeading": true,
+          "detailHeading": "现场直拍｜她唱到副歌的时候场馆灯全暗了"
+        },
+        "before": {
+          "found": true,
+          "currentTime": 0,
+          "paused": true,
+          "readyState": 4
+        },
+        "after": {
+          "found": true,
+          "currentTime": 1.145901,
+          "paused": false,
+          "readyState": 4
+        },
+        "mutedRequested": true,
+        "playRequested": true,
+        "currentTimeDelta": 1.145901,
+        "progressed": true
+      },
+      "brokenImages": 0,
+      "cardCount": 13,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 1716,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    }
+  },
+  "metrics": {
+    "home": {
+      "brokenImages": 0,
+      "cardCount": 37,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 1915,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "feed": {
+      "brokenImages": 0,
+      "cardCount": 72,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 2499,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "final": {
+      "brokenImages": 0,
+      "cardCount": 13,
+      "scrollOverflow": {
+        "horizontal": false,
+        "vertical": true,
+        "scrollWidth": 1432,
+        "scrollHeight": 1716,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      }
+    },
+    "finalURL": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd"
+  },
+  "playback": {
+    "href": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd",
+    "target": {
+      "selector": "[data-eval-video-target=\"true\"]",
+      "href": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd",
+      "kind": "anchor"
+    },
+    "beforeUrl": "http://127.0.0.1:5174/",
+    "afterUrl": "http://127.0.0.1:5174/video/BV1wx4y1p7Kd",
+    "beforeDetailState": {
+      "hasVideo": false,
+      "hasPlayer": false,
+      "hasDetailHeading": false,
+      "detailHeading": ""
+    },
+    "detailState": {
+      "hasVideo": true,
+      "hasPlayer": true,
+      "hasDetailHeading": true,
+      "detailHeading": "现场直拍｜她唱到副歌的时候场馆灯全暗了"
+    },
+    "before": {
+      "found": true,
+      "currentTime": 0,
+      "paused": true,
+      "readyState": 4
+    },
+    "after": {
+      "found": true,
+      "currentTime": 1.145901,
+      "paused": false,
+      "readyState": 4
+    },
+    "mutedRequested": true,
+    "playRequested": true,
+    "currentTimeDelta": 1.145901,
+    "progressed": true
+  },
+  "errors": []
+}

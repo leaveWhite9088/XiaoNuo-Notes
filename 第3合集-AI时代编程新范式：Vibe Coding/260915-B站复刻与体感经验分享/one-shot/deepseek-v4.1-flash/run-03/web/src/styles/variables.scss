@@ -1,0 +1,54 @@
+// ============================================================
+//  设计变量：数值来自对真实 B站首页计算样式的采样
+//  body bg #F1F2F3 / 主色 #00AEEC / 品牌粉 #FB7299 / 内容宽 1520
+// ============================================================
+
+// 品牌色
+$brand-pink: #fb7299;
+$brand-blue: #00aeec;
+$brand-pink-hover: #fc8bab;
+$brand-blue-hover: #40c5f1;
+$brand-orange: #ff9212;
+
+// 文本
+$text-1: #18191c;
+$text-2: #61666d;
+$text-3: #9499a0;
+$text-4: #c9ccd0;
+$text-inverse: #ffffff;
+
+// 背景
+$bg-body: #f1f2f3;
+$bg-card: #f6f7f8;
+$bg-white: #ffffff;
+$bg-mask: rgba(0, 0, 0, 0.55);
+$border-line: #e3e5e7;
+
+// 布局
+$layout-width: 1520px;
+$layout-padding: 24px;
+$grid-card: 288px;
+$grid-gap: 20px;
+$header-bar-height: 64px;
+$banner-height: 169px;
+$channel-height: 120px;
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 12px;
+
+// 阴影 / 层级
+$shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+$shadow-pop: 0 8px 24px rgba(0, 0, 0, 0.12);
+$shadow-player: 0 12px 32px rgba(0, 0, 0, 0.35);
+$z-header: 1000;
+$z-popover: 1200;
+
+// 字体
+$font-family: 'PingFang SC', HarmonyOS_Regular, 'Helvetica Neue', 'Microsoft YaHei',
+  'Source Han Sans SC', 'Noto Sans CJK SC', sans-serif;
+
+// 过渡
+$ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$transition-fast: 0.16s $ease;
+$transition-base: 0.24s $ease;

@@ -1,0 +1,164 @@
+/* 设计变量：取自 B 站主站的配色与圆角体系 */
+:root {
+  --brand-pink: #fb7299;
+  --brand-pink-hover: #ff85ad;
+  --brand-pink-active: #e5688c;
+  --brand-blue: #00aeec;
+  --brand-blue-hover: #46c8f5;
+
+  --text1: #18191c;
+  --text2: #61666d;
+  --text3: #9499a0;
+  --text4: #c9ccd0;
+  --text-white: #ffffff;
+
+  --bg1: #ffffff;
+  --bg2: #f6f7f8;
+  --bg3: #f1f2f3;
+  --bg-page: #f6f7f8;
+  --line: #e3e5e7;
+  --line-light: #f1f2f3;
+
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-panel: 0 4px 16px rgba(0, 0, 0, 0.14);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-round: 999px;
+
+  --header-height: 64px;
+  --content-max: 1760px;
+  --easing: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text1);
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', 'Microsoft YaHei',
+    'Source Han Sans SC', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d7dbdf;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c2c7cc;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.app-main {
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* 骨架屏 */
+.skeleton {
+  background: linear-gradient(90deg, #eceef0 25%, #f5f6f7 37%, #eceef0 63%);
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.24s var(--easing);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

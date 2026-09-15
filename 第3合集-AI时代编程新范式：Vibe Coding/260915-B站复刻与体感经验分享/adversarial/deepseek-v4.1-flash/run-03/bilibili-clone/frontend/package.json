@@ -1,0 +1,29 @@
+{
+  "name": "bilibili-clone-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "bilibili 首页复刻 —— 前端 (Vue3 + Vite + TypeScript + Pinia)",
+  "scripts": {
+    "dev": "vite --port 3112 --strictPort --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --port 3112 --strictPort",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "pinia": "^2.3.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.5.0",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.9",
+    "vue-tsc": "^2.2.0"
+  }
+}

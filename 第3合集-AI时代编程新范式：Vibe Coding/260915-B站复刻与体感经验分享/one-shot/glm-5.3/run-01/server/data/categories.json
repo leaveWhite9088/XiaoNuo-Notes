@@ -1,0 +1,102 @@
+[
+  {
+    "key": "home",
+    "name": "首页",
+    "icon": "🏠"
+  },
+  {
+    "key": "hot",
+    "name": "热门",
+    "icon": "🔥"
+  },
+  {
+    "key": "animation",
+    "name": "动画",
+    "icon": "🎬"
+  },
+  {
+    "key": "guochuang",
+    "name": "国创",
+    "icon": "🐉"
+  },
+  {
+    "key": "music",
+    "name": "音乐",
+    "icon": "🎵"
+  },
+  {
+    "key": "dance",
+    "name": "舞蹈",
+    "icon": "💃"
+  },
+  {
+    "key": "game",
+    "name": "游戏",
+    "icon": "🎮"
+  },
+  {
+    "key": "knowledge",
+    "name": "知识",
+    "icon": "📖"
+  },
+  {
+    "key": "digital",
+    "name": "科技",
+    "icon": "💻"
+  },
+  {
+    "key": "sports",
+    "name": "运动",
+    "icon": "⚽"
+  },
+  {
+    "key": "life",
+    "name": "生活",
+    "icon": "🌱"
+  },
+  {
+    "key": "food",
+    "name": "美食",
+    "icon": "🍜"
+  },
+  {
+    "key": "animal",
+    "name": "动物圈",
+    "icon": "🐾"
+  },
+  {
+    "key": "ghost",
+    "name": "鬼畜",
+    "icon": "🤪"
+  },
+  {
+    "key": "fashion",
+    "name": "时尚",
+    "icon": "👗"
+  },
+  {
+    "key": "news",
+    "name": "资讯",
+    "icon": "📰"
+  },
+  {
+    "key": "ent",
+    "name": "娱乐",
+    "icon": "🎤"
+  },
+  {
+    "key": "cine",
+    "name": "影视",
+    "icon": "📽️"
+  },
+  {
+    "key": "doc",
+    "name": "纪录片",
+    "icon": "🌍"
+  },
+  {
+    "key": "other",
+    "name": "其他",
+    "icon": "🧭"
+  }
+]

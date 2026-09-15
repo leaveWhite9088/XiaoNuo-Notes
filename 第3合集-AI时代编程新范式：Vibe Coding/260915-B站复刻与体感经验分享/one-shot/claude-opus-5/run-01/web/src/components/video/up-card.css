@@ -1,0 +1,97 @@
+.up-card {
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-card);
+}
+
+.up-card__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.up-card__avatar {
+  position: relative;
+  flex: none;
+}
+
+.up-card__avatar img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.up-card__badge {
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  padding: 0 5px;
+  border-radius: 7px;
+  background: var(--brand-pink);
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  line-height: 14px;
+}
+
+.up-card__info {
+  min-width: 0;
+}
+
+.up-card__name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--brand-pink);
+  cursor: pointer;
+}
+
+.up-card__sub {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.up-card__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.up-card__follow {
+  flex: 1;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--brand-pink);
+  color: #fff;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.up-card__follow:hover {
+  background: var(--brand-pink-hover);
+}
+
+.up-card__follow.is-followed {
+  background: var(--bg-2);
+  color: var(--text-2);
+}
+
+.up-card__message {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--bg-2);
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+.up-card__message:hover {
+  color: var(--brand-pink);
+}

@@ -1,0 +1,40 @@
+.side-tools {
+  position: fixed;
+  right: 16px;
+  bottom: 80px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.side-tools__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-card);
+  color: var(--text2);
+  font-size: 11px;
+  transition: color 0.18s, transform 0.18s, opacity 0.18s;
+}
+
+.side-tools__btn:hover {
+  color: var(--brand-pink);
+  transform: translateY(-2px);
+}
+
+.side-tools__btn--top {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.side-tools__btn--top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}

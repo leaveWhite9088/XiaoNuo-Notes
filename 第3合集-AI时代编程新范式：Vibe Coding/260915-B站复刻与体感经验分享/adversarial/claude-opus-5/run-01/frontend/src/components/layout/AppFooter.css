@@ -1,0 +1,53 @@
+.app-footer {
+  margin-top: 40px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  color: var(--text2);
+}
+
+.app-footer__inner {
+  display: flex;
+  gap: 60px;
+  padding-top: 34px;
+  padding-bottom: 26px;
+}
+
+.app-footer__brand {
+  max-width: 420px;
+}
+
+.app-footer__brand strong {
+  font-size: 20px;
+  color: var(--brand-pink);
+}
+
+.app-footer__brand p {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text3);
+}
+
+.app-footer__col h4 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--text1);
+}
+
+.app-footer__col li button {
+  padding: 4px 0;
+  font-size: 12px;
+  color: var(--text3);
+}
+
+.app-footer__col li button:hover {
+  color: var(--brand-pink);
+}
+
+.app-footer__bottom {
+  padding: 14px 0;
+  border-top: 1px solid var(--line-light);
+  text-align: center;
+  font-size: 12px;
+  color: var(--text4);
+}
