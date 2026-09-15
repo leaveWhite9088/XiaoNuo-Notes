@@ -41,7 +41,7 @@
         "strengths": "做得好的地方",
         "weaknesses": "还可以更好的地方",
         "scenes": [
-          { "id": "home-top", "image": "assets/model/home-top.png" }
+          { "id": "home-top", "image": "assets/model/home-top.jpg" }
         ]
       },
       "adversarial": { "status": "pending", "total": null, "scores": {}, "scenes": [] }
